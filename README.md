@@ -12,7 +12,9 @@ $ #or
 $ yarn add the-traveler
 ```
 
-### Prerequisites
+
+
+__Prerequisites__
 
 To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application) to obtain your access token.
 
@@ -24,6 +26,16 @@ import Traveler from 'the-traveler';
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
     userAgent: 'yourUserAgent' //used to identify your request to the API
+});
+```
+
+If you want to use this package inside a es5 you can import it like so:
+
+```
+var Traveler = require('the-traveler').default;
+const traveler = new traveler({
+    apikey: 'yourAPIkey',
+    userAgent: 'yourUserAgent' 
 });
 ```
 
@@ -51,11 +63,11 @@ traveler
 | /Actions/Items/EquipItems/                                                                            | ![alt text][no]  |
 | /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/             | ![alt text][no]  |
 | /{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/                              | ![alt text][yes] |
-| /Stats/AggregateClanStats/{groupId}/                                                                  | ![alt text][no]  |
-| /Stats/Leaderboards/Clans/{groupId}/                                                                  | ![alt text][no]  |
-| /Clan/{groupId}/WeeklyRewardState/                                                                    | ![alt text][no]  |
+| /Stats/AggregateClanStats/{groupId}/                                                                  | ![alt text][yes] |
+| /Stats/Leaderboards/Clans/{groupId}/                                                                  | ![alt text][yes] |
+| /Clan/{groupId}/WeeklyRewardState/                                                                    | ![alt text][yes] |
 | /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/ | ![alt text][no]  |
-| /Manifest/                                                                                            | ![alt text][no]  |
+| /Manifest/                                                                                            | ![alt text][yes] |
 | /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/                        | ![alt text][no]  |
 | /Stats/Definition/                                                                                    | ![alt text][no]  |
 | /{membershipType}/Account/{destinyMembershipId}/Stats/                                                | ![alt text][yes] |

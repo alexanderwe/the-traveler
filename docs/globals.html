@@ -924,7 +924,7 @@ img { max-width: 100%; }
 			<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install the-traveler</span>
 <span class="hljs-meta">$</span><span class="bash"> <span class="hljs-comment">#or</span></span>
 <span class="hljs-meta">$</span><span class="bash"> yarn add the-traveler</span>
-</code></pre><h3 id="prerequisites">Prerequisites</h3>
+</code></pre><p><strong>Prerequisites</strong></p>
 			<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 			<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 			<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -932,6 +932,12 @@ img { max-width: 100%; }
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
+});
+</code></pre><p>If you want to use this package inside a es5 you can import it like so:</p>
+			<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-built_in">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
+<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> traveler({
+    apikey: <span class="hljs-string">'yourAPIkey'</span>,
+    userAgent: <span class="hljs-string">'yourUserAgent'</span> 
 });
 </code></pre><h2 id="examples">Examples</h2>
 			<p><em>Search for a player</em></p>
@@ -953,119 +959,119 @@ img { max-width: 100%; }
 				<tbody>
 					<tr>
 						<td>/Actions/Items/ActivateTalentNode/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/EquipItem/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/EquipItems/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/</td>
-						<td>[ X]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/Stats/AggregateClanStats/{groupId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/Stats/Leaderboards/Clans/{groupId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/Clan/{groupId}/WeeklyRewardState/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Manifest/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Stats/Definition/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Stats/</td>
-						<td>[X ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Stats/Leaderboards/{membershipType}/{destinyMembershipId}/{characterId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Stats/PostGameCarnageReport/{activityId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Profile/{destinyMembershipId}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Milestones/{milestoneHash}/Content/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
-						<td>Milestones</td>
-						<td>[ ]</td>
+						<td>/Milestones/</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/InsertSocketPlug/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Armory/Search/{type}/{searchTerm}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/SearchDestinyPlayer/{membershipType}/{displayName}/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/SetLockState/</td>
-						<td>[X]</td>
+						<td><img src="https://img.shields.io/badge/integrated-yes-green.svg" alt="alt text" title="Integrated:yes"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/SetTrackedState/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 					<tr>
 						<td>/Actions/Items/TransferItem/</td>
-						<td>[ ]</td>
+						<td><img src="https://img.shields.io/badge/integrated-no-red.svg" alt="alt text" title="Integrated:no"></td>
 					</tr>
 				</tbody>
 			</table>
