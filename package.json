@@ -1,0 +1,54 @@
+{
+    "name": "the-traveler",
+    "version": "0.0.1",
+    "description": "A Node.js API wrapper for the Destiny 2 API",
+    "keywords": [
+        "destiny2",
+        "traveler",
+        "api",
+        "wrapper"
+    ],
+    "main": "index.js",
+    "author": "Alexander Weiß",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexanderwe/the-traveler"
+    },
+    "scripts": {
+        "start": "babel-node ./src/index.js --presets es2015,stage-2",
+        "build": "tsc --p tsconfig.json",
+        "watch": "tsc --watch --p tsconfig.json",
+        "test": "mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --theme node_modules/typedoc-clarity-theme/bin --out ./docs/ ./src/*.ts"
+    },
+    "babel": {
+        "presets": [
+            "stage-2",
+            "es2015"
+        ],
+        "plugins": [
+            "transform-runtime"
+        ]
+    },
+    "dependencies": {
+        "request": "^2.81.0",
+        "request-promise-native": "^1.0.4"
+    },
+    "devDependencies": {
+        "@types/request-promise-native": "^1.0.6",
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "chai": "^4.1.2",
+        "chai-as-promised": "^7.1.1",
+        "es6-promise": "^4.1.1",
+        "minami": "^1.2.3",
+        "mocha": "^3.5.0",
+        "tslint": "^5.7.0",
+        "typedoc-clarity-theme": "^1.1.0",
+        "typescript": "^2.5.2"
+    }
+}

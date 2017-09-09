@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "lib": [
+            "dom",
+            "es5",
+            "es2015.promise"
+        ],
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "request-promise-native"
+        ],
+        "outDir": "./build"
+    }
+}

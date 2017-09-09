@@ -1,0 +1,20 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "trailing-comma": [
+            true,
+            {
+                "multiline": "always",
+                "singleline": "never"
+            }
+        ],
+        "max-line-length": 200,
+        "no-trailing-whitespace": [
+            false
+        ]
+    }
+}

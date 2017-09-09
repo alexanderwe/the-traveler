@@ -1,0 +1,7 @@
+node_modules/*
+build/*
+deprecated/*
+.env
+src/index.js
+.vscode
+.DS_Store
