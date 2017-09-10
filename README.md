@@ -56,37 +56,38 @@ traveler
 
 ## Progress
 
-| Endpoint                                                                                              | Implemented      |
-| ----------------------------------------------------------------------------------------------------- | ---------------- |
-| /Actions/Items/ActivateTalentNode/                                                                    | ![alt text][no]  |
-| /Actions/Items/EquipItem/                                                                             | ![alt text][no]  |
-| /Actions/Items/EquipItems/                                                                            | ![alt text][no]  |
-| /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/             | ![alt text][no]  |
-| /{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/                              | ![alt text][yes] |
-| /Stats/AggregateClanStats/{groupId}/                                                                  | ![alt text][yes] |
-| /Stats/Leaderboards/Clans/{groupId}/                                                                  | ![alt text][yes] |
-| /Clan/{groupId}/WeeklyRewardState/                                                                    | ![alt text][yes] |
-| /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/ | ![alt text][no]  |
-| /Manifest/                                                                                            | ![alt text][yes] |
-| /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/                        | ![alt text][no]  |
-| /Stats/Definition/                                                                                    | ![alt text][no]  |
-| /{membershipType}/Account/{destinyMembershipId}/Stats/                                                | ![alt text][yes] |
-| /{membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/                                | ![alt text][no]  |
-| /{membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/                                   | ![alt text][no]  |
-| /Stats/Leaderboards/{membershipType}/{destinyMembershipId}/{characterId}/                             | ![alt text][no]  |
-| /Stats/PostGameCarnageReport/{activityId}/                                                            | ![alt text][no]  |
-| /{membershipType}/Profile/{destinyMembershipId}/                                                      | ![alt text][no]  |
-| /Milestones/{milestoneHash}/Content/                                                                  | ![alt text][no]  |
-| /Milestones/                                                                                          | ![alt text][no]  |
-| /{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/          | ![alt text][no]  |
-| /{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/         | ![alt text][no]  |
-| /{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/                      | ![alt text][no]  |
-| /Actions/Items/InsertSocketPlug/                                                                      | ![alt text][no]  |
-| /Armory/Search/{type}/{searchTerm}/                                                                   | ![alt text][no]  |
-| /SearchDestinyPlayer/{membershipType}/{displayName}/                                                  | ![alt text][no]  |
-| /Actions/Items/SetLockState/                                                                          | ![alt text][yes] |
-| /Actions/Items/SetTrackedState/                                                                       | ![alt text][no]  |
-| /Actions/Items/TransferItem/                                                                          | ![alt text][no]  |
+Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview
+
+| Endpoint                                  | Implemented      | Unlocked in API       |
+| ----------------------------------------- | ---------------- | --------------------- |
+| Destiny2.GetDestinyManifest               | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.SearchDestinyPlayer              | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetProfile                       | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetCharacter                     | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetClanWeeklyRewardState         | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetItem                          | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetVendors                       | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetVendor                        | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.TransferItem                     | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.EquipItem                        | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.EquipItems                       | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.SetItemLockState                 | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.InsertSocketPlug                 | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.ActivateTalentNode               | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.GetPostGameCarnageReport         | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetHistoricalStatsDefinition     | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetClanLeaderboards              | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetClanAggregateStats            | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetLeaderboards                  | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetLeaderboardsForCharacter      | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.SearchDestinyEntities            | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetHistoricalStats               | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetHistoricalStatsForAccount     | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetActivityHistory               | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.GetUniqueWeaponHistory           | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.GetDestinyAggregateActivityStats | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.GetPublicMilestoneContent        | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.GetPublicMilestones              | ![alt text][no]  | ![alt text][unlocked] |
 
 ## Built With
 
@@ -107,5 +108,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 **the-traveler package isn't endorsed by Bunge and doesn't reflect the views or opinions of Bungies or anyone officially involved in producing or managing Destiny 2. Destiny 2 and Bungie are trademarks or registered trademarks of Bungie, Inc. Destiny 2 © Bungie.**
 
 
-[yes]:  https://img.shields.io/badge/integrated-yes-green.svg "Integrated:yes"
-[no]:  https://img.shields.io/badge/integrated-no-red.svg "Integrated:no"
+[yes]:  https://img.shields.io/badge/implemented-yes-green.svg "Implemented:yes"
+[no]:  https://img.shields.io/badge/implemented-no-red.svg "Implemented:no"
+[preview]: https://img.shields.io/badge/-preview-blue.svg "Preview"
+[unlocked]: https://img.shields.io/badge/-unlocked-green.svg "Unlocked"

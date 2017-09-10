@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>The Traveler | The Traveler</title>
+	<title>PeriodType | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -912,221 +912,107 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+			<a href="_enums_.componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
+		</li>
+		<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+			<a href="_enums_.destinyactivitymodetype.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Type</a>
+		</li>
+		<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+			<a href="_enums_.destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
+		</li>
+		<li class="current tsd-kind-enum tsd-parent-kind-external-module">
+			<a href="_enums_.periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
+			<ul>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="_enums_.periodtype.html#activity" class="tsd-kind-icon">Activity</a>
+				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="_enums_.periodtype.html#alltime" class="tsd-kind-icon">All<wbr>Time</a>
+				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="_enums_.periodtype.html#daily" class="tsd-kind-icon">Daily</a>
+				</li>
+				<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+					<a href="_enums_.periodtype.html#none" class="tsd-kind-icon">None</a>
+				</li>
+			</ul>
+		</li>
+		<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+			<a href="_enums_.searchtype.html" class="tsd-kind-icon">Search<wbr>Type</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<div class="tsd-panel tsd-typography">
-			<h1 id="the-traveler">The Traveler</h1>
-			<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application</p>
-			<h2 id="getting-started">Getting Started</h2>
-			<p>To get started use <code>npm</code> or <code>yarn</code> to add this package to your project.</p>
-			<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install the-traveler</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-comment">#or</span></span>
-<span class="hljs-meta">$</span><span class="bash"> yarn add the-traveler</span>
-</code></pre><p><strong>Prerequisites</strong></p>
-			<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
-			<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
-			<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
-
-<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
-    <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
-    <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
-});
-</code></pre><p>If you want to use this package inside a es5 you can import it like so:</p>
-			<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-built_in">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
-<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> traveler({
-    apikey: <span class="hljs-string">'yourAPIkey'</span>,
-    userAgent: <span class="hljs-string">'yourUserAgent'</span> 
-});
-</code></pre><h2 id="examples">Examples</h2>
-			<p><em>Search for a player</em></p>
-			<pre><code>traveler
-    .searchPlayer(<span class="hljs-string">'-1'</span>, <span class="hljs-string">'playername'</span>)
-    .then(<span class="hljs-function"><span class="hljs-params">player</span> =&gt;</span> {
-        <span class="hljs-comment">//do something with the player</span>
-    }.catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
-        <span class="hljs-comment">//do something with the error</span>
-    })
-</code></pre><h2 id="progress">Progress</h2>
-			<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview</p>
-			<table>
-				<thead>
-					<tr>
-						<th>Endpoint</th>
-						<th>Implemented</th>
-						<th>Unlocked in API</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Destiny2.GetDestinyManifest</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.SearchDestinyPlayer</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetProfile</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetCharacter</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetClanWeeklyRewardState</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetItem</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetVendors</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetVendor</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.TransferItem</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.EquipItem</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.EquipItems</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.SetItemLockState</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.InsertSocketPlug</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.ActivateTalentNode</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetPostGameCarnageReport</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetHistoricalStatsDefinition</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetClanLeaderboards</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetClanAggregateStats</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetLeaderboards</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetLeaderboardsForCharacter</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.SearchDestinyEntities</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetHistoricalStats</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetHistoricalStatsForAccount</td>
-						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetActivityHistory</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetUniqueWeaponHistory</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetDestinyAggregateActivityStats</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetPublicMilestoneContent</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-					<tr>
-						<td>Destiny2.GetPublicMilestones</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
-						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-					</tr>
-				</tbody>
-			</table>
-			<h2 id="built-with">Built With</h2>
-			<ul>
-				<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
-				<li><a href="https://github.com/Microsoft/TypeScript">Typescript</a> - Programming Language</li>
-			</ul>
-			<h2 id="versioning">Versioning</h2>
-			<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/your/project/tags">tags on this repository</a>. </p>
-			<h2 id="license">License</h2>
-			<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
-			<h2 id="acknowledgments">Acknowledgments</h2>
-			<p><strong>the-traveler package isn&#39;t endorsed by Bunge and doesn&#39;t reflect the views or opinions of Bungies or anyone officially involved in producing or managing Destiny 2. Destiny 2 and Bungie are trademarks or registered trademarks of Bungie, Inc. Destiny 2 © Bungie.</strong></p>
-		</div>
-		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Enum for Destiny period type</p>
+				</div>
+				<dl class="tsd-comment-tags">
+					<dt>enum</dt>
+					<dd></dd>
+				</dl>
+			</div>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>External modules</h3>
+						<h3>Enumeration members</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-external-module"><a href="modules/_enums_.html" class="tsd-kind-icon">"enums"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_interfaces_.html" class="tsd-kind-icon">"interfaces"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_traveler_.html" class="tsd-kind-icon">"traveler"</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_enums_.periodtype.html#activity" class="tsd-kind-icon">Activity</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_enums_.periodtype.html#alltime" class="tsd-kind-icon">All<wbr>Time</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_enums_.periodtype.html#daily" class="tsd-kind-icon">Daily</a></li>
+							<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_enums_.periodtype.html#none" class="tsd-kind-icon">None</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Enumeration members</h2>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="activity" class="tsd-anchor"></a>
+				<h3>Activity</h3>
+				<div class="tsd-signature tsd-kind-icon">Activity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in enums.ts:97</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="alltime" class="tsd-anchor"></a>
+				<h3>All<wbr>Time</h3>
+				<div class="tsd-signature tsd-kind-icon">All<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in enums.ts:96</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="daily" class="tsd-anchor"></a>
+				<h3>Daily</h3>
+				<div class="tsd-signature tsd-kind-icon">Daily<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in enums.ts:95</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+				<a name="none" class="tsd-anchor"></a>
+				<h3>None</h3>
+				<div class="tsd-signature tsd-kind-icon">None<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in enums.ts:94</li>
+					</ul>
+				</aside>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
