@@ -918,7 +918,7 @@ img { max-width: 100%; }
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
 			<h1 id="the-traveler">The Traveler</h1>
-			<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application</p>
+			<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 			<h2 id="getting-started">Getting Started</h2>
 			<p>To get started use <code>npm</code> or <code>yarn</code> to add this package to your project.</p>
 			<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install the-traveler</span>
@@ -934,10 +934,10 @@ img { max-width: 100%; }
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
 });
 </code></pre><p>If you want to use this package inside a es5 you can import it like so:</p>
-			<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-built_in">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
-<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> traveler({
+			<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
+<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'yourAPIkey'</span>,
-    userAgent: <span class="hljs-string">'yourUserAgent'</span> 
+    userAgent: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
 });
 </code></pre><h2 id="examples">Examples</h2>
 			<p><em>Search for a player</em></p>
@@ -1076,27 +1076,27 @@ img { max-width: 100%; }
 					</tr>
 					<tr>
 						<td>Destiny2.GetActivityHistory</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
 					</tr>
 					<tr>
 						<td>Destiny2.GetUniqueWeaponHistory</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
 					</tr>
 					<tr>
 						<td>Destiny2.GetDestinyAggregateActivityStats</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 						<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
 					</tr>
 					<tr>
 						<td>Destiny2.GetPublicMilestoneContent</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 					</tr>
 					<tr>
 						<td>Destiny2.GetPublicMilestones</td>
-						<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+						<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 						<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 					</tr>
 				</tbody>

@@ -3,6 +3,9 @@ import * as rp from 'request-promise-native';
 import { SearchType } from './enums';
 import { IConfig, IQueryStringParameters } from './interfaces';
 
+/**
+ * Entry class for accessing the Destiny 2 API
+ */
 export default class Traveler {
     private apikey: string;
     private apibase: string;
@@ -248,6 +251,7 @@ export default class Traveler {
 
     /**
      * Get historical stats definitions. This contains the values for the `statId` key.
+     * @async
      */
     public getHistoricalStatsDefinition(): Promise<object> {
         this.options.uri = `${this.apibase}/Stats/Definition/`;
@@ -385,6 +389,7 @@ export default class Traveler {
 
     /**
      * Gets a page list of Destiny items
+     * @async
      * @param searchTerm The string to use when searching for Destiny entities
      * @param type The type of entity for whom you would like results
      * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
@@ -406,7 +411,7 @@ export default class Traveler {
     }
 
     /**
-     * Retrieve historical stats of a Destiny 2 character
+     * Gets activity history stats for indicated character
      * @async
      * @param membershipType A valid non-BungieNet membership type, or All <ul>
      * <li>-1: ALL</li>
@@ -464,6 +469,127 @@ export default class Traveler {
      */
     public getHistoricalStatsForAccount(membershipType: string, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
+        return new Promise<object>((resolve, reject) => {
+            this.makeRequest(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Gets activity history stats for indicated character
+     * @async
+     * @param membershipType A valid non-BungieNet membership type, or All <ul>
+     * <li>-1: ALL</li>
+     * <li>1: Xbox</li>
+     * <li>2: PSN</li>
+     * <li>254: Bungie</li>
+     * </ul>
+     * @param destinyMembershipId The Destiny ID (Account ID)
+     * @param characterId ID of the character
+     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * <ul>
+     * <li>count {number}: Number of rows to return</li>
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.
+     * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
+     * </li>
+     * <li>page {number}: Page number to return, starting with 0</li>
+     * </ul>
+     * @return {Promise.object} When fulfilled returns an object containing stats for activities for the specified character
+     */
+    public getActivityHistory(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+        this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/${this.resolveQueryStringParameters(queryStringParameters)}`;
+        return new Promise<object>((resolve, reject) => {
+            this.makeRequest(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Gets details about unique weapon usage, including all exotic weapons
+     * @async
+     * @param membershipType A valid non-BungieNet membership type, or All <ul>
+     * <li>-1: ALL</li>
+     * <li>1: Xbox</li>
+     * <li>2: PSN</li>
+     * <li>254: Bungie</li>
+     * </ul>
+     * @param destinyMembershipId The Destiny ID (Account ID)
+     * @param characterId ID of the character
+     * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
+     */
+    public getUniqueWeaponHistory(membershipType: string, destinyMembershipId: string, characterId: string): Promise<object> {
+        this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/`;
+        return new Promise<object>((resolve, reject) => {
+            this.makeRequest(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Gets all activities the character has participated in together with aggregate statistics for those activities
+     * @async
+     * @param membershipType A valid non-BungieNet membership type, or All <ul>
+     * <li>-1: ALL</li>
+     * <li>1: Xbox</li>
+     * <li>2: PSN</li>
+     * <li>254: Bungie</li>
+     * </ul>
+     * @param destinyMembershipId The Destiny ID (Account ID)
+     * @param characterId ID of the character
+     * @return {Promise.object} When fulfilled returns an object containing aggregated information about recent activities
+     */
+    public getAggregateActivityStats(membershipType: string, destinyMembershipId: string, characterId: string): Promise<object> {
+        this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/`;
+        return new Promise<object>((resolve, reject) => {
+            this.makeRequest(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Gets custom localized content for the milestone of the given hash, if it exists.
+     * @async
+     * @param milestoneHash The identifier for the milestone to be returned
+     */
+    public getPublicMilestoneContent(milestoneHash: string): Promise<object> {
+        this.options.uri = `${this.apibase}/Milestones/${milestoneHash}/Content/`;
+        return new Promise<object>((resolve, reject) => {
+            this.makeRequest(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Gets public information about currently available Milestones
+     * @async
+     */
+    public getPublicMilestones(): Promise<object> {
+        this.options.uri = `${this.apibase}/Milestones/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
                 .then((response) => {

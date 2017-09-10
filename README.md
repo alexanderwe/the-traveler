@@ -1,6 +1,6 @@
 # The Traveler
 
-The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application
+The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
 
 ## Getting Started
 
@@ -33,9 +33,9 @@ If you want to use this package inside a es5 you can import it like so:
 
 ```
 var Traveler = require('the-traveler').default;
-const traveler = new traveler({
+const traveler = new Traveler({
     apikey: 'yourAPIkey',
-    userAgent: 'yourUserAgent' 
+    userAgent: 'yourUserAgent' //used to identify your request to the API
 });
 ```
 
@@ -83,11 +83,11 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 | Destiny2.SearchDestinyEntities            | ![alt text][yes] | ![alt text][preview]  |
 | Destiny2.GetHistoricalStats               | ![alt text][yes] | ![alt text][preview]  |
 | Destiny2.GetHistoricalStatsForAccount     | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetActivityHistory               | ![alt text][no]  | ![alt text][preview]  |
-| Destiny2.GetUniqueWeaponHistory           | ![alt text][no]  | ![alt text][preview]  |
-| Destiny2.GetDestinyAggregateActivityStats | ![alt text][no]  | ![alt text][preview]  |
-| Destiny2.GetPublicMilestoneContent        | ![alt text][no]  | ![alt text][unlocked] |
-| Destiny2.GetPublicMilestones              | ![alt text][no]  | ![alt text][unlocked] |
+| Destiny2.GetActivityHistory               | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetUniqueWeaponHistory           | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetDestinyAggregateActivityStats | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.GetPublicMilestoneContent        | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.GetPublicMilestones              | ![alt text][yes] | ![alt text][unlocked] |
 
 ## Built With
 
