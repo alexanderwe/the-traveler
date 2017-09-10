@@ -10,6 +10,7 @@ export default class Traveler {
     private apikey: string;
     private apibase: string;
     private assetbase: string;
+    private debug?: boolean = false;
     private options: rp.OptionsWithUri;
 
     constructor(config: IConfig) {
@@ -25,6 +26,7 @@ export default class Traveler {
             simple: true, // Automatically parses the JSON string in the response
             uri: '',
         };
+        this.debug = config.debug;
     }
 
     /**
@@ -79,10 +81,14 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
+     * <ul>
+     * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+     * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
-    public getProfile(membershipType: string, destinyMembershipId: string): Promise<object> {
-        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/`;
+    public getProfile(membershipType: string, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
                 .then((response) => {
@@ -95,7 +101,7 @@ export default class Traveler {
     }
 
     /**
-     * Retrieve aggregrated details about a Destiny Account
+     * Retrieve aggregrated details about a Destiny Characters
      * @async
      * @param membershipType A valid non-BungieNet membership type, or All <ul>
      * <li>-1: ALL</li>
@@ -105,7 +111,7 @@ export default class Traveler {
      * </ul>
      * @param characterId ID of the character
      * @param destinyMembershipId The Destiny ID (Account ID)
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
@@ -180,7 +186,7 @@ export default class Traveler {
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character for whom to get the vendor info
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
@@ -211,7 +217,7 @@ export default class Traveler {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character for whom to get the vendor info
      * @param vendorHash Hash identifier of the vendor to retreieve
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
@@ -270,7 +276,7 @@ export default class Traveler {
      * Get the leaderboard of a clan
      * @async
      * @param groupId Group ID of the clan whose leaderboards you wish to fetch
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>modes {strings[]} Different gameMode IDs for which to get the stats
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
@@ -298,7 +304,7 @@ export default class Traveler {
      * Gets aggregated stats for a clan using the same categories as the clan leaderboards
      * @async
      * @param groupId Group ID of the clan whose stats you wish to fetch
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>modes {string[]}: Array of game modes for which to get stats 
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
@@ -328,7 +334,7 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>modes {strings[]} Different gameMode IDs for which to get the stats
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
@@ -363,7 +369,7 @@ export default class Traveler {
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>modes {strings[]} Different gameMode IDs for which to get the stats
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
@@ -392,7 +398,7 @@ export default class Traveler {
      * @async
      * @param searchTerm The string to use when searching for Destiny entities
      * @param type The type of entity for whom you would like results
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>page {number} Page number to return, starting with 0
      * @return {Promise.object} The entities search result
@@ -421,7 +427,7 @@ export default class Traveler {
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>dayend {string}: Last day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
      * <li>daystart {string}: First day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
@@ -460,7 +466,7 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
@@ -491,7 +497,7 @@ export default class Traveler {
      * </ul>
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @param queryStringParameters An array containg the query parameters for this endpoint. For this endpoint only the following keys are valid:
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>count {number}: Number of rows to return</li>
      * <li>modes {strings[]} Different gameMode IDs for which to get the stats.
@@ -608,6 +614,9 @@ export default class Traveler {
      * @return {Promise.any} When fulfilled returns an object containing the response from the request
      */
     private makeRequest(options: rp.OptionsWithUri): Promise<any> {
+        if (this.debug) {
+            console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
+        }
         return new Promise<object>((resolve, reject) => {
             rp(this.options)
                 .then((response) => {

@@ -7,6 +7,7 @@ import { ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodTy
 export interface IConfig {
     apikey: string;
     userAgent: string;
+    debug?: boolean;
 }
 
 /**

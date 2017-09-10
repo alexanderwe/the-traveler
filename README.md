@@ -1,3 +1,24 @@
+Table of Contents
+=================
+
+   * [The Traveler](#the-traveler)
+      * [Getting Started](#getting-started)
+         * [Prerequisites](#prerequisites)
+      * [Notices](#notices)
+         * [Typical Response](#typical-response)
+         * [Privacy](#privacy)
+         * [Documentation](#documentation)
+      * [Examples](#examples)
+         * [Search for an Destiny Account on PSN](#search-for-an-destiny-account-on-psn)
+         * [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
+      * [Progress](#progress)
+      * [Built With](#built-with)
+      * [Versioning](#versioning)
+      * [Issues](#issues)
+      * [License](#license)
+      * [Acknowledgments](#acknowledgments)
+
+
 # The Traveler
 
 The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
@@ -14,7 +35,7 @@ $ yarn add the-traveler
 
 
 
-__Prerequisites__
+### Prerequisites
 
 To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application) to obtain your access token.
 
@@ -39,18 +60,101 @@ const traveler = new Traveler({
 });
 ```
 
-## Examples
+_If you want to show the URLs the API wrapper is requesting, just add `debug: true` to the configuration array when instantiate a `Traveler` object_
+```
+const traveler = new Traveler({
+    apikey: 'pasteYourAPIkey',
+    userAgent: 'yourUserAgent', //used to identify your request to the API
+    debug: true 
+});
+```
 
-_Search for a player_
+
+## Notices
+
+There are some noteworthy information which could help to resolve some issues with the Destiny 2 API.
+
+### Typical Response
+
+The response object from the API is always constructed like the following snippet indicates. The `Response` will contain the actual request data, while `ErrorCode`, `ThrottleSeconds`, `ErrorStatus`, `Message` and `MessageData` will hold additional data about the sucess of our request. 
 
 ```
+{ Response: Array or Object,
+  ErrorCode: 1,
+  ThrottleSeconds: 0,
+  ErrorStatus: 'Success',
+  Message: 'Ok',
+  MessageData: {} }
+```
+### Privacy
+
+Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to obtain specific information through the API. The different pricacy indicators are the following:
+
+* None: 0
+* Public: 1
+* Private: 2
+
+### Documentation
+
+* The documentation for this package can be found at 
+* A fully complete documentation about the different endpoints and methods can be found at the [official Destiny 2 API site](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest)
+
+
+## Examples
+
+### Search for an Destiny Account on PSN
+
+_Query:_
+```
 traveler
-    .searchPlayer('-1', 'playername')
+    .searchDestinyPlayer('-1', 'playername')
     .then(player => {
-        //do something with the player
-    }.catch(err => {
+        console.log(player);
+    }).catch(err => {
         //do something with the error
     })
+```
+
+_Response_
+```
+{ Response:
+   [ { iconPath: '/img/theme/destiny/icons/icon_psn.png',
+       membershipType: 2,
+       membershipId: '4611686018433838874',
+       displayName: 'Playername' } ],
+  ErrorCode: 1,
+  ThrottleSeconds: 0,
+  ErrorStatus: 'Success',
+  Message: 'Ok',
+```
+
+### Get a character for an PSN Account
+
+Here all character specific components are queried
+
+_Query:_
+```
+traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', { components: ['200', '201', '202', '203', '204', '205'] }).then(result => {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
+```
+_Response (First level):_
+```
+{ Response:
+   { inventory: { privacy: 2 },
+     character: { data: [Object], privacy: 1 },
+     progressions: { privacy: 2 },
+     renderData: { data: [Object], privacy: 1 },
+     activities: { privacy: 2 },
+     equipment: { data: [Object], privacy: 1 },
+     itemComponents: {} },
+  ErrorCode: 1,
+  ThrottleSeconds: 0,
+  ErrorStatus: 'Success',
+  Message: 'Ok',
+  MessageData: {} }
 ```
 
 
@@ -97,6 +201,11 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+
+## Issues
+
+Do you have any issues or recommendations for this package ? Feel free to open an issue in the [isse section](https://github.com/alexanderwe/the-traveler/issues) :) 
 
 
 ## License
