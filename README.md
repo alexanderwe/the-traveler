@@ -25,13 +25,7 @@ The Traveler is a small npm package which wraps around the Destiny 2 API. It use
 
 ## Getting Started
 
-To get started use `npm` or `yarn` to add this package to your project.
-
-```
-$ npm install the-traveler
-$ #or
-$ yarn add the-traveler
-```
+npm support will come soon :)
 
 
 
