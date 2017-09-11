@@ -30,7 +30,6 @@ export enum ComponentType {
     Kiosks = 500,
 }
 
-
 /**
  * Enum for Destiny acitivity mode type
  * @enum 

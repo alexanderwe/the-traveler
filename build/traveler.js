@@ -10,7 +10,7 @@ var Traveler = /** @class */ (function () {
         this.debug = false;
         this.apikey = config.apikey;
         this.apibase = 'https://www.bungie.net/Platform/Destiny2';
-        this.assetbase = 'http://www.bungie.net/';
+        this.assetbase = 'https://www.bungie.net/';
         this.options = {
             headers: {
                 'User-Agent': config.userAgent,
@@ -25,6 +25,7 @@ var Traveler = /** @class */ (function () {
     /**
      * Gets the current manifest in a JSON document
      * @async
+     * @return {Promise.Object} When fulfilled returns an object containing the current Destiny 2 manifest
      */
     Traveler.prototype.getDestinyManifest = function () {
         var _this = this;
@@ -493,7 +494,7 @@ var Traveler = /** @class */ (function () {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>count {number}: Number of rows to return</li>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.
+     * <li>mode {number} A single game mode to get the history for
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>
@@ -569,6 +570,7 @@ var Traveler = /** @class */ (function () {
      * Gets custom localized content for the milestone of the given hash, if it exists.
      * @async
      * @param milestoneHash The identifier for the milestone to be returned
+     * @return {Promise.object} When fulfilled returns an object containing aggregated information about recent activities
      */
     Traveler.prototype.getPublicMilestoneContent = function (milestoneHash) {
         var _this = this;

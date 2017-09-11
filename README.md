@@ -101,7 +101,7 @@ Some information in the Destiny API is privacy protected. If the user set the pr
 _Query:_
 ```
 traveler
-    .searchDestinyPlayer('-1', 'playername')
+    .searchDestinyPlayer('2', 'playername')
     .then(player => {
         console.log(player);
     }).catch(err => {

@@ -17,6 +17,7 @@ export interface IConfig {
 export interface IQueryStringParameters {
     components?: ComponentType[];
     modes?: DestinyActivityModeType[];
+    mode?: DestinyActivityModeType;
     maxtop?: number;
     statid?: string;
     page?: number;

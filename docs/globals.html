@@ -947,11 +947,8 @@ img { max-width: 100%; }
 			<h1 id="the-traveler">The Traveler</h1>
 			<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 			<h2 id="getting-started">Getting Started</h2>
-			<p>To get started use <code>npm</code> or <code>yarn</code> to add this package to your project.</p>
-			<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install the-traveler</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-comment">#or</span></span>
-<span class="hljs-meta">$</span><span class="bash"> yarn add the-traveler</span>
-</code></pre><h3 id="prerequisites">Prerequisites</h3>
+			<p>npm support will come soon :)</p>
+			<h3 id="prerequisites">Prerequisites</h3>
 			<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 			<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 			<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -998,7 +995,7 @@ img { max-width: 100%; }
 			<h3 id="search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</h3>
 			<p><em>Query:</em></p>
 			<pre><code>traveler
-    .searchDestinyPlayer(<span class="hljs-string">'-1'</span>, <span class="hljs-string">'playername'</span>)
+    .searchDestinyPlayer(<span class="hljs-string">'2'</span>, <span class="hljs-string">'playername'</span>)
     .then(<span class="hljs-function"><span class="hljs-params">player</span> =&gt;</span> {
         <span class="hljs-built_in">console</span>.log(player);
     }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
