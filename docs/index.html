@@ -917,6 +917,33 @@ img { max-width: 100%; }
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
+			<h1 id="table-of-contents">Table of Contents</h1>
+			<ul>
+				<li><a href="#the-traveler">The Traveler</a><ul>
+						<li><a href="#getting-started">Getting Started</a><ul>
+								<li><a href="#prerequisites">Prerequisites</a></li>
+							</ul>
+						</li>
+						<li><a href="#notices">Notices</a><ul>
+								<li><a href="#typical-response">Typical Response</a></li>
+								<li><a href="#privacy">Privacy</a></li>
+								<li><a href="#documentation">Documentation</a></li>
+							</ul>
+						</li>
+						<li><a href="#examples">Examples</a><ul>
+								<li><a href="#search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</a></li>
+								<li><a href="#get-a-character-for-an-psn-account">Get a character for an PSN Account</a></li>
+							</ul>
+						</li>
+						<li><a href="#progress">Progress</a></li>
+						<li><a href="#built-with">Built With</a></li>
+						<li><a href="#versioning">Versioning</a></li>
+						<li><a href="#issues">Issues</a></li>
+						<li><a href="#license">License</a></li>
+						<li><a href="#acknowledgments">Acknowledgments</a></li>
+					</ul>
+				</li>
+			</ul>
 			<h1 id="the-traveler">The Traveler</h1>
 			<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 			<h2 id="getting-started">Getting Started</h2>
@@ -924,7 +951,7 @@ img { max-width: 100%; }
 			<pre><code><span class="hljs-meta">$</span><span class="bash"> npm install the-traveler</span>
 <span class="hljs-meta">$</span><span class="bash"> <span class="hljs-comment">#or</span></span>
 <span class="hljs-meta">$</span><span class="bash"> yarn add the-traveler</span>
-</code></pre><p><strong>Prerequisites</strong></p>
+</code></pre><h3 id="prerequisites">Prerequisites</h3>
 			<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 			<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 			<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -939,15 +966,76 @@ img { max-width: 100%; }
     apikey: <span class="hljs-string">'yourAPIkey'</span>,
     userAgent: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
 });
-</code></pre><h2 id="examples">Examples</h2>
-			<p><em>Search for a player</em></p>
+</code></pre><p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
+			<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+    apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
+    userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
+    debug: <span class="hljs-literal">true</span> 
+});
+</code></pre><h2 id="notices">Notices</h2>
+			<p>There are some noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
+			<h3 id="typical-response">Typical Response</h3>
+			<p>The response object from the API is always constructed like the following snippet indicates. The <code>Response</code> will contain the actual request data, while <code>ErrorCode</code>, <code>ThrottleSeconds</code>, <code>ErrorStatus</code>, <code>Message</code> and <code>MessageData</code> will hold additional data about the sucess of our request. </p>
+			<pre><code>{ <span class="hljs-attribute">Response</span>: Array or Object,
+  <span class="hljs-attribute">ErrorCode</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
+  <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
+  <span class="hljs-attribute">MessageData</span>: {} }
+</code></pre><h3 id="privacy">Privacy</h3>
+			<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to obtain specific information through the API. The different pricacy indicators are the following:</p>
+			<ul>
+				<li>None: 0</li>
+				<li>Public: 1</li>
+				<li>Private: 2</li>
+			</ul>
+			<h3 id="documentation">Documentation</h3>
+			<ul>
+				<li>The documentation for this package can be found at </li>
+				<li>A fully complete documentation about the different endpoints and methods can be found at the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official Destiny 2 API site</a></li>
+			</ul>
+			<h2 id="examples">Examples</h2>
+			<h3 id="search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</h3>
+			<p><em>Query:</em></p>
 			<pre><code>traveler
-    .searchPlayer(<span class="hljs-string">'-1'</span>, <span class="hljs-string">'playername'</span>)
+    .searchDestinyPlayer(<span class="hljs-string">'-1'</span>, <span class="hljs-string">'playername'</span>)
     .then(<span class="hljs-function"><span class="hljs-params">player</span> =&gt;</span> {
-        <span class="hljs-comment">//do something with the player</span>
-    }.catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(player);
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
         <span class="hljs-comment">//do something with the error</span>
     })
+</code></pre><p><em>Response</em></p>
+			<pre><code>{ <span class="hljs-attribute">Response</span>:
+   [ { <span class="hljs-attribute">iconPath</span>: <span class="hljs-string">'/img/theme/destiny/icons/icon_psn.png'</span>,
+       <span class="hljs-attribute">membershipType</span>: <span class="hljs-number">2</span>,
+       <span class="hljs-attribute">membershipId</span>: <span class="hljs-string">'4611686018433838874'</span>,
+       <span class="hljs-attribute">displayName</span>: <span class="hljs-string">'Playername'</span> } ],
+  <span class="hljs-attribute">ErrorCode</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
+  <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
+</code></pre><h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
+			<p>Here all character specific components are queried</p>
+			<p><em>Query:</em></p>
+			<pre><code>traveler.getCharacter('2', '<span class="hljs-number">46116860184520</span><span class="hljs-number">3346</span>1', '<span class="hljs-number">23058430092650</span><span class="hljs-number">4211</span>5', { components: ['200', '201', '202', '203', '204', '205'] }).then(result =&gt; {
+    console.<span class="hljs-built_in">log</span>(result);
+}).catch(err =&gt; {
+    console.<span class="hljs-built_in">log</span>(err);
+});
+</code></pre><p><em>Response (First level):</em></p>
+			<pre><code>{ <span class="hljs-attribute">Response</span>:
+   { <span class="hljs-attribute">inventory</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
+     <span class="hljs-attribute">character</span>: { <span class="hljs-attribute">data</span>: [Object], <span class="hljs-attribute">privacy</span>: <span class="hljs-number">1</span> },
+     <span class="hljs-attribute">progressions</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
+     <span class="hljs-attribute">renderData</span>: { <span class="hljs-attribute">data</span>: [Object], <span class="hljs-attribute">privacy</span>: <span class="hljs-number">1</span> },
+     <span class="hljs-attribute">activities</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
+     <span class="hljs-attribute">equipment</span>: { <span class="hljs-attribute">data</span>: [Object], <span class="hljs-attribute">privacy</span>: <span class="hljs-number">1</span> },
+     <span class="hljs-attribute">itemComponents</span>: {} },
+  <span class="hljs-attribute">ErrorCode</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
+  <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
+  <span class="hljs-attribute">MessageData</span>: {} }
 </code></pre><h2 id="progress">Progress</h2>
 			<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview</p>
 			<table>
@@ -1108,6 +1196,8 @@ img { max-width: 100%; }
 			</ul>
 			<h2 id="versioning">Versioning</h2>
 			<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/your/project/tags">tags on this repository</a>. </p>
+			<h2 id="issues">Issues</h2>
+			<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">isse section</a> :) </p>
 			<h2 id="license">License</h2>
 			<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
 			<h2 id="acknowledgments">Acknowledgments</h2>

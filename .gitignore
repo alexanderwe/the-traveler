@@ -1,6 +1,4 @@
 node_modules/*
-build/*
-deprecated/*
 .env
 src/index.js
 .vscode

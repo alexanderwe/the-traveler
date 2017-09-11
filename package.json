@@ -8,7 +8,7 @@
         "api",
         "wrapper"
     ],
-    "main": "index.js",
+    "main": "/build/index.js",
     "author": "Alexander Weiß",
     "license": "MIT",
     "repository": {
