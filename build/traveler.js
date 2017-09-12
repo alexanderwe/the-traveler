@@ -107,7 +107,7 @@ var Traveler = /** @class */ (function () {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+     * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
@@ -272,12 +272,12 @@ var Traveler = /** @class */ (function () {
      * @param groupId Group ID of the clan whose leaderboards you wish to fetch
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats.
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * {@link https://github.com/alexanderwe/the-traveler/blob/master/additions/statids.md|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing leaderboards for a clan
      */
@@ -300,7 +300,7 @@ var Traveler = /** @class */ (function () {
      * @param groupId Group ID of the clan whose stats you wish to fetch
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {string[]}: Array of game modes for which to get stats
+     * <li>modes {string[]}: Array of game modes for which to get stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing aggregated stats for a clan
@@ -330,12 +330,12 @@ var Traveler = /** @class */ (function () {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats.
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
@@ -365,12 +365,12 @@ var Traveler = /** @class */ (function () {
      * @param characterId ID of the character
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats.
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
@@ -394,7 +394,7 @@ var Traveler = /** @class */ (function () {
      * @param type The type of entity for whom you would like results
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>page {number} Page number to return, starting with 0
+     * <li>page {number} Page number to return, starting with 0</li>
      * @return {Promise.object} The entities search result
      */
     Traveler.prototype.searchDestinyEntities = function (searchTerm, type, queryStringParameters) {
@@ -425,13 +425,13 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>dayend {string}: Last day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
      * <li>daystart {string}: First day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
-     * <li>groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.
+     * <li>groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.<br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </li>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.<br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
-     * <li>periodType {number}: Indicates a specific period type to return.
+     * <li>periodType {number}: Indicates a specific period type to return. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-PeriodType.html#schema_Destiny-HistoricalStats-Definitions-PeriodType|PeriodType} for the different period type numbers
      * </li>
      * </ul>
@@ -462,7 +462,7 @@ var Traveler = /** @class */ (function () {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.
+     * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
@@ -494,7 +494,7 @@ var Traveler = /** @class */ (function () {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>count {number}: Number of rows to return</li>
-     * <li>mode {number} A single game mode to get the history for
+     * <li>mode {number} A single game mode to get the history for the specified character. <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>

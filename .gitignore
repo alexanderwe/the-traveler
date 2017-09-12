@@ -3,3 +3,4 @@ node_modules/*
 src/index.js
 .vscode
 .DS_Store
+.babelrc
