@@ -124,15 +124,44 @@ _Response_
 
 ### Get a character for an PSN Account
 
-Here all character specific components are queried
+Here all character specific components are queried. You can either use normal strings or use the integrated enums for a better naming.
 
 _Query:_
 ```
+import Traveler from 'the-traveler';
+import {ComponentType} from 'the-traveler/enums' 
+
+const traveler = new Traveler({
+    apikey: 'pasteYourAPIkey',
+    userAgent: 'yourUserAgent' //used to identify your request to the API
+});
+
 traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', { components: ['200', '201', '202', '203', '204', '205'] }).then(result => {
     console.log(result);
 }).catch(err => {
     console.log(err);
 });
+
+// OR
+
+traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', {
+    components:
+    [
+        ComponentType.Characters,
+        ComponentType.CharacterInventories,
+        ComponentType.CharacterProgressions,
+        ComponentType.CharacterRenderData,
+        ComponentType.CharacterActivities,
+        ComponentType.CharacterEquipment
+    ]
+}).then(result => {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
+
+
+
 ```
 _Response (First level):_
 ```
