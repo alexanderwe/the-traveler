@@ -1,6 +1,10 @@
-src/
-test/
+node_modules
+docs
+src
+test
+.babelrc
+.env
 tslint.json
 tsconfig.json
-.env
 yarn.lock
+build

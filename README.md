@@ -37,6 +37,7 @@ After obtaining your access token you are ready for using the Destiny 2 API in y
 
 ```
 import Traveler from 'the-traveler';
+import { ComponentType, anyOtherEnum} from 'the-traveler/build/enums';
 
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
@@ -48,10 +49,16 @@ If you want to use this package inside a es5 you can import it like so:
 
 ```
 var Traveler = require('the-traveler').default;
+const Enums = require('the-traveler/build/enums')
+
 const traveler = new Traveler({
     apikey: 'yourAPIkey',
     userAgent: 'yourUserAgent' //used to identify your request to the API
 });
+
+//Access the enums (example componentType profiles)
+var prorfilesType = Enums.ComponentType.Profiles;
+
 ```
 
 _If you want to show the URLs the API wrapper is requesting, just add `debug: true` to the configuration array when instantiate a `Traveler` object_
@@ -90,7 +97,7 @@ Some information in the Destiny API is privacy protected. If the user set the pr
 
 ### Documentation
 
-* The documentation for this package can be found at 
+* The documentation for this package can be found at [The Traveler documentation](https://alexanderwe.github.io/the-traveler/)
 * A fully complete documentation about the different endpoints and methods can be found at the [official Destiny 2 API site](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest)
 
 
@@ -124,15 +131,44 @@ _Response_
 
 ### Get a character for an PSN Account
 
-Here all character specific components are queried
+Here all character specific components are queried. You can either use normal strings or use the integrated enums for a better naming.
 
 _Query:_
 ```
+import Traveler from 'the-traveler';
+import {ComponentType} from 'the-traveler/enums' 
+
+const traveler = new Traveler({
+    apikey: 'pasteYourAPIkey',
+    userAgent: 'yourUserAgent' //used to identify your request to the API
+});
+
 traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', { components: ['200', '201', '202', '203', '204', '205'] }).then(result => {
     console.log(result);
 }).catch(err => {
     console.log(err);
 });
+
+// OR
+
+traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', {
+    components:
+    [
+        ComponentType.Characters,
+        ComponentType.CharacterInventories,
+        ComponentType.CharacterProgressions,
+        ComponentType.CharacterRenderData,
+        ComponentType.CharacterActivities,
+        ComponentType.CharacterEquipment
+    ]
+}).then(result => {
+    console.log(result);
+}).catch(err => {
+    console.log(err);
+});
+
+
+
 ```
 _Response (First level):_
 ```
@@ -154,7 +190,7 @@ _Response (First level):_
 
 ## Progress
 
-Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview
+Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
 
 | Endpoint                                  | Implemented      | Unlocked in API       |
 | ----------------------------------------- | ---------------- | --------------------- |

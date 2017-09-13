@@ -1,6 +1,6 @@
 import 'es6-promise';
 import * as rp from 'request-promise-native';
-import { SearchType } from './enums';
+import { MembershipType, SearchType } from './enums';
 import { IConfig, IQueryStringParameters } from './interfaces';
 
 /**
@@ -59,7 +59,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.Object} When fulfilled returns an object containing information about the found user
      */
-    public searchDestinyPlayer(membershipType: string, displayName: string): Promise<object> {
+    public searchDestinyPlayer(membershipType: MembershipType, displayName: string): Promise<object> {
         this.options.uri = `${this.apibase}/SearchDestinyPlayer/${membershipType}/${displayName}/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -88,7 +88,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
-    public getProfile(membershipType: string, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getProfile(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -114,11 +114,11 @@ export default class Traveler {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+     * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
-    public getCharacter(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getCharacter(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -163,7 +163,7 @@ export default class Traveler {
      * @param  itemInstanceId: ID of the Destiny Item
      * @return {Promise.object} When fulfilled returns an object containing stats about the queried item
      */
-    public getItem(membershipType: string, destinyMembershipId: string, itemInstanceId: string): Promise<object> {
+    public getItem(membershipType: MembershipType, destinyMembershipId: string, itemInstanceId: string): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -193,7 +193,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing all available vendors
      */
-    public getVendors(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getVendors(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -224,7 +224,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing all available vendors
      */
-    public getVendor(membershipType: string, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getVendor(membershipType: MembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -279,12 +279,12 @@ export default class Traveler {
      * @param groupId Group ID of the clan whose leaderboards you wish to fetch
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. 
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing leaderboards for a clan
      */
@@ -307,7 +307,7 @@ export default class Traveler {
      * @param groupId Group ID of the clan whose stats you wish to fetch
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {string[]}: Array of game modes for which to get stats 
+     * <li>modes {string[]}: Array of game modes for which to get stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing aggregated stats for a clan
@@ -337,16 +337,16 @@ export default class Traveler {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. 
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboards(membershipType: string, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getLeaderboards(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -372,16 +372,16 @@ export default class Traveler {
      * @param characterId ID of the character
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. 
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboardsForCharacter(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getLeaderboardsForCharacter(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -401,7 +401,7 @@ export default class Traveler {
      * @param type The type of entity for whom you would like results
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li>page {number} Page number to return, starting with 0
+     * <li>page {number} Page number to return, starting with 0</li>
      * @return {Promise.object} The entities search result
      */
     public searchDestinyEntities(searchTerm: string, type: SearchType, queryStringParameters: IQueryStringParameters): Promise<object> {
@@ -432,19 +432,19 @@ export default class Traveler {
      * <ul>
      * <li>dayend {string}: Last day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
      * <li>daystart {string}: First day to return when daily stats are requested. Use the format YYYY-MM-DD</li>
-     * <li>groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.
+     * <li>groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.<br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </li>
-     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.
+     * <li>modes {strings[]} Different gameMode IDs for which to get the stats.<br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
-     * <li>periodType {number}: Indicates a specific period type to return. 
+     * <li>periodType {number}: Indicates a specific period type to return. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-PeriodType.html#schema_Destiny-HistoricalStats-Definitions-PeriodType|PeriodType} for the different period type numbers
      * </li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the characters historical stats
      */
-    public getHistoricalStats(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getHistoricalStats(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -469,12 +469,12 @@ export default class Traveler {
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
-     * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers.
+     * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
      */
-    public getHistoricalStatsForAccount(membershipType: string, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getHistoricalStatsForAccount(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -501,14 +501,14 @@ export default class Traveler {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>count {number}: Number of rows to return</li>
-     * <li>mode {number} A single game mode to get the history for
+     * <li>mode {number} A single game mode to get the history for the specified character. <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats for activities for the specified character
      */
-    public getActivityHistory(membershipType: string, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getActivityHistory(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -534,7 +534,7 @@ export default class Traveler {
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
      */
-    public getUniqueWeaponHistory(membershipType: string, destinyMembershipId: string, characterId: string): Promise<object> {
+    public getUniqueWeaponHistory(membershipType: MembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -560,7 +560,7 @@ export default class Traveler {
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing aggregated information about recent activities
      */
-    public getAggregateActivityStats(membershipType: string, destinyMembershipId: string, characterId: string): Promise<object> {
+    public getAggregateActivityStats(membershipType: MembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)

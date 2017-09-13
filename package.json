@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.1.1",
+    "version": "0.1.4",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -8,32 +8,28 @@
         "api",
         "wrapper"
     ],
-    "main": "/build/index.js",
+    "main": "build/traveler.js",
     "author": "Alexander Weiß",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/alexanderwe/the-traveler"
     },
+    "files": [
+        "build/traveler.js",
+        "build/enums.js"
+    ],
     "scripts": {
         "start": "babel-node ./src/index.js --presets es2015,stage-2",
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
-        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --theme node_modules/typedoc-clarity-theme/bin --out ./docs/ ./src/*.ts"
-    },
-    "babel": {
-        "presets": [
-            "stage-2",
-            "es2015"
-        ],
-        "plugins": [
-            "transform-runtime"
-        ]
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
         "request": "^2.81.0",
-        "request-promise-native": "^1.0.4"
+        "request-promise-native": "^1.0.4",
+        "es6-promise": "^4.1.1"
     },
     "devDependencies": {
         "@types/request-promise-native": "^1.0.6",

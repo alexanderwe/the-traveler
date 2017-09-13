@@ -1,5 +1,7 @@
-node_modules/*
+node_modules
 .env
 src/index.js
 .vscode
 .DS_Store
+.babelrc
+build
