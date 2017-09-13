@@ -10,3 +10,4 @@ tslint.json
 tsconfig.json
 yarn.lock
 build
+.DS_Store

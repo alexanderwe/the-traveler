@@ -3,9 +3,5 @@ node_modules
 src/index.js
 .vscode
 .DS_Store
-<<<<<<< HEAD
 .babelrc
 build
-=======
-.babelrc
->>>>>>> ecc2505875e64ecca7bda5c8e417955785be90cb

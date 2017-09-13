@@ -94,11 +94,14 @@
 				<h1 id="the-traveler">The Traveler</h1>
 				<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 				<h2 id="getting-started">Getting Started</h2>
-				<p>npm support will come soon :)</p>
-				<h3 id="prerequisites">Prerequisites</h3>
+				<pre><code>npm install <span class="hljs-keyword">the</span>-traveler
+<span class="hljs-comment"># or</span>
+yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span>-traveler
+</code></pre><h3 id="prerequisites">Prerequisites</h3>
 				<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 				<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
+<span class="hljs-keyword">import</span> { ComponentType, anyOtherEnum} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>;
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
@@ -106,10 +109,15 @@
 });
 </code></pre><p>If you want to use this package inside a es5 you can import it like so:</p>
 				<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
+<span class="hljs-keyword">const</span> Enums = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler/build/enums'</span>)
+
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'yourAPIkey'</span>,
     userAgent: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
 });
+
+<span class="hljs-comment">//Access the enums (example componentType profiles)</span>
+<span class="hljs-keyword">var</span> prorfilesType = Enums.ComponentType.Profiles;
 </code></pre><p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
 				<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
@@ -135,11 +143,7 @@
 				</ul>
 				<h3 id="documentation">Documentation</h3>
 				<ul>
-<<<<<<< HEAD
 					<li>The documentation for this package can be found at <a href="https://alexanderwe.github.io/the-traveler/">The Traveler documentation</a></li>
-=======
-					<li>The documentation for this package can be found at </li>
->>>>>>> ecc2505875e64ecca7bda5c8e417955785be90cb
 					<li>A fully complete documentation about the different endpoints and methods can be found at the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official Destiny 2 API site</a></li>
 				</ul>
 				<h2 id="examples">Examples</h2>
@@ -211,7 +215,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attribute">MessageData</span>: {} }
 </code></pre><h2 id="progress">Progress</h2>
-				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview</p>
+				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
 				<table>
 					<thead>
 						<tr>
@@ -398,23 +402,17 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 						<a href="enums/destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-<<<<<<< HEAD
 						<a href="enums/membershiptype.html" class="tsd-kind-icon">Membership<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-=======
->>>>>>> ecc2505875e64ecca7bda5c8e417955785be90cb
 						<a href="enums/periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/searchtype.html" class="tsd-kind-icon">Search<wbr>Type</a>
 					</li>
-<<<<<<< HEAD
 					<li class=" tsd-kind-enum">
 						<a href="enums/statid.html" class="tsd-kind-icon">Stat<wbr>Id</a>
 					</li>
-=======
->>>>>>> ecc2505875e64ecca7bda5c8e417955785be90cb
 					<li class=" tsd-kind-class">
 						<a href="classes/traveler.html" class="tsd-kind-icon">Traveler</a>
 					</li>

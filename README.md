@@ -25,9 +25,12 @@ The Traveler is a small npm package which wraps around the Destiny 2 API. It use
 
 ## Getting Started
 
-npm support will come soon :)
 
-
+```
+npm install the-traveler
+# or
+yarn add the-traveler
+```
 
 ### Prerequisites
 
@@ -45,7 +48,7 @@ const traveler = new Traveler({
 });
 ```
 
-If you want to use this package inside a es5 you can import it like so:
+If you want to use this package inside a ES5 project you can import it like so:
 
 ```
 var Traveler = require('the-traveler').default;
