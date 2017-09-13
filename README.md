@@ -60,7 +60,7 @@ const traveler = new Traveler({
 });
 
 //Access the enums (example componentType profiles)
-var prorfilesType = Enums.ComponentType.Profiles;
+var profilesType = Enums.ComponentType.Profiles;
 
 ```
 
@@ -139,7 +139,7 @@ Here all character specific components are queried. You can either use normal st
 _Query:_
 ```
 import Traveler from 'the-traveler';
-import {ComponentType} from 'the-traveler/enums' 
+import {ComponentType} from 'the-traveler/build/enums' 
 
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
