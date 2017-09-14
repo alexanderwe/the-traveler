@@ -152,6 +152,7 @@ export default class Traveler {
 
     /**
      * Get the details of an instanced Destiny Item. Materials and other non-instanced items can not be queried with this endpoint.
+     * The items are coupled with an specific Destiny Account
      * @async
      * @param membershipType A valid non-BungieNet membership type, or All <ul>
      * <li>-1: ALL</li>
@@ -161,10 +162,14 @@ export default class Traveler {
      * </ul>
      * @param  destinyMembershipId The Destiny ID (Account ID)
      * @param  itemInstanceId: ID of the Destiny Item
+     * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
+     * <ul>
+     * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+     * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the queried item
      */
-    public getItem(membershipType: MembershipType, destinyMembershipId: string, itemInstanceId: string): Promise<object> {
-        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/`;
+    public getItem(membershipType: MembershipType, destinyMembershipId: string, itemInstanceId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
                 .then((response) => {
@@ -284,11 +289,7 @@ export default class Traveler {
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
      * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
-<<<<<<< HEAD
      * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIDs} for available ids</li>
-=======
-     * {@link https://github.com/alexanderwe/the-traveler/blob/master/additions/statids.md|StatIDs} for available ids</li>
->>>>>>> ecc2505875e64ecca7bda5c8e417955785be90cb
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing leaderboards for a clan
      */
@@ -409,7 +410,7 @@ export default class Traveler {
      * @return {Promise.object} The entities search result
      */
     public searchDestinyEntities(searchTerm: string, type: SearchType, queryStringParameters: IQueryStringParameters): Promise<object> {
-        this.options.uri = `${this.apibase}/Armory/Search/{type}/{searchTerm}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+        this.options.uri = `${this.apibase}/Armory/Search/${type}/${searchTerm}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
                 .then((response) => {
@@ -644,16 +645,20 @@ export default class Traveler {
      */
     private resolveQueryStringParameters(queryStringParameters: IQueryStringParameters): string {
         let queryString = '?';
-        const end = Object.entries(queryStringParameters).length;
+        const end = Object.keys(queryStringParameters).length;
         let count = 0;
-        Object.entries(queryStringParameters).forEach(([key, value]) => {
-            count++;
-            if (count !== end) {
-                queryString = queryString.concat(key, '=', value, '&');
-            } else {
-                queryString = queryString.concat(key, '=', value);
+
+        for (const key in queryStringParameters) {
+            if (queryStringParameters.hasOwnProperty(key)) {
+                count++;
+                const value = queryStringParameters[key];
+                if (count !== end) {
+                    queryString = queryString.concat(key, '=', value, '&');
+                } else {
+                    queryString = queryString.concat(key, '=', value);
+                }
             }
-        });
+        }
         return queryString;
     }
 

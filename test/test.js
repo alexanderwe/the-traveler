@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import Traveler from '../build/traveler';
+import { ComponentType } from '../build/enums';
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;
@@ -25,20 +26,37 @@ describe('traveler#getManifest', function () {
 describe('traveler#searchDestinyPlayer', function () {
     it('respond with matching player', async () => {
         const result = await traveler.searchDestinyPlayer('-1', 'playername');
-        return expect(result.Response[0]).to.deep.include({ displayName: 'Playername' });
+        expect(result.Response[0]).to.deep.include({ displayName: 'Playername' });
     });
-});
-
-describe('traveler#searchDestinyPlayer', function () {
     it('get rejected', async () => {
         expect(traveler.searchDestinyPlayer('-1', '')).to.be.rejectedWith(Error);
     });
 });
 
+
 describe('traveler#getProfile', function () {
-    it('respond with the matchin profile', async () => {
+    it('respond with the matching profile', async () => {
         const result = await traveler.getProfile('2', '4611686018452033461', { components: ['100'] });
         return expect(result.Response).to.be.an('object').and.to.include.key('profile');
     });
 });
+
+describe('traveler#getCharcter', function () {
+    it('respond with matching character and only character components', async () => {
+        const result = await traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', {
+            components:
+            [
+                ComponentType.Characters,
+                ComponentType.CharacterInventories,
+                ComponentType.CharacterProgressions,
+                ComponentType.CharacterRenderData,
+                ComponentType.CharacterActivities,
+                ComponentType.CharacterEquipment
+            ]
+        });
+        return expect(result.Response).to.be.an('object').and.to.include.key('activities', 'character', 'equipment', 'inventory', 'renderData', 'itemComponents', 'progressions');
+    });
+});
+
+
 

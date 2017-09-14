@@ -26,4 +26,5 @@ export interface IQueryStringParameters {
     groups?: DestinyStatsGroupType[];
     periodType?: PeriodType;
     count?: number;
+    [key: string]: any;
 }
