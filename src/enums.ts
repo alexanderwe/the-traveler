@@ -93,6 +93,7 @@ export enum MembershipType {
     All = -1,
     Xbox = 1,
     PSN = 2,
+    PC = 4,
     Bungie = 254,
 }
 

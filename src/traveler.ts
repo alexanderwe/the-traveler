@@ -55,8 +55,10 @@ export default class Traveler {
      * <li>-1: ALL</li>
      * <li>1: Xbox</li>
      * <li>2: PSN</li>
+     * <li>4: PC (Blizzard)</li>
      * <li>254: Bungie</li>
      * </ul>
+     * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
      * @return {Promise.Object} When fulfilled returns an object containing information about the found user
      */
     public searchDestinyPlayer(membershipType: MembershipType, displayName: string): Promise<object> {
@@ -75,12 +77,9 @@ export default class Traveler {
     /**
      * Retrieve information about the Destiny Profile
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint..
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
@@ -104,12 +103,9 @@ export default class Traveler {
     /**
      * Retrieve aggregrated details about a Destiny Characters
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param characterId ID of the character
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -154,12 +150,9 @@ export default class Traveler {
      * Get the details of an instanced Destiny Item. Materials and other non-instanced items can not be queried with this endpoint.
      * The items are coupled with an specific Destiny Account
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param  destinyMembershipId The Destiny ID (Account ID)
      * @param  itemInstanceId: ID of the Destiny Item
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -184,12 +177,9 @@ export default class Traveler {
     /**
      * Retrieve all currently available vendors for a specific character
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character for whom to get the vendor info
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -214,12 +204,9 @@ export default class Traveler {
     /**
      * Retrieve all currently available vendors for a specific character
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character for whom to get the vendor info
      * @param vendorHash Hash identifier of the vendor to retreieve
@@ -262,7 +249,7 @@ export default class Traveler {
     }
 
     /**
-     * Get historical stats definitions. This contains the values for the `statId` key.
+     * Get historical stats definitions. This contains the values for the `<br` key.
      * @async
      */
     public getHistoricalStatsDefinition(): Promise<object> {
@@ -288,8 +275,8 @@ export default class Traveler {
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
-     * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIDs} for available ids</li>
+     * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing leaderboards for a clan
      */
@@ -333,12 +320,9 @@ export default class Traveler {
     /**
      * Gets leaderboards with the signed in user's friends and the supplied destinyMembershipId as the focus.
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
@@ -346,8 +330,8 @@ export default class Traveler {
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
-     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
@@ -367,12 +351,9 @@ export default class Traveler {
     /**
      * Gets leaderboards for the specified character and friend's
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -381,8 +362,8 @@ export default class Traveler {
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs
      * </li>
      * <li>maxtop {number}: Maximum number of top players to return. Use a large number to get entire leaderboard
-     * <li>statid {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
-     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|StatIDs} for available ids</li>
+     * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
+     * See {@link https://github.com/alexanderwe/the-traveler/blob/master/docs/globals.html|<brs} for available ids</li>
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
@@ -425,12 +406,9 @@ export default class Traveler {
     /**
      * Gets activity history stats for indicated character
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -465,12 +443,9 @@ export default class Traveler {
     /**
      * Retrieve aggregrated details about a Destiny account's characters
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
@@ -495,12 +470,9 @@ export default class Traveler {
     /**
      * Gets activity history stats for indicated character
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
@@ -529,12 +501,9 @@ export default class Traveler {
     /**
      * Gets details about unique weapon usage, including all exotic weapons
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
@@ -555,12 +524,9 @@ export default class Traveler {
     /**
      * Gets all activities the character has participated in together with aggregate statistics for those activities
      * @async
-     * @param membershipType A valid non-BungieNet membership type, or All <ul>
-     * <li>-1: ALL</li>
-     * <li>1: Xbox</li>
-     * <li>2: PSN</li>
-     * <li>254: Bungie</li>
-     * </ul>
+     * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+     * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+     * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing aggregated information about recent activities

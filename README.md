@@ -170,8 +170,6 @@ traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', {
     console.log(err);
 });
 
-
-
 ```
 _Response (First level):_
 ```
