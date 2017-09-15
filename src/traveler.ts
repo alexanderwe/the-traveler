@@ -1,13 +1,14 @@
 import 'es6-promise';
 import * as rp from 'request-promise-native';
 import { MembershipType, SearchType } from './enums';
-import { IConfig, IQueryStringParameters } from './interfaces';
+import { IConfig, IOAuth, IQueryStringParameters } from './interfaces';
 
 /**
  * Entry class for accessing the Destiny 2 API
  */
 export default class Traveler {
     private apikey: string;
+    private oauth?: IOAuth;
     private apibase: string;
     private assetbase: string;
     private debug?: boolean = false;
@@ -15,6 +16,9 @@ export default class Traveler {
 
     constructor(config: IConfig) {
         this.apikey = config.apikey;
+        this.oauth = {
+            clientId: config.oauthClientId,
+        };
         this.apibase = 'https://www.bungie.net/Platform/Destiny2';
         this.assetbase = 'https://www.bungie.net/';
         this.options = {

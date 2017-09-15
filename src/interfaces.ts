@@ -7,6 +7,7 @@ import { ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodTy
 export interface IConfig {
     apikey: string;
     userAgent: string;
+    oauthClientId?: string;
     debug?: boolean;
 }
 
@@ -27,4 +28,17 @@ export interface IQueryStringParameters {
     periodType?: PeriodType;
     count?: number;
     [key: string]: any;
+}
+
+/**
+ * Interface for defining an object for the OAuth process
+ * @interface 
+ */
+export interface IOAuth {
+    clientId?: string;
+    authorizationCode?: string;
+    accessToken?: string;
+    resfreshToken?: string;
+    expires_in?: number;
+    refresh_expires_in?: number;
 }
