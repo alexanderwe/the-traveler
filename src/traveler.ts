@@ -1,25 +1,34 @@
 import 'es6-promise';
 import * as rp from 'request-promise-native';
+const querystring = require('querystring');
 import { MembershipType, SearchType } from './enums';
-import { IConfig, IQueryStringParameters } from './interfaces';
+import { IConfig, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 
 /**
  * Entry class for accessing the Destiny 2 API
  */
 export default class Traveler {
     private apikey: string;
+    private userAgent: string;
+    private oauthConfig: IOAuthConfig;
+    private oauth: IOAuthResponse;
     private apibase: string;
-    private assetbase: string;
+    private rootURL: string;
     private debug?: boolean = false;
     private options: rp.OptionsWithUri;
 
     constructor(config: IConfig) {
         this.apikey = config.apikey;
+        this.userAgent = config.userAgent;
+        this.oauthConfig = {
+            clientId: config.oauthClientId,
+            clientSecret: config.oauthClientSecret,
+        };
         this.apibase = 'https://www.bungie.net/Platform/Destiny2';
-        this.assetbase = 'https://www.bungie.net/';
+        this.rootURL = 'https://www.bungie.net/';
         this.options = {
             headers: {
-                'User-Agent': config.userAgent,
+                'User-Agent': this.userAgent,
                 'X-API-Key': this.apikey,
             },
             json: true,
@@ -581,6 +590,100 @@ export default class Traveler {
     }
 
     /**
+     * Generates the OAuthURL where your users need to sign up to give your application access to 
+     * authorized endpoints.
+     */
+    public generateOAuthURL(): string {
+        if (this.oauthConfig.clientId !== undefined) {
+            return `https://www.bungie.net/en/OAuth/Authorize?client_id=${this.oauthConfig.clientId}&response_type=code`;
+        } else {
+            throw new Error('You did not specify a oauth client id');
+        }
+    }
+
+    /**
+     * Retreive the Oauth access token from the authorization code
+     * @param code The authorization code from the oauth redirect url
+     */
+    public getAccessToken(code: string): Promise<IOAuthResponse> {
+
+        let options: rp.OptionsWithUri;
+        if (this.oauthConfig.clientSecret) {  // you use a confidential client
+            options = {
+                body: querystring.stringify({
+                    client_id: this.oauthConfig.clientId,
+                    code: `${code}`,
+                    grant_type: 'authorization_code',
+                }),
+                headers: {
+                    'authorization': `Basic ${new Buffer(`${this.oauthConfig.clientId}:${this.oauthConfig.clientSecret}`).toString('base64')}`,
+                    'content-type': 'application/x-www-form-urlencoded',
+
+                },
+                json: true,
+                method: 'POST',
+                uri: 'https://www.bungie.net/platform/app/oauth/token/',
+            };
+        } else {
+            options = {
+                body: querystring.stringify({
+                    client_id: this.oauthConfig.clientId,
+                    code: `${code}`,
+                    grant_type: 'authorization_code',
+                }),
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                },
+                json: true,
+                method: 'POST',
+                uri: 'https://www.bungie.net/platform/app/oauth/token/',
+            };
+        }
+        return new Promise<IOAuthResponse>((resolve, reject) => {
+            this.makeRequest(options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Use the refreshToken to retrieve a new valid access_token. 
+     * Please keep the expiration durations in mind.
+     * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
+     * @param refreshToken 
+     */
+    public refreshToken(refreshToken: string): Promise<IOAuthResponse> {
+        const options = {
+            body: querystring.stringify({
+                grant_type: 'refresh_token',
+                refresh_token: `${refreshToken}`,
+            }),
+            headers: {
+                'authorization': `Basic ${new Buffer(`${this.oauthConfig.clientId}:${this.oauthConfig.clientSecret}`).toString('base64')}`,
+                'content-type': 'application/x-www-form-urlencoded',
+
+            },
+            json: true,
+            method: 'POST',
+            uri: 'https://www.bungie.net/platform/app/oauth/token/',
+        };
+
+        return new Promise<IOAuthResponse>((resolve, reject) => {
+            this.makeRequest(options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
      * Base function for making the request to the API endpoint. We need this, because we can do error validation, or agregated functions here.
      * @async
      * @param options Options for the request package to use
@@ -591,9 +694,11 @@ export default class Traveler {
             console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
         }
         return new Promise<object>((resolve, reject) => {
-            rp(this.options)
+            rp(options)
                 .then((response) => {
-                    if (response.ErrorCode !== 1) {
+                    if (response.access_token) { // this is a oauth reponse
+                        resolve(response);
+                    } else if (response.ErrorCode !== 1) {
                         reject(response);
                     }
                     resolve(response);
@@ -627,5 +732,4 @@ export default class Traveler {
         }
         return queryString;
     }
-
 }

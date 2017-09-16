@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SearchType | The Traveler</title>
+	<title>IOAuthResponse | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="searchtype.html">SearchType</a>
+					<a href="ioauthresponse.html">IOAuthResponse</a>
 				</li>
 			</ul>
-			<h1>Enumeration SearchType</h1>
+			<h1>Interface IOAuthResponse</h1>
 		</div>
 	</div>
 </header>
@@ -69,36 +69,99 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Enum for different search types</p>
+						<p>Interface for defining an object for the OAuth response</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>enum</dt>
+						<dt>interface</dt>
 						<dd></dd>
 					</dl>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IOAuthResponse</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="searchtype.html#destinyinventoryitemdefinition" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Item<wbr>Definition</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#access_token" class="tsd-kind-icon">access_<wbr>token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#membership_id" class="tsd-kind-icon">membership_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#refresh_expires_in" class="tsd-kind-icon">refresh_<wbr>expires_<wbr>in</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ioauthresponse.html#token_type" class="tsd-kind-icon">token_<wbr>type</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="destinyinventoryitemdefinition" class="tsd-anchor"></a>
-					<h3>Destiny<wbr>Inventory<wbr>Item<wbr>Definition</h3>
-					<div class="tsd-signature tsd-kind-icon">Destiny<wbr>Inventory<wbr>Item<wbr>Definition<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;&quot;DestinyInventoryItemDefinition&quot;</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="access_token" class="tsd-anchor"></a>
+					<h3>access_<wbr>token</h3>
+					<div class="tsd-signature tsd-kind-icon">access_<wbr>token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/enums.ts#L116">enums.ts:116</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L48">interfaces.ts:48</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="expires_in" class="tsd-anchor"></a>
+					<h3>expires_<wbr>in</h3>
+					<div class="tsd-signature tsd-kind-icon">expires_<wbr>in<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L50">interfaces.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="membership_id" class="tsd-anchor"></a>
+					<h3>membership_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">membership_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L53">interfaces.ts:53</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="refresh_expires_in" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> refresh_<wbr>expires_<wbr>in</h3>
+					<div class="tsd-signature tsd-kind-icon">refresh_<wbr>expires_<wbr>in<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L52">interfaces.ts:52</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="refresh_token" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> refresh_<wbr>token</h3>
+					<div class="tsd-signature tsd-kind-icon">refresh_<wbr>token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L51">interfaces.ts:51</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="token_type" class="tsd-anchor"></a>
+					<h3>token_<wbr>type</h3>
+					<div class="tsd-signature tsd-kind-icon">token_<wbr>type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2edd417/src/interfaces.ts#L49">interfaces.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -115,49 +178,64 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
+						<a href="../enums/componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="destinyactivitymodetype.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Type</a>
+						<a href="../enums/destinyactivitymodetype.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
+						<a href="../enums/destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="membershiptype.html" class="tsd-kind-icon">Membership<wbr>Type</a>
+						<a href="../enums/membershiptype.html" class="tsd-kind-icon">Membership<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
+						<a href="../enums/periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="searchtype.html" class="tsd-kind-icon">Search<wbr>Type</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="searchtype.html#destinyinventoryitemdefinition" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Item<wbr>Definition</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-enum">
-						<a href="statid.html" class="tsd-kind-icon">Stat<wbr>Id</a>
+						<a href="../enums/searchtype.html" class="tsd-kind-icon">Search<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/statid.html" class="tsd-kind-icon">Stat<wbr>Id</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="../classes/traveler.html" class="tsd-kind-icon">Traveler</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
+						<a href="iconfig.html" class="tsd-kind-icon">IConfig</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+						<a href="ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#access_token" class="tsd-kind-icon">access_<wbr>token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#expires_in" class="tsd-kind-icon">expires_<wbr>in</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#membership_id" class="tsd-kind-icon">membership_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#refresh_expires_in" class="tsd-kind-icon">refresh_<wbr>expires_<wbr>in</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#refresh_token" class="tsd-kind-icon">refresh_<wbr>token</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="ioauthresponse.html#token_type" class="tsd-kind-icon">token_<wbr>type</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+						<a href="iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="../globals.html#querystring" class="tsd-kind-icon">querystring</a>
