@@ -137,7 +137,7 @@ _Response_:
 ``` 
 _Use refresh_:
 ```
-traveler.getRefreshToken(traveler.oauth.refresh_token).then(oauth => {
+traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => {
     // Provide your traveler object with the oauth object. This is later used for making authenticated calls
     traveler.oauth = oauth; 
 }).catch(err => {
