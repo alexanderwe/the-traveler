@@ -9,8 +9,9 @@ import { IConfig, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from '.
  */
 export default class Traveler {
     private apikey: string;
+    private userAgent: string;
     private oauthConfig: IOAuthConfig;
-    private oauthResponse: IOAuthResponse;
+    private oauth: IOAuthResponse;
     private apibase: string;
     private rootURL: string;
     private debug?: boolean = false;
@@ -18,6 +19,7 @@ export default class Traveler {
 
     constructor(config: IConfig) {
         this.apikey = config.apikey;
+        this.userAgent = config.userAgent;
         this.oauthConfig = {
             clientId: config.oauthClientId,
             clientSecret: config.oauthClientSecret,
@@ -26,7 +28,7 @@ export default class Traveler {
         this.rootURL = 'https://www.bungie.net/';
         this.options = {
             headers: {
-                'User-Agent': config.userAgent,
+                'User-Agent': this.userAgent,
                 'X-API-Key': this.apikey,
             },
             json: true,
@@ -600,7 +602,7 @@ export default class Traveler {
     }
 
     /**
-     * Retreive the Oauth access tojen from the authorization code
+     * Retreive the Oauth access token from the authorization code
      * @param code The authorization code from the oauth redirect url
      */
     public getAccessToken(code: string): Promise<IOAuthResponse> {
@@ -637,11 +639,42 @@ export default class Traveler {
                 uri: 'https://www.bungie.net/platform/app/oauth/token/',
             };
         }
+        return new Promise<IOAuthResponse>((resolve, reject) => {
+            this.makeRequest(options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Use the refreshToken to retrieve a new valid access_token. 
+     * Please keep the expiration durations in mind.
+     * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
+     * @param refreshToken 
+     */
+    public refreshToken(refreshToken: string): Promise<IOAuthResponse> {
+        const options = {
+            body: querystring.stringify({
+                grant_type: 'refresh_token',
+                refresh_token: `${refreshToken}`,
+            }),
+            headers: {
+                'authorization': `Basic ${new Buffer(`${this.oauthConfig.clientId}:${this.oauthConfig.clientSecret}`).toString('base64')}`,
+                'content-type': 'application/x-www-form-urlencoded',
+
+            },
+            json: true,
+            method: 'POST',
+            uri: 'https://www.bungie.net/platform/app/oauth/token/',
+        };
 
         return new Promise<IOAuthResponse>((resolve, reject) => {
             this.makeRequest(options)
                 .then((response) => {
-                    console.log("resolving response")
                     resolve(response);
                 })
                 .catch((err) => {

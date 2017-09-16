@@ -71,6 +71,7 @@
 									<li><a href="#prerequisites">Prerequisites</a></li>
 								</ul>
 							</li>
+							<li><a href="#oauth">OAuth</a></li>
 							<li><a href="#notices">Notices</a><ul>
 									<li><a href="#typical-response">Typical Response</a></li>
 									<li><a href="#privacy">Privacy</a></li>
@@ -101,11 +102,11 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 				<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 				<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
-<span class="hljs-keyword">import</span> { ComponentType, anyOtherEnum} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>;
+<span class="hljs-keyword">import</span> { ComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>;
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
-    <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
+    <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
 });
 </code></pre><p>If you want to use this package inside a ES5 project you can import it like so:</p>
 				<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
@@ -124,7 +125,60 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
     userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
     debug: <span class="hljs-literal">true</span> 
 });
-</code></pre><h2 id="notices">Notices</h2>
+</code></pre><h2 id="oauth">OAuth</h2>
+				<p>If you want to use OAuth to also get access to endpoints which require authentications, provide the <code>Traveler</code> object with the needed OAuth <code>clientId</code> and if you are using a confidential client type the <code>clientSecret</code>.</p>
+				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
+
+<span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+    <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
+    <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
+    oauthClientId: <span class="hljs-string">'yourClientId'</span>,
+    <span class="hljs-attr">oauthClientSecret</span>: <span class="hljs-string">'yourClientSecret'</span>,
+});
+</code></pre><p> Also ensure that you specify an <code>redirectURL</code> in your Application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>
+				After that you can generate the authentication URL which has to be visited by your users to approve your app and give it access. This follows the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>. </p>
+				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
+</code></pre><p>If the users visit this site and approve your application they will be redirected to the <code>redirectURL</code> you specified, with a URL query parameter <code>code</code> appended: <code>https://www.example.com/?code=hereComesTheCode</code></p>
+				<p>This is the code you need to get the OAuth Access token. Use it with the <code>getAccessToken()</code></p>
+				<pre><code>traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+    <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
+    traveler.oauth = oauth; 
+}).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(err)
+})
+</code></pre><p>The oauth response schema depends on if you are using a <code>public</code> or <code>confidential</code>client type. With a <code>public</code> type the response does <strong>not</strong> contain an <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired. Such an response looks like this:</p>
+				<p><em>Response</em>:</p>
+				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
+  token_type: <span class="hljs-string">'Bearer'</span>,
+  expires_in: <span class="hljs-number">3600</span>,
+  membership_id: <span class="hljs-string">''</span>}
+</code></pre><p>If you are using a <code>confidential</code> client type the response will contain an <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent getting errors because the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
+				<p><em>Response</em>:</p>
+				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-attribute">token_type</span>: <span class="hljs-string">'Bearer'</span>,
+  <span class="hljs-attribute">expires_in</span>: <span class="hljs-number">3600</span>,
+  <span class="hljs-attribute">refresh_token</span>: ',
+  <span class="hljs-attribute">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
+  <span class="hljs-attribute">membership_id</span>: <span class="hljs-string">''</span> }
+</code></pre><p><em>Use refresh</em>:</p>
+				<pre><code>traveler.getRefreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+    <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
+    traveler.oauth = oauth; 
+}).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(err)
+})
+</code></pre><p>To wrap this up, the flow is the following:</p>
+				<ul>
+					<li>Provide <code>clientId</code> and <code>clientSecret (only for confidential)</code></li>
+					<li>Generate <code>authUrl</code> and redirect users to it</li>
+					<li>Grab the <code>code</code> parameter from your <code>redirectURL</code></li>
+					<li>Use <code>code</code> to get the <code>oauth Object</code> and apply it to the <code>traveler object</code></li>
+					<li><strong>FOR Public</strong> Reauthenticate your users after the access token has expired, so they have to visit the <code>authUrl</code>again</li>
+					<li><strong>FOR Confidential</strong> Use <code>traveler.oauth.refreshtoken</code> to renew the <code>accessToken</code>, without user interaction</li>
+					<li>After the oauth object is set on the traveler object you can query the endpoints which require authentiation</li>
+					<li>Keep in mind that it would be very useful to store the tokens for your users <em><strong>securely</strong></em>!</li>
+				</ul>
+				<h2 id="notices">Notices</h2>
 				<p>There are some noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
 				<h3 id="typical-response">Typical Response</h3>
 				<p>The response object from the API is always constructed like the following snippet indicates. The <code>Response</code> will contain the actual request data, while <code>ErrorCode</code>, <code>ThrottleSeconds</code>, <code>ErrorStatus</code>, <code>Message</code> and <code>MessageData</code> will hold additional data about the sucess of our request. </p>
@@ -420,7 +474,16 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 						<a href="interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#querystring" class="tsd-kind-icon">querystring</a>
 					</li>
 				</ul>
 			</nav>

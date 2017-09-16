@@ -4,6 +4,7 @@ Table of Contents
    * [The Traveler](#the-traveler)
       * [Getting Started](#getting-started)
          * [Prerequisites](#prerequisites)
+      * [OAuth](#oauth)
       * [Notices](#notices)
          * [Typical Response](#typical-response)
          * [Privacy](#privacy)
@@ -40,11 +41,11 @@ After obtaining your access token you are ready for using the Destiny 2 API in y
 
 ```
 import Traveler from 'the-traveler';
-import { ComponentType, anyOtherEnum} from 'the-traveler/build/enums';
+import { ComponentType } from 'the-traveler/build/enums';
 
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
-    userAgent: 'yourUserAgent' //used to identify your request to the API
+    userAgent: 'yourUserAgent', //used to identify your request to the API
 });
 ```
 
@@ -73,6 +74,87 @@ const traveler = new Traveler({
 });
 ```
 
+## OAuth
+
+If you want to use OAuth to also get access to endpoints which require authentications, provide the `Traveler` object with the needed OAuth `clientId` and if you are using a confidential client type the `clientSecret`.
+
+```
+import Traveler from 'the-traveler';
+
+const traveler = new Traveler({
+    apikey: 'pasteYourAPIkey',
+    userAgent: 'yourUserAgent', //used to identify your request to the API
+    oauthClientId: 'yourClientId',
+    oauthClientSecret: 'yourClientSecret',
+});
+```
+
+
+ Also ensure that you specify an `redirectURL` in your Application settings on [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application)
+After that you can generate the authentication URL which has to be visited by your users to approve your app and give it access. This follows the following schema: `https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&response_type=code`. 
+
+```
+const authUrl = traveler.traveler.generateOAuthURL(); // The URL your users have to visit to give your application access
+
+```
+
+
+If the users visit this site and approve your application they will be redirected to the `redirectURL` you specified, with a URL query parameter `code` appended: `https://www.example.com/?code=hereComesTheCode`
+
+This is the code you need to get the OAuth Access token. Use it with the `getAccessToken()`
+
+```
+traveler.getAccessToken(hereComesTheCode).then(oauth => {
+    // Provide your traveler object with the oauth object. This is later used for making authenticated calls
+    traveler.oauth = oauth; 
+}).catch(err => {
+    console.log(err)
+})
+```
+
+The oauth response schema depends on if you are using a `public` or `confidential`client type. With a `public` type the response does **not** contain an `refresh_token`. This means that a user has to authenticate everytime again after the OAuth access token has expired. Such an response looks like this:
+
+
+_Response_:
+```
+{ access_token: '',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  membership_id: ''}
+```
+
+If you are using a `confidential` client type the response will contain an `refresh_token` which can be used to get a new `access_token` without requiring the user to approve your app again. Use this `refresh_token` to prevent getting errors because the `access_token` has expired.  In the following you can see such a response with the method to renew the token.
+
+_Response_:
+```
+{ access_token: '',
+  token_type: 'Bearer',
+  expires_in: 3600,
+  refresh_token: ',
+  refresh_expires_in: 7776000,
+  membership_id: '' }
+
+``` 
+_Use refresh_:
+```
+traveler.getRefreshToken(traveler.oauth.refresh_token).then(oauth => {
+    // Provide your traveler object with the oauth object. This is later used for making authenticated calls
+    traveler.oauth = oauth; 
+}).catch(err => {
+    console.log(err)
+})
+```
+
+To wrap this up, the flow is the following:
+
+* Provide `clientId` and `clientSecret (only for confidential)`
+* Generate `authUrl` and redirect users to it
+* Grab the `code` parameter from your `redirectURL`
+* Use `code` to get the `oauth Object` and apply it to the `traveler object`
+* **FOR Public** Reauthenticate your users after the access token has expired, so they have to visit the `authUrl`again
+* **FOR Confidential** Use `traveler.oauth.refreshtoken` to renew the `accessToken`, without user interaction
+* After the oauth object is set on the traveler object you can query the endpoints which require authentiation
+* Keep in mind that it would be very useful to store the tokens for your users _**securely**_!
 
 ## Notices
 
