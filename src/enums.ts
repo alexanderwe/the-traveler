@@ -38,20 +38,20 @@ export enum DestinyActivityModeType {
     None = 0,
     Story = 2,
     Strike = 3,
-    Reserved4 = 4,
+    Raid = 4,
     AllPvP = 5,
     Patrol = 6,
     AllPvE = 7,
     Reserved9 = 9,
     Control = 10,
     Reserved11 = 11,
-    Team = 12,
+    Clash = 12,
     Reserved13 = 13,
     Reserved15 = 15,
     Nightfall = 16,
-    Heroic = 17,
+    HeroicNightfall = 17,
     AllStrikes = 18,
-    Reserved19 = 19,
+    IronBanner = 19,
     Reserved20 = 20,
     Reserved21 = 21,
     Reserved22 = 22,
@@ -62,10 +62,11 @@ export enum DestinyActivityModeType {
     Reserved28 = 28,
     Reserved29 = 29,
     Reserved30 = 30,
+    Supremacy = 31,
     Reserved32 = 32,
     Survival = 37,
     Countdown = 38,
-    Reserved39 = 39,
+    TrialsOfTheNine = 39,
     Social = 40,
 }
 
@@ -86,10 +87,10 @@ export enum DestinyStatsGroupType {
 }
 
 /**
- * Enum for the Destiny membership type
+ * Enum for the Bungie membership type
  * @enum
  */
-export enum MembershipType {
+export enum BungieMembershipType {
     All = -1,
     Xbox = 1,
     PSN = 2,

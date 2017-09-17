@@ -1,7 +1,7 @@
 import 'es6-promise';
 import * as rp from 'request-promise-native';
 const querystring = require('querystring');
-import { MembershipType, SearchType } from './enums';
+import { BungieMembershipType, SearchType } from './enums';
 import { IConfig, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 
 /**
@@ -70,7 +70,7 @@ export default class Traveler {
      * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
      * @return {Promise.Object} When fulfilled returns an object containing information about the found user
      */
-    public searchDestinyPlayer(membershipType: MembershipType, displayName: string): Promise<object> {
+    public searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<object> {
         this.options.uri = `${this.apibase}/SearchDestinyPlayer/${membershipType}/${displayName}/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -96,7 +96,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
-    public getProfile(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -123,7 +123,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
-    public getCharacter(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -170,7 +170,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the queried item
      */
-    public getItem(membershipType: MembershipType, destinyMembershipId: string, itemInstanceId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getItem(membershipType: BungieMembershipType, destinyMembershipId: string, itemInstanceId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -197,7 +197,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing all available vendors
      */
-    public getVendors(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -225,7 +225,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing all available vendors
      */
-    public getVendor(membershipType: MembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getVendor(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -344,7 +344,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboards(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getLeaderboards(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -376,7 +376,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboardsForCharacter(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getLeaderboardsForCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -436,7 +436,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the characters historical stats
      */
-    public getHistoricalStats(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getHistoricalStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -463,7 +463,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
      */
-    public getHistoricalStatsForAccount(membershipType: MembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getHistoricalStatsForAccount(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -494,7 +494,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.object} When fulfilled returns an object containing stats for activities for the specified character
      */
-    public getActivityHistory(membershipType: MembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
+    public getActivityHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -517,7 +517,7 @@ export default class Traveler {
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
      */
-    public getUniqueWeaponHistory(membershipType: MembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
+    public getUniqueWeaponHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
@@ -540,7 +540,7 @@ export default class Traveler {
      * @param characterId ID of the character
      * @return {Promise.object} When fulfilled returns an object containing aggregated information about recent activities
      */
-    public getAggregateActivityStats(membershipType: MembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
+    public getAggregateActivityStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<object> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/`;
         return new Promise<object>((resolve, reject) => {
             this.makeRequest(this.options)
