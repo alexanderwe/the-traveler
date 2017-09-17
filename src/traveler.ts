@@ -1,6 +1,6 @@
 import 'es6-promise';
+import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
-const querystring = require('querystring');
 import { BungieMembershipType, SearchType } from './enums';
 import { IConfig, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 
