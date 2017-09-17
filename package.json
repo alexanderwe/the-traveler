@@ -16,8 +16,9 @@
         "url": "https://github.com/alexanderwe/the-traveler"
     },
     "files": [
-        "build/traveler.js",
-        "build/enums.js"
+        "build/Traveler.js",
+        "build/enums.js",
+        "build/HttpService.js"
     ],
     "scripts": {
         "start": "babel-node ./src/index.js --presets es2015,stage-2",

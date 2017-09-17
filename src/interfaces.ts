@@ -1,4 +1,4 @@
-import { ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodType } from './enums';
+import { BungieMembershipType, ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodType } from './enums';
 
 /**
  * Interface for defining an object for the Traveler class
@@ -10,6 +10,16 @@ export interface IConfig {
     oauthClientId?: string;
     oauthClientSecret?: string;
     debug?: boolean;
+}
+
+/**
+ * Interface for defining an object in case of an item action request to the API
+ * @interface
+ */
+export interface IDestinyItemActionRequest {
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
 }
 
 /**
