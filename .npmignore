@@ -11,3 +11,4 @@ tsconfig.json
 yarn.lock
 build
 .DS_Store
+*.log
