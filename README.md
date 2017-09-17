@@ -76,7 +76,7 @@ const traveler = new Traveler({
 
 ## OAuth
 
-If you want to use OAuth to also get access to endpoints which require authentications, provide the `Traveler` object with the needed OAuth `clientId` and if you are using a confidential client type the `clientSecret`.
+If you want to use OAuth to get access to endpoints which require user approval provide the `Traveler` object with your OAuth `clientId` and if you are using a confidential client type additionally the `clientSecret`.
 
 ```
 import Traveler from 'the-traveler';
@@ -90,18 +90,17 @@ const traveler = new Traveler({
 ```
 
 
- Also ensure that you specify an `redirectURL` in your Application settings on [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application)
-After that you can generate the authentication URL which has to be visited by your users to approve your app and give it access. This follows the following schema: `https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&response_type=code`. 
+Please ensure that you specified a `redirectURL` in your application settings on [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application).
+After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: `https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&response_type=code`. 
 
 ```
 const authUrl = traveler.traveler.generateOAuthURL(); // The URL your users have to visit to give your application access
-
 ```
 
 
-If the users visit this site and approve your application they will be redirected to the `redirectURL` you specified, with a URL query parameter `code` appended: `https://www.example.com/?code=hereComesTheCode`
+If a user visit this site and approve your application he/she will be redirected to the `redirectURL` you specified. This URL is expaned with query parameter called `code`: `https://www.example.com/?code=hereComesTheCode`
 
-This is the code you need to get the OAuth Access token. Use it with the `getAccessToken()`
+This is the code you need to obtain the OAuth Access token with the  `getAccessToken()` method.
 
 ```
 traveler.getAccessToken(hereComesTheCode).then(oauth => {
@@ -112,7 +111,7 @@ traveler.getAccessToken(hereComesTheCode).then(oauth => {
 })
 ```
 
-The oauth response schema depends on if you are using a `public` or `confidential`client type. With a `public` type the response does **not** contain an `refresh_token`. This means that a user has to authenticate everytime again after the OAuth access token has expired. Such an response looks like this:
+The OAuth response schema is depended on the client type you are using on if you are using. With a `public` type the response does **not** contain an `refresh_token`. This means that a user has to authenticate everytime again after the OAuth access token has expired.
 
 
 _Response_:
@@ -123,7 +122,7 @@ _Response_:
   membership_id: ''}
 ```
 
-If you are using a `confidential` client type the response will contain an `refresh_token` which can be used to get a new `access_token` without requiring the user to approve your app again. Use this `refresh_token` to prevent getting errors because the `access_token` has expired.  In the following you can see such a response with the method to renew the token.
+If you are using a `confidential` client type the response will contain a `refresh_token` which can be used to get a new `access_token` without requiring the user to approve your app again. Use this `refresh_token` to prevent getting errors if the `access_token` has expired.  In the following you can see such a response with the method to renew the token.
 
 _Response_:
 ```
@@ -150,9 +149,9 @@ To wrap this up, the flow is the following:
 * Provide `clientId` and `clientSecret (only for confidential)`
 * Generate `authUrl` and redirect users to it
 * Grab the `code` parameter from your `redirectURL`
-* Use `code` to get the `oauth Object` and apply it to the `traveler object`
-* **FOR Public** Reauthenticate your users after the access token has expired, so they have to visit the `authUrl`again
-* **FOR Confidential** Use `traveler.oauth.refreshtoken` to renew the `accessToken`, without user interaction
+* Use `code` to get the `OAuth object` and apply it to the `Traveler object`
+* **FOR Public** Reauthenticate your users after the access token has expired. They have to visit the `authorization url` again
+* **FOR Confidential**  Use `traveler.oauth.refreshtoken` to renew the `accessToken`, without user interaction by `traveler.refreshToken()`
 * After the oauth object is set on the traveler object you can query the endpoints which require authentiation
 * Keep in mind that it would be very useful to store the tokens for your users _**securely**_!
 
