@@ -1,3 +1,14 @@
+/**
+ * Enum for the Bungie membership type
+ * @enum
+ */
+export enum BungieMembershipType {
+    All = -1,
+    Xbox = 1,
+    PSN = 2,
+    PC = 4,
+    Bungie = 254,
+}
 
 /**
  * Enum for Desinty component type
@@ -84,18 +95,6 @@ export enum DestinyStatsGroupType {
     Activity = 102,
     UniqueWeapon = 103,
     Internal = 104,
-}
-
-/**
- * Enum for the Bungie membership type
- * @enum
- */
-export enum BungieMembershipType {
-    All = -1,
-    Xbox = 1,
-    PSN = 2,
-    PC = 4,
-    Bungie = 254,
 }
 
 /**

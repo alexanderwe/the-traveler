@@ -24,6 +24,30 @@ export interface IDestinyItemActionRequest {
 }
 
 /**
+ * Interface for defining an object in oder to set the lock state of an item in the inventory
+ * @interface
+ */
+export interface IDestinyItemStateRequest {
+    state: boolean;
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+
+/**
+ * Interface for defining an object in oder to transfer it from inventory to vault or vice versa
+ * @interface
+ */
+export interface IDestinyItemTransferRequest {
+    itemReferenceHash: string;
+    stackSize: number;
+    transferToVault: boolean;
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+
+/**
  * Interface for defining an object for the endpoint query strings
  * @interface 
  */

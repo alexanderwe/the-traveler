@@ -143,6 +143,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="traveler.html#resolvequerystringparameters" class="tsd-kind-icon">resolve<wbr>Query<wbr>String<wbr>Parameters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#searchdestinyentities" class="tsd-kind-icon">search<wbr>Destiny<wbr>Entities</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#searchdestinyplayer" class="tsd-kind-icon">search<wbr>Destiny<wbr>Player</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#setitemlockstate" class="tsd-kind-icon">set<wbr>Item<wbr>Lock<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#transferitem" class="tsd-kind-icon">transfer<wbr>Item</a></li>
 							</ul>
 						</section>
 					</div>
@@ -280,7 +282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:802</li>
+									<li>Defined in Traveler.ts:862</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ioauthresponse.html" class="tsd-signature-type">IOAuthResponse</a></h4>
@@ -288,7 +290,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:806</li>
+									<li>Defined in Traveler.ts:866</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -386,7 +388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:688</li>
+									<li>Defined in Traveler.ts:748</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,7 +411,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:700</li>
+									<li>Defined in Traveler.ts:760</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1458,7 +1460,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:751</li>
+									<li>Defined in Traveler.ts:811</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1490,7 +1492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:783</li>
+									<li>Defined in Traveler.ts:843</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1607,6 +1609,82 @@
 		<p>When fulfilled returns an object containing information about the found user</p>
 		</li>
 		</ul>
+		</section>
+		<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<a name="setitemlockstate" class="tsd-anchor"></a>
+			<h3>set<wbr>Item<wbr>Lock<wbr>State</h3>
+			<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+				<li class="tsd-signature tsd-kind-icon">set<wbr>Item<wbr>Lock<wbr>State<span class="tsd-signature-symbol">(</span>stateRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemstaterequest.html" class="tsd-signature-type">IDestinyItemStateRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+			</ul>
+			<ul class="tsd-descriptions">
+				<li class="tsd-description">
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Traveler.ts:694</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set the Lock State for an instanced item in your inventory. You must have a valid Destiny Account.</p>
+						</div>
+					</div>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<h5>stateRequest: <a href="../interfaces/idestinyitemstaterequest.html" class="tsd-signature-type">IDestinyItemStateRequest</a></h5>
+							<div class="tsd-comment tsd-typography">
+								<p>An object containing following keys: <br /></p>
+								<ul>
+									<li>state {boolean}: Set lock state = true, remove lock state = false</li>
+									<li>itemId {string}: Multiple itemInstanceId (<strong>not hash</strong>) of the item which you want to change the lock state on</li>
+									<li>charcterId {string}: The character ID of the character who owns the item</li>
+									<li>membershipType {enum|number}: The BungieMemberschipType</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+				</li>
+			</ul>
+		</section>
+		<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+			<a name="transferitem" class="tsd-anchor"></a>
+			<h3>transfer<wbr>Item</h3>
+			<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+				<li class="tsd-signature tsd-kind-icon">transfer<wbr>Item<span class="tsd-signature-symbol">(</span>transferRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-signature-type">IDestinyItemTransferRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+			</ul>
+			<ul class="tsd-descriptions">
+				<li class="tsd-description">
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Traveler.ts:725</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item (in your inventory).</p>
+						</div>
+					</div>
+					<h4 class="tsd-parameters-title">Parameters</h4>
+					<ul class="tsd-parameters">
+						<li>
+							<h5>transferRequest: <a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-signature-type">IDestinyItemTransferRequest</a></h5>
+							<div class="tsd-comment tsd-typography">
+								<p>An object containing following keys: <br /></p>
+								<ul>
+									<li>itemReferenceHash {string}: hash of the item</li>
+									<li>stackSize{number}: How many of the item</li>
+									<li>transferToVault {boolean} Transfer to vault - true, from vault - false</li>
+									<li>itemId {string}: itemInstanceId (<strong>not hash</strong>) of the item which you want to transfer/li&gt;
+										<li>charcterId {string}: The character ID of the character who owns the item</li>
+										<li>membershipType {enum|number}: The BungieMemberschipType</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+				</li>
+			</ul>
 		</section>
 		</section>
 	</div>
@@ -1772,6 +1850,12 @@
 						<li class=" tsd-kind-method tsd-parent-kind-class">
 							<a href="traveler.html#searchdestinyplayer" class="tsd-kind-icon">search<wbr>Destiny<wbr>Player</a>
 						</li>
+						<li class=" tsd-kind-method tsd-parent-kind-class">
+							<a href="traveler.html#setitemlockstate" class="tsd-kind-icon">set<wbr>Item<wbr>Lock<wbr>State</a>
+						</li>
+						<li class=" tsd-kind-method tsd-parent-kind-class">
+							<a href="traveler.html#transferitem" class="tsd-kind-icon">transfer<wbr>Item</a>
+						</li>
 					</ul>
 				</li>
 			</ul>
@@ -1781,6 +1865,12 @@
 				</li>
 				<li class=" tsd-kind-interface">
 					<a href="../interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+				</li>
+				<li class=" tsd-kind-interface">
+					<a href="../interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+				</li>
+				<li class=" tsd-kind-interface">
+					<a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
 				</li>
 				<li class=" tsd-kind-interface">
 					<a href="../interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>

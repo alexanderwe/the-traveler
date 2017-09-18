@@ -3,7 +3,7 @@ import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, SearchType } from './enums';
 import HTTPService from './HttpService';
-import { IConfig, IDestinyItemActionRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
+import { IConfig, IDestinyItemActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 import OAuthError from './OAuthError';
 /**
  * Entry class for accessing the Destiny 2 API
@@ -666,6 +666,66 @@ export default class Traveler {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItems/`;
+            this.oauthOptions.json = true;
+            return new Promise<object>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Set the Lock State for an instanced item in your inventory. You must have a valid Destiny Account.
+     * @param stateRequest An object containing following keys: <br />
+     * <ul>
+     * <li>state {boolean}: Set lock state = true, remove lock state = false</li>
+     * <li>itemId {string}: Multiple itemInstanceId (**not hash**) of the item which you want to change the lock state on</li>
+     * <li>charcterId {string}: The character ID of the character who owns the item</li>
+     * <li>membershipType {enum|number}: The BungieMemberschipType</li>
+     * </ul>
+     */
+    public setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<object> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = stateRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/SetLockState/`;
+            this.oauthOptions.json = true;
+            return new Promise<object>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item (in your inventory).
+     * @param transferRequest An object containing following keys: <br />
+     * <ul>
+     * <li>itemReferenceHash {string}: hash of the item</li>
+     * <li>stackSize{number}: How many of the item</li>
+     * <li>transferToVault {boolean} Transfer to vault - true, from vault - false</li>
+     * <li>itemId {string}: itemInstanceId (**not hash**) of the item which you want to transfer/li>
+     * <li>charcterId {string}: The character ID of the character who owns the item</li>
+     * <li>membershipType {enum|number}: The BungieMemberschipType</li>
+     * </ul>
+     */
+    public transferItem(transferRequest: IDestinyItemTransferRequest): Promise<object> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = transferRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/TransferItem/`;
             this.oauthOptions.json = true;
             return new Promise<object>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
