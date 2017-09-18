@@ -17,7 +17,8 @@ export interface IConfig {
  * @interface
  */
 export interface IDestinyItemActionRequest {
-    itemId: string;
+    itemId?: string;
+    itemIds?: string[];
     characterId: string;
     membershipType: BungieMembershipType;
 }

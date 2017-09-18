@@ -18,7 +18,8 @@
     "files": [
         "build/Traveler.js",
         "build/enums.js",
-        "build/HttpService.js"
+        "build/HttpService.js",
+        "build/OAuthError.js"
     ],
     "scripts": {
         "start": "babel-node ./src/index.js --presets es2015,stage-2",

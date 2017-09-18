@@ -16,6 +16,7 @@
         "types": [
             "request-promise-native"
         ],
-        "outDir": "./build"
+        "outDir": "./build",
+        "watch": true
     }
 }

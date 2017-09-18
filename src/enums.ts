@@ -115,6 +115,7 @@ export enum PeriodType {
  */
 export enum SearchType {
     DestinyInventoryItemDefinition = 'DestinyInventoryItemDefinition',
+    DestinyInventoryComponent = 'DestinyInventoryComponent',
 }
 
 /**

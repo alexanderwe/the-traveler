@@ -45,8 +45,29 @@ export default class Traveler {
      * @async
      * @return {Promise.Object} When fulfilled returns an object containing the current Destiny 2 manifest
      */
-    public getDestinyManifest() {
+    public getDestinyManifest(): Promise<object> {
         this.options.uri = `${this.apibase}/Manifest/`;
+        return new Promise<object>((resolve, reject) => {
+            this.httpService.get(this.options)
+                .then((response) => {
+                    resolve(response);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    /**
+     * Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions. 
+     * Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found. 
+     * Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
+     * @param entityType 
+     * @param hashIdentifier 
+     * @return {Promise.Object} When fulfilled returns an object containing the static definition of an entity.
+     */
+    public getDestinyEntityDefinition(entityType: SearchType, hashIdentifier: string): Promise<object> {
+        this.options.uri = `${this.apibase}/Manifest/${entityType}/${hashIdentifier}/`;
         return new Promise<object>((resolve, reject) => {
             this.httpService.get(this.options)
                 .then((response) => {
@@ -126,16 +147,29 @@ export default class Traveler {
      * @return {Promise.object} When fulfilled returns an object containing stats about the specified character
      */
     public getCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<object> {
-        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<object>((resolve, reject) => {
-            this.httpService.get(this.options)
-                .then((response) => {
-                    resolve(response);
-                })
-                .catch((err) => {
-                    reject(err);
-                });
-        });
+        if (this.oauthOptions) { // if we have oauth available use it 
+            this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<object>((resolve, reject) => {
+                this.httpService.get(this.oauthOptions)
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<object>((resolve, reject) => {
+                this.httpService.get(this.options)
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        }
     }
 
     /**
@@ -592,20 +626,47 @@ export default class Traveler {
     }
 
     /**
-     * Equip an item. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
+     * Equip an item from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
      * @param itemActionRequest An object containing following keys: <br />
      * <ul>
-     * <li>itemId</li>
-     * <li>charcterId</li>
-     * <li>membershipType</li>
+     * <li>itemId {string} - The itemInstanceId (**not hash**) of the item you want to equipt</li>
+     * <li>charcterId {string} The character ID of the character who gets the item</li>
+     * <li>membershipType {enum|number} The BungieMemberschipType</li>
      * </ul>
      */
     public equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<object> {
         if (this.oauth !== undefined) {
-            this.oauthOptions.body = JSON.stringify(itemActionRequest);
+            this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItem/`;
+            this.oauthOptions.json = true;
+            return new Promise<object>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
 
-            console.log(this.oauthOptions);
+    /**
+     * Equip multiple items from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
+     * @param itemActionRequest An object containing following keys: <br />
+     * <ul>
+     * <li>itemIds {string[]} - Multiple itemInstanceIds (**not hasesh**) of the items you want to equipt</li>
+     * <li>charcterId {string} The character ID of the character who gets the item</li>
+     * <li>membershipType {enum|number} The BungieMemberschipType</li>
+     * </ul>
+     */
+    public equipItems(itemActionRequest: IDestinyItemActionRequest): Promise<object> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = itemActionRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItems/`;
+            this.oauthOptions.json = true;
             return new Promise<object>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
                     .then((response) => {
@@ -748,10 +809,8 @@ export default class Traveler {
             headers: {
                 'Authorization': `Bearer ${this.oauth.access_token}`,
                 'X-API-Key': this.apikey,
-                'content-type': 'application/json',
                 'user-agent': this.userAgent,
             },
-            json: true,
             uri: '',
         };
     }
