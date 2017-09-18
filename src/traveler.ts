@@ -614,7 +614,7 @@ export default class Traveler {
      */
     public getPublicMilestones(): Promise<IAPIResponse> {
         this.options.uri = `${this.apibase}/Milestones/`;
-        return new Promise<IAPIResponseobject>((resolve, reject) => {
+        return new Promise<IAPIResponse>((resolve, reject) => {
             this.httpService.get(this.options)
                 .then((response: IAPIResponse) => {
                     resolve(response);
