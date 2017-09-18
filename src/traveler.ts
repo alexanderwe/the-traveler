@@ -3,7 +3,7 @@ import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, SearchType } from './enums';
 import HTTPService from './HttpService';
-import { IConfig, IDestinyItemActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
+import { IAPIResponse, IConfig, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 import OAuthError from './OAuthError';
 /**
  * Entry class for accessing the Destiny 2 API
@@ -627,11 +627,12 @@ export default class Traveler {
 
     /**
      * Equip an item from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
+     * @async
      * @param itemActionRequest An object containing following keys: <br />
      * <ul>
      * <li>itemId {string} - The itemInstanceId (**not hash**) of the item you want to equipt</li>
      * <li>charcterId {string} The character ID of the character who gets the item</li>
-     * <li>membershipType {enum|number} The BungieMemberschipType</li>
+     * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
     public equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<object> {
@@ -655,14 +656,15 @@ export default class Traveler {
 
     /**
      * Equip multiple items from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
+     * @async
      * @param itemActionRequest An object containing following keys: <br />
      * <ul>
      * <li>itemIds {string[]} - Multiple itemInstanceIds (**not hasesh**) of the items you want to equipt</li>
      * <li>charcterId {string} The character ID of the character who gets the item</li>
-     * <li>membershipType {enum|number} The BungieMemberschipType</li>
+     * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public equipItems(itemActionRequest: IDestinyItemActionRequest): Promise<object> {
+    public equipItems(itemActionRequest: IDestinyItemSetActionRequest): Promise<object> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItems/`;
@@ -683,12 +685,13 @@ export default class Traveler {
 
     /**
      * Set the Lock State for an instanced item in your inventory. You must have a valid Destiny Account.
+     * @async
      * @param stateRequest An object containing following keys: <br />
      * <ul>
      * <li>state {boolean}: Set lock state = true, remove lock state = false</li>
      * <li>itemId {string}: Multiple itemInstanceId (**not hash**) of the item which you want to change the lock state on</li>
      * <li>charcterId {string}: The character ID of the character who owns the item</li>
-     * <li>membershipType {enum|number}: The BungieMemberschipType</li>
+     * <li>membershipType {number}: The BungieMemberschipType</li>
      * </ul>
      */
     public setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<object> {
@@ -712,6 +715,7 @@ export default class Traveler {
 
     /**
      * Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item (in your inventory).
+     * @async
      * @param transferRequest An object containing following keys: <br />
      * <ul>
      * <li>itemReferenceHash {string}: hash of the item</li>
@@ -719,17 +723,77 @@ export default class Traveler {
      * <li>transferToVault {boolean} Transfer to vault - true, from vault - false</li>
      * <li>itemId {string}: itemInstanceId (**not hash**) of the item which you want to transfer/li>
      * <li>charcterId {string}: The character ID of the character who owns the item</li>
-     * <li>membershipType {enum|number}: The BungieMemberschipType</li>
+     * <li>membershipType {umber}: The BungieMemberschipType</li>
      * </ul>
      */
-    public transferItem(transferRequest: IDestinyItemTransferRequest): Promise<object> {
+    public transferItem(transferRequest: IDestinyItemTransferRequest): Promise<IAPIResponse> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = transferRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/TransferItem/`;
             this.oauthOptions.json = true;
-            return new Promise<object>((resolve, reject) => {
+            return new Promise<IAPIResponse>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response) => {
+                    .then((response: IAPIResponse) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Insert a plug into a socketed item. <strong>NOT RELEASED</strong>
+     * @async
+     * @not-released
+     * @param itemActionRequest An object containing following keys: <br />
+     * <ul>
+     * <li>itemId {string} - The itemInstanceId (**not hash**) of the item you want to equipt</li>
+     * <li>charcterId {string} The character ID of the character who gets the item</li>
+     * <li>membershipType {number} The BungieMemberschipType</li>
+     * </ul>
+     */
+    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = itemActionRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/InsertSocketPlug/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Activate a Talent Node <strong>NOT RELEASED</strong>
+     * @async
+     * @not-released
+     * @param itemActionRequest An object containing following keys: <br />
+     * <ul>
+     * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate/li>
+     * <li>charcterId {string} The character ID of the character</li>
+     * <li>membershipType {number} The BungieMemberschipType</li>
+     * </ul>
+     */
+    public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = itemActionRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/ActivateTalentNode/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -755,6 +819,7 @@ export default class Traveler {
 
     /**
      * Retreive the Oauth access token from the authorization code
+     * @async
      * @param code The authorization code from the oauth redirect url
      */
     public getAccessToken(code: string): Promise<IOAuthResponse> {
@@ -793,7 +858,7 @@ export default class Traveler {
         }
         return new Promise<IOAuthResponse>((resolve, reject) => {
             this.httpService.post(options)
-                .then((response) => {
+                .then((response: IOAuthResponse) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -806,6 +871,7 @@ export default class Traveler {
      * Use the refreshToken to retrieve a new valid access_token. 
      * Please keep the expiration durations in mind.
      * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
+     * @async
      * @param refreshToken 
      */
     public refreshToken(refreshToken: string): Promise<IOAuthResponse> {
@@ -826,7 +892,7 @@ export default class Traveler {
 
         return new Promise<IOAuthResponse>((resolve, reject) => {
             this.httpService.post(options)
-                .then((response) => {
+                .then((response: IOAuthResponse) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -837,6 +903,7 @@ export default class Traveler {
 
     /**
      * Generates the query string parameters out of the specified object which contains the parameters
+     * @async
      * @param queryStringParameters: Object which contains the query keys and values
      * @return The query string to add to the endpoint url
      */

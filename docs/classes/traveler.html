@@ -114,6 +114,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#activatetalentnode" class="tsd-kind-icon">activate<wbr>Talent<wbr>Node</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#equipitem" class="tsd-kind-icon">equip<wbr>Item</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#equipitems" class="tsd-kind-icon">equip<wbr>Items</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#generateoauthurl" class="tsd-kind-icon">generateOAuthURL</a></li>
@@ -139,6 +140,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#getuniqueweaponhistory" class="tsd-kind-icon">get<wbr>Unique<wbr>Weapon<wbr>History</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#getvendor" class="tsd-kind-icon">get<wbr>Vendor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#getvendors" class="tsd-kind-icon">get<wbr>Vendors</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#insertsocketplug" class="tsd-kind-icon">insert<wbr>Socket<wbr>Plug</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="traveler.html#resolvequerystringparameters" class="tsd-kind-icon">resolve<wbr>Query<wbr>String<wbr>Parameters</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="traveler.html#searchdestinyentities" class="tsd-kind-icon">search<wbr>Destiny<wbr>Entities</a></li>
@@ -282,7 +284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:862</li>
+									<li>Defined in Traveler.ts:929</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/ioauthresponse.html" class="tsd-signature-type">IOAuthResponse</a></h4>
@@ -290,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:866</li>
+									<li>Defined in Traveler.ts:933</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -307,6 +309,48 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="activatetalentnode" class="tsd-anchor"></a>
+					<h3>activate<wbr>Talent<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">activate<wbr>Talent<wbr>Node<span class="tsd-signature-symbol">(</span>itemActionRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Traveler.ts:789</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Activate a Talent Node <strong>NOT RELEASED</strong></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+									<dt>not-released</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemActionRequest: <a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object containing following keys: <br /></p>
+										<ul>
+											<li>itemId {string} - The itemInstanceId (<strong>not hash</strong>) of the node you want to activate/li&gt;
+												<li>charcterId {string} The character ID of the character</li>
+												<li>membershipType {number} The BungieMemberschipType</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="equipitem" class="tsd-anchor"></a>
 					<h3>equip<wbr>Item</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -316,13 +360,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:637</li>
+									<li>Defined in Traveler.ts:638</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Equip an item from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -333,7 +381,7 @@
 										<ul>
 											<li>itemId {string} - The itemInstanceId (<strong>not hash</strong>) of the item you want to equipt</li>
 											<li>charcterId {string} The character ID of the character who gets the item</li>
-											<li>membershipType {enum|number} The BungieMemberschipType</li>
+											<li>membershipType {number} The BungieMemberschipType</li>
 										</ul>
 									</div>
 								</li>
@@ -346,30 +394,34 @@
 					<a name="equipitems" class="tsd-anchor"></a>
 					<h3>equip<wbr>Items</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">equip<wbr>Items<span class="tsd-signature-symbol">(</span>itemActionRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">equip<wbr>Items<span class="tsd-signature-symbol">(</span>itemActionRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemsetactionrequest.html" class="tsd-signature-type">IDestinyItemSetActionRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:665</li>
+									<li>Defined in Traveler.ts:667</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Equip multiple items from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>itemActionRequest: <a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a></h5>
+									<h5>itemActionRequest: <a href="../interfaces/idestinyitemsetactionrequest.html" class="tsd-signature-type">IDestinyItemSetActionRequest</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An object containing following keys: <br /></p>
 										<ul>
 											<li>itemIds {string[]} - Multiple itemInstanceIds (<strong>not hasesh</strong>) of the items you want to equipt</li>
 											<li>charcterId {string} The character ID of the character who gets the item</li>
-											<li>membershipType {enum|number} The BungieMemberschipType</li>
+											<li>membershipType {number} The BungieMemberschipType</li>
 										</ul>
 									</div>
 								</li>
@@ -388,7 +440,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:748</li>
+									<li>Defined in Traveler.ts:812</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -411,13 +463,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:760</li>
+									<li>Defined in Traveler.ts:825</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Retreive the Oauth access token from the authorization code</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1451,6 +1507,48 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="insertsocketplug" class="tsd-anchor"></a>
+					<h3>insert<wbr>Socket<wbr>Plug</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Socket<wbr>Plug<span class="tsd-signature-symbol">(</span>itemActionRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Traveler.ts:759</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Insert a plug into a socketed item. <strong>NOT RELEASED</strong></p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+									<dt>not-released</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>itemActionRequest: <a href="../interfaces/idestinyitemactionrequest.html" class="tsd-signature-type">IDestinyItemActionRequest</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object containing following keys: <br /></p>
+										<ul>
+											<li>itemId {string} - The itemInstanceId (<strong>not hash</strong>) of the item you want to equipt</li>
+											<li>charcterId {string} The character ID of the character who gets the item</li>
+											<li>membershipType {number} The BungieMemberschipType</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="refreshtoken" class="tsd-anchor"></a>
 					<h3>refresh<wbr>Token</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -1460,7 +1558,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:811</li>
+									<li>Defined in Traveler.ts:877</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1469,6 +1567,10 @@
 										Please keep the expiration durations in mind.
 									<strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong></p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1492,13 +1594,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traveler.ts:843</li>
+									<li>Defined in Traveler.ts:910</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Generates the query string parameters out of the specified object which contains the parameters</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1620,13 +1726,17 @@
 				<li class="tsd-description">
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Traveler.ts:694</li>
+							<li>Defined in Traveler.ts:697</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Set the Lock State for an instanced item in your inventory. You must have a valid Destiny Account.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>async</dt>
+							<dd></dd>
+						</dl>
 					</div>
 					<h4 class="tsd-parameters-title">Parameters</h4>
 					<ul class="tsd-parameters">
@@ -1638,7 +1748,7 @@
 									<li>state {boolean}: Set lock state = true, remove lock state = false</li>
 									<li>itemId {string}: Multiple itemInstanceId (<strong>not hash</strong>) of the item which you want to change the lock state on</li>
 									<li>charcterId {string}: The character ID of the character who owns the item</li>
-									<li>membershipType {enum|number}: The BungieMemberschipType</li>
+									<li>membershipType {number}: The BungieMemberschipType</li>
 								</ul>
 							</div>
 						</li>
@@ -1651,19 +1761,23 @@
 			<a name="transferitem" class="tsd-anchor"></a>
 			<h3>transfer<wbr>Item</h3>
 			<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-				<li class="tsd-signature tsd-kind-icon">transfer<wbr>Item<span class="tsd-signature-symbol">(</span>transferRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-signature-type">IDestinyItemTransferRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<li class="tsd-signature tsd-kind-icon">transfer<wbr>Item<span class="tsd-signature-symbol">(</span>transferRequest<span class="tsd-signature-symbol">: </span><a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-signature-type">IDestinyItemTransferRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 			</ul>
 			<ul class="tsd-descriptions">
 				<li class="tsd-description">
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in Traveler.ts:725</li>
+							<li>Defined in Traveler.ts:729</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item (in your inventory).</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>async</dt>
+							<dd></dd>
+						</dl>
 					</div>
 					<h4 class="tsd-parameters-title">Parameters</h4>
 					<ul class="tsd-parameters">
@@ -1677,12 +1791,12 @@
 									<li>transferToVault {boolean} Transfer to vault - true, from vault - false</li>
 									<li>itemId {string}: itemInstanceId (<strong>not hash</strong>) of the item which you want to transfer/li&gt;
 										<li>charcterId {string}: The character ID of the character who owns the item</li>
-										<li>membershipType {enum|number}: The BungieMemberschipType</li>
+										<li>membershipType {umber}: The BungieMemberschipType</li>
 								</ul>
 							</div>
 						</li>
 					</ul>
-					<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iapiresponse.html" class="tsd-signature-type">IAPIResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 				</li>
 			</ul>
 		</section>
@@ -1764,6 +1878,9 @@
 							<a href="traveler.html#oauth" class="tsd-kind-icon">oauth</a>
 						</li>
 						<li class=" tsd-kind-method tsd-parent-kind-class">
+							<a href="traveler.html#activatetalentnode" class="tsd-kind-icon">activate<wbr>Talent<wbr>Node</a>
+						</li>
+						<li class=" tsd-kind-method tsd-parent-kind-class">
 							<a href="traveler.html#equipitem" class="tsd-kind-icon">equip<wbr>Item</a>
 						</li>
 						<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1839,6 +1956,9 @@
 							<a href="traveler.html#getvendors" class="tsd-kind-icon">get<wbr>Vendors</a>
 						</li>
 						<li class=" tsd-kind-method tsd-parent-kind-class">
+							<a href="traveler.html#insertsocketplug" class="tsd-kind-icon">insert<wbr>Socket<wbr>Plug</a>
+						</li>
+						<li class=" tsd-kind-method tsd-parent-kind-class">
 							<a href="traveler.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a>
 						</li>
 						<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -1861,10 +1981,16 @@
 			</ul>
 			<ul class="after-current">
 				<li class=" tsd-kind-interface">
+					<a href="../interfaces/iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
+				</li>
+				<li class=" tsd-kind-interface">
 					<a href="../interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
 				</li>
 				<li class=" tsd-kind-interface">
 					<a href="../interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+				</li>
+				<li class=" tsd-kind-interface">
+					<a href="../interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
 				</li>
 				<li class=" tsd-kind-interface">
 					<a href="../interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>

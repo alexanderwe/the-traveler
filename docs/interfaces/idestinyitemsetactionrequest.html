@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IDestinyItemTransferRequest | The Traveler</title>
+	<title>IDestinyItemSetActionRequest | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="idestinyitemtransferrequest.html">IDestinyItemTransferRequest</a>
+					<a href="idestinyitemsetactionrequest.html">IDestinyItemSetActionRequest</a>
 				</li>
 			</ul>
-			<h1>Interface IDestinyItemTransferRequest</h1>
+			<h1>Interface IDestinyItemSetActionRequest</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for defining an object in order to transfer it from inventory to vault or vice versa</p>
+						<p>Interface for defining an object in case of an item set action request to the API</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>interface</dt>
@@ -81,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IDestinyItemTransferRequest</span>
+						<span class="target">IDestinyItemSetActionRequest</span>
 					</li>
 				</ul>
 			</section>
@@ -92,12 +92,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#itemid" class="tsd-kind-icon">item<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#itemreferencehash" class="tsd-kind-icon">item<wbr>Reference<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#stacksize" class="tsd-kind-icon">stack<wbr>Size</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtransferrequest.html#transfertovault" class="tsd-kind-icon">transfer<wbr>ToVault</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsetactionrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsetactionrequest.html#itemids" class="tsd-kind-icon">item<wbr>Ids</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsetactionrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -111,27 +108,17 @@
 					<div class="tsd-signature tsd-kind-icon">character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L67">interfaces.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L44">interfaces.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemid" class="tsd-anchor"></a>
-					<h3>item<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="itemids" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> item<wbr>Ids</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L66">interfaces.ts:66</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="itemreferencehash" class="tsd-anchor"></a>
-					<h3>item<wbr>Reference<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Reference<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L63">interfaces.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L43">interfaces.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -141,27 +128,7 @@
 					<div class="tsd-signature tsd-kind-icon">membership<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BungieMembershipType.All</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.Xbox</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.PSN</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.PC</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.Bungie</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L68">interfaces.ts:68</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="stacksize" class="tsd-anchor"></a>
-					<h3>stack<wbr>Size</h3>
-					<div class="tsd-signature tsd-kind-icon">stack<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L64">interfaces.ts:64</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="transfertovault" class="tsd-anchor"></a>
-					<h3>transfer<wbr>ToVault</h3>
-					<div class="tsd-signature tsd-kind-icon">transfer<wbr>ToVault<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L65">interfaces.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/b52abc3/src/interfaces.ts#L45">interfaces.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -216,39 +183,30 @@
 					<li class=" tsd-kind-interface">
 						<a href="idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+						<a href="idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a>
+								<a href="idestinyitemsetactionrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#itemid" class="tsd-kind-icon">item<wbr>Id</a>
+								<a href="idestinyitemsetactionrequest.html#itemids" class="tsd-kind-icon">item<wbr>Ids</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#itemreferencehash" class="tsd-kind-icon">item<wbr>Reference<wbr>Hash</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#stacksize" class="tsd-kind-icon">stack<wbr>Size</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemtransferrequest.html#transfertovault" class="tsd-kind-icon">transfer<wbr>ToVault</a>
+								<a href="idestinyitemsetactionrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
 					</li>
