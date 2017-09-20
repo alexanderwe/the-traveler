@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import Traveler from '../build/traveler';
-import { ComponentType } from '../build/enums';
+import { ComponentType, SearchType } from '../build/enums';
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;
@@ -22,6 +22,15 @@ describe('traveler#getManifest', function () {
             'version');
     });
 });
+
+describe('traveler#searchDestinyEntities', function () {
+    it('respond with JSON data about the weapon called Blue Shift', async () => {
+        const result = await traveler.getDestinyEntityDefinition(SearchType.DestinyInventoryItemDefinition, '417474226');
+        return expect(result.Response.displayProperties.name).to.be.an('string').and.equals('Blue Shift')
+    });
+});
+
+
 
 describe('traveler#searchDestinyPlayer', function () {
     it('respond with matching player', async () => {

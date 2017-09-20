@@ -447,7 +447,6 @@ export default class Traveler {
                 });
         });
     }
-
     /**
      * Gets activity history stats for indicated character
      * @async
