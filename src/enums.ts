@@ -109,12 +109,46 @@ export enum PeriodType {
 }
 
 /**
- * Enum for different search types
+ * Enum for different type definitions
  * @enum
  */
-export enum SearchType {
+export enum TypeDefinition {
+    DestinyActivityGraphDefinition = 'DestinyActivityGraphDefinition',
+    DestinyActivityModeDefinition = 'DestinyActivityModeDefinition',
+    DestinyActivityModifierDefinition = 'DestinyActivityModifierDefinition',
+    DestinyActivityTypeDefinition = 'DestinyActivityTypeDefinition',
+    DestinyBondDefinition = 'DestinyBondDefinition',
+    DestinyClassDefinition = 'DestinyClassDefinition',
+    DestinyDamageTypeDefinition = 'DestinyDamageTypeDefinition',
+    DestinyDestinationDefinition = 'DestinyDestinationDefinition',
+    DestinyEnemyRaceDefinition = 'DestinyEnemyRaceDefinition',
+    DestinyFactionDefinition = 'DestinyFactionDefinition',
+    DestinyGenderDefinition = 'DestinyGenderDefinition',
+    DestinyHistoricalStatsDefinition = 'DestinyHistoricalStatsDefinition',
+    DestinyInventoryBucketDefinition = 'DestinyInventoryBucketDefinition',
     DestinyInventoryItemDefinition = 'DestinyInventoryItemDefinition',
-    DestinyInventoryComponent = 'DestinyInventoryComponent',
+    DestinyItemCategoryDefinition = 'DestinyItemCategoryDefinition',
+    DestinyItemTierTypeDefinition = 'DestinyItemTierTypeDefinition',
+    DestinyLocationDefinition = 'DestinyLocationDefinition',
+    DestinyLoreDefinition = 'DestinyLoreDefinition',
+    DestinyMedalTierDefinition = 'DestinyMedalTierDefinition',
+    DestinyMilestoneDefinition = 'DestinyMilestoneDefinition',
+    DestinyObjectiveDefinition = 'DestinyObjectiveDefinition',
+    DestinyPlaceDefinition = 'DestinyPlaceDefinition',
+    DestinyProgressionDefinition = 'DestinyProgressionDefinition',
+    DestinyProgressionLevelRequirementDefinition = 'DestinyProgressionLevelRequirementDefinition',
+    DestinyRaceDefinition = 'DestinyRaceDefinition',
+    DestinyRewardSourceDefinition = 'DestinyRewardSourceDefinition',
+    DestinySackRewardItemListDefinition = 'DestinySackRewardItemListDefinition',
+    DestinySandboxPerkDefinition = 'DestinySandboxPerkDefinition',
+    DestinySocketCategoryDefinition = 'DestinySocketCategoryDefinition',
+    DestinySocketTypeDefinition = 'DestinySocketTypeDefinition',
+    DestinyStatDefinition = 'DestinyStatDefinition',
+    DestinyStatGroupDefinition = 'DestinyStatGroupDefinition',
+    DestinyTalentGridDefinition = 'DestinyTalentGridDefinition',
+    DestinyUnlockDefinition = 'DestinyUnlockDefinition',
+    DestinyVendorCategoryDefinition = 'DestinyVendorCategoryDefinition',
+    DestinyVendorDefinition = 'DestinyVendorDefinition',
 }
 
 /**

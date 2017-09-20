@@ -1,7 +1,7 @@
 import 'es6-promise';
 import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
-import { BungieMembershipType, SearchType } from './enums';
+import { BungieMembershipType, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
 import { IAPIResponse, IConfig, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
 import OAuthError from './OAuthError';
@@ -66,8 +66,8 @@ export default class Traveler {
      * @param hashIdentifier 
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing the static definition of an entity.
      */
-    public getDestinyEntityDefinition(entityType: SearchType, hashIdentifier: string): Promise<IAPIResponse> {
-        this.options.uri = `${this.apibase}/Manifest/${entityType}/${hashIdentifier}/`;
+    public getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse> {
+        this.options.uri = `${this.apibase}/Manifest/${typeDefinition}/${hashIdentifier}/`;
         return new Promise<IAPIResponse>((resolve, reject) => {
             this.httpService.get(this.options)
                 .then((response: IAPIResponse) => {
@@ -429,14 +429,14 @@ export default class Traveler {
      * Gets a page list of Destiny items
      * @async
      * @param searchTerm The string to use when searching for Destiny entities
-     * @param type The type of entity for whom you would like results
+     * @param typeDefinition The type of entity for which you want to search
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>page {number} Page number to return, starting with 0</li>
      * @return {Promise.IAPIResponse} The entities search result
      */
-    public searchDestinyEntities(searchTerm: string, type: SearchType, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
-        this.options.uri = `${this.apibase}/Armory/Search/${type}/${searchTerm}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+    public searchDestinyEntities(searchTerm: string, typeDefinition: TypeDefinition, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+        this.options.uri = `${this.apibase}/Armory/Search/${typeDefinition}/${searchTerm}/${this.resolveQueryStringParameters(queryStringParameters)}`;
         return new Promise<IAPIResponse>((resolve, reject) => {
             this.httpService.get(this.options)
                 .then((response: IAPIResponse) => {

@@ -143,6 +143,7 @@ traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => {
     console.log(err)
 })
 ```
+So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.
 
 To wrap this up, the flow is the following:
 
