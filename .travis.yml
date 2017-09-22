@@ -4,6 +4,8 @@ node_js:
 - '7'
 install:
 - yarn install
+before_script:
+- yarn build
 script:
 - yarn test
 env:
