@@ -1,6 +1,7 @@
 Table of Contents
 =================
 
+   * [Table of Contents](#table-of-contents)
    * [The Traveler](#the-traveler)
       * [Getting Started](#getting-started)
          * [Prerequisites](#prerequisites)
@@ -12,13 +13,14 @@ Table of Contents
       * [Examples](#examples)
          * [Search for an Destiny Account on PSN](#search-for-an-destiny-account-on-psn)
          * [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
+         * [Transfer item from vault to character (needs OAuth)](#transfer-item-from-vault-to-character-needs-oauth)
+         * [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
       * [Progress](#progress)
       * [Built With](#built-with)
       * [Versioning](#versioning)
       * [Issues](#issues)
       * [License](#license)
       * [Acknowledgments](#acknowledgments)
-
 
 # The Traveler
 
@@ -143,6 +145,7 @@ traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => {
     console.log(err)
 })
 ```
+So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.
 
 To wrap this up, the flow is the following:
 
@@ -153,6 +156,7 @@ To wrap this up, the flow is the following:
 * **FOR Public** Reauthenticate your users after the access token has expired. They have to visit the `authorization url` again
 * **FOR Confidential**  Use `traveler.oauth.refreshtoken` to renew the `accessToken`, without user interaction by `traveler.refreshToken()`
 * After the oauth object is set on the traveler object you can query the endpoints which require authentiation
+    * You can try to use this approach with `async` and `await` to overcome the `callback hell`, see [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
 * Keep in mind that it would be very useful to store the tokens for your users _**securely**_!
 
 ## Notices
@@ -270,6 +274,49 @@ _Response (First level):_
 ```
 
 
+### Transfer item from vault to character (needs OAuth)
+
+`traveler.oauth` has to be set before calling this method
+
+```
+traveler
+    .transferItem({
+        itemReferenceHash: '2907129556',
+        stackSize: 1,
+        transferToVault: false,
+        itemId: '6917529033189743362',
+        characterId: 'yourCharacterId',
+        membershipType: Enums.BungieMembershipType.PSN
+    })
+    .then(result => {
+        console.log(result);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+```
+
+### Async await approach (pseudo-code)
+
+Just a thought about using `async` and `await`
+
+```
+async () => {
+    const traveler = new Traveler({
+        apikey: 'pasteYourAPIkey',
+        userAgent: 'yourUserAgent', //used to identify your request to the API
+        oauthClientId: 'yourClientId',
+        oauthClientSecret: 'yourClientSecret',
+    });
+
+    traveler.oauth = await traveler.getAccessToken(accessCode);
+    // OR 
+    traveler.oauth = await traveler.refreshToken(refreshToken);
+
+    // now do your calls
+}
+```
+
 ## Progress
 
 Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
@@ -284,12 +331,12 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 | Destiny2.GetItem                          | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.GetVendors                       | ![alt text][yes] | ![alt text][preview]  |
 | Destiny2.GetVendor                        | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.TransferItem                     | ![alt text][no]  | ![alt text][unlocked] |
-| Destiny2.EquipItem                        | ![alt text][no]  | ![alt text][unlocked] |
-| Destiny2.EquipItems                       | ![alt text][no]  | ![alt text][unlocked] |
-| Destiny2.SetItemLockState                 | ![alt text][no]  | ![alt text][unlocked] |
-| Destiny2.InsertSocketPlug                 | ![alt text][no]  | ![alt text][preview]  |
-| Destiny2.ActivateTalentNode               | ![alt text][no]  | ![alt text][preview]  |
+| Destiny2.TransferItem                     | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.EquipItem                        | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.EquipItems                       | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.SetItemLockState                 | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.InsertSocketPlug                 | ![alt text][yes] | ![alt text][preview]  |
+| Destiny2.ActivateTalentNode               | ![alt text][yes] | ![alt text][preview]  |
 | Destiny2.GetPostGameCarnageReport         | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.GetHistoricalStatsDefinition     | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.GetClanLeaderboards              | ![alt text][yes] | ![alt text][preview]  |

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IConfig | The Traveler</title>
+	<title>HTTPService | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="iconfig.html">IConfig</a>
+					<a href="httpservice.html">HTTPService</a>
 				</li>
 			</ul>
-			<h1>Interface IConfig</h1>
+			<h1>Class HTTPService</h1>
 		</div>
 	</div>
 </header>
@@ -69,19 +69,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for defining an object for the Traveler class</p>
+						<p>Wrapper class for the request package. Used to make HTTP calls.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IConfig</span>
+						<span class="target">HTTPService</span>
 					</li>
 				</ul>
 			</section>
@@ -90,69 +86,139 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="httpservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#apikey" class="tsd-kind-icon">apikey</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#debug" class="tsd-kind-icon">debug</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#oauthclientid" class="tsd-kind-icon">oauth<wbr>Client<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#oauthclientsecret" class="tsd-kind-icon">oauth<wbr>Client<wbr>Secret</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="httpservice.html#debug" class="tsd-kind-icon">debug</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="httpservice.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="httpservice.html#post" class="tsd-kind-icon">post</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="apikey" class="tsd-anchor"></a>
-					<h3>apikey</h3>
-					<div class="tsd-signature tsd-kind-icon">apikey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L21">interfaces.ts:21</a></li>
-						</ul>
-					</aside>
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new HTTPService<span class="tsd-signature-symbol">(</span>debug<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="httpservice.html" class="tsd-signature-type">HTTPService</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/HttpService.ts#L10">HttpService.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> debug: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="httpservice.html" class="tsd-signature-type">HTTPService</a></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="debug" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> debug</h3>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagOptional">Optional</span> debug</h3>
 					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L25">interfaces.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/HttpService.ts#L10">HttpService.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="oauthclientid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> oauth<wbr>Client<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">oauth<wbr>Client<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L23">interfaces.ts:23</a></li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="get" class="tsd-anchor"></a>
+					<h3>get</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">rp.OptionsWithUri</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/HttpService.ts#L22">HttpService.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base function for GET requests</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">rp.OptionsWithUri</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options for the request package to use</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>When fulfilled returns an object containing the response from the request</p>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="oauthclientsecret" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> oauth<wbr>Client<wbr>Secret</h3>
-					<div class="tsd-signature tsd-kind-icon">oauth<wbr>Client<wbr>Secret<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L24">interfaces.ts:24</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="useragent" class="tsd-anchor"></a>
-					<h3>user<wbr>Agent</h3>
-					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L22">interfaces.ts:22</a></li>
-						</ul>
-					</aside>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="post" class="tsd-anchor"></a>
+					<h3>post</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">post<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">rp.OptionsWithUri</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/HttpService.ts#L49">HttpService.ts:49</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base function for POST requests</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>async</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">rp.OptionsWithUri</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options for the request package to use</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>When fulfilled returns an object containing the response from the request</p>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -187,62 +253,59 @@
 					<li class=" tsd-kind-enum">
 						<a href="../enums/typedefinition.html" class="tsd-kind-icon">Type<wbr>Definition</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/httpservice.html" class="tsd-kind-icon">HTTPService</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/traveler.html" class="tsd-kind-icon">Traveler</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="iconfig.html" class="tsd-kind-icon">IConfig</a>
+					<li class="current tsd-kind-class">
+						<a href="httpservice.html" class="tsd-kind-icon">HTTPService</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#apikey" class="tsd-kind-icon">apikey</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="httpservice.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#debug" class="tsd-kind-icon">debug</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="httpservice.html#debug" class="tsd-kind-icon">debug</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#oauthclientid" class="tsd-kind-icon">oauth<wbr>Client<wbr>Id</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="httpservice.html#get" class="tsd-kind-icon">get</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#oauthclientsecret" class="tsd-kind-icon">oauth<wbr>Client<wbr>Secret</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="httpservice.html#post" class="tsd-kind-icon">post</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+					<li class=" tsd-kind-class">
+						<a href="oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="traveler.html" class="tsd-kind-icon">Traveler</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
+						<a href="../interfaces/iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+						<a href="../interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+						<a href="../interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+						<a href="../interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+						<a href="../interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+						<a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
 					</li>
 				</ul>
 			</nav>

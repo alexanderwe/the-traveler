@@ -15,6 +15,11 @@
         "max-line-length": 200,
         "no-trailing-whitespace": [
             false
+        ],
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore"
         ]
     }
 }

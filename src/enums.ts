@@ -1,3 +1,14 @@
+/**
+ * Enum for the Bungie membership type
+ * @enum
+ */
+export enum BungieMembershipType {
+    All = -1,
+    Xbox = 1,
+    PSN = 2,
+    PC = 4,
+    Bungie = 254,
+}
 
 /**
  * Enum for Desinty component type
@@ -87,18 +98,6 @@ export enum DestinyStatsGroupType {
 }
 
 /**
- * Enum for the Bungie membership type
- * @enum
- */
-export enum BungieMembershipType {
-    All = -1,
-    Xbox = 1,
-    PSN = 2,
-    PC = 4,
-    Bungie = 254,
-}
-
-/**
  * Enum for Destiny period type
  * @enum
  */
@@ -110,11 +109,46 @@ export enum PeriodType {
 }
 
 /**
- * Enum for different search types
+ * Enum for different type definitions
  * @enum
  */
-export enum SearchType {
+export enum TypeDefinition {
+    DestinyActivityGraphDefinition = 'DestinyActivityGraphDefinition',
+    DestinyActivityModeDefinition = 'DestinyActivityModeDefinition',
+    DestinyActivityModifierDefinition = 'DestinyActivityModifierDefinition',
+    DestinyActivityTypeDefinition = 'DestinyActivityTypeDefinition',
+    DestinyBondDefinition = 'DestinyBondDefinition',
+    DestinyClassDefinition = 'DestinyClassDefinition',
+    DestinyDamageTypeDefinition = 'DestinyDamageTypeDefinition',
+    DestinyDestinationDefinition = 'DestinyDestinationDefinition',
+    DestinyEnemyRaceDefinition = 'DestinyEnemyRaceDefinition',
+    DestinyFactionDefinition = 'DestinyFactionDefinition',
+    DestinyGenderDefinition = 'DestinyGenderDefinition',
+    DestinyHistoricalStatsDefinition = 'DestinyHistoricalStatsDefinition',
+    DestinyInventoryBucketDefinition = 'DestinyInventoryBucketDefinition',
     DestinyInventoryItemDefinition = 'DestinyInventoryItemDefinition',
+    DestinyItemCategoryDefinition = 'DestinyItemCategoryDefinition',
+    DestinyItemTierTypeDefinition = 'DestinyItemTierTypeDefinition',
+    DestinyLocationDefinition = 'DestinyLocationDefinition',
+    DestinyLoreDefinition = 'DestinyLoreDefinition',
+    DestinyMedalTierDefinition = 'DestinyMedalTierDefinition',
+    DestinyMilestoneDefinition = 'DestinyMilestoneDefinition',
+    DestinyObjectiveDefinition = 'DestinyObjectiveDefinition',
+    DestinyPlaceDefinition = 'DestinyPlaceDefinition',
+    DestinyProgressionDefinition = 'DestinyProgressionDefinition',
+    DestinyProgressionLevelRequirementDefinition = 'DestinyProgressionLevelRequirementDefinition',
+    DestinyRaceDefinition = 'DestinyRaceDefinition',
+    DestinyRewardSourceDefinition = 'DestinyRewardSourceDefinition',
+    DestinySackRewardItemListDefinition = 'DestinySackRewardItemListDefinition',
+    DestinySandboxPerkDefinition = 'DestinySandboxPerkDefinition',
+    DestinySocketCategoryDefinition = 'DestinySocketCategoryDefinition',
+    DestinySocketTypeDefinition = 'DestinySocketTypeDefinition',
+    DestinyStatDefinition = 'DestinyStatDefinition',
+    DestinyStatGroupDefinition = 'DestinyStatGroupDefinition',
+    DestinyTalentGridDefinition = 'DestinyTalentGridDefinition',
+    DestinyUnlockDefinition = 'DestinyUnlockDefinition',
+    DestinyVendorCategoryDefinition = 'DestinyVendorCategoryDefinition',
+    DestinyVendorDefinition = 'DestinyVendorDefinition',
 }
 
 /**

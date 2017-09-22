@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IConfig | The Traveler</title>
+	<title>OAuthError | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,32 +56,26 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="iconfig.html">IConfig</a>
+					<a href="oautherror.html">OAuthError</a>
 				</li>
 			</ul>
-			<h1>Interface IConfig</h1>
+			<h1>Class OAuthError</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Interface for defining an object for the Traveler class</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IConfig</span>
+						<span class="tsd-signature-type">Error</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">OAuthError</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -90,67 +84,92 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="oautherror.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#apikey" class="tsd-kind-icon">apikey</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#debug" class="tsd-kind-icon">debug</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#oauthclientid" class="tsd-kind-icon">oauth<wbr>Client<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#oauthclientsecret" class="tsd-kind-icon">oauth<wbr>Client<wbr>Secret</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iconfig.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="oautherror.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="oautherror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="oautherror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static"><a href="oautherror.html#stack" class="tsd-kind-icon">stack</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new OAuth<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="oautherror.html" class="tsd-signature-type">OAuthError</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/OAuthError.ts#L1">OAuthError.ts:1</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="oautherror.html" class="tsd-signature-type">OAuthError</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="apikey" class="tsd-anchor"></a>
-					<h3>apikey</h3>
-					<div class="tsd-signature tsd-kind-icon">apikey<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L21">interfaces.ts:21</a></li>
+							<li>Defined in /usr/local/lib/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:884</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="debug" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> debug</h3>
-					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="message" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from Error.message</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L25">interfaces.ts:25</a></li>
+							<li>Defined in /usr/local/lib/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:874</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="oauthclientid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> oauth<wbr>Client<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">oauth<wbr>Client<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from Error.name</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L23">interfaces.ts:23</a></li>
+							<li>Defined in /usr/local/lib/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:873</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="oauthclientsecret" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> oauth<wbr>Client<wbr>Secret</h3>
-					<div class="tsd-signature tsd-kind-icon">oauth<wbr>Client<wbr>Secret<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static">
+					<a name="stack" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from Error.stack</p>
+						<p>Overrides Error.stack</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L24">interfaces.ts:24</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="useragent" class="tsd-anchor"></a>
-					<h3>user<wbr>Agent</h3>
-					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/bb32d3c/src/interfaces.ts#L22">interfaces.ts:22</a></li>
+							<li>Defined in /usr/local/lib/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:875</li>
 						</ul>
 					</aside>
 				</section>
@@ -188,61 +207,61 @@
 						<a href="../enums/typedefinition.html" class="tsd-kind-icon">Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="../classes/httpservice.html" class="tsd-kind-icon">HTTPService</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/traveler.html" class="tsd-kind-icon">Traveler</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
+						<a href="httpservice.html" class="tsd-kind-icon">HTTPService</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="iconfig.html" class="tsd-kind-icon">IConfig</a>
+					<li class="current tsd-kind-class">
+						<a href="oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#apikey" class="tsd-kind-icon">apikey</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="oautherror.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#debug" class="tsd-kind-icon">debug</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="oautherror.html#error" class="tsd-kind-icon">Error</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#oauthclientid" class="tsd-kind-icon">oauth<wbr>Client<wbr>Id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="oautherror.html#message" class="tsd-kind-icon">message</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#oauthclientsecret" class="tsd-kind-icon">oauth<wbr>Client<wbr>Secret</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="oautherror.html#name" class="tsd-kind-icon">name</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iconfig.html#useragent" class="tsd-kind-icon">user<wbr>Agent</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-static">
+								<a href="oautherror.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+					<li class=" tsd-kind-class">
+						<a href="traveler.html" class="tsd-kind-icon">Traveler</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
+						<a href="../interfaces/iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+						<a href="../interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+						<a href="../interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+						<a href="../interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+						<a href="../interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+						<a href="../interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
 					</li>
 				</ul>
 			</nav>

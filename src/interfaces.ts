@@ -1,4 +1,17 @@
-import { ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodType } from './enums';
+import { BungieMembershipType, ComponentType, DestinyActivityModeType, DestinyStatsGroupType, PeriodType } from './enums';
+
+/**
+ * Interface for the common API response object
+ * @interface
+ */
+export interface IAPIResponse {
+    Response: object;
+    ErrorCode: string;
+    ThrottleSeconds?: string;
+    ErrorStatus?: string;
+    Message?: string;
+    MessageData: object;
+}
 
 /**
  * Interface for defining an object for the Traveler class
@@ -10,6 +23,49 @@ export interface IConfig {
     oauthClientId?: string;
     oauthClientSecret?: string;
     debug?: boolean;
+}
+
+/**
+ * Interface for defining an object in case of an item action request to the API
+ * @interface
+ */
+export interface IDestinyItemActionRequest {
+    itemId?: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+
+/**
+ * Interface for defining an object in case of an item set action request to the API
+ * @interface
+ */
+export interface IDestinyItemSetActionRequest {
+    itemIds?: string[];
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+/**
+ * Interface for defining an object in oder to set the lock state of an item in the inventory
+ * @interface
+ */
+export interface IDestinyItemStateRequest {
+    state: boolean;
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+
+/**
+ * Interface for defining an object in order to transfer it from inventory to vault or vice versa
+ * @interface
+ */
+export interface IDestinyItemTransferRequest {
+    itemReferenceHash: string;
+    stackSize: number;
+    transferToVault: boolean;
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
 }
 
 /**
