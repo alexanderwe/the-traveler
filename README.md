@@ -1,8 +1,17 @@
+# The Traveler
+[![npm](https://img.shields.io/npm/v/the-traveler.svg)]()
+[![npm](https://img.shields.io/npm/dt/the-traveler.svg)]()
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/alexanderwe/the-traveler/master/LICENSE.md)
+[![GitHub issues](https://img.shields.io/github/issues/alexanderwe/the-traveler.svg)](https://github.com/alexanderwe/the-traveler/issues)
+[![Build Status](https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master)](https://travis-ci.org/alexanderwe/the-traveler)
+
+The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
+
 Table of Contents
 =================
 
-   * [Table of Contents](#table-of-contents)
    * [The Traveler](#the-traveler)
+   * [Table of Contents](#table-of-contents)
       * [Getting Started](#getting-started)
          * [Prerequisites](#prerequisites)
       * [OAuth](#oauth)
@@ -22,9 +31,7 @@ Table of Contents
       * [License](#license)
       * [Acknowledgments](#acknowledgments)
 
-# The Traveler
 
-The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
 
 ## Getting Started
 
