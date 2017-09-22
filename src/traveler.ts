@@ -234,16 +234,30 @@ export default class Traveler {
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
      */
     public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
-        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
-            this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
-                    resolve(response);
-                })
-                .catch((err) => {
-                    reject(err);
-                });
-        });
+        if (this.oauthOptions) { // if we have oauth available use it 
+            this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<IAPIResponse>((resolve, reject) => {
+                this.httpService.get(this.oauthOptions)
+                    .then((response: IAPIResponse) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<IAPIResponse>((resolve, reject) => {
+                this.httpService.get(this.options)
+                    .then((response: IAPIResponse) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        }
+
     }
 
     /**
