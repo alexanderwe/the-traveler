@@ -66,6 +66,7 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="table-of-contents">Table of Contents</h1>
 				<ul>
+					<li><a href="#table-of-contents">Table of Contents</a></li>
 					<li><a href="#the-traveler">The Traveler</a><ul>
 							<li><a href="#getting-started">Getting Started</a><ul>
 									<li><a href="#prerequisites">Prerequisites</a></li>
@@ -81,6 +82,8 @@
 							<li><a href="#examples">Examples</a><ul>
 									<li><a href="#search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</a></li>
 									<li><a href="#get-a-character-for-an-psn-account">Get a character for an PSN Account</a></li>
+									<li><a href="#transfer-item-from-vault-to-character-needs-oauth">Transfer item from vault to character (needs OAuth)</a></li>
+									<li><a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
 								</ul>
 							</li>
 							<li><a href="#progress">Progress</a></li>
@@ -176,7 +179,10 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 					<li>Use <code>code</code> to get the <code>OAuth object</code> and apply it to the <code>Traveler object</code></li>
 					<li><strong>FOR Public</strong> Reauthenticate your users after the access token has expired. They have to visit the <code>authorization url</code> again</li>
 					<li><strong>FOR Confidential</strong>  Use <code>traveler.oauth.refreshtoken</code> to renew the <code>accessToken</code>, without user interaction by <code>traveler.refreshToken()</code></li>
-					<li>After the oauth object is set on the traveler object you can query the endpoints which require authentiation</li>
+					<li>After the oauth object is set on the traveler object you can query the endpoints which require authentiation<ul>
+							<li>You can try to use this approach with <code>async</code> and <code>await</code> to overcome the <code>callback hell</code>, see <a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
+						</ul>
+					</li>
 					<li>Keep in mind that it would be very useful to store the tokens for your users <em><strong>securely</strong></em>!</li>
 				</ul>
 				<h2 id="notices">Notices</h2>
@@ -269,6 +275,39 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attribute">MessageData</span>: {} }
+</code></pre><h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
+				<p><code>traveler.oauth</code> has to be set before calling this method</p>
+				<pre><code><span class="hljs-selector-tag">traveler</span>
+    <span class="hljs-selector-class">.transferItem</span>({
+        <span class="hljs-attribute">itemReferenceHash</span>: <span class="hljs-string">'2907129556'</span>,
+        <span class="hljs-attribute">stackSize</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attribute">transferToVault</span>: false,
+        <span class="hljs-attribute">itemId</span>: <span class="hljs-string">'6917529033189743362'</span>,
+        <span class="hljs-attribute">characterId</span>: <span class="hljs-string">'yourCharacterId'</span>,
+        <span class="hljs-attribute">membershipType</span>: Enums.BungieMembershipType.PSN
+    })
+    <span class="hljs-selector-class">.then</span>(result =&gt; {
+        <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(result);
+    })
+    <span class="hljs-selector-class">.catch</span>(err =&gt; {
+        <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(err);
+    });
+</code></pre><h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
+				<p>Just a thought about using <code>async</code> and <code>await</code></p>
+				<pre><code><span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+        apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
+        userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
+        oauthClientId: <span class="hljs-string">'yourClientId'</span>,
+        oauthClientSecret: <span class="hljs-string">'yourClientSecret'</span>,
+    });
+
+    traveler.oauth = <span class="hljs-keyword">await</span> traveler.getAccessToken(accessCode);
+    <span class="hljs-comment">// OR </span>
+    traveler.oauth = <span class="hljs-keyword">await</span> traveler.refreshToken(refreshToken);
+
+    <span class="hljs-comment">// now do your calls</span>
+}
 </code></pre><h2 id="progress">Progress</h2>
 				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
 				<table>
@@ -322,32 +361,32 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 						</tr>
 						<tr>
 							<td>Destiny2.TransferItem</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.EquipItem</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.EquipItems</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.SetItemLockState</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.InsertSocketPlug</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.ActivateTalentNode</td>
-							<td><img src="https://img.shields.io/badge/implemented-no-red.svg" alt="alt text" title="Implemented:no"></td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
 						</tr>
 						<tr>

@@ -119,3 +119,15 @@ describe('traveler#searchDestinyEntities', function () {
 });
 
 //TODO: getHistoricalStats
+
+//TODO: getHistoricalStatsForAccount
+
+//TODO: getActivityHistory
+
+//TODO: getUniqueWeaponHistory
+
+//TODO: getAggregateActivityStats
+
+//TODO: getPublicMilestoneContent
+
+//TODO:getPublicMilestones
