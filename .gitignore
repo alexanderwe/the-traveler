@@ -11,7 +11,7 @@ node_modules
 src/index.js
 .vscode
 .DS_Store
-build
+
 
 # Coverage directory used by tools like istanbul
 coverage
