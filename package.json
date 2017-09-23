@@ -26,7 +26,7 @@
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "nyc mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
-        "posttest": "nyc report --reporter=json && codecov",
+        "posttest": "nyc report --reporter=lcov > coverage.lcov && codecov",
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
