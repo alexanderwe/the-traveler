@@ -66,4 +66,3 @@ var HTTPService = /** @class */ (function () {
     return HTTPService;
 }());
 exports.default = HTTPService;
-//# sourceMappingURL=HttpService.js.map

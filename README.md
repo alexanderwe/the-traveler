@@ -4,6 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/alexanderwe/the-traveler/master/LICENSE.md)
 [![GitHub issues](https://img.shields.io/github/issues/alexanderwe/the-traveler.svg)](https://github.com/alexanderwe/the-traveler/issues)
 [![Build Status](https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master)](https://travis-ci.org/alexanderwe/the-traveler)
+[![codecov](https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg)](https://codecov.io/gh/alexanderwe/the-traveler)
 
 The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
 

@@ -20,4 +20,3 @@ var OAuthError = /** @class */ (function (_super) {
     return OAuthError;
 }(Error));
 exports.default = OAuthError;
-//# sourceMappingURL=OAuthError.js.map

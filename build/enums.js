@@ -388,4 +388,3 @@ var StatId;
     StatId["GatesHit"] = "GatesHit";
     StatId["RaceCompletionMilliseconds"] = "RaceCompletionMilliseconds";
 })(StatId = exports.StatId || (exports.StatId = {}));
-//# sourceMappingURL=enums.js.map

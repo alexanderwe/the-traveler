@@ -952,4 +952,3 @@ var Traveler = /** @class */ (function () {
     return Traveler;
 }());
 exports.default = Traveler;
-//# sourceMappingURL=traveler.js.map

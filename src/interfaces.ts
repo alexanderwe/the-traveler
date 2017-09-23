@@ -5,7 +5,7 @@ import { BungieMembershipType, ComponentType, DestinyActivityModeType, DestinySt
  * @interface
  */
 export interface IAPIResponse {
-    Response: object;
+    Response: any;
     ErrorCode: string;
     ThrottleSeconds?: string;
     ErrorStatus?: string;
