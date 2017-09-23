@@ -25,7 +25,8 @@
         "start": "babel-node ./src/index.js --presets es2015,stage-2",
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
-        "test": "mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
+        "test": "nyc mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
+        "posttest": "nyc report --reporter=json",
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
@@ -42,9 +43,11 @@
         "babel-preset-stage-2": "^6.24.1",
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
+        "codecov": "^2.3.0",
         "es6-promise": "^4.1.1",
         "minami": "^1.2.3",
         "mocha": "^3.5.0",
+        "nyc": "^11.2.1",
         "tslint": "^5.7.0",
         "typedoc-clarity-theme": "^1.1.0",
         "typescript": "^2.5.2"

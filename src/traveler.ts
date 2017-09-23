@@ -45,11 +45,11 @@ export default class Traveler {
      * @async
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing the current Destiny 2 manifest
      */
-    public getDestinyManifest(): Promise<object> {
+    public getDestinyManifest(): Promise<IAPIResponse> {
         this.options.uri = `${this.apibase}/Manifest/`;
-        return new Promise<object>((resolve, reject) => {
+        return new Promise<IAPIResponse>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response) => {
+                .then((response: IAPIResponse) => {
                     resolve(response);
                 })
                 .catch((err) => {

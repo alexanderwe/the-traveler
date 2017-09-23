@@ -1,7 +1,19 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
 node_modules
+
+# Dev stuff
 .env
 src/index.js
 .vscode
 .DS_Store
 build
-*.log
+
+# Coverage directory used by tools like istanbul
+coverage
+.nyc_output
+coverage.*
