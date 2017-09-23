@@ -26,10 +26,11 @@
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "nyc mocha --timeout 15000 --compilers js:babel-core/register --reporter spec",
-        "posttest": "nyc report --reporter=json",
+        "posttest": "nyc report --reporter=json && codecov",
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
+        "codecov": "^2.3.0",
         "es6-promise": "^4.1.1",
         "request": "^2.81.0",
         "request-promise-native": "^1.0.4"
@@ -43,7 +44,6 @@
         "babel-preset-stage-2": "^6.24.1",
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
-        "codecov": "^2.3.0",
         "es6-promise": "^4.1.1",
         "minami": "^1.2.3",
         "mocha": "^3.5.0",
