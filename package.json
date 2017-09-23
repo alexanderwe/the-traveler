@@ -29,9 +29,9 @@
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
+        "es6-promise": "^4.1.1",
         "request": "^2.81.0",
-        "request-promise-native": "^1.0.4",
-        "es6-promise": "^4.1.1"
+        "request-promise-native": "^1.0.4"
     },
     "devDependencies": {
         "@types/request-promise-native": "^1.0.6",
