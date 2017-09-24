@@ -3,7 +3,21 @@ import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
-import { IAPIResponse, IConfig, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthConfig, IOAuthResponse, IQueryStringParameters } from './interfaces';
+import {
+    IAPIResponse,
+    IConfig,
+    IDestinyDefinition,
+    IDestinyItemActionRequest,
+    IDestinyItemSetActionRequest,
+    IDestinyItemStateRequest,
+    IDestinyItemTransferRequest,
+    IDestinyManifest,
+    IDestinyProfileResponse,
+    IOAuthConfig,
+    IOAuthResponse,
+    IQueryStringParameters,
+    IUserInfoCard,
+} from './interfaces';
 import OAuthError from './OAuthError';
 /**
  * Entry class for accessing the Destiny 2 API
@@ -43,13 +57,13 @@ export default class Traveler {
     /**
      * Gets the current manifest in a JSON document
      * @async
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the current Destiny 2 manifest
+     * @return {Promise.IAPIResponse<IDestinyManifest>} When fulfilled returns an object containing the current Destiny 2 manifest
      */
-    public getDestinyManifest(): Promise<IAPIResponse> {
+    public getDestinyManifest(): Promise<IAPIResponse<IDestinyManifest>> {
         this.options.uri = `${this.apibase}/Manifest/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyManifest>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyManifest>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -64,13 +78,13 @@ export default class Traveler {
      * Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
      * @param entityType 
      * @param hashIdentifier 
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the static definition of an entity.
+     * @return {Promise.IAPIResponse<IDestinyDefinition>} When fulfilled returns an object containing the static definition of an entity.
      */
-    public getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse> {
+    public getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse<IDestinyDefinition>> {
         this.options.uri = `${this.apibase}/Manifest/${typeDefinition}/${hashIdentifier}/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyDefinition>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyDefinition>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -91,13 +105,13 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing information about the found user
+     * @return {Promise.IAPIResponse<IUserInfoCard>} When fulfilled returns an object containing information about the found user
      */
-    public searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse> {
+    public searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse<IUserInfoCard>> {
         this.options.uri = `${this.apibase}/SearchDestinyPlayer/${membershipType}/${displayName}/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IUserInfoCard>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IUserInfoCard>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -117,13 +131,13 @@ export default class Traveler {
      * <ul>
      * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
-    public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyProfileResponse>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyProfileResponse>) => {
                     resolve(response);
                 })
                 .catch((err) => {
