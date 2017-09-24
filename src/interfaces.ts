@@ -2,6 +2,7 @@ import {
     BungieMembershipType,
     ComponentPrivacySetting,
     ComponentType,
+    DestinyActivityDifficultyTier,
     DestinyActivityModeType,
     DestinyClass,
     DestinyGameVersion,
@@ -163,7 +164,6 @@ export interface IOAuthResponse {
     membership_id: string;
 }
 
-// TODO: Implement the different objects
 /**
  * Interface for the response of getProfile
  * @interface 
@@ -177,11 +177,141 @@ export interface IDestinyProfileResponse {
     characters?: IDictionaryComponentResponseOfint64AndDestinyCharacterComponent;
     characterInventories?: IDictionaryComponentResponseOfint64AndDestinyInventoryComponent;
     characterProgressions?: IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent;
-    characterRenderData?: object;
-    characterActivities?: object;
-    characterEquipment?: object;
-    characterKiosks?: object;
-    itemComponents?: object;
+    characterRenderData?: IDictionaryComponentResponseOfint64AndDestinyCharacterRenderComponent;
+    characterActivities?: IDictionaryComponentResponseOfint64AndDestinyCharacterActivitiesComponent;
+    characterEquipment?: IDictionaryComponentResponseOfint64AndDestinyInventoryComponent;
+    characterKiosks?: IDictionaryComponentResponseOfint64AndDestinyKiosksComponent;
+    itemComponents?: IDestinyItemComponentSetOfint64;
+}
+
+// TODO: Implement full
+/**
+ * Interface for an object containing information about instanced items across all returned characters.
+ * @interface
+ */
+export interface IDestinyItemComponentSetOfint64 {
+    instances: object;
+    perks: object;
+    objectives: object;
+    renderData: object;
+    stats: object;
+    sockets: object;
+    talentGrids: object;
+    plugStates: object;
+}
+
+/**
+ * Interface for an response of Destiny 2 kiosks component
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyKiosksComponent {
+    data: IDestinyKiosksComponent;
+    pricavy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for an response of an characters activities component
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyCharacterActivitiesComponent {
+    data: IDestinyCharacterActivitiesComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for an characters activities component
+ * @interface
+ */
+export interface IDestinyCharacterActivitiesComponent {
+    dateActivityStarted: Date;
+    availableActivites: IDestinyActivity[];
+    currentActivityHash: string;
+    currentActivityModeHash: string;
+    currentActivityModeType?: DestinyActivityModeType;
+    currentActivityModeHashes: string[];
+    currentActivityModeTypes: DestinyActivityModeType[];
+    currentPlaylistActivityHash?: string;
+    lastCompletedStoryHash: string;
+}
+
+/**
+ * Interface for an Destiny 2 Activity
+ * @interface
+ */
+export interface IDestinyActivity {
+    activityHash: string;
+    isNew: boolean;
+    canLead: boolean;
+    canJoin: boolean;
+    isCompleted: boolean;
+    isVisible: boolean;
+    displayLevel?: number;
+    recommendedLight?: number;
+    difficultyTier: DestinyActivityDifficultyTier;
+}
+
+/**
+ * Interface for an response of an character render data component
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyCharacterRenderComponent {
+    data: IDestinyCharacterRenderComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for character render data component
+ * @interface
+ */
+export interface IDestinyCharacterRenderComponent {
+    customDyes: IDyeReference;
+    customization: IDestinyCharacterCustomization;
+    peerView: IDestinyCharacterPeerView;
+
+}
+
+/**
+ * Interface for a minimal view of a character's equipped items
+ * @interface
+ */
+export interface IDestinyCharacterPeerView {
+    equipment: IDestinyItemPeerView[];
+}
+
+/**
+ * Interface for a minimal view of a character's equipped items
+ * @interface
+ */
+export interface IDestinyItemPeerView {
+    itemHash: string;
+    dyes: IDyeReference;
+}
+/**
+ * Interface for a character customization object
+ * @interface
+ */
+export interface IDestinyCharacterCustomization {
+    personality: string;
+    face: string;
+    skinColor: string;
+    lipColor: string;
+    eyeColor: string;
+    hairColors: string[];
+    featureColors: string[];
+    decalColor: string;
+    wearHelmet: boolean;
+    hairIndex: number;
+    featureIndex: number;
+    decalIndex: number;
+}
+
+/**
+ * Interface for dye reference
+ * @interface
+ */
+export interface IDyeReference {
+    channelHash: string;
+    dyeHash: string;
 }
 
 /**

@@ -52,6 +52,21 @@ export enum ComponentPrivacySetting {
 }
 
 /**
+ * Enum for Destiny acitivity difficulty
+ * @enum
+ */
+export enum DestinyActivityDifficultyTier {
+    Trivial = 0,
+    Easy = 1,
+    Normal = 2,
+    Challenging = 3,
+    Hard = 4,
+    Brave = 5,
+    AlmostImpossible = 6,
+    Impossible = 7,
+}
+
+/**
  * Enum for Destiny acitivity mode type
  * @enum
  */
@@ -101,6 +116,8 @@ export enum DestinyClass {
     Warlock = 2,
     Unknown = 3,
 }
+
+
 
 /**
  * A flags enumeration indicating the versions of the game that a given user has purchased.
