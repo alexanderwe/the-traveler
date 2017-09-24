@@ -3,7 +3,10 @@ import {
     ComponentPrivacySetting,
     ComponentType,
     DestinyActivityModeType,
+    DestinyClass,
     DestinyGameVersion,
+    DestinyGender,
+    DestinyRace,
     DestinyStatsGroupType,
     ItemBindStatus,
     ItemLocation,
@@ -38,6 +41,7 @@ export interface IConfig {
     oauthClientSecret?: string;
     debug?: boolean;
 }
+
 export interface IDestinyActivityHistoryResults {
     activities: object[];
 }
@@ -170,14 +174,223 @@ export interface IDestinyProfileResponse {
     profileCurrencies?: ISingleComponentResponseOfDestinyInventoryComponent;
     profile?: ISingleComponentResponseOfDestinyProfileComponent;
     profileKiosks?: ISingleComponentResponseOfDestinyKiosksComponent;
-    characters?: ;
-    characterInventories?: ;
-    characterProgressions?: ;
-    characterRenderData?: ;
-    characterActivities?: ;
-    characterEquipment?: ;
-    characterKiosks?: ;
-    itemComponents?: ;
+    characters?: IDictionaryComponentResponseOfint64AndDestinyCharacterComponent;
+    characterInventories?: IDictionaryComponentResponseOfint64AndDestinyInventoryComponent;
+    characterProgressions?: IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent;
+    characterRenderData?: object;
+    characterActivities?: object;
+    characterEquipment?: object;
+    characterKiosks?: object;
+    itemComponents?: object;
+}
+
+/**
+ * Interface for an response of an inventory component
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyInventoryComponent {
+    data: IDestinyInventoryComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for an response of an character progress component
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent {
+    data: IDestinyCharacterProgressionComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for a single character progress component
+ * @interface
+ */
+export interface IDestinyCharacterProgressionComponent {
+    progessions: IDestinyProgression;
+    factions: IDestinyFactionProgression;
+    milesontes: IDestinyMilestone;
+    quests: IDestinyQuestStatus[];
+    uninstancedItemObjectives: object;
+}
+
+/**
+ * Interface for an Destiny 2 milestone
+ * @interface
+ */
+export interface IDestinyMilestone {
+    milestoneHash: string;
+    availableQuests: IDestinyMilestoneQuest[];
+    values: object;
+    vendorHashes: number[];
+    rewards: IDestinyMilestoneRewardCategory[];
+    startDate?: Date;
+    endDate?: Date;
+}
+
+/**
+ * Interface for a category of "summary" rewards that can be earned for the Milestone regardless of specific quest rewards that can be earned.
+ * @interface
+ */
+export interface IDestinyMilestoneRewardCategory {
+    rewardCategoryHash: string;
+    entries: IDestinyMilestoneRewardEntry[];
+}
+
+/**
+ * Interface for The character-specific data for a milestone's reward entry
+ * @interface
+ */
+export interface IDestinyMilestoneRewardEntry {
+    rewardEntryHash: string;
+    earned: boolean;
+    redeemed: boolean;
+}
+
+/**
+ * Interface for an Destiny 2 milestone quest
+ * @interface
+ */
+export interface IDestinyMilestoneQuest {
+    questItemHash: string;
+    status: IDestinyQuestStatus;
+    activity: IDestinyMilestoneActivity;
+    challenges: IDestinyChallengeStatus[];
+}
+
+/**
+ * Interface for an Destiny 2 challenge status
+ * @interface
+ */
+export interface IDestinyChallengeStatus {
+    objective: IDestinyObjectiveProgress;
+}
+
+/**
+ * Interface an milestone activity
+ * @interface
+ */
+export interface IDestinyMilestoneActivity {
+    activityHash: string;
+    modifierHash: string[];
+    variants: IDestinyMilestoneActivityVariant[];
+
+}
+
+/**
+ * Interface an milestone activity variant
+ * @interface
+ */
+export interface IDestinyMilestoneActivityVariant {
+    activityHash: string;
+    completionStatus?: IDestinyMilestoneActivityCompletionStatus;
+
+}
+
+/**
+ * Interface an milestone activity completion status
+ * @interface
+ */
+export interface IDestinyMilestoneActivityCompletionStatus {
+    completed: boolean;
+    phases: IDestinyMilestoneActivityPhase[];
+}
+
+/**
+ * Interface an milestone activity phase
+ * @interface
+ */
+export interface IDestinyMilestoneActivityPhase {
+    complete: boolean;
+}
+
+/**
+ * Interface for data regarding the progress of a Quest for a specific character.
+ * @interface
+ */
+export interface IDestinyQuestStatus {
+    questHash: string;
+    stepHash: string;
+    stepObjectives: IDestinyObjectiveProgress[];
+    tracked: boolean;
+    itemInstanceId: string;
+    completed: boolean;
+    redeemed: boolean;
+    started: boolean;
+    vendorHash?: string;
+}
+/**
+ * Interface for data about a character's status with a given Objective
+ * @interface
+ */
+export interface IDestinyObjectiveProgress {
+    objectiveHash: string;
+    destinationHash?: string;
+    activityHash?: string;
+    progress?: number;
+    complete: boolean;
+}
+
+/**
+ * Interface for an response of an destiny character
+ * @interface
+ */
+export interface IDictionaryComponentResponseOfint64AndDestinyCharacterComponent {
+    data: IDestinyCharacterComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * This component contains base properties of the character.
+ * @interface
+ */
+export interface IDestinyCharacterComponent {
+    membershipId: string;
+    membershipType: BungieMembershipType;
+    characterId: string;
+    dateLastPlayed: Date;
+    minutesPlayedThisSession: number;
+    minutesPlayedTotal: number;
+    light: number;
+    stats: object;
+    raceHash: string;
+    genderHash: string;
+    classHash: string;
+    raceType: DestinyRace;
+    classType: DestinyClass;
+    genderType: DestinyGender;
+    emblemPath: string;
+    emplemBackgroundPath: string;
+    emblemHash: string;
+    levelProgression: IDestinyProgression;
+    baseCharacterLevel: number;
+    percentToNextLevel: number;
+}
+
+/**
+ * Mostly for historical purposes, we segregate Faction progressions from other progressions
+ * @interface
+ */
+export interface IDestinyFactionProgression extends IDestinyProgression {
+    factionHash: string;
+}
+
+/**
+ * Interface for the level progression of a character
+ * @interface
+ */
+export interface IDestinyProgression {
+    progressionHash: string;
+    dailyProgress: number;
+    dailyLimit: number;
+    weeklyProgress: number;
+    weeklyLimit: number;
+    currentProgress: number;
+    level: number;
+    levelCap: number;
+    stepIndex: number;
+    progressToNextLevel: number;
+    nextLevelAt: number;
 }
 
 /**
@@ -284,53 +497,9 @@ export interface ISingleComponentResponseOfDestinyKiosksComponent {
  * @interface
  */
 export interface IDestinyKiosksComponent {
-    kioskItems: IDestinyVendorDefinition[];
+    kioskItems: number[];
 }
 
-/**
- * Interface for the definition of a vendor
- * @interface
- */
-export interface IDestinyVendorDefinition {
-    displayProperties: IDestinyVendorDisplayPropertiesDefinition;
-    buyString: string;
-    sellString: string;
-    displayItemHash: string;
-    inhibitBuying: boolean;
-    factionHash: string;
-    resetIntervalMinutes: number;
-    resetOffsetMinutes: number;
-    failureStrings: string[];
-    unlockRanges: IDateRange;
-    vendorIdentifier: string;
-    vendorPortrait: string;
-    vendorBanner: string;
-    enabled: boolean;
-    visible: boolean;
-    vendorCategoryIdentifier: string;
-    consolidateCategories: boolean;
-    actions: IDestinyVendorActionDefinition;
-    categories: IDestinyVendorCategoryEntryDefinition;
-    originalCategories: IDestinyVendorCategoryEntryDefinition;
-    displayCategroies: IDestinyDisplayCategoryDefinition;
-    interactions: // TODO: go on specifying from here
-    inventoryFlyouts:
-    itemList:
-    services:
-    acceptedItems:
-    hash: string;
-    index: string;
-    redacted: boolean;
-}
-
-/**
- * Display Categories are different from "categories" in that these are specifically for visual grouping and display of categories in Vendor UI.
- * @interface
- */
-export interface IDestinyDisplayCategoryDefinition {
-    identifier: string;
-    displayProperties: IDestinyDisplayPropertiesDefinition;
-}
 /**
  * Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base interface for that display information.
  * @interface
@@ -340,71 +509,6 @@ export interface IDestinyDisplayPropertiesDefinition {
     name: string;
     icon: string;
     hashIcon: string;
-}
-
-/**
- * If a vendor can ever end up performing actions, these are the properties that will be related to those actions. I'm not going to bother documenting this yet, as it is unused and unclear if it will ever be used... but in case it is ever populated and someone finds it useful, it is defined here.
- * @interface
- */
-export interface IDestinyVendorActionDefinition {
-    description: string;
-    executeSeconds: number;
-    icon: string;
-    name: string;
-    verb: string;
-    isPositive: string;
-    actionId: string;
-    actionHash: string;
-    autoPerformAction: boolean;
-}
-/**
- * Interface for the definition of a display properties of a vendor
- * @interface
- */
-export interface IDestinyVendorDisplayPropertiesDefinition extends IDestinyDisplayPropertiesDefinition {
-    largeIcon: string;
-    subtitle: string;
-    requirementsDisplay: IDestinyVendorRequirementDisplayEntryDefinition;
-}
-
-/**
- * Interface for the localized properties of the requirementsDisplay, allowing information about the requirement or item being featured to be seen
- * @interface
- */
-export interface IDestinyVendorRequirementDisplayEntryDefinition {
-    icon: string;
-    name: string;
-    source: string;
-    type: string;
-}
-
-/**
- * This is the definition for a single Vendor Category, into which Sale Items are grouped.
- * @interface
- */
-export interface IDestinyVendorCategoryEntryDefinition {
-    categoryIndex: number;
-    categoryId: string;
-    categoryHash: string;
-    quantityAvailable: number;
-    showUnavailableItems: boolean;
-    hideIfNoCurrency: boolean;
-    hideFromRegularPurchase: boolean;
-    buyStringOverride: string;
-    disabledDescription: string;
-    displayTitle: string;
-    overlay: IDestinyVendorCategoryOverlayDefinition;
-}
-
-/**
- * The details of an overlay prompt to show to a user. They are all fairly self-explanatory localized strings that can be shown.
- * @interface
- */
-export interface IDestinyVendorCategoryOverlayDefinition {
-    choiceDescription: string;
-    description: string;
-    icon: string;
-    title: string;
 }
 
 /**

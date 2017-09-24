@@ -92,12 +92,43 @@ export enum DestinyActivityModeType {
 }
 
 /**
+ * Enum for classes in Destiny 2
+ * @enum
+ */
+export enum DestinyClass {
+    Titan = 0,
+    Hunter = 1,
+    Warlock = 2,
+    Unknown = 3,
+}
+
+/**
  * A flags enumeration indicating the versions of the game that a given user has purchased.
  * @enum
  */
-export enum DestinyGameVersion  {
+export enum DestinyGameVersion {
     None = 0,
     Destiny2 = 1,
+}
+/**
+ * Enum for genders in Destiny 2
+ * @enum
+ */
+export enum DestinyGender {
+    Male = 0,
+    Female = 1,
+    Unknown = 2,
+}
+
+/**
+ * Enum for races in Destiny
+ * @enum
+ */
+export enum DestinyRace {
+    Human = 0,
+    Awoken = 1,
+    Exo = 2,
+    Unknown = 3,
 }
 
 /**

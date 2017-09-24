@@ -31,7 +31,7 @@ var Traveler = /** @class */ (function () {
     /**
      * Gets the current manifest in a JSON document
      * @async
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the current Destiny 2 manifest
+     * @return {Promise.IAPIResponse<IDestinyManifest>} When fulfilled returns an object containing the current Destiny 2 manifest
      */
     Traveler.prototype.getDestinyManifest = function () {
         var _this = this;
@@ -52,7 +52,7 @@ var Traveler = /** @class */ (function () {
      * Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
      * @param entityType
      * @param hashIdentifier
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the static definition of an entity.
+     * @return {Promise.IAPIResponse<IDestinyDefinition>} When fulfilled returns an object containing the static definition of an entity.
      */
     Traveler.prototype.getDestinyEntityDefinition = function (typeDefinition, hashIdentifier) {
         var _this = this;
@@ -79,7 +79,7 @@ var Traveler = /** @class */ (function () {
      * <li>254: Bungie</li>
      * </ul>
      * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing information about the found user
+     * @return {Promise.IAPIResponse<IUserInfoCard>} When fulfilled returns an object containing information about the found user
      */
     Traveler.prototype.searchDestinyPlayer = function (membershipType, displayName) {
         var _this = this;
@@ -105,20 +105,34 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
     Traveler.prototype.getProfile = function (membershipType, destinyMembershipId, queryStringParameters) {
         var _this = this;
-        this.options.uri = this.apibase + "/" + membershipType + "/Profile/" + destinyMembershipId + "/" + this.resolveQueryStringParameters(queryStringParameters);
-        return new Promise(function (resolve, reject) {
-            _this.httpService.get(_this.options)
-                .then(function (response) {
-                resolve(response);
-            })
-                .catch(function (err) {
-                reject(err);
+        if (this.oauthOptions) {
+            this.oauthOptions.uri = this.apibase + "/" + membershipType + "/Profile/" + destinyMembershipId + "/" + this.resolveQueryStringParameters(queryStringParameters);
+            return new Promise(function (resolve, reject) {
+                _this.httpService.get(_this.oauthOptions)
+                    .then(function (response) {
+                    resolve(response);
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
             });
-        });
+        }
+        else {
+            this.options.uri = this.apibase + "/" + membershipType + "/Profile/" + destinyMembershipId + "/" + this.resolveQueryStringParameters(queryStringParameters);
+            return new Promise(function (resolve, reject) {
+                _this.httpService.get(_this.options)
+                    .then(function (response) {
+                    resolve(response);
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            });
+        }
     };
     /**
      * Retrieve aggregrated details about a Destiny Characters

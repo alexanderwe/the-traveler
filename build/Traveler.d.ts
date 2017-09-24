@@ -1,6 +1,6 @@
 import 'es6-promise';
 import { BungieMembershipType, TypeDefinition } from './enums';
-import { IAPIResponse, IConfig, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IOAuthResponse, IQueryStringParameters } from './interfaces';
+import { IAPIResponse, IConfig, IDestinyDefinition, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyProfileResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -18,18 +18,18 @@ export default class Traveler {
     /**
      * Gets the current manifest in a JSON document
      * @async
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the current Destiny 2 manifest
+     * @return {Promise.IAPIResponse<IDestinyManifest>} When fulfilled returns an object containing the current Destiny 2 manifest
      */
-    getDestinyManifest(): Promise<IAPIResponse>;
+    getDestinyManifest(): Promise<IAPIResponse<IDestinyManifest>>;
     /**
      * Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions.
      * Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found.
      * Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
      * @param entityType
      * @param hashIdentifier
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the static definition of an entity.
+     * @return {Promise.IAPIResponse<IDestinyDefinition>} When fulfilled returns an object containing the static definition of an entity.
      */
-    getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse>;
+    getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse<IDestinyDefinition>>;
     /**
      * Search for a Destiny 2 player by name
      * @async
@@ -42,9 +42,9 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing information about the found user
+     * @return {Promise.IAPIResponse<IUserInfoCard>} When fulfilled returns an object containing information about the found user
      */
-    searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse>;
+    searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse<IUserInfoCard>>;
     /**
      * Retrieve information about the Destiny Profile
      * @async
@@ -56,9 +56,9 @@ export default class Traveler {
      * <ul>
      * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
-    getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>>;
     /**
      * Retrieve aggregrated details about a Destiny Characters
      * @async

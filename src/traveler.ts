@@ -134,16 +134,30 @@ export default class Traveler {
      * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
     public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>> {
-        this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse<IDestinyProfileResponse>>((resolve, reject) => {
-            this.httpService.get(this.options)
-                .then((response: IAPIResponse<IDestinyProfileResponse>) => {
-                    resolve(response);
-                })
-                .catch((err) => {
-                    reject(err);
-                });
-        });
+        if (this.oauthOptions) { // if we have oauth available use it 
+            this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<IAPIResponse<IDestinyProfileResponse>>((resolve, reject) => {
+                this.httpService.get(this.oauthOptions)
+                    .then((response: IAPIResponse<IDestinyProfileResponse>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+            return new Promise<IAPIResponse<IDestinyProfileResponse>>((resolve, reject) => {
+                this.httpService.get(this.options)
+                    .then((response: IAPIResponse<IDestinyProfileResponse>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        }
+
     }
 
     /**
