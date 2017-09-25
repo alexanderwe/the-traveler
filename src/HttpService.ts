@@ -21,6 +21,7 @@ export default class HTTPService {
      */
     public get(options: rp.OptionsWithUri): Promise<object> {
         options.method = 'GET';
+        options.json = true;
         if (this.debug) {
             console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
         }
