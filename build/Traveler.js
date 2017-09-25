@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("es6-promise");
+require("es6-map");
 var querystring = require("querystring");
 var HttpService_1 = require("./HttpService");
 var OAuthError_1 = require("./OAuthError");
@@ -146,7 +146,7 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyCharacterResponse>} When fulfilled returns an object containing stats about the specified character
      */
     Traveler.prototype.getCharacter = function (membershipType, destinyMembershipId, characterId, queryStringParameters) {
         var _this = this;
@@ -207,7 +207,7 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the queried item
+     * @return {Promise.IAPIResponse<IDestinyItemResponse>} When fulfilled returns an object containing stats about the queried item
      */
     Traveler.prototype.getItem = function (membershipType, destinyMembershipId, itemInstanceId, queryStringParameters) {
         var _this = this;
@@ -234,7 +234,7 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
      */
     Traveler.prototype.getVendors = function (membershipType, destinyMembershipId, characterId, queryStringParameters) {
         var _this = this;

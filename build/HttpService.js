@@ -17,6 +17,7 @@ var HTTPService = /** @class */ (function () {
      */
     HTTPService.prototype.get = function (options) {
         options.method = 'GET';
+        options.json = true;
         if (this.debug) {
             console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
         }
@@ -29,7 +30,9 @@ var HTTPService = /** @class */ (function () {
                 else if (response.ErrorCode !== 1) {
                     reject(response);
                 }
-                resolve(response);
+                else {
+                    resolve(response);
+                }
             })
                 .catch(function (err) {
                 reject(err);

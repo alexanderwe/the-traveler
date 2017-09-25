@@ -54,6 +54,21 @@ var ComponentPrivacySetting;
     ComponentPrivacySetting[ComponentPrivacySetting["Private"] = 2] = "Private";
 })(ComponentPrivacySetting = exports.ComponentPrivacySetting || (exports.ComponentPrivacySetting = {}));
 /**
+ * Enum for Destiny acitivity difficulty
+ * @enum
+ */
+var DestinyActivityDifficultyTier;
+(function (DestinyActivityDifficultyTier) {
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Trivial"] = 0] = "Trivial";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Easy"] = 1] = "Easy";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Normal"] = 2] = "Normal";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Challenging"] = 3] = "Challenging";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Hard"] = 4] = "Hard";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Brave"] = 5] = "Brave";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["AlmostImpossible"] = 6] = "AlmostImpossible";
+    DestinyActivityDifficultyTier[DestinyActivityDifficultyTier["Impossible"] = 7] = "Impossible";
+})(DestinyActivityDifficultyTier = exports.DestinyActivityDifficultyTier || (exports.DestinyActivityDifficultyTier = {}));
+/**
  * Enum for Destiny acitivity mode type
  * @enum
  */

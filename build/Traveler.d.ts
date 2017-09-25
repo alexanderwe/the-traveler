@@ -1,6 +1,6 @@
-import 'es6-promise';
+import 'es6-map';
 import { BungieMembershipType, TypeDefinition } from './enums';
-import { IAPIResponse, IConfig, IDestinyDefinition, IDestinyItemActionRequest, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyProfileResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
+import { IAPIResponse, IConfig, IDestinyCharacterResponse, IDestinyDefinition, IDestinyItemActionRequest, IDestinyItemResponse, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyMilestone, IDestinyProfileResponse, IDestinyVendorResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -71,16 +71,16 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyCharacterResponse>} When fulfilled returns an object containing stats about the specified character
      */
-    getCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyCharacterResponse>>;
     /**
      * Returns information on the weekly clan rewards and if the clan has earned them or not. Note that this will always report rewards as not redeemed
      * @async
      * @param groupId Group ID of the clan whose stats you wish to fetch
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing information about the weekly clan results
      */
-    getClanWeeklyRewardState(groupId: string): Promise<IAPIResponse>;
+    getClanWeeklyRewardState(groupId: string): Promise<IAPIResponse<IDestinyMilestone>>;
     /**
      * Get the details of an instanced Destiny Item. Materials and other non-instanced items can not be queried with this endpoint.
      * The items are coupled with an specific Destiny Account
@@ -94,9 +94,9 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the queried item
+     * @return {Promise.IAPIResponse<IDestinyItemResponse>} When fulfilled returns an object containing stats about the queried item
      */
-    getItem(membershipType: BungieMembershipType, destinyMembershipId: string, itemInstanceId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getItem(membershipType: BungieMembershipType, destinyMembershipId: string, itemInstanceId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyItemResponse>>;
     /**
      * Retrieve all currently available vendors for a specific character
      * @async
@@ -109,9 +109,9 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
      */
-    getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse>>;
     /**
      * Retrieve all currently available vendors for a specific character
      * @async

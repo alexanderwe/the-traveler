@@ -46,6 +46,20 @@ export interface IConfig {
 export interface IDestinyActivityHistoryResults {
     activities: object[];
 }
+/**
+ * Interface for an character response object
+ * @interface
+ */
+export interface IDestinyCharacterResponse {
+    inventory?: ISingleComponentResponseOfDestinyInventoryComponent;
+    character?: ISingleComponentResponseOfDestinyCharacterComponent;
+    progressions?: ISingleComponentResponseOfDestinyCharacterProgressionComponent;
+    renderData?: SingleComponentResponseOfDestinyCharacterRenderComponent;
+    activities?: ISingleComponentResponseOfDestinyCharacterActivitiesComponent;
+    equipment?: ISingleComponentResponseOfDestinyInventoryComponent;
+    kiosks?: ISingleComponentResponseOfDestinyKiosksComponent;
+    itemComponents?: IDestinyItemComponentSetOfint64;
+}
 
 /**
  * Interface for common properties for destiny defitions
@@ -68,8 +82,37 @@ export interface IDestinyManifest {
     mobileWorldContentPaths: object;
     mobileClanBannerDatabasePath: string;
     mobileGearCDN: object;
-
 }
+
+
+/**
+ * Interface an response object for retrieving an individual instanced item
+ * @interface
+ */
+export interface IDestinyItemResponse {
+    characterId?: string;
+    item?: ISingleComponentResponseOfDestinyItemComponent;
+    instance?: ISingleComponentResponseOfDestinyItemInstanceComponent;
+    objectives?: ISingleComponentResponseOfDestinyItemObjectivesComponent;
+    perks?: ISingleComponentResponseOfDestinyItemPerksComponent;
+    renderData?: ISingleComponentResponseOfDestinyItemRenderComponent;
+    stats?: ISingleComponentResponseOfDestinyItemStatsComponent;
+    talentGrid?: ISingleComponentResponseOfDestinyItemTalentGridComponent;
+    sockets?: ISingleComponentResponseOfDestinyItemSocketsComponent;
+}
+
+/**
+ * Interface an response containing all of the components for a vendor.
+ * @interface
+ */
+export interface IDestinyVendorResponse {
+    vendor?: ISingleComponentResponseOfDestinyVendorComponent;
+    categories?: ISingleComponentResponseOfDestinyVendorCategoriesComponent;
+    sales?: IDictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent;
+    items: IDestinyItemComponentSetOfint32;
+}
+
+
 
 /**
  * Interface for defining an object in case of an item action request to the API
@@ -328,7 +371,9 @@ export interface IDictionaryComponentResponseOfint64AndDestinyInventoryComponent
  * @interface
  */
 export interface IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent {
-    data: IDestinyCharacterProgressionComponent;
+    data: {
+        [key: string]: IDestinyCharacterProgressionComponent;
+    };
     privacy: ComponentPrivacySetting;
 }
 
@@ -339,7 +384,7 @@ export interface IDictionaryComponentResponseOfint64AndDestinyCharacterProgressi
 export interface IDestinyCharacterProgressionComponent {
     progessions: IDestinyProgression;
     factions: IDestinyFactionProgression;
-    milesontes: IDestinyMilestone;
+    milestones: IDestinyMilestone;
     quests: IDestinyQuestStatus[];
     uninstancedItemObjectives: object;
 }

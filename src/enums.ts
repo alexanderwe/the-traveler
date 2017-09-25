@@ -117,8 +117,6 @@ export enum DestinyClass {
     Unknown = 3,
 }
 
-
-
 /**
  * A flags enumeration indicating the versions of the game that a given user has purchased.
  * @enum

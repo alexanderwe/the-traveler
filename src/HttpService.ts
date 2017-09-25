@@ -1,6 +1,7 @@
 import 'es6-promise';
 import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
+import * as util from 'util';
 import { IAPIResponse } from './interfaces';
 
 /**
@@ -31,8 +32,9 @@ export default class HTTPService {
                         resolve(response);
                     } else if (response.ErrorCode !== 1) {
                         reject(response);
+                    } else {
+                        resolve(response);
                     }
-                    resolve(response);
                 })
                 .catch((err) => {
                     reject(err);

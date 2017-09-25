@@ -23,6 +23,7 @@
     ],
     "scripts": {
         "start": "babel-node ./src/index.js --presets es2015,stage-2",
+        "debug": "babel-node ./src/index.js --presets es2015,stage-2",
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "nyc mocha",
@@ -44,7 +45,9 @@
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
         "codecov": "^2.3.0",
+        "es6-map": "^0.1.5",
         "es6-promise": "^4.1.1",
+        "es6-shim": "^0.35.3",
         "minami": "^1.2.3",
         "mocha": "^3.5.0",
         "nyc": "^11.2.1",
