@@ -46,18 +46,39 @@ export interface IConfig {
 export interface IDestinyActivityHistoryResults {
     activities: object[];
 }
+
+/**
+ * Interface for an sigle component
+ * @interface
+ */
+export interface ISingleComponentResponse<IComponent> {
+    data: IComponent;
+    privacy: ComponentPrivacySetting;
+}
+
+/**
+ * Interface for an sigle dictionary component
+ * @interface
+ */
+export interface IDictionaryComponent<IComponent> {
+    data: {
+        [key: string]: IComponent;
+    };
+    privacy: ComponentPrivacySetting;
+}
+
 /**
  * Interface for an character response object
  * @interface
  */
 export interface IDestinyCharacterResponse {
-    inventory?: ISingleComponentResponseOfDestinyInventoryComponent;
-    character?: ISingleComponentResponseOfDestinyCharacterComponent;
-    progressions?: ISingleComponentResponseOfDestinyCharacterProgressionComponent;
-    renderData?: SingleComponentResponseOfDestinyCharacterRenderComponent;
-    activities?: ISingleComponentResponseOfDestinyCharacterActivitiesComponent;
-    equipment?: ISingleComponentResponseOfDestinyInventoryComponent;
-    kiosks?: ISingleComponentResponseOfDestinyKiosksComponent;
+    inventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
+    character?: ISingleComponentResponse<IDestinyCharacterComponent>;
+    progressions?: ISingleComponentResponse<IDestinyCharacterProgressionComponent>;
+    renderData?: ISingleComponentResponse<IDestinyCharacterRenderComponent>;
+    activities?: ISingleComponentResponse<IDestinyCharacterActivitiesComponent>;
+    equipment?: ISingleComponentResponse<IDestinyInventoryComponent>;
+    kiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
     itemComponents?: IDestinyItemComponentSetOfint64;
 }
 
@@ -84,21 +105,20 @@ export interface IDestinyManifest {
     mobileGearCDN: object;
 }
 
-
 /**
  * Interface an response object for retrieving an individual instanced item
  * @interface
  */
 export interface IDestinyItemResponse {
     characterId?: string;
-    item?: ISingleComponentResponseOfDestinyItemComponent;
-    instance?: ISingleComponentResponseOfDestinyItemInstanceComponent;
-    objectives?: ISingleComponentResponseOfDestinyItemObjectivesComponent;
-    perks?: ISingleComponentResponseOfDestinyItemPerksComponent;
-    renderData?: ISingleComponentResponseOfDestinyItemRenderComponent;
-    stats?: ISingleComponentResponseOfDestinyItemStatsComponent;
-    talentGrid?: ISingleComponentResponseOfDestinyItemTalentGridComponent;
-    sockets?: ISingleComponentResponseOfDestinyItemSocketsComponent;
+    item?: ISingleComponentResponse<IDestinyItemComponent>;
+    instance?: ISingleComponentResponse<IDestinyItemInstanceComponent>;
+    objectives?: ISingleComponentResponse<IDestinyItemObjectivesComponent>;
+    perks?: ISingleComponentResponse<IDestinyItemPerksComponent>;
+    renderData?: ISingleComponentResponse<IDestinyItemRenderComponent>;
+    stats?: ISingleComponentResponse<IDestinyItemStatsComponent>;
+    talentGrid?: ISingleComponentResponse<IDestinyItemTalentGridComponent>;
+    sockets?: ISingleComponentResponse<IDestinyItemSocketsComponent>;
 }
 
 /**
@@ -106,8 +126,8 @@ export interface IDestinyItemResponse {
  * @interface
  */
 export interface IDestinyVendorResponse {
-    vendor?: ISingleComponentResponseOfDestinyVendorComponent;
-    categories?: ISingleComponentResponseOfDestinyVendorCategoriesComponent;
+    vendor?: ISingleComponentResponse<IDestinyVendorComponent>;
+    categories?: ISingleComponentResponse<IDestinyVendorCategoriesComponent>
     sales?: IDictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent;
     items: IDestinyItemComponentSetOfint32;
 }
@@ -212,18 +232,18 @@ export interface IOAuthResponse {
  * @interface 
  */
 export interface IDestinyProfileResponse {
-    vendorReceipts?: ISingleComponentResponseOfDestinyVendorReceiptsComponent;
-    profileInventory?: ISingleComponentResponseOfDestinyInventoryComponent;
-    profileCurrencies?: ISingleComponentResponseOfDestinyInventoryComponent;
-    profile?: ISingleComponentResponseOfDestinyProfileComponent;
-    profileKiosks?: ISingleComponentResponseOfDestinyKiosksComponent;
-    characters?: IDictionaryComponentResponseOfint64AndDestinyCharacterComponent;
-    characterInventories?: IDictionaryComponentResponseOfint64AndDestinyInventoryComponent;
-    characterProgressions?: IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent;
-    characterRenderData?: IDictionaryComponentResponseOfint64AndDestinyCharacterRenderComponent;
-    characterActivities?: IDictionaryComponentResponseOfint64AndDestinyCharacterActivitiesComponent;
-    characterEquipment?: IDictionaryComponentResponseOfint64AndDestinyInventoryComponent;
-    characterKiosks?: IDictionaryComponentResponseOfint64AndDestinyKiosksComponent;
+    vendorReceipts?: ISingleComponentResponse<IDestinyVendorReceiptsComponent>;
+    profileInventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
+    profileCurrencies?: ISingleComponentResponse<IDestinyInventoryComponent>;
+    profile?: ISingleComponentResponse<IDestinyProfileComponent>;
+    profileKiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
+    characters?: IDictionaryComponent<IDestinyCharacterComponent>;
+    characterInventories?: IDictionaryComponent<IDestinyInventoryComponent>;
+    characterProgressions?: IDictionaryComponent<IDestinyCharacterProgressionComponent>;
+    characterRenderData?: IDictionaryComponent<IDestinyCharacterRenderComponent>;
+    characterActivities?: IDictionaryComponent<IDestinyCharacterActivitiesComponent>;
+    characterEquipment?: IDictionaryComponent<IDestinyInventoryComponent>;
+    characterKiosks?: IDictionaryComponent<IDestinyKiosksComponent>;
     itemComponents?: IDestinyItemComponentSetOfint64;
 }
 
@@ -241,24 +261,6 @@ export interface IDestinyItemComponentSetOfint64 {
     sockets: object;
     talentGrids: object;
     plugStates: object;
-}
-
-/**
- * Interface for an response of Destiny 2 kiosks component
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyKiosksComponent {
-    data: IDestinyKiosksComponent;
-    pricavy: ComponentPrivacySetting;
-}
-
-/**
- * Interface for an response of an characters activities component
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyCharacterActivitiesComponent {
-    data: IDestinyCharacterActivitiesComponent;
-    privacy: ComponentPrivacySetting;
 }
 
 /**
@@ -293,14 +295,6 @@ export interface IDestinyActivity {
     difficultyTier: DestinyActivityDifficultyTier;
 }
 
-/**
- * Interface for an response of an character render data component
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyCharacterRenderComponent {
-    data: IDestinyCharacterRenderComponent;
-    privacy: ComponentPrivacySetting;
-}
 
 /**
  * Interface for character render data component
@@ -357,25 +351,6 @@ export interface IDyeReference {
     dyeHash: string;
 }
 
-/**
- * Interface for an response of an inventory component
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyInventoryComponent {
-    data: IDestinyInventoryComponent;
-    privacy: ComponentPrivacySetting;
-}
-
-/**
- * Interface for an response of an character progress component
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent {
-    data: {
-        [key: string]: IDestinyCharacterProgressionComponent;
-    };
-    privacy: ComponentPrivacySetting;
-}
 
 /**
  * Interface for a single character progress component
@@ -507,15 +482,6 @@ export interface IDestinyObjectiveProgress {
 }
 
 /**
- * Interface for an response of an destiny character
- * @interface
- */
-export interface IDictionaryComponentResponseOfint64AndDestinyCharacterComponent {
-    data: IDestinyCharacterComponent;
-    privacy: ComponentPrivacySetting;
-}
-
-/**
  * This component contains base properties of the character.
  * @interface
  */
@@ -600,14 +566,6 @@ export interface IDestinyVendorReceipt {
     timeToExpiration: number;
     expiresOn: Date;
 }
-/**
- * Interface for a signle component response of an inventory
- * @interface
- */
-export interface ISingleComponentResponseOfDestinyInventoryComponent {
-    data: IDestinyInventoryComponent;
-    privacy: ComponentPrivacySetting;
-}
 
 /**
  * Interface for  minimal information for items in an inventory:
@@ -630,24 +588,6 @@ export interface IDestinyItemComponent {
 }
 
 /**
- * Interface for a signle component response of destiny vendor receipts
- * @interface
- */
-export interface ISingleComponentResponseOfDestinyVendorReceiptsComponent {
-    data: IDestinyVendorReceiptsComponent;
-    privacy: ComponentPrivacySetting;
-}
-
-/**
- * Interface for a signle component response of a destiny profile
- * @interface
- */
-export interface ISingleComponentResponseOfDestinyProfileComponent {
-    data: IDestinyProfileComponent;
-    privacy: ComponentPrivacySetting;
-}
-
-/**
  * Interface for a signle destiny profile
  * @interface
  */
@@ -656,15 +596,6 @@ export interface IDestinyProfileComponent {
     dateLastPlayed: Date;
     versionsOwned: DestinyGameVersion;
     characterIds: string[];
-}
-
-/**
- * Interface for a single component response of a destiny kiosk
- * @interface
- */
-export interface ISingleComponentResponseOfDestinyKiosksComponent {
-    data: IDestinyKiosksComponent;
-    privacy: ComponentPrivacySetting;
 }
 
 /**
