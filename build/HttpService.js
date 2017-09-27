@@ -31,7 +31,7 @@ var HTTPService = /** @class */ (function () {
                     reject(response);
                 }
                 else {
-                    resolve(response);
+                    resolve(JSON.parse(JSON.stringify(response)));
                 }
             })
                 .catch(function (err) {

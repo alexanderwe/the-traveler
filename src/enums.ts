@@ -52,6 +52,19 @@ export enum ComponentPrivacySetting {
 }
 
 /**
+ * Enum for the damage type of items
+ * @enum
+ */
+export enum DamageType {
+    None = 0,
+    Kinetic = 1,
+    Arc = 2,
+    Thermal = 3,
+    Void = 4,
+    Raid = 5,
+}
+
+/**
  * Enum for Destiny acitivity difficulty
  * @enum
  */
@@ -160,6 +173,40 @@ export enum DestinyStatsGroupType {
     Activity = 102,
     UniqueWeapon = 103,
     Internal = 104,
+}
+
+/**
+ * Enum for Destiny talent node states
+ * @enum
+ */
+export enum DestinyTalentNodeState {
+    Invalid = 0,
+    CanUpgrade = 1,
+    NoPoints = 2,
+    NoPrerequisites = 3,
+    NoSteps = 4,
+    NoUnlock = 5,
+    NoMaterial = 6,
+    NoGridLevel = 7,
+    SwappingLocked = 8,
+    MustSwap = 9,
+    Complete = 10,
+    Unknown = 11,
+    CreationOnly = 12,
+    Hidden = 13,
+}
+
+/**
+ * The reasons why an item cannot be equipped, if any. Many flags can be set, or "None" if
+ * @enum
+ */
+export enum EquipFailureReason {
+    None = 0,
+    ItemUnequippable = 1,
+    temUniqueEquipRestricted = 2,
+    ItemFailedUnlockCheck = 4,
+    ItemFailedLevelCheck = 8,
+    ItemNotOnCharacter = 16,
 }
 
 /**
@@ -828,46 +875,26 @@ export enum PlatformErrorCodes {
 }
 
 /**
- * Enum for different type definitions
+ * Enum for different stat category types
  * @enum
  */
-export enum TypeDefinition {
-    DestinyActivityGraphDefinition = 'DestinyActivityGraphDefinition',
-    DestinyActivityModeDefinition = 'DestinyActivityModeDefinition',
-    DestinyActivityModifierDefinition = 'DestinyActivityModifierDefinition',
-    DestinyActivityTypeDefinition = 'DestinyActivityTypeDefinition',
-    DestinyBondDefinition = 'DestinyBondDefinition',
-    DestinyClassDefinition = 'DestinyClassDefinition',
-    DestinyDamageTypeDefinition = 'DestinyDamageTypeDefinition',
-    DestinyDestinationDefinition = 'DestinyDestinationDefinition',
-    DestinyEnemyRaceDefinition = 'DestinyEnemyRaceDefinition',
-    DestinyFactionDefinition = 'DestinyFactionDefinition',
-    DestinyGenderDefinition = 'DestinyGenderDefinition',
-    DestinyHistoricalStatsDefinition = 'DestinyHistoricalStatsDefinition',
-    DestinyInventoryBucketDefinition = 'DestinyInventoryBucketDefinition',
-    DestinyInventoryItemDefinition = 'DestinyInventoryItemDefinition',
-    DestinyItemCategoryDefinition = 'DestinyItemCategoryDefinition',
-    DestinyItemTierTypeDefinition = 'DestinyItemTierTypeDefinition',
-    DestinyLocationDefinition = 'DestinyLocationDefinition',
-    DestinyLoreDefinition = 'DestinyLoreDefinition',
-    DestinyMedalTierDefinition = 'DestinyMedalTierDefinition',
-    DestinyMilestoneDefinition = 'DestinyMilestoneDefinition',
-    DestinyObjectiveDefinition = 'DestinyObjectiveDefinition',
-    DestinyPlaceDefinition = 'DestinyPlaceDefinition',
-    DestinyProgressionDefinition = 'DestinyProgressionDefinition',
-    DestinyProgressionLevelRequirementDefinition = 'DestinyProgressionLevelRequirementDefinition',
-    DestinyRaceDefinition = 'DestinyRaceDefinition',
-    DestinyRewardSourceDefinition = 'DestinyRewardSourceDefinition',
-    DestinySackRewardItemListDefinition = 'DestinySackRewardItemListDefinition',
-    DestinySandboxPerkDefinition = 'DestinySandboxPerkDefinition',
-    DestinySocketCategoryDefinition = 'DestinySocketCategoryDefinition',
-    DestinySocketTypeDefinition = 'DestinySocketTypeDefinition',
-    DestinyStatDefinition = 'DestinyStatDefinition',
-    DestinyStatGroupDefinition = 'DestinyStatGroupDefinition',
-    DestinyTalentGridDefinition = 'DestinyTalentGridDefinition',
-    DestinyUnlockDefinition = 'DestinyUnlockDefinition',
-    DestinyVendorCategoryDefinition = 'DestinyVendorCategoryDefinition',
-    DestinyVendorDefinition = 'DestinyVendorDefinition',
+export enum StatsCategoryType {
+    None = 0,
+    Kills = 1,
+    Assists = 2,
+    Deaths = 3,
+    Criticals = 4,
+    KDa = 5,
+    KD = 6,
+    Score = 7,
+    Entered = 8,
+    TimePlayed = 9,
+    MedalWins = 10,
+    MedalGame = 11,
+    MedalSpecialKills = 12,
+    MedalSprees = 13,
+    MedalMultiKills = 14,
+    MedalAbilities = 15,
 }
 
 /**
@@ -1106,6 +1133,49 @@ export enum StatId {
 }
 
 /**
+ * Enum for different type definitions
+ * @enum
+ */
+export enum TypeDefinition {
+    DestinyActivityGraphDefinition = 'DestinyActivityGraphDefinition',
+    DestinyActivityModeDefinition = 'DestinyActivityModeDefinition',
+    DestinyActivityModifierDefinition = 'DestinyActivityModifierDefinition',
+    DestinyActivityTypeDefinition = 'DestinyActivityTypeDefinition',
+    DestinyBondDefinition = 'DestinyBondDefinition',
+    DestinyClassDefinition = 'DestinyClassDefinition',
+    DestinyDamageTypeDefinition = 'DestinyDamageTypeDefinition',
+    DestinyDestinationDefinition = 'DestinyDestinationDefinition',
+    DestinyEnemyRaceDefinition = 'DestinyEnemyRaceDefinition',
+    DestinyFactionDefinition = 'DestinyFactionDefinition',
+    DestinyGenderDefinition = 'DestinyGenderDefinition',
+    DestinyHistoricalStatsDefinition = 'DestinyHistoricalStatsDefinition',
+    DestinyInventoryBucketDefinition = 'DestinyInventoryBucketDefinition',
+    DestinyInventoryItemDefinition = 'DestinyInventoryItemDefinition',
+    DestinyItemCategoryDefinition = 'DestinyItemCategoryDefinition',
+    DestinyItemTierTypeDefinition = 'DestinyItemTierTypeDefinition',
+    DestinyLocationDefinition = 'DestinyLocationDefinition',
+    DestinyLoreDefinition = 'DestinyLoreDefinition',
+    DestinyMedalTierDefinition = 'DestinyMedalTierDefinition',
+    DestinyMilestoneDefinition = 'DestinyMilestoneDefinition',
+    DestinyObjectiveDefinition = 'DestinyObjectiveDefinition',
+    DestinyPlaceDefinition = 'DestinyPlaceDefinition',
+    DestinyProgressionDefinition = 'DestinyProgressionDefinition',
+    DestinyProgressionLevelRequirementDefinition = 'DestinyProgressionLevelRequirementDefinition',
+    DestinyRaceDefinition = 'DestinyRaceDefinition',
+    DestinyRewardSourceDefinition = 'DestinyRewardSourceDefinition',
+    DestinySackRewardItemListDefinition = 'DestinySackRewardItemListDefinition',
+    DestinySandboxPerkDefinition = 'DestinySandboxPerkDefinition',
+    DestinySocketCategoryDefinition = 'DestinySocketCategoryDefinition',
+    DestinySocketTypeDefinition = 'DestinySocketTypeDefinition',
+    DestinyStatDefinition = 'DestinyStatDefinition',
+    DestinyStatGroupDefinition = 'DestinyStatGroupDefinition',
+    DestinyTalentGridDefinition = 'DestinyTalentGridDefinition',
+    DestinyUnlockDefinition = 'DestinyUnlockDefinition',
+    DestinyVendorCategoryDefinition = 'DestinyVendorCategoryDefinition',
+    DestinyVendorDefinition = 'DestinyVendorDefinition',
+}
+
+/**
  * Enum for the transfer status of an item
  * @enum
  */
@@ -1117,6 +1187,26 @@ export enum TransferStatus {
 }
 
 /**
+ * Enum for unit types
+ * @enum
+ */
+export enum UnitType {
+    None = 0,
+    Count = 1,
+    PerGame = 2,
+    Seconds = 3,
+    Points = 4,
+    Team = 5,
+    Distance = 6,
+    Percent = 7,
+    Ratio = 8,
+    Boolean = 9,
+    WeaponType = 10,
+    Standing = 11,
+    Milliseconds = 12,
+}
+
+/**
  * Enum for the vendor item refund policy
  * @enum
  */
@@ -1124,4 +1214,25 @@ export enum VendorItemRefundPolicy {
     NotRefundable = 0,
     DeletesItem = 1,
     RevokesLicense = 2,
+}
+
+/**
+ * Enum for the vendor item status
+ * @enum
+ */
+export enum VendorItemStatus {
+    Success = 0,
+    NoInventorySpace = 1,
+    NoFunds = 2,
+    NoProgression = 4,
+    NoUnlock = 8,
+    NoQuantity = 16,
+    OutsidePurchaseWindow = 32,
+    NotAvailable = 64,
+    UniquenessViolation = 128,
+    UnknownError = 256,
+    AlreadySelling = 512,
+    Unsellable = 1024,
+    SellingInhibited = 2048,
+    AlreadyOwned = 4096,
 }

@@ -1,6 +1,6 @@
 import 'es6-map';
 import { BungieMembershipType, TypeDefinition } from './enums';
-import { IAPIResponse, IConfig, IDestinyCharacterResponse, IDestinyDefinition, IDestinyItemActionRequest, IDestinyItemResponse, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyMilestone, IDestinyProfileResponse, IDestinyVendorResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
+import { IAPIResponse, IConfig, IDestinyActivityHistoryResults, IDestinyAggregateActivityResults, IDestinyCharacterResponse, IDestinyClanAggregateStat, IDestinyDefinition, IDestinyEntitySearchResult, IDestinyEquipItemResults, IDestinyHistoricalStatsAccountResult, IDestinyHistoricalStatsByPeriod, IDestinyHistoricalStatsDefinition, IDestinyHistoricalWeaponStatsData, IDestinyItemActionRequest, IDestinyItemResponse, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyMilestone, IDestinyMilestoneContent, IDestinyPostGameCarnageReportData, IDestinyProfileResponse, IDestinyPublicMilestone, IDestinyVendorResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -109,9 +109,9 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
      */
-    getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse>>;
+    getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse[]>>;
     /**
      * Retrieve all currently available vendors for a specific character
      * @async
@@ -125,21 +125,21 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
      */
-    getVendor(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getVendor(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse>>;
     /**
      * Ge the post carnage report for a specific activity ID
      * @async
      * @param activityId The activity ID for getting the carnage report
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the carnage report for the specified activity
+     * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity
      */
-    getPostGameCarnageReport(activityId: string): Promise<IAPIResponse>;
+    getPostGameCarnageReport(activityId: string): Promise<IAPIResponse<IDestinyPostGameCarnageReportData>>;
     /**
      * Get historical stats definitions. This contains the values for the `<br` key.
      * @async
      */
-    getHistoricalStatsDefinition(): Promise<IAPIResponse>;
+    getHistoricalStatsDefinition(): Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>>;
     /**
      * Get the leaderboard of a clan
      * @async
@@ -153,9 +153,9 @@ export default class Traveler {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing leaderboards for a clan
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing leaderboards for a clan
      */
-    getClanLeaderboards(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getClanLeaderboards(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>>;
     /**
      * Gets aggregated stats for a clan using the same categories as the clan leaderboards
      * @async
@@ -165,9 +165,9 @@ export default class Traveler {
      * <li>modes {string[]}: Array of game modes for which to get stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated stats for a clan
+     * @return {Promise.IAPIResponse<IDestinyClanAggregateStat[]>} When fulfilled returns an object containing aggregated stats for a clan
      */
-    getClanAggregateStats(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getClanAggregateStats(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyClanAggregateStat[]>>;
     /**
      * Gets leaderboards with the signed in user's friends and the supplied destinyMembershipId as the focus.
      * @async
@@ -184,9 +184,9 @@ export default class Traveler {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * See {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the leaderboard
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing the leaderboard
      */
-    getLeaderboards(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getLeaderboards(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>>;
     /**
      * Gets leaderboards for the specified character and friend's
      * @async
@@ -206,7 +206,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing the leaderboard
      */
-    getLeaderboardsForCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getLeaderboardsForCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>>;
     /**
      * Gets a page list of Destiny items
      * @async
@@ -215,9 +215,9 @@ export default class Traveler {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>page {number} Page number to return, starting with 0</li>
-     * @return {Promise.IAPIResponse} The entities search result
+     * @return {Promise.IAPIResponse<IDestinyEntitySearchResult>} The entities search result
      */
-    searchDestinyEntities(searchTerm: string, typeDefinition: TypeDefinition, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    searchDestinyEntities(searchTerm: string, typeDefinition: TypeDefinition, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyEntitySearchResult>>;
     /**
      * Gets activity history stats for indicated character
      * @async
@@ -242,7 +242,9 @@ export default class Traveler {
      * </ul>
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the characters historical stats
      */
-    getHistoricalStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getHistoricalStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<{
+        [key: string]: IDestinyHistoricalStatsByPeriod;
+    }>>;
     /**
      * Retrieve aggregrated details about a Destiny account's characters
      * @async
@@ -255,9 +257,9 @@ export default class Traveler {
      * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </ul>
-     * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
+     * @return {Promise.IAPIResponse<IDestinyHistoricalStatsAccountResult>} When fulfilled returns an object containing stats about the found user's account
      */
-    getHistoricalStatsForAccount(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getHistoricalStatsForAccount(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyHistoricalStatsAccountResult>>;
     /**
      * Gets activity history stats for indicated character
      * @async
@@ -274,9 +276,9 @@ export default class Traveler {
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats for activities for the specified character
+     * @return {Promise.IAPIResponse<IDestinyActivityHistoryResults>} When fulfilled returns an object containing stats for activities for the specified character
      */
-    getActivityHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse>;
+    getActivityHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyActivityHistoryResults>>;
     /**
      * Gets details about unique weapon usage, including all exotic weapons
      * @async
@@ -285,9 +287,9 @@ export default class Traveler {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
+     * @return {Promise.IAPIResponse<IDestinyHistoricalWeaponStatsData>} When fulfilled returns an object containing information about the weapon usage for the indiciated character
      */
-    getUniqueWeaponHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse>;
+    getUniqueWeaponHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse<IDestinyHistoricalWeaponStatsData>>;
     /**
      * Gets all activities the character has participated in together with aggregate statistics for those activities
      * @async
@@ -296,21 +298,23 @@ export default class Traveler {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyAggregateActivityResults>} When fulfilled returns an object containing aggregated information about recent activities
      */
-    getAggregateActivityStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse>;
+    getAggregateActivityStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse<IDestinyAggregateActivityResults>>;
     /**
      * Gets custom localized content for the milestone of the given hash, if it exists.
      * @async
      * @param milestoneHash The identifier for the milestone to be returned
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyMilestoneContent>} When fulfilled returns an object containing aggregated information about recent activities
      */
-    getPublicMilestoneContent(milestoneHash: string): Promise<IAPIResponse>;
+    getPublicMilestoneContent(milestoneHash: string): Promise<IAPIResponse<IDestinyMilestoneContent>>;
     /**
      * Gets public information about currently available Milestones
      * @async
      */
-    getPublicMilestones(): Promise<IAPIResponse>;
+    getPublicMilestones(): Promise<IAPIResponse<{
+        [key: string]: IDestinyPublicMilestone;
+    }>>;
     /**
      * Equip an item from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
      * @async
@@ -321,7 +325,7 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse>;
+    equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>>;
     /**
      * Equip multiple items from the inventory. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
      * @async
@@ -332,7 +336,7 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    equipItems(itemActionRequest: IDestinyItemSetActionRequest): Promise<IAPIResponse>;
+    equipItems(itemActionRequest: IDestinyItemSetActionRequest): Promise<IAPIResponse<IDestinyEquipItemResults>>;
     /**
      * Set the Lock State for an instanced item in your inventory. You must have a valid Destiny Account.
      * @async
@@ -344,7 +348,7 @@ export default class Traveler {
      * <li>membershipType {number}: The BungieMemberschipType</li>
      * </ul>
      */
-    setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<IAPIResponse>;
+    setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<IAPIResponse<number>>;
     /**
      * Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item (in your inventory).
      * @async
@@ -358,7 +362,7 @@ export default class Traveler {
      * <li>membershipType {umber}: The BungieMemberschipType</li>
      * </ul>
      */
-    transferItem(transferRequest: IDestinyItemTransferRequest): Promise<IAPIResponse>;
+    transferItem(transferRequest: IDestinyItemTransferRequest): Promise<IAPIResponse<number>>;
     /**
      * Insert a plug into a socketed item. <strong>NOT RELEASED</strong>
      * @async
@@ -370,7 +374,7 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse>;
+    insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>>;
     /**
      * Activate a Talent Node <strong>NOT RELEASED</strong>
      * @async
@@ -382,7 +386,7 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse>;
+    activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>>;
     /**
      * Generates the OAuthURL where your users need to sign up to give your application access to
      * authorized endpoints.

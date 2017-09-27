@@ -6,8 +6,17 @@ import HTTPService from './HttpService';
 import {
     IAPIResponse,
     IConfig,
+    IDestinyActivityHistoryResults,
+    IDestinyAggregateActivityResults,
     IDestinyCharacterResponse,
+    IDestinyClanAggregateStat,
     IDestinyDefinition,
+    IDestinyEntitySearchResult,
+    IDestinyEquipItemResults,
+    IDestinyHistoricalStatsAccountResult,
+    IDestinyHistoricalStatsByPeriod,
+    IDestinyHistoricalStatsDefinition,
+    IDestinyHistoricalWeaponStatsData,
     IDestinyItemActionRequest,
     IDestinyItemResponse,
     IDestinyItemSetActionRequest,
@@ -15,7 +24,10 @@ import {
     IDestinyItemTransferRequest,
     IDestinyManifest,
     IDestinyMilestone,
+    IDestinyMilestoneContent,
+    IDestinyPostGameCarnageReportData,
     IDestinyProfileResponse,
+    IDestinyPublicMilestone,
     IDestinyVendorResponse,
     IOAuthConfig,
     IOAuthResponse,
@@ -263,14 +275,14 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
      */
-    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse>> {
+    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse[]>> {
         if (this.oauthOptions) { // if we have oauth available use it 
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
-                    .then((response: IAPIResponse<IDestinyVendorResponse>) => {
+                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -279,9 +291,9 @@ export default class Traveler {
             });
         } else {
             this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
                 this.httpService.get(this.options)
-                    .then((response: IAPIResponse<IDestinyVendorResponse>) => {
+                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -305,13 +317,13 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
      */
-    public getVendor(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getVendor(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, vendorHash: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse>> {
         this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyVendorResponse>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyVendorResponse>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -324,13 +336,13 @@ export default class Traveler {
      * Ge the post carnage report for a specific activity ID
      * @async
      * @param activityId The activity ID for getting the carnage report
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the carnage report for the specified activity
+     * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity
      */
-    public getPostGameCarnageReport(activityId: string): Promise<IAPIResponse> {
+    public getPostGameCarnageReport(activityId: string): Promise<IAPIResponse<IDestinyPostGameCarnageReportData>> {
         this.options.uri = `${this.apibase}/Stats/PostGameCarnageReport/${activityId}/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyPostGameCarnageReportData>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyPostGameCarnageReportData>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -343,11 +355,11 @@ export default class Traveler {
      * Get historical stats definitions. This contains the values for the `<br` key.
      * @async
      */
-    public getHistoricalStatsDefinition(): Promise<IAPIResponse> {
+    public getHistoricalStatsDefinition(): Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>> {
         this.options.uri = `${this.apibase}/Stats/Definition/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyHistoricalStatsDefinition>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -369,13 +381,13 @@ export default class Traveler {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing leaderboards for a clan
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing leaderboards for a clan
      */
-    public getClanLeaderboards(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getClanLeaderboards(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>> {
         this.options.uri = `${this.apibase}/Stats/Leaderboards/Clans/${groupId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<object>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<object>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -393,13 +405,13 @@ export default class Traveler {
      * <li>modes {string[]}: Array of game modes for which to get stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated stats for a clan
+     * @return {Promise.IAPIResponse<IDestinyClanAggregateStat[]>} When fulfilled returns an object containing aggregated stats for a clan
      */
-    public getClanAggregateStats(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getClanAggregateStats(groupId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyClanAggregateStat[]>> {
         this.options.uri = `${this.apibase}/Stats/AggregateClanStats/${groupId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyClanAggregateStat[]>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyClanAggregateStat[]>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -424,13 +436,13 @@ export default class Traveler {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * See {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the leaderboard
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboards(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getLeaderboards(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<object>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<object>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -458,11 +470,11 @@ export default class Traveler {
      * </ul>
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing the leaderboard
      */
-    public getLeaderboardsForCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getLeaderboardsForCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<object>> {
         this.options.uri = `${this.apibase}/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<object>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<object>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -479,13 +491,13 @@ export default class Traveler {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>page {number} Page number to return, starting with 0</li>
-     * @return {Promise.IAPIResponse} The entities search result
+     * @return {Promise.IAPIResponse<IDestinyEntitySearchResult>} The entities search result
      */
-    public searchDestinyEntities(searchTerm: string, typeDefinition: TypeDefinition, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public searchDestinyEntities(searchTerm: string, typeDefinition: TypeDefinition, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyEntitySearchResult>> {
         this.options.uri = `${this.apibase}/Armory/Search/${typeDefinition}/${searchTerm}/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyEntitySearchResult>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyEntitySearchResult>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -517,11 +529,17 @@ export default class Traveler {
      * </ul>
      * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats about the characters historical stats
      */
-    public getHistoricalStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getHistoricalStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<{
+        [key: string]: IDestinyHistoricalStatsByPeriod;
+    }>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<{
+            [key: string]: IDestinyHistoricalStatsByPeriod;
+        }>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<{
+                    [key: string]: IDestinyHistoricalStatsByPeriod;
+                }>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -542,13 +560,13 @@ export default class Traveler {
      * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </ul>
-     * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
+     * @return {Promise.IAPIResponse<IDestinyHistoricalStatsAccountResult>} When fulfilled returns an object containing stats about the found user's account
      */
-    public getHistoricalStatsForAccount(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getHistoricalStatsForAccount(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyHistoricalStatsAccountResult>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Stats/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyHistoricalStatsAccountResult>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyHistoricalStatsAccountResult>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -573,13 +591,13 @@ export default class Traveler {
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats for activities for the specified character
+     * @return {Promise.IAPIResponse<IDestinyActivityHistoryResults>} When fulfilled returns an object containing stats for activities for the specified character
      */
-    public getActivityHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse> {
+    public getActivityHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyActivityHistoryResults>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/${this.resolveQueryStringParameters(queryStringParameters)}`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyActivityHistoryResults>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyActivityHistoryResults>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -596,13 +614,13 @@ export default class Traveler {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
+     * @return {Promise.IAPIResponse<IDestinyHistoricalWeaponStatsData>} When fulfilled returns an object containing information about the weapon usage for the indiciated character
      */
-    public getUniqueWeaponHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse> {
+    public getUniqueWeaponHistory(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse<IDestinyHistoricalWeaponStatsData>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyHistoricalWeaponStatsData>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyHistoricalWeaponStatsData>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -619,13 +637,13 @@ export default class Traveler {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyAggregateActivityResults>} When fulfilled returns an object containing aggregated information about recent activities
      */
-    public getAggregateActivityStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse> {
+    public getAggregateActivityStats(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string): Promise<IAPIResponse<IDestinyAggregateActivityResults>> {
         this.options.uri = `${this.apibase}/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyAggregateActivityResults>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyAggregateActivityResults>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -638,13 +656,13 @@ export default class Traveler {
      * Gets custom localized content for the milestone of the given hash, if it exists.
      * @async
      * @param milestoneHash The identifier for the milestone to be returned
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyMilestoneContent>} When fulfilled returns an object containing aggregated information about recent activities
      */
-    public getPublicMilestoneContent(milestoneHash: string): Promise<IAPIResponse> {
+    public getPublicMilestoneContent(milestoneHash: string): Promise<IAPIResponse<IDestinyMilestoneContent>> {
         this.options.uri = `${this.apibase}/Milestones/${milestoneHash}/Content/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<IDestinyMilestoneContent>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<IDestinyMilestoneContent>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -657,11 +675,11 @@ export default class Traveler {
      * Gets public information about currently available Milestones
      * @async
      */
-    public getPublicMilestones(): Promise<IAPIResponse> {
+    public getPublicMilestones(): Promise<IAPIResponse<{ [key: string]: IDestinyPublicMilestone }>> {
         this.options.uri = `${this.apibase}/Milestones/`;
-        return new Promise<IAPIResponse>((resolve, reject) => {
+        return new Promise<IAPIResponse<{ [key: string]: IDestinyPublicMilestone }>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse) => {
+                .then((response: IAPIResponse<{ [key: string]: IDestinyPublicMilestone }>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -680,14 +698,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse> {
+    public equipItem(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItem/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<number>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -709,14 +727,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public equipItems(itemActionRequest: IDestinyItemSetActionRequest): Promise<IAPIResponse> {
+    public equipItems(itemActionRequest: IDestinyItemSetActionRequest): Promise<IAPIResponse<IDestinyEquipItemResults>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItems/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyEquipItemResults>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<IDestinyEquipItemResults>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -739,14 +757,14 @@ export default class Traveler {
      * <li>membershipType {number}: The BungieMemberschipType</li>
      * </ul>
      */
-    public setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<IAPIResponse> {
+    public setItemLockState(stateRequest: IDestinyItemStateRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = stateRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/SetLockState/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<number>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -771,14 +789,14 @@ export default class Traveler {
      * <li>membershipType {umber}: The BungieMemberschipType</li>
      * </ul>
      */
-    public transferItem(transferRequest: IDestinyItemTransferRequest): Promise<IAPIResponse> {
+    public transferItem(transferRequest: IDestinyItemTransferRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = transferRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/TransferItem/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<number>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -801,14 +819,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse> {
+    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/InsertSocketPlug/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<number>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -831,14 +849,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse> {
+    public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/ActivateTalentNode/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse>((resolve, reject) => {
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse) => {
+                    .then((response: IAPIResponse<number>) => {
                         resolve(response);
                     })
                     .catch((err) => {

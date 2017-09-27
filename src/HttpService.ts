@@ -22,6 +22,7 @@ export default class HTTPService {
      */
     public get(options: rp.OptionsWithUri): Promise<object> {
         options.method = 'GET';
+        options.json = true;
         if (this.debug) {
             console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
         }
@@ -33,7 +34,7 @@ export default class HTTPService {
                     } else if (response.ErrorCode !== 1) {
                         reject(response);
                     } else {
-                        resolve(response);
+                        resolve(JSON.parse(JSON.stringify(response)));
                     }
                 })
                 .catch((err) => {

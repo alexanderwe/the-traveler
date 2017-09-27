@@ -234,7 +234,7 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
      */
     Traveler.prototype.getVendors = function (membershipType, destinyMembershipId, characterId, queryStringParameters) {
         var _this = this;
@@ -276,7 +276,7 @@ var Traveler = /** @class */ (function () {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorResponse>} When fulfilled returns an object containing all available vendors
      */
     Traveler.prototype.getVendor = function (membershipType, destinyMembershipId, characterId, vendorHash, queryStringParameters) {
         var _this = this;
@@ -295,7 +295,7 @@ var Traveler = /** @class */ (function () {
      * Ge the post carnage report for a specific activity ID
      * @async
      * @param activityId The activity ID for getting the carnage report
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the carnage report for the specified activity
+     * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity
      */
     Traveler.prototype.getPostGameCarnageReport = function (activityId) {
         var _this = this;
@@ -340,7 +340,7 @@ var Traveler = /** @class */ (function () {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing leaderboards for a clan
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing leaderboards for a clan
      */
     Traveler.prototype.getClanLeaderboards = function (groupId, queryStringParameters) {
         var _this = this;
@@ -364,7 +364,7 @@ var Traveler = /** @class */ (function () {
      * <li>modes {string[]}: Array of game modes for which to get stats <br />
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType|DestinyActivityModeType} for the different game mode IDs</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated stats for a clan
+     * @return {Promise.IAPIResponse<IDestinyClanAggregateStat[]>} When fulfilled returns an object containing aggregated stats for a clan
      */
     Traveler.prototype.getClanAggregateStats = function (groupId, queryStringParameters) {
         var _this = this;
@@ -395,7 +395,7 @@ var Traveler = /** @class */ (function () {
      * <li><statId {string}: ID of stat to return rather than returning all Leaderboard stats. <br />
      * See {@link https://alexanderwe.github.io/the-traveler/enums/statid.html|StatIds} for available ids</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing the leaderboard
+     * @return {Promise.IAPIResponse<object>} When fulfilled returns an object containing the leaderboard
      */
     Traveler.prototype.getLeaderboards = function (membershipType, destinyMembershipId, queryStringParameters) {
         var _this = this;
@@ -450,7 +450,7 @@ var Traveler = /** @class */ (function () {
      * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
      * <ul>
      * <li>page {number} Page number to return, starting with 0</li>
-     * @return {Promise.IAPIResponse} The entities search result
+     * @return {Promise.IAPIResponse<IDestinyEntitySearchResult>} The entities search result
      */
     Traveler.prototype.searchDestinyEntities = function (searchTerm, typeDefinition, queryStringParameters) {
         var _this = this;
@@ -514,7 +514,7 @@ var Traveler = /** @class */ (function () {
      * <li> groups {string[]}: Group of stats to include, otherwise only general stats are returned. Use the numbers. <br >/
      * See {@link https://bungie-net.github.io/multi/schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType.html#schema_Destiny-HistoricalStats-Definitions-DestinyStatsGroupType|DestinyStatsGroupType} for the different IDs
      * </ul>
-     * @return {Promise.object} When fulfilled returns an object containing stats about the found user's account
+     * @return {Promise.IAPIResponse<IDestinyHistoricalStatsAccountResult>} When fulfilled returns an object containing stats about the found user's account
      */
     Traveler.prototype.getHistoricalStatsForAccount = function (membershipType, destinyMembershipId, queryStringParameters) {
         var _this = this;
@@ -545,7 +545,7 @@ var Traveler = /** @class */ (function () {
      * </li>
      * <li>page {number}: Page number to return, starting with 0</li>
      * </ul>
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing stats for activities for the specified character
+     * @return {Promise.IAPIResponse<IDestinyActivityHistoryResults>} When fulfilled returns an object containing stats for activities for the specified character
      */
     Traveler.prototype.getActivityHistory = function (membershipType, destinyMembershipId, characterId, queryStringParameters) {
         var _this = this;
@@ -568,7 +568,7 @@ var Traveler = /** @class */ (function () {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.object} When fulfilled returns an object containing information about the weapon usage for the indiciated character
+     * @return {Promise.IAPIResponse<IDestinyHistoricalWeaponStatsData>} When fulfilled returns an object containing information about the weapon usage for the indiciated character
      */
     Traveler.prototype.getUniqueWeaponHistory = function (membershipType, destinyMembershipId, characterId) {
         var _this = this;
@@ -591,7 +591,7 @@ var Traveler = /** @class */ (function () {
      * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
      * @param destinyMembershipId The Destiny ID (Account ID)
      * @param characterId ID of the character
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyAggregateActivityResults>} When fulfilled returns an object containing aggregated information about recent activities
      */
     Traveler.prototype.getAggregateActivityStats = function (membershipType, destinyMembershipId, characterId) {
         var _this = this;
@@ -610,7 +610,7 @@ var Traveler = /** @class */ (function () {
      * Gets custom localized content for the milestone of the given hash, if it exists.
      * @async
      * @param milestoneHash The identifier for the milestone to be returned
-     * @return {Promise.IAPIResponse} When fulfilled returns an object containing aggregated information about recent activities
+     * @return {Promise.IAPIResponse<IDestinyMilestoneContent>} When fulfilled returns an object containing aggregated information about recent activities
      */
     Traveler.prototype.getPublicMilestoneContent = function (milestoneHash) {
         var _this = this;

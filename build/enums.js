@@ -54,6 +54,19 @@ var ComponentPrivacySetting;
     ComponentPrivacySetting[ComponentPrivacySetting["Private"] = 2] = "Private";
 })(ComponentPrivacySetting = exports.ComponentPrivacySetting || (exports.ComponentPrivacySetting = {}));
 /**
+ * Enum for the damage type of items
+ * @enum
+ */
+var DamageType;
+(function (DamageType) {
+    DamageType[DamageType["None"] = 0] = "None";
+    DamageType[DamageType["Kinetic"] = 1] = "Kinetic";
+    DamageType[DamageType["Arc"] = 2] = "Arc";
+    DamageType[DamageType["Thermal"] = 3] = "Thermal";
+    DamageType[DamageType["Void"] = 4] = "Void";
+    DamageType[DamageType["Raid"] = 5] = "Raid";
+})(DamageType = exports.DamageType || (exports.DamageType = {}));
+/**
  * Enum for Destiny acitivity difficulty
  * @enum
  */
@@ -165,6 +178,40 @@ var DestinyStatsGroupType;
     DestinyStatsGroupType[DestinyStatsGroupType["UniqueWeapon"] = 103] = "UniqueWeapon";
     DestinyStatsGroupType[DestinyStatsGroupType["Internal"] = 104] = "Internal";
 })(DestinyStatsGroupType = exports.DestinyStatsGroupType || (exports.DestinyStatsGroupType = {}));
+/**
+ * Enum for Destiny talent node states
+ * @enum
+ */
+var DestinyTalentNodeState;
+(function (DestinyTalentNodeState) {
+    DestinyTalentNodeState[DestinyTalentNodeState["Invalid"] = 0] = "Invalid";
+    DestinyTalentNodeState[DestinyTalentNodeState["CanUpgrade"] = 1] = "CanUpgrade";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoPoints"] = 2] = "NoPoints";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoPrerequisites"] = 3] = "NoPrerequisites";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoSteps"] = 4] = "NoSteps";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoUnlock"] = 5] = "NoUnlock";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoMaterial"] = 6] = "NoMaterial";
+    DestinyTalentNodeState[DestinyTalentNodeState["NoGridLevel"] = 7] = "NoGridLevel";
+    DestinyTalentNodeState[DestinyTalentNodeState["SwappingLocked"] = 8] = "SwappingLocked";
+    DestinyTalentNodeState[DestinyTalentNodeState["MustSwap"] = 9] = "MustSwap";
+    DestinyTalentNodeState[DestinyTalentNodeState["Complete"] = 10] = "Complete";
+    DestinyTalentNodeState[DestinyTalentNodeState["Unknown"] = 11] = "Unknown";
+    DestinyTalentNodeState[DestinyTalentNodeState["CreationOnly"] = 12] = "CreationOnly";
+    DestinyTalentNodeState[DestinyTalentNodeState["Hidden"] = 13] = "Hidden";
+})(DestinyTalentNodeState = exports.DestinyTalentNodeState || (exports.DestinyTalentNodeState = {}));
+/**
+ * The reasons why an item cannot be equipped, if any. Many flags can be set, or "None" if
+ * @enum
+ */
+var EquipFailureReason;
+(function (EquipFailureReason) {
+    EquipFailureReason[EquipFailureReason["None"] = 0] = "None";
+    EquipFailureReason[EquipFailureReason["ItemUnequippable"] = 1] = "ItemUnequippable";
+    EquipFailureReason[EquipFailureReason["temUniqueEquipRestricted"] = 2] = "temUniqueEquipRestricted";
+    EquipFailureReason[EquipFailureReason["ItemFailedUnlockCheck"] = 4] = "ItemFailedUnlockCheck";
+    EquipFailureReason[EquipFailureReason["ItemFailedLevelCheck"] = 8] = "ItemFailedLevelCheck";
+    EquipFailureReason[EquipFailureReason["ItemNotOnCharacter"] = 16] = "ItemNotOnCharacter";
+})(EquipFailureReason = exports.EquipFailureReason || (exports.EquipFailureReason = {}));
 /**
  * Enum for the item bind status
  * @enum
@@ -831,48 +878,28 @@ var PlatformErrorCodes;
     PlatformErrorCodes[PlatformErrorCodes["TrendingEntryTypeNotSupported"] = 2601] = "TrendingEntryTypeNotSupported";
 })(PlatformErrorCodes = exports.PlatformErrorCodes || (exports.PlatformErrorCodes = {}));
 /**
- * Enum for different type definitions
+ * Enum for different stat category types
  * @enum
  */
-var TypeDefinition;
-(function (TypeDefinition) {
-    TypeDefinition["DestinyActivityGraphDefinition"] = "DestinyActivityGraphDefinition";
-    TypeDefinition["DestinyActivityModeDefinition"] = "DestinyActivityModeDefinition";
-    TypeDefinition["DestinyActivityModifierDefinition"] = "DestinyActivityModifierDefinition";
-    TypeDefinition["DestinyActivityTypeDefinition"] = "DestinyActivityTypeDefinition";
-    TypeDefinition["DestinyBondDefinition"] = "DestinyBondDefinition";
-    TypeDefinition["DestinyClassDefinition"] = "DestinyClassDefinition";
-    TypeDefinition["DestinyDamageTypeDefinition"] = "DestinyDamageTypeDefinition";
-    TypeDefinition["DestinyDestinationDefinition"] = "DestinyDestinationDefinition";
-    TypeDefinition["DestinyEnemyRaceDefinition"] = "DestinyEnemyRaceDefinition";
-    TypeDefinition["DestinyFactionDefinition"] = "DestinyFactionDefinition";
-    TypeDefinition["DestinyGenderDefinition"] = "DestinyGenderDefinition";
-    TypeDefinition["DestinyHistoricalStatsDefinition"] = "DestinyHistoricalStatsDefinition";
-    TypeDefinition["DestinyInventoryBucketDefinition"] = "DestinyInventoryBucketDefinition";
-    TypeDefinition["DestinyInventoryItemDefinition"] = "DestinyInventoryItemDefinition";
-    TypeDefinition["DestinyItemCategoryDefinition"] = "DestinyItemCategoryDefinition";
-    TypeDefinition["DestinyItemTierTypeDefinition"] = "DestinyItemTierTypeDefinition";
-    TypeDefinition["DestinyLocationDefinition"] = "DestinyLocationDefinition";
-    TypeDefinition["DestinyLoreDefinition"] = "DestinyLoreDefinition";
-    TypeDefinition["DestinyMedalTierDefinition"] = "DestinyMedalTierDefinition";
-    TypeDefinition["DestinyMilestoneDefinition"] = "DestinyMilestoneDefinition";
-    TypeDefinition["DestinyObjectiveDefinition"] = "DestinyObjectiveDefinition";
-    TypeDefinition["DestinyPlaceDefinition"] = "DestinyPlaceDefinition";
-    TypeDefinition["DestinyProgressionDefinition"] = "DestinyProgressionDefinition";
-    TypeDefinition["DestinyProgressionLevelRequirementDefinition"] = "DestinyProgressionLevelRequirementDefinition";
-    TypeDefinition["DestinyRaceDefinition"] = "DestinyRaceDefinition";
-    TypeDefinition["DestinyRewardSourceDefinition"] = "DestinyRewardSourceDefinition";
-    TypeDefinition["DestinySackRewardItemListDefinition"] = "DestinySackRewardItemListDefinition";
-    TypeDefinition["DestinySandboxPerkDefinition"] = "DestinySandboxPerkDefinition";
-    TypeDefinition["DestinySocketCategoryDefinition"] = "DestinySocketCategoryDefinition";
-    TypeDefinition["DestinySocketTypeDefinition"] = "DestinySocketTypeDefinition";
-    TypeDefinition["DestinyStatDefinition"] = "DestinyStatDefinition";
-    TypeDefinition["DestinyStatGroupDefinition"] = "DestinyStatGroupDefinition";
-    TypeDefinition["DestinyTalentGridDefinition"] = "DestinyTalentGridDefinition";
-    TypeDefinition["DestinyUnlockDefinition"] = "DestinyUnlockDefinition";
-    TypeDefinition["DestinyVendorCategoryDefinition"] = "DestinyVendorCategoryDefinition";
-    TypeDefinition["DestinyVendorDefinition"] = "DestinyVendorDefinition";
-})(TypeDefinition = exports.TypeDefinition || (exports.TypeDefinition = {}));
+var StatsCategoryType;
+(function (StatsCategoryType) {
+    StatsCategoryType[StatsCategoryType["None"] = 0] = "None";
+    StatsCategoryType[StatsCategoryType["Kills"] = 1] = "Kills";
+    StatsCategoryType[StatsCategoryType["Assists"] = 2] = "Assists";
+    StatsCategoryType[StatsCategoryType["Deaths"] = 3] = "Deaths";
+    StatsCategoryType[StatsCategoryType["Criticals"] = 4] = "Criticals";
+    StatsCategoryType[StatsCategoryType["KDa"] = 5] = "KDa";
+    StatsCategoryType[StatsCategoryType["KD"] = 6] = "KD";
+    StatsCategoryType[StatsCategoryType["Score"] = 7] = "Score";
+    StatsCategoryType[StatsCategoryType["Entered"] = 8] = "Entered";
+    StatsCategoryType[StatsCategoryType["TimePlayed"] = 9] = "TimePlayed";
+    StatsCategoryType[StatsCategoryType["MedalWins"] = 10] = "MedalWins";
+    StatsCategoryType[StatsCategoryType["MedalGame"] = 11] = "MedalGame";
+    StatsCategoryType[StatsCategoryType["MedalSpecialKills"] = 12] = "MedalSpecialKills";
+    StatsCategoryType[StatsCategoryType["MedalSprees"] = 13] = "MedalSprees";
+    StatsCategoryType[StatsCategoryType["MedalMultiKills"] = 14] = "MedalMultiKills";
+    StatsCategoryType[StatsCategoryType["MedalAbilities"] = 15] = "MedalAbilities";
+})(StatsCategoryType = exports.StatsCategoryType || (exports.StatsCategoryType = {}));
 /**
  * Enum for different stat IDs
  * @enum
@@ -1109,6 +1136,49 @@ var StatId;
     StatId["RaceCompletionMilliseconds"] = "RaceCompletionMilliseconds";
 })(StatId = exports.StatId || (exports.StatId = {}));
 /**
+ * Enum for different type definitions
+ * @enum
+ */
+var TypeDefinition;
+(function (TypeDefinition) {
+    TypeDefinition["DestinyActivityGraphDefinition"] = "DestinyActivityGraphDefinition";
+    TypeDefinition["DestinyActivityModeDefinition"] = "DestinyActivityModeDefinition";
+    TypeDefinition["DestinyActivityModifierDefinition"] = "DestinyActivityModifierDefinition";
+    TypeDefinition["DestinyActivityTypeDefinition"] = "DestinyActivityTypeDefinition";
+    TypeDefinition["DestinyBondDefinition"] = "DestinyBondDefinition";
+    TypeDefinition["DestinyClassDefinition"] = "DestinyClassDefinition";
+    TypeDefinition["DestinyDamageTypeDefinition"] = "DestinyDamageTypeDefinition";
+    TypeDefinition["DestinyDestinationDefinition"] = "DestinyDestinationDefinition";
+    TypeDefinition["DestinyEnemyRaceDefinition"] = "DestinyEnemyRaceDefinition";
+    TypeDefinition["DestinyFactionDefinition"] = "DestinyFactionDefinition";
+    TypeDefinition["DestinyGenderDefinition"] = "DestinyGenderDefinition";
+    TypeDefinition["DestinyHistoricalStatsDefinition"] = "DestinyHistoricalStatsDefinition";
+    TypeDefinition["DestinyInventoryBucketDefinition"] = "DestinyInventoryBucketDefinition";
+    TypeDefinition["DestinyInventoryItemDefinition"] = "DestinyInventoryItemDefinition";
+    TypeDefinition["DestinyItemCategoryDefinition"] = "DestinyItemCategoryDefinition";
+    TypeDefinition["DestinyItemTierTypeDefinition"] = "DestinyItemTierTypeDefinition";
+    TypeDefinition["DestinyLocationDefinition"] = "DestinyLocationDefinition";
+    TypeDefinition["DestinyLoreDefinition"] = "DestinyLoreDefinition";
+    TypeDefinition["DestinyMedalTierDefinition"] = "DestinyMedalTierDefinition";
+    TypeDefinition["DestinyMilestoneDefinition"] = "DestinyMilestoneDefinition";
+    TypeDefinition["DestinyObjectiveDefinition"] = "DestinyObjectiveDefinition";
+    TypeDefinition["DestinyPlaceDefinition"] = "DestinyPlaceDefinition";
+    TypeDefinition["DestinyProgressionDefinition"] = "DestinyProgressionDefinition";
+    TypeDefinition["DestinyProgressionLevelRequirementDefinition"] = "DestinyProgressionLevelRequirementDefinition";
+    TypeDefinition["DestinyRaceDefinition"] = "DestinyRaceDefinition";
+    TypeDefinition["DestinyRewardSourceDefinition"] = "DestinyRewardSourceDefinition";
+    TypeDefinition["DestinySackRewardItemListDefinition"] = "DestinySackRewardItemListDefinition";
+    TypeDefinition["DestinySandboxPerkDefinition"] = "DestinySandboxPerkDefinition";
+    TypeDefinition["DestinySocketCategoryDefinition"] = "DestinySocketCategoryDefinition";
+    TypeDefinition["DestinySocketTypeDefinition"] = "DestinySocketTypeDefinition";
+    TypeDefinition["DestinyStatDefinition"] = "DestinyStatDefinition";
+    TypeDefinition["DestinyStatGroupDefinition"] = "DestinyStatGroupDefinition";
+    TypeDefinition["DestinyTalentGridDefinition"] = "DestinyTalentGridDefinition";
+    TypeDefinition["DestinyUnlockDefinition"] = "DestinyUnlockDefinition";
+    TypeDefinition["DestinyVendorCategoryDefinition"] = "DestinyVendorCategoryDefinition";
+    TypeDefinition["DestinyVendorDefinition"] = "DestinyVendorDefinition";
+})(TypeDefinition = exports.TypeDefinition || (exports.TypeDefinition = {}));
+/**
  * Enum for the transfer status of an item
  * @enum
  */
@@ -1120,6 +1190,26 @@ var TransferStatus;
     TransferStatus[TransferStatus["NoRoomInDestination"] = 4] = "NoRoomInDestination";
 })(TransferStatus = exports.TransferStatus || (exports.TransferStatus = {}));
 /**
+ * Enum for unit types
+ * @enum
+ */
+var UnitType;
+(function (UnitType) {
+    UnitType[UnitType["None"] = 0] = "None";
+    UnitType[UnitType["Count"] = 1] = "Count";
+    UnitType[UnitType["PerGame"] = 2] = "PerGame";
+    UnitType[UnitType["Seconds"] = 3] = "Seconds";
+    UnitType[UnitType["Points"] = 4] = "Points";
+    UnitType[UnitType["Team"] = 5] = "Team";
+    UnitType[UnitType["Distance"] = 6] = "Distance";
+    UnitType[UnitType["Percent"] = 7] = "Percent";
+    UnitType[UnitType["Ratio"] = 8] = "Ratio";
+    UnitType[UnitType["Boolean"] = 9] = "Boolean";
+    UnitType[UnitType["WeaponType"] = 10] = "WeaponType";
+    UnitType[UnitType["Standing"] = 11] = "Standing";
+    UnitType[UnitType["Milliseconds"] = 12] = "Milliseconds";
+})(UnitType = exports.UnitType || (exports.UnitType = {}));
+/**
  * Enum for the vendor item refund policy
  * @enum
  */
@@ -1129,3 +1219,24 @@ var VendorItemRefundPolicy;
     VendorItemRefundPolicy[VendorItemRefundPolicy["DeletesItem"] = 1] = "DeletesItem";
     VendorItemRefundPolicy[VendorItemRefundPolicy["RevokesLicense"] = 2] = "RevokesLicense";
 })(VendorItemRefundPolicy = exports.VendorItemRefundPolicy || (exports.VendorItemRefundPolicy = {}));
+/**
+ * Enum for the vendor item status
+ * @enum
+ */
+var VendorItemStatus;
+(function (VendorItemStatus) {
+    VendorItemStatus[VendorItemStatus["Success"] = 0] = "Success";
+    VendorItemStatus[VendorItemStatus["NoInventorySpace"] = 1] = "NoInventorySpace";
+    VendorItemStatus[VendorItemStatus["NoFunds"] = 2] = "NoFunds";
+    VendorItemStatus[VendorItemStatus["NoProgression"] = 4] = "NoProgression";
+    VendorItemStatus[VendorItemStatus["NoUnlock"] = 8] = "NoUnlock";
+    VendorItemStatus[VendorItemStatus["NoQuantity"] = 16] = "NoQuantity";
+    VendorItemStatus[VendorItemStatus["OutsidePurchaseWindow"] = 32] = "OutsidePurchaseWindow";
+    VendorItemStatus[VendorItemStatus["NotAvailable"] = 64] = "NotAvailable";
+    VendorItemStatus[VendorItemStatus["UniquenessViolation"] = 128] = "UniquenessViolation";
+    VendorItemStatus[VendorItemStatus["UnknownError"] = 256] = "UnknownError";
+    VendorItemStatus[VendorItemStatus["AlreadySelling"] = 512] = "AlreadySelling";
+    VendorItemStatus[VendorItemStatus["Unsellable"] = 1024] = "Unsellable";
+    VendorItemStatus[VendorItemStatus["SellingInhibited"] = 2048] = "SellingInhibited";
+    VendorItemStatus[VendorItemStatus["AlreadyOwned"] = 4096] = "AlreadyOwned";
+})(VendorItemStatus = exports.VendorItemStatus || (exports.VendorItemStatus = {}));
