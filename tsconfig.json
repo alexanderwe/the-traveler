@@ -6,7 +6,7 @@
         "strictNullChecks": true,
         "lib": [
             "dom",
-            "es5",
+            "es6",
             "es2015.promise",
             "es2017.object"
         ],

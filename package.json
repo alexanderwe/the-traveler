@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -8,7 +8,8 @@
         "api",
         "wrapper"
     ],
-    "main": "build/traveler.js",
+    "main": "build/Traveler.js",
+    "types": "build/Traveler.d.ts",
     "author": "Alexander Weiß",
     "license": "MIT",
     "repository": {
@@ -16,13 +17,12 @@
         "url": "https://github.com/alexanderwe/the-traveler"
     },
     "files": [
-        "build/Traveler.js",
-        "build/enums.js",
-        "build/HttpService.js",
-        "build/OAuthError.js"
+        "build/*.js",
+        "build/*.d.ts"
     ],
     "scripts": {
         "start": "babel-node ./src/index.js --presets es2015,stage-2",
+        "debug": "babel-node ./src/index.js --presets es2015,stage-2",
         "build": "tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "nyc mocha",
@@ -32,10 +32,10 @@
     "dependencies": {
         "es6-promise": "^4.1.1",
         "request": "^2.81.0",
-        "request-promise-native": "^1.0.4"
+        "request-promise-native": "^1.0.4",
+        "@types/request-promise-native": "^1.0.6"
     },
     "devDependencies": {
-        "@types/request-promise-native": "^1.0.6",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
         "babel-plugin-transform-runtime": "^6.23.0",
@@ -44,7 +44,9 @@
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
         "codecov": "^2.3.0",
+        "es6-map": "^0.1.5",
         "es6-promise": "^4.1.1",
+        "es6-shim": "^0.35.3",
         "minami": "^1.2.3",
         "mocha": "^3.5.0",
         "nyc": "^11.2.1",

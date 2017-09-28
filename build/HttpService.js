@@ -30,7 +30,9 @@ var HTTPService = /** @class */ (function () {
                 else if (response.ErrorCode !== 1) {
                     reject(response);
                 }
-                resolve(response);
+                else {
+                    resolve(JSON.parse(JSON.stringify(response)));
+                }
             })
                 .catch(function (err) {
                 reject(err);
