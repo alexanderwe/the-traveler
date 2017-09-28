@@ -179,7 +179,7 @@ export interface IDestinyCharacterPeerView {
  * @interface
  */
 export interface IDestinyCharacterProgressionComponent {
-    progessions: IDestinyProgression;
+    progressions: IDestinyProgression;
     factions: IDestinyFactionProgression;
     milestones: IDestinyMilestone;
     quests: IDestinyQuestStatus[];
@@ -750,7 +750,7 @@ export interface IDestinyProfileResponse {
  * @interface
  */
 export interface IDestinyCharacterProgressionComponent {
-    progessions: IDestinyProgression;
+    progressions: IDestinyProgression;
     factions: IDestinyFactionProgression;
     milestones: IDestinyMilestone;
     quests: IDestinyQuestStatus[];
