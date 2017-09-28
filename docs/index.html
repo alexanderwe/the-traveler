@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="default no-js">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,128 +8,118 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
-	<header>
-		<div class="tsd-page-toolbar">
-			<div class="container">
-				<div class="table-wrap">
-					<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
-						<div class="field">
-							<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-							<input id="tsd-search-field" type="text" />
-						</div>
-						<ul class="results">
-							<li class="state loading">Preparing search index...</li>
-							<li class="state failure">The search index is not available</li>
-						</ul>
-						<a href="index.html" class="title">The Traveler</a>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
 					</div>
-					<div class="table-cell" id="tsd-widgets">
-						<div id="tsd-filter">
-							<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-							<div class="tsd-filter-group">
-								<div class="tsd-select" id="tsd-filter-visibility">
-									<span class="tsd-select-label">All</span>
-									<ul class="tsd-select-list">
-										<li data-value="public">Public</li>
-										<li data-value="protected">Public/Protected</li>
-										<li data-value="private" class="selected">All</li>
-									</ul>
-								</div>
-								<input type="checkbox" id="tsd-filter-inherited" checked />
-								<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-								<input type="checkbox" id="tsd-filter-externals" checked />
-								<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-								<input type="checkbox" id="tsd-filter-only-exported" />
-								<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">The Traveler</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
 							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
-						<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
 				</div>
 			</div>
 		</div>
-		<div class="tsd-page-title">
-			<div class="container">
-				<ul class="tsd-breadcrumb">
-					<li>
-						<a href="globals.html">Globals</a>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> The Traveler</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="the-traveler">The Traveler</h1>
+				<p><a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/v/the-traveler.svg" alt="npm"></a>
+					<a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/dt/the-traveler.svg" alt="npm"></a>
+					<a href="https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
+					<a href="https://github.com/alexanderwe/the-traveler/issues"><img src="https://img.shields.io/github/issues/alexanderwe/the-traveler.svg" alt="GitHub issues"></a>
+					<a href="https://travis-ci.org/alexanderwe/the-traveler"><img src="https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master" alt="Build Status"></a>
+				<a href="https://codecov.io/gh/alexanderwe/the-traveler"><img src="https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg" alt="codecov"></a></p>
+				<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
+				<h1 id="table-of-contents">Table of Contents</h1>
+				<ul>
+					<li><a href="#the-traveler">The Traveler</a></li>
+					<li><a href="#table-of-contents">Table of Contents</a><ul>
+							<li><a href="#getting-started">Getting Started</a><ul>
+									<li><a href="#prerequisites">Prerequisites</a></li>
+								</ul>
+							</li>
+							<li><a href="#oauth">OAuth</a></li>
+							<li><a href="#notices">Notices</a><ul>
+									<li><a href="#typescript-support">Typescript Support</a> </li>
+									<li><a href="#typical-response">Typical Response</a></li>
+									<li><a href="#privacy">Privacy</a></li>
+									<li><a href="#documentation">Documentation</a></li>
+								</ul>
+							</li>
+							<li><a href="#examples">Examples</a><ul>
+									<li><a href="#search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</a></li>
+									<li><a href="#get-a-character-for-an-psn-account">Get a character for an PSN Account</a></li>
+									<li><a href="#transfer-item-from-vault-to-character-needs-oauth">Transfer item from vault to character (needs OAuth)</a></li>
+									<li><a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
+								</ul>
+							</li>
+							<li><a href="#progress">Progress</a></li>
+							<li><a href="#built-with">Built With</a></li>
+							<li><a href="#versioning">Versioning</a></li>
+							<li><a href="#issues">Issues</a></li>
+							<li><a href="#license">License</a></li>
+							<li><a href="#acknowledgments">Acknowledgments</a></li>
+						</ul>
 					</li>
 				</ul>
-				<h1> The Traveler</h1>
-			</div>
-		</div>
-	</header>
-	<div class="container container-main">
-		<div class="row">
-			<div class="col-8 col-content">
-				<div class="tsd-panel tsd-typography">
-					<h1 id="the-traveler">The Traveler</h1>
-					<p><a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/v/the-traveler.svg" alt="npm"></a>
-						<a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/dt/the-traveler.svg" alt="npm"></a>
-						<a href="https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
-						<a href="https://github.com/alexanderwe/the-traveler/issues"><img src="https://img.shields.io/github/issues/alexanderwe/the-traveler.svg" alt="GitHub issues"></a>
-						<a href="https://travis-ci.org/alexanderwe/the-traveler"><img src="https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master" alt="Build Status"></a>
-						<a href="https://codecov.io/gh/alexanderwe/the-traveler"><img src="https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg" alt="codecov"></a></p>
-					<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in
-						your application.</p>
-					<h1 id="table-of-contents">Table of Contents</h1>
-					<ul>
-						<li><a href="#the-traveler">The Traveler</a></li>
-						<li><a href="#table-of-contents">Table of Contents</a>
-							<ul>
-								<li><a href="#getting-started">Getting Started</a>
-									<ul>
-										<li><a href="#prerequisites">Prerequisites</a></li>
-									</ul>
-								</li>
-								<li><a href="#oauth">OAuth</a></li>
-								<li><a href="#notices">Notices</a>
-									<ul>
-										<li><a href="#typescript-support">Typescript Support</a> </li>
-										<li><a href="#typical-response">Typical Response</a></li>
-										<li><a href="#privacy">Privacy</a></li>
-										<li><a href="#documentation">Documentation</a></li>
-									</ul>
-								</li>
-								<li><a href="#examples">Examples</a>
-									<ul>
-										<li><a href="#search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</a></li>
-										<li><a href="#get-a-character-for-an-psn-account">Get a character for an PSN Account</a></li>
-										<li><a href="#transfer-item-from-vault-to-character-needs-oauth">Transfer item from vault to character (needs OAuth)</a></li>
-										<li><a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
-									</ul>
-								</li>
-								<li><a href="#progress">Progress</a></li>
-								<li><a href="#built-with">Built With</a></li>
-								<li><a href="#versioning">Versioning</a></li>
-								<li><a href="#issues">Issues</a></li>
-								<li><a href="#license">License</a></li>
-								<li><a href="#acknowledgments">Acknowledgments</a></li>
-							</ul>
-						</li>
-					</ul>
-					<h2 id="getting-started">Getting Started</h2>
-					<pre><code>npm install <span class="hljs-keyword">the</span>-traveler
+				<h2 id="getting-started">Getting Started</h2>
+				<pre><code>npm install <span class="hljs-keyword">the</span>-traveler
 <span class="hljs-comment"># or</span>
 yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span>-traveler
-</code></pre>
-					<h3 id="prerequisites">Prerequisites</h3>
-					<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit
-						<a
-						 href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
-					<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
-					<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
+</code></pre><h3 id="prerequisites">Prerequisites</h3>
+				<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
+				<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
+				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> { ComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>;
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
 });
-</code></pre>
-					<p>If you want to use this package inside a ES5 project you can import it like so:</p>
-					<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
+</code></pre><p>If you want to use this package inside a ES5 project you can import it like so:</p>
+				<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
 <span class="hljs-keyword">const</span> Enums = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler/build/enums'</span>)
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
@@ -140,18 +129,15 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 
 <span class="hljs-comment">//Access the enums (example componentType profiles)</span>
 <span class="hljs-keyword">var</span> profilesType = Enums.ComponentType.Profiles;
-</code></pre>
-					<p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
-					<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+</code></pre><p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
+				<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
     userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
     debug: <span class="hljs-literal">true</span> 
 });
-</code></pre>
-					<h2 id="oauth">OAuth</h2>
-					<p>If you want to use OAuth to get access to endpoints which require user approval provide the <code>Traveler</code> object
-						with your OAuth <code>clientId</code> and if you are using a confidential client type additionally the <code>clientSecret</code>.</p>
-					<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
+</code></pre><h2 id="oauth">OAuth</h2>
+				<p>If you want to use OAuth to get access to endpoints which require user approval provide the <code>Traveler</code> object with your OAuth <code>clientId</code> and if you are using a confidential client type additionally the <code>clientSecret</code>.</p>
+				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
@@ -159,109 +145,90 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
     oauthClientId: <span class="hljs-string">'yourClientId'</span>,
     <span class="hljs-attr">oauthClientSecret</span>: <span class="hljs-string">'yourClientSecret'</span>,
 });
-</code></pre>
-					<p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
-						After you have done that, you can generate the authentication URL which has to be visited by your users to approve
-						your application. The URL is constructed with the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>.
-						</p>
-					<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
-</code></pre>
-					<p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you
-						specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
-					<p>This is the code you need to obtain the OAuth Access token with the <code>getAccessToken()</code> method.</p>
-					<pre><code>traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+</code></pre><p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
+				After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>. </p>
+				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
+</code></pre><p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
+				<p>This is the code you need to obtain the OAuth Access token with the  <code>getAccessToken()</code> method.</p>
+				<pre><code>traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth; 
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err)
 })
-</code></pre>
-					<p>The OAuth response schema is depended on the client type you are using on if you are using. With a <code>public</code>						type the response does <strong>not</strong> contain an <code>refresh_token</code>. This means that a user has to authenticate
-						everytime again after the OAuth access token has expired.</p>
-					<p><em>Response</em>:</p>
-					<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
+</code></pre><p>The OAuth response schema is depended on the client type you are using on if you are using. With a <code>public</code> type the response does <strong>not</strong> contain an <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired.</p>
+				<p><em>Response</em>:</p>
+				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   token_type: <span class="hljs-string">'Bearer'</span>,
   expires_in: <span class="hljs-number">3600</span>,
   membership_id: <span class="hljs-string">''</span>}
-</code></pre>
-					<p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which
-						can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code>						to prevent getting errors if the <code>access_token</code> has expired. In the following you can see such a response
-						with the method to renew the token.</p>
-					<p><em>Response</em>:</p>
-					<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
+</code></pre><p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent getting errors if the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
+				<p><em>Response</em>:</p>
+				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   <span class="hljs-attribute">token_type</span>: <span class="hljs-string">'Bearer'</span>,
   <span class="hljs-attribute">expires_in</span>: <span class="hljs-number">3600</span>,
   <span class="hljs-attribute">refresh_token</span>: ',
   <span class="hljs-attribute">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attribute">membership_id</span>: <span class="hljs-string">''</span> }
-</code></pre>
-					<p><em>Use refresh</em>:</p>
-					<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+</code></pre><p><em>Use refresh</em>:</p>
+				<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth; 
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err)
 })
-</code></pre>
-					<p>So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.</p>
-					<p>To wrap this up, the flow is the following:</p>
-					<ul>
-						<li>Provide <code>clientId</code> and <code>clientSecret (only for confidential)</code></li>
-						<li>Generate <code>authUrl</code> and redirect users to it</li>
-						<li>Grab the <code>code</code> parameter from your <code>redirectURL</code></li>
-						<li>Use <code>code</code> to get the <code>OAuth object</code> and apply it to the <code>Traveler object</code></li>
-						<li><strong>FOR Public</strong> Reauthenticate your users after the access token has expired. They have to visit the <code>authorization url</code>							again</li>
-						<li><strong>FOR Confidential</strong> Use <code>traveler.oauth.refreshtoken</code> to renew the <code>accessToken</code>,
-							without user interaction by <code>traveler.refreshToken()</code></li>
-						<li>After the oauth object is set on the traveler object you can query the endpoints which require authentiation
-							<ul>
-								<li>You can try to use this approach with <code>async</code> and <code>await</code> to overcome the <code>callback hell</code>,
-									see <a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
-							</ul>
-						</li>
-						<li>Keep in mind that it would be very useful to store the tokens for your users <em><strong>securely</strong></em>!</li>
-					</ul>
-					<h2 id="notices">Notices</h2>
-					<h3 id="typescript-support">Typescript Support</h3>
-					<p>The npm package comes with <code>d.ts</code> files to allow autocompletion and type checking if you are using <code>the-traveler</code>						within Typescript. </p>
-					<p><img src="https://raw.githubusercontent.com/alexanderwe/the-traveler/master/output.gif" alt=""></p>
-					<p>There are some other noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
-					<h3 id="typical-response">Typical Response</h3>
-					<p>The response object from the API is always constructed like the following snippet indicates. The <code>Response</code>						will contain the actual request data, while <code>ErrorCode</code>, <code>ThrottleSeconds</code>, <code>ErrorStatus</code>,
-						<code>Message</code> and <code>MessageData</code> will hold additional data about the sucess of our request. </p>
-					<pre><code>{ <span class="hljs-attribute">Response</span>: Array or Object,
+</code></pre><p>So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.</p>
+				<p>To wrap this up, the flow is the following:</p>
+				<ul>
+					<li>Provide <code>clientId</code> and <code>clientSecret (only for confidential)</code></li>
+					<li>Generate <code>authUrl</code> and redirect users to it</li>
+					<li>Grab the <code>code</code> parameter from your <code>redirectURL</code></li>
+					<li>Use <code>code</code> to get the <code>OAuth object</code> and apply it to the <code>Traveler object</code></li>
+					<li><strong>FOR Public</strong> Reauthenticate your users after the access token has expired. They have to visit the <code>authorization url</code> again</li>
+					<li><strong>FOR Confidential</strong>  Use <code>traveler.oauth.refreshtoken</code> to renew the <code>accessToken</code>, without user interaction by <code>traveler.refreshToken()</code></li>
+					<li>After the oauth object is set on the traveler object you can query the endpoints which require authentiation<ul>
+							<li>You can try to use this approach with <code>async</code> and <code>await</code> to overcome the <code>callback hell</code>, see <a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
+						</ul>
+					</li>
+					<li>Keep in mind that it would be very useful to store the tokens for your users <em><strong>securely</strong></em>!</li>
+				</ul>
+				<h2 id="notices">Notices</h2>
+				<h3 id="typescript-support">Typescript Support</h3>
+				<p>The npm package comes with <code>d.ts</code> files to allow autocompletion and type checking if you are using <code>the-traveler</code> within Typescript. </p>
+				<p><img src="https://raw.githubusercontent.com/alexanderwe/the-traveler/master/output.gif" alt=""></p>
+				<p>There are some other noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
+				<h3 id="typical-response">Typical Response</h3>
+				<p>The response object from the API is always constructed like the following snippet indicates. The <code>Response</code> will contain the actual request data, while <code>ErrorCode</code>, <code>ThrottleSeconds</code>, <code>ErrorStatus</code>, <code>Message</code> and <code>MessageData</code> will hold additional data about the sucess of our request. </p>
+				<pre><code>{ <span class="hljs-attribute">Response</span>: Array or Object,
   <span class="hljs-attribute">ErrorCode</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attribute">MessageData</span>: {} }
-</code></pre>
-					<h3 id="privacy">Privacy</h3>
-					<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to
-						obtain specific information through the API. The different pricacy indicators are the following:</p>
-					<ul>
-						<li>None: 0</li>
-						<li>Public: 1</li>
-						<li>Private: 2</li>
-					</ul>
-					<h3 id="documentation">Documentation</h3>
-					<ul>
-						<li>The documentation for this package can be found at <a href="https://alexanderwe.github.io/the-traveler/">The Traveler documentation</a></li>
-						<li>A fully complete documentation about the different endpoints and methods can be found at the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official Destiny 2 API site</a></li>
-					</ul>
-					<h2 id="examples">Examples</h2>
-					<h3 id="search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</h3>
-					<p><em>Query:</em></p>
-					<pre><code>traveler
+</code></pre><h3 id="privacy">Privacy</h3>
+				<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to obtain specific information through the API. The different pricacy indicators are the following:</p>
+				<ul>
+					<li>None: 0</li>
+					<li>Public: 1</li>
+					<li>Private: 2</li>
+				</ul>
+				<h3 id="documentation">Documentation</h3>
+				<ul>
+					<li>The documentation for this package can be found at <a href="https://alexanderwe.github.io/the-traveler/">The Traveler documentation</a></li>
+					<li>A fully complete documentation about the different endpoints and methods can be found at the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official Destiny 2 API site</a></li>
+				</ul>
+				<h2 id="examples">Examples</h2>
+				<h3 id="search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</h3>
+				<p><em>Query:</em></p>
+				<pre><code>traveler
     .searchDestinyPlayer(<span class="hljs-string">'2'</span>, <span class="hljs-string">'playername'</span>)
     .then(<span class="hljs-function"><span class="hljs-params">player</span> =&gt;</span> {
         <span class="hljs-built_in">console</span>.log(player);
     }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
         <span class="hljs-comment">//do something with the error</span>
     })
-</code></pre>
-					<p><em>Response</em></p>
-					<pre><code>{ <span class="hljs-attribute">Response</span>:
+</code></pre><p><em>Response</em></p>
+				<pre><code>{ <span class="hljs-attribute">Response</span>:
    [ { <span class="hljs-attribute">iconPath</span>: <span class="hljs-string">'/img/theme/destiny/icons/icon_psn.png'</span>,
        <span class="hljs-attribute">membershipType</span>: <span class="hljs-number">2</span>,
        <span class="hljs-attribute">membershipId</span>: <span class="hljs-string">'4611686018433838874'</span>,
@@ -270,12 +237,10 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
-</code></pre>
-					<h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
-					<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums for
-						a better naming.</p>
-					<p><em>Query:</em></p>
-					<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
+</code></pre><h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
+				<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums for a better naming.</p>
+				<p><em>Query:</em></p>
+				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> {ComponentType} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span> 
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
@@ -306,9 +271,8 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err);
 });
-</code></pre>
-					<p><em>Response (First level):</em></p>
-					<pre><code>{ <span class="hljs-attribute">Response</span>:
+</code></pre><p><em>Response (First level):</em></p>
+				<pre><code>{ <span class="hljs-attribute">Response</span>:
    { <span class="hljs-attribute">inventory</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
      <span class="hljs-attribute">character</span>: { <span class="hljs-attribute">data</span>: [Object], <span class="hljs-attribute">privacy</span>: <span class="hljs-number">1</span> },
      <span class="hljs-attribute">progressions</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
@@ -321,10 +285,9 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attribute">MessageData</span>: {} }
-</code></pre>
-					<h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
-					<p><code>traveler.oauth</code> has to be set before calling this method</p>
-					<pre><code><span class="hljs-selector-tag">traveler</span>
+</code></pre><h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
+				<p><code>traveler.oauth</code> has to be set before calling this method</p>
+				<pre><code><span class="hljs-selector-tag">traveler</span>
     <span class="hljs-selector-class">.transferItem</span>({
         <span class="hljs-attribute">itemReferenceHash</span>: <span class="hljs-string">'2907129556'</span>,
         <span class="hljs-attribute">stackSize</span>: <span class="hljs-number">1</span>,
@@ -339,10 +302,9 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
     <span class="hljs-selector-class">.catch</span>(err =&gt; {
         <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(err);
     });
-</code></pre>
-					<h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
-					<p>Just a thought about using <code>async</code> and <code>await</code></p>
-					<pre><code><span class="hljs-keyword">async</span> () =&gt; {
+</code></pre><h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
+				<p>Just a thought about using <code>async</code> and <code>await</code></p>
+				<pre><code><span class="hljs-keyword">async</span> () =&gt; {
     <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
         apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
         userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
@@ -356,644 +318,637 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 
     <span class="hljs-comment">// now do your calls</span>
 }
-</code></pre>
-					<h2 id="progress">Progress</h2>
-					<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a>						to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear
-						in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and
-						test the functionalities.</p>
-					<table>
-						<thead>
-							<tr>
-								<th>Endpoint</th>
-								<th>Implemented</th>
-								<th>Unlocked in API</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Destiny2.GetDestinyManifest</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.SearchDestinyPlayer</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetProfile</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetCharacter</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetClanWeeklyRewardState</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetItem</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetVendors</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetVendor</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.TransferItem</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.EquipItem</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.EquipItems</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.SetItemLockState</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.InsertSocketPlug</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.ActivateTalentNode</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetPostGameCarnageReport</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetHistoricalStatsDefinition</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetClanLeaderboards</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetClanAggregateStats</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetLeaderboards</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetLeaderboardsForCharacter</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.SearchDestinyEntities</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetHistoricalStats</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetHistoricalStatsForAccount</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetActivityHistory</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetUniqueWeaponHistory</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetDestinyAggregateActivityStats</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetPublicMilestoneContent</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-							<tr>
-								<td>Destiny2.GetPublicMilestones</td>
-								<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-								<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
-							</tr>
-						</tbody>
-					</table>
-					<h2 id="built-with">Built With</h2>
-					<ul>
-						<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
-						<li><a href="https://github.com/Microsoft/TypeScript">Typescript</a> - Programming Language</li>
-					</ul>
-					<h2 id="versioning">Versioning</h2>
-					<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/alexanderwe/the-traveler/tags">tags on this repository</a>.
-						</p>
-					<h2 id="issues">Issues</h2>
-					<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">isse section</a>						:) </p>
-					<h2 id="license">License</h2>
-					<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
-					<h2 id="acknowledgments">Acknowledgments</h2>
-					<p><strong>the-traveler package isn&#39;t endorsed by Bunge and doesn&#39;t reflect the views or opinions of Bungies or anyone officially involved in producing or managing Destiny 2. Destiny 2 and Bungie are trademarks or registered trademarks of Bungie, Inc. Destiny 2 © Bungie.</strong></p>
-				</div>
+</code></pre><h2 id="progress">Progress</h2>
+				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Endpoint</th>
+							<th>Implemented</th>
+							<th>Unlocked in API</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Destiny2.GetDestinyManifest</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.SearchDestinyPlayer</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetProfile</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetCharacter</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetClanWeeklyRewardState</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetItem</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetVendors</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetVendor</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.TransferItem</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.EquipItem</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.EquipItems</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.SetItemLockState</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.InsertSocketPlug</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.ActivateTalentNode</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetPostGameCarnageReport</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetHistoricalStatsDefinition</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetClanLeaderboards</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetClanAggregateStats</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetLeaderboards</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetLeaderboardsForCharacter</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.SearchDestinyEntities</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetHistoricalStats</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetHistoricalStatsForAccount</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetActivityHistory</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetUniqueWeaponHistory</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetDestinyAggregateActivityStats</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetPublicMilestoneContent</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.GetPublicMilestones</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+					</tbody>
+				</table>
+				<h2 id="built-with">Built With</h2>
+				<ul>
+					<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
+					<li><a href="https://github.com/Microsoft/TypeScript">Typescript</a> - Programming Language</li>
+				</ul>
+				<h2 id="versioning">Versioning</h2>
+				<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/alexanderwe/the-traveler/tags">tags on this repository</a>. </p>
+				<h2 id="issues">Issues</h2>
+				<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">isse section</a> :) </p>
+				<h2 id="license">License</h2>
+				<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
+				<h2 id="acknowledgments">Acknowledgments</h2>
+				<p><strong>the-traveler package isn&#39;t endorsed by Bunge and doesn&#39;t reflect the views or opinions of Bungies or anyone officially involved in producing or managing Destiny 2. Destiny 2 and Bungie are trademarks or registered trademarks of Bungie, Inc. Destiny 2 © Bungie.</strong></p>
 			</div>
-			<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-				<nav class="tsd-navigation primary">
-					<ul>
-						<li class="globals  ">
-							<a href="globals.html"><em>Globals</em></a>
-						</li>
-					</ul>
-				</nav>
-				<nav class="tsd-navigation secondary menu-sticky">
-					<ul class="before-current">
-						<li class=" tsd-kind-enum">
-							<a href="enums/bungiemembershiptype.html" class="tsd-kind-icon">Bungie<wbr>Membership<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/componentprivacysetting.html" class="tsd-kind-icon">Component<wbr>Privacy<wbr>Setting</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/damagetype.html" class="tsd-kind-icon">Damage<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinyactivitydifficultytier.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Difficulty<wbr>Tier</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinyactivitymodetype.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinyclass.html" class="tsd-kind-icon">Destiny<wbr>Class</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinygameversion.html" class="tsd-kind-icon">Destiny<wbr>Game<wbr>Version</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinygender.html" class="tsd-kind-icon">Destiny<wbr>Gender</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinyrace.html" class="tsd-kind-icon">Destiny<wbr>Race</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/destinytalentnodestate.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>State</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/equipfailurereason.html" class="tsd-kind-icon">Equip<wbr>Failure<wbr>Reason</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/itembindstatus.html" class="tsd-kind-icon">Item<wbr>Bind<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/itemlocation.html" class="tsd-kind-icon">Item<wbr>Location</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/itemstate.html" class="tsd-kind-icon">Item<wbr>State</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/platformerrorcodes.html" class="tsd-kind-icon">Platform<wbr>Error<wbr>Codes</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/statid.html" class="tsd-kind-icon">Stat<wbr>Id</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/statscategorytype.html" class="tsd-kind-icon">Stats<wbr>Category<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/transferstatus.html" class="tsd-kind-icon">Transfer<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/typedefinition.html" class="tsd-kind-icon">Type<wbr>Definition</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/unittype.html" class="tsd-kind-icon">Unit<wbr>Type</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/vendoritemrefundpolicy.html" class="tsd-kind-icon">Vendor<wbr>Item<wbr>Refund<wbr>Policy</a>
-						</li>
-						<li class=" tsd-kind-enum">
-							<a href="enums/vendoritemstatus.html" class="tsd-kind-icon">Vendor<wbr>Item<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-class">
-							<a href="classes/httpservice.html" class="tsd-kind-icon">HTTPService</a>
-						</li>
-						<li class=" tsd-kind-class">
-							<a href="classes/oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
-						</li>
-						<li class=" tsd-kind-class">
-							<a href="classes/traveler.html" class="tsd-kind-icon">Traveler</a>
-						</li>
-						<li class=" tsd-kind-interface tsd-has-type-parameter">
-							<a href="interfaces/iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idaterange.html" class="tsd-kind-icon">IDate<wbr>Range</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyactivity.html" class="tsd-kind-icon">IDestiny<wbr>Activity</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyactivityhistoryresults.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>History<wbr>Results</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyaggregateactivityresults.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Results</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyaggregateactivitystats.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Stats</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinychallengestatus.html" class="tsd-kind-icon">IDestiny<wbr>Challenge<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharacteractivitiescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Activities<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharactercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharactercustomization.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Customization</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharacterpeerview.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Peer<wbr>View</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharacterprogressioncomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Progression<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharacterrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Render<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinycharacterresponse.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyclanaggregatestat.html" class="tsd-kind-icon">IDestiny<wbr>Clan<wbr>Aggregate<wbr>Stat</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Definition</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinydisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Display<wbr>Properties<wbr>Definition</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyentitysearchresult.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyentitysearchresultitem.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyequipitemresult.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Result</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyequipitemresults.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Results</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyfactionprogression.html" class="tsd-kind-icon">IDestiny<wbr>Faction<wbr>Progression</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsaccountresult.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Account<wbr>Result</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsactivity.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Activity</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsbyperiod.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>ByPeriod</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Definition</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatspercharacter.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Per<wbr>Character</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsperiodgroup.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Period<wbr>Group</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsvalue.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatsvaluepair.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value<wbr>Pair</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalstatswithmerged.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>With<wbr>Merged</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalweaponstats.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyhistoricalweaponstatsdata.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats<wbr>Data</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyinventorycomponent.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyiteminstancecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Instance<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemobjectivescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Objectives<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitempeerview.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Peer<wbr>View</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemperkscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Perks<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemquantity.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Quantity</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Render<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemresponse.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemsocketscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Sockets<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemstatscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Stats<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemtalentgridcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinykioskscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Kiosks<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymanifest.html" class="tsd-kind-icon">IDestiny<wbr>Manifest</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymaterialrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Material<wbr>Requirement</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestone.html" class="tsd-kind-icon">IDestiny<wbr>Milestone</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestoneactivitycompletionstatus.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Completion<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestoneactivityphase.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Phase</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Variant</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestonecontent.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestonecontentitemcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content<wbr>Item<wbr>Category</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestonerewardcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Category</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinymilestonerewardentry.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Entry</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyobjectiveprogress.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Progress</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyperkreference.html" class="tsd-kind-icon">IDestiny<wbr>Perk<wbr>Reference</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyplayer.html" class="tsd-kind-icon">IDestiny<wbr>Player</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypostgamecarnagereportdata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Data</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypostgamecarnagereportentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Entry</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypostgamecarnagereportextendeddata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Extended<wbr>Data</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypostgamecarnagereportteamentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Team<wbr>Entry</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyprofilecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyprofileresponse.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyprogression.html" class="tsd-kind-icon">IDestiny<wbr>Progression</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypublicmilestone.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypublicmilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypublicmilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity<wbr>Variant</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypublicmilestonechallenge.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Challenge</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinypublicmilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Quest</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyqueststatus.html" class="tsd-kind-icon">IDestiny<wbr>Quest<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinystat.html" class="tsd-kind-icon">IDestiny<wbr>Stat</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinytalentnode.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinytalentnodestatblock.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Stat<wbr>Block</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyunlockstatus.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Status</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorcategoriescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Categories<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorcategory.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorreceipt.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipt</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorreceiptscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipts<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idestinyvendorsaleitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface tsd-has-type-parameter">
-							<a href="interfaces/idictionarycomponent.html" class="tsd-kind-icon">IDictionary<wbr>Component</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/idyereference.html" class="tsd-kind-icon">IDye<wbr>Reference</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/igearassetdatabasedefinition.html" class="tsd-kind-icon">IGear<wbr>Asset<wbr>Data<wbr>Base<wbr>Definition</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/ipagedquery.html" class="tsd-kind-icon">IPagedQUery</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/isearchresultofdestinyentitysearchresultitem.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
-						</li>
-						<li class=" tsd-kind-interface tsd-has-type-parameter">
-							<a href="interfaces/isinglecomponentresponse.html" class="tsd-kind-icon">ISingle<wbr>Component<wbr>Response</a>
-						</li>
-						<li class=" tsd-kind-interface">
-							<a href="interfaces/iuserinfocard.html" class="tsd-kind-icon">IUser<wbr>Info<wbr>Card</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/bungiemembershiptype.html" class="tsd-kind-icon">Bungie<wbr>Membership<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/componentprivacysetting.html" class="tsd-kind-icon">Component<wbr>Privacy<wbr>Setting</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/componenttype.html" class="tsd-kind-icon">Component<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/damagetype.html" class="tsd-kind-icon">Damage<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinyactivitydifficultytier.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Difficulty<wbr>Tier</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinyactivitymodetype.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinyclass.html" class="tsd-kind-icon">Destiny<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinygameversion.html" class="tsd-kind-icon">Destiny<wbr>Game<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinygender.html" class="tsd-kind-icon">Destiny<wbr>Gender</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinyrace.html" class="tsd-kind-icon">Destiny<wbr>Race</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinystatsgrouptype.html" class="tsd-kind-icon">Destiny<wbr>Stats<wbr>Group<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinytalentnodestate.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/equipfailurereason.html" class="tsd-kind-icon">Equip<wbr>Failure<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/itembindstatus.html" class="tsd-kind-icon">Item<wbr>Bind<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/itemlocation.html" class="tsd-kind-icon">Item<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/itemstate.html" class="tsd-kind-icon">Item<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/periodtype.html" class="tsd-kind-icon">Period<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/platformerrorcodes.html" class="tsd-kind-icon">Platform<wbr>Error<wbr>Codes</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/statid.html" class="tsd-kind-icon">Stat<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/statscategorytype.html" class="tsd-kind-icon">Stats<wbr>Category<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/transferstatus.html" class="tsd-kind-icon">Transfer<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/typedefinition.html" class="tsd-kind-icon">Type<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/unittype.html" class="tsd-kind-icon">Unit<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/vendoritemrefundpolicy.html" class="tsd-kind-icon">Vendor<wbr>Item<wbr>Refund<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/vendoritemstatus.html" class="tsd-kind-icon">Vendor<wbr>Item<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/httpservice.html" class="tsd-kind-icon">HTTPService</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/traveler.html" class="tsd-kind-icon">Traveler</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/iapiresponse.html" class="tsd-kind-icon">IAPIResponse</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idaterange.html" class="tsd-kind-icon">IDate<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyactivity.html" class="tsd-kind-icon">IDestiny<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyactivityhistoryresults.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>History<wbr>Results</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyaggregateactivityresults.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Results</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyaggregateactivitystats.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinychallengestatus.html" class="tsd-kind-icon">IDestiny<wbr>Challenge<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharacteractivitiescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Activities<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharactercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharactercustomization.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Customization</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharacterpeerview.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Peer<wbr>View</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharacterprogressioncomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Progression<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharacterrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Render<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycharacterresponse.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyclanaggregatestat.html" class="tsd-kind-icon">IDestiny<wbr>Clan<wbr>Aggregate<wbr>Stat</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinydisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Display<wbr>Properties<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyentitysearchresult.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyentitysearchresultitem.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyequipitemresult.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyequipitemresults.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Results</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyfactionprogression.html" class="tsd-kind-icon">IDestiny<wbr>Faction<wbr>Progression</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsaccountresult.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Account<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsactivity.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsbyperiod.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>ByPeriod</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatspercharacter.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Per<wbr>Character</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsperiodgroup.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Period<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsvalue.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatsvaluepair.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value<wbr>Pair</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalstatswithmerged.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>With<wbr>Merged</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalweaponstats.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyhistoricalweaponstatsdata.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyinventorycomponent.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyiteminstancecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Instance<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemobjectivescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Objectives<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitempeerview.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Peer<wbr>View</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemperkscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Perks<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemquantity.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Quantity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Render<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemresponse.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemsocketscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Sockets<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemstatscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Stats<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemtalentgridcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinykioskscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Kiosks<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymanifest.html" class="tsd-kind-icon">IDestiny<wbr>Manifest</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymaterialrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Material<wbr>Requirement</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestone.html" class="tsd-kind-icon">IDestiny<wbr>Milestone</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestoneactivitycompletionstatus.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Completion<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestoneactivityphase.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Phase</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Variant</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestonecontent.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestonecontentitemcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content<wbr>Item<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestonerewardcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinymilestonerewardentry.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyobjectiveprogress.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Progress</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyperkreference.html" class="tsd-kind-icon">IDestiny<wbr>Perk<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyplayer.html" class="tsd-kind-icon">IDestiny<wbr>Player</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypostgamecarnagereportdata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypostgamecarnagereportentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypostgamecarnagereportextendeddata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Extended<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypostgamecarnagereportteamentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Team<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyprofilecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyprofileresponse.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyprogression.html" class="tsd-kind-icon">IDestiny<wbr>Progression</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypublicmilestone.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypublicmilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypublicmilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity<wbr>Variant</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypublicmilestonechallenge.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Challenge</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypublicmilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Quest</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyqueststatus.html" class="tsd-kind-icon">IDestiny<wbr>Quest<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinystat.html" class="tsd-kind-icon">IDestiny<wbr>Stat</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinytalentnode.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinytalentnodestatblock.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Stat<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyunlockstatus.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorcategoriescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Categories<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorcategory.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorreceipt.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipt</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorreceiptscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipts<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorsaleitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/idictionarycomponent.html" class="tsd-kind-icon">IDictionary<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idyereference.html" class="tsd-kind-icon">IDye<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/igearassetdatabasedefinition.html" class="tsd-kind-icon">IGear<wbr>Asset<wbr>Data<wbr>Base<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ipagedquery.html" class="tsd-kind-icon">IPagedQUery</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/isearchresultofdestinyentitysearchresultitem.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/isinglecomponentresponse.html" class="tsd-kind-icon">ISingle<wbr>Component<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iuserinfocard.html" class="tsd-kind-icon">IUser<wbr>Info<wbr>Card</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
-	<footer>
-		<div class="container">
-			<h2>Legend</h2>
-			<div class="tsd-legend-group">
-				<ul class="tsd-legend">
-					<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-					<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-					<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-					<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-					<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-					<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-					<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-					<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-					<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-					<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-					<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-					<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-					<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-					<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-					<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-					<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-					<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-					<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-					<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-					<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-					<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-					<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-					<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-				</ul>
-				<ul class="tsd-legend">
-					<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-					<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-				</ul>
-			</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
 		</div>
-	</footer>
-	<div class="overlay"></div>
-	<script src="assets/js/main.js"></script>
-	<script>
-		if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');
-	</script>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
-
 </html>
