@@ -65,9 +65,9 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="the-traveler">The Traveler</h1>
-				<p><a href=""><img src="https://img.shields.io/npm/v/the-traveler.svg" alt="npm"></a>
-					<a href=""><img src="https://img.shields.io/npm/dt/the-traveler.svg" alt="npm"></a>
-					<a href="https://raw.githubusercontent.com/alexanderwe/the-traveler/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
+				<p><a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/v/the-traveler.svg" alt="npm"></a>
+					<a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/dt/the-traveler.svg" alt="npm"></a>
+					<a href="https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
 					<a href="https://github.com/alexanderwe/the-traveler/issues"><img src="https://img.shields.io/github/issues/alexanderwe/the-traveler.svg" alt="GitHub issues"></a>
 					<a href="https://travis-ci.org/alexanderwe/the-traveler"><img src="https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master" alt="Build Status"></a>
 				<a href="https://codecov.io/gh/alexanderwe/the-traveler"><img src="https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg" alt="codecov"></a></p>
@@ -82,6 +82,7 @@
 							</li>
 							<li><a href="#oauth">OAuth</a></li>
 							<li><a href="#notices">Notices</a><ul>
+									<li><a href="#typescript-support">Typescript Support</a> </li>
 									<li><a href="#typical-response">Typical Response</a></li>
 									<li><a href="#privacy">Privacy</a></li>
 									<li><a href="#documentation">Documentation</a></li>
@@ -192,7 +193,10 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 					<li>Keep in mind that it would be very useful to store the tokens for your users <em><strong>securely</strong></em>!</li>
 				</ul>
 				<h2 id="notices">Notices</h2>
-				<p>There are some noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
+				<h3 id="typescript-support">Typescript Support</h3>
+				<p>The npm package comes with <code>d.ts</code> files to allow autocompletion and type checking if you are using <code>the-traveler</code> within Typescript. </p>
+				<p><img src="https://raw.githubusercontent.com/alexanderwe/the-traveler/master/output.gif" alt=""></p>
+				<p>There are some other noteworthy information which could help to resolve some issues with the Destiny 2 API.</p>
 				<h3 id="typical-response">Typical Response</h3>
 				<p>The response object from the API is always constructed like the following snippet indicates. The <code>Response</code> will contain the actual request data, while <code>ErrorCode</code>, <code>ThrottleSeconds</code>, <code>ErrorStatus</code>, <code>Message</code> and <code>MessageData</code> will hold additional data about the sucess of our request. </p>
 				<pre><code>{ <span class="hljs-attribute">Response</span>: Array or Object,
@@ -688,9 +692,6 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 						<a href="interfaces/idestinyitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/idestinyitemcomponentsetofint64.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofint64</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyiteminstancecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Instance<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -860,9 +861,6 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/igearassetdatabasedefinition.html" class="tsd-kind-icon">IGear<wbr>Asset<wbr>Data<wbr>Base<wbr>Definition</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iidestinyitemtalentgridcomponent.html" class="tsd-kind-icon">IIDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ioauthconfig.html" class="tsd-kind-icon">IOAuth<wbr>Config</a>

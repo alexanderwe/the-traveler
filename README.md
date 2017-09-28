@@ -1,7 +1,7 @@
 # The Traveler
-[![npm](https://img.shields.io/npm/v/the-traveler.svg)]()
-[![npm](https://img.shields.io/npm/dt/the-traveler.svg)]()
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/alexanderwe/the-traveler/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
+[![npm](https://img.shields.io/npm/dt/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md)
 [![GitHub issues](https://img.shields.io/github/issues/alexanderwe/the-traveler.svg)](https://github.com/alexanderwe/the-traveler/issues)
 [![Build Status](https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master)](https://travis-ci.org/alexanderwe/the-traveler)
 [![codecov](https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg)](https://codecov.io/gh/alexanderwe/the-traveler)
@@ -17,6 +17,7 @@ Table of Contents
          * [Prerequisites](#prerequisites)
       * [OAuth](#oauth)
       * [Notices](#notices)
+         * [Typescript Support](#typescript-support) 
          * [Typical Response](#typical-response)
          * [Privacy](#privacy)
          * [Documentation](#documentation)
@@ -169,7 +170,18 @@ To wrap this up, the flow is the following:
 
 ## Notices
 
-There are some noteworthy information which could help to resolve some issues with the Destiny 2 API.
+
+### Typescript Support
+
+
+The npm package comes with `d.ts` files to allow autocompletion and type checking if you are using `the-traveler` within Typescript. 
+
+![](https://raw.githubusercontent.com/alexanderwe/the-traveler/master/output.gif)
+
+
+
+
+There are some other noteworthy information which could help to resolve some issues with the Destiny 2 API.
 
 ### Typical Response
 
