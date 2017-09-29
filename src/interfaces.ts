@@ -59,7 +59,7 @@ export interface IDateRange {
  * @interface
  */
 export interface IDestinyActivity {
-    activityHash: string;
+    activityHash: number;
     isNew: boolean;
     canLead: boolean;
     canJoin: boolean;
@@ -79,7 +79,7 @@ export interface IDestinyAggregateActivityResults {
 }
 
 export interface IDestinyAggregateActivityStats {
-    activityHash: string;
+    activityHash: number;
     values: {
         [key: string]: IDestinyHistoricalStatsValue;
     };
@@ -90,7 +90,7 @@ export interface IDestinyAggregateActivityStats {
  * @interface
  */
 export interface IDestinyMilestoneQuest {
-    questItemHash: string;
+    questItemHash: number;
     status: IDestinyQuestStatus;
     activity: IDestinyMilestoneActivity;
     challenges: IDestinyChallengeStatus[];
@@ -111,13 +111,13 @@ export interface IDestinyChallengeStatus {
 export interface IDestinyCharacterActivitiesComponent {
     dateActivityStarted: Date;
     availableActivites: IDestinyActivity[];
-    currentActivityHash: string;
-    currentActivityModeHash: string;
+    currentActivityHash: number;
+    currentActivityModeHash: number;
     currentActivityModeType?: DestinyActivityModeType;
     currentActivityModeHashes: string[];
     currentActivityModeTypes: DestinyActivityModeType[];
     currentPlaylistActivityHash?: string;
-    lastCompletedStoryHash: string;
+    lastCompletedStoryHash: number;
 }
 
 /**
@@ -133,15 +133,15 @@ export interface IDestinyCharacterComponent {
     minutesPlayedTotal: number;
     light: number;
     stats: object;
-    raceHash: string;
-    genderHash: string;
-    classHash: string;
+    raceHash: number;
+    genderHash: number;
+    classHash: number;
     raceType: DestinyRace;
     classType: DestinyClass;
     genderType: DestinyGender;
     emblemPath: string;
     emplemBackgroundPath: string;
-    emblemHash: string;
+    emblemHash: number;
     levelProgression: IDestinyProgression;
     baseCharacterLevel: number;
     percentToNextLevel: number;
@@ -222,7 +222,7 @@ export interface IDestinyClanAggregateStat {
  * @interface
  */
 export interface IDestinyDefinition {
-    hash: string;
+    hash: number;
     index: number;
     redacted: boolean;
 }
@@ -244,7 +244,7 @@ export interface IDestinyEntitySearchResult {
 }
 
 export interface IDestinyEntitySearchResultItem {
-    hash: string;
+    hash: number;
     entityType: string;
     displayProperties: IDestinyDisplayPropertiesDefinition;
     weight: number;
@@ -264,7 +264,7 @@ export interface IDestinyEquipItemResults {
  * @interface
  */
 export interface IDestinyFactionProgression extends IDestinyProgression {
-    factionHash: string;
+    factionHash: number;
 }
 
 export interface IDestinyHistoricalStatsAccountResult {
@@ -275,7 +275,7 @@ export interface IDestinyHistoricalStatsAccountResult {
 
 export interface IDestinyHistoricalStatsActivity {
     referenceId: string;
-    directorActivityHash: string;
+    directorActivityHash: number;
     isntanceId: string;
     mode: DestinyActivityModeType;
     modes: DestinyActivityModeType[];
@@ -382,12 +382,12 @@ export interface IDestinyItemActionRequest {
 }
 
 export interface IDestinyItemComponent {
-    itemHash: string;
+    itemHash: number;
     itemInstanceId: string;
     quantity: number;
     bindStatus: ItemBindStatus;
     location: ItemLocation;
-    bucketHash: string;
+    bucketHash: number;
     transferStatus: TransferStatus;
     lockable: boolean;
     state: ItemState;
@@ -399,7 +399,7 @@ export interface IDestinyItemComponent {
  */
 export interface IDestinyItemInstanceComponent {
     damageType: DamageType;
-    damageTypeHash: string;
+    damageTypeHash: number;
     primaryStat: IDestinyStat;
     itemLevel: number;
     quality: number;
@@ -422,7 +422,7 @@ export interface IDestinyItemObjectivesComponent {
  * @interface
  */
 export interface IDestinyItemPeerView {
-    itemHash: string;
+    itemHash: number;
     dyes: IDyeReference;
 }
 
@@ -439,7 +439,7 @@ export interface IDestinyItemPerksComponent {
  * @interface
  */
 export interface IDestinyItemQuantity {
-    itemHash: string;
+    itemHash: number;
     itemInstanceId: string;
     quantity: number;
 }
@@ -484,7 +484,7 @@ export interface IDestinyItemStatsComponent {
 }
 
 export interface IDestinyItemSocketState {
-    plugHash: string;
+    plugHash: number;
     isEnabled: boolean;
     enableFailIndexes: number[];
     reusablePlugHashes: string[];
@@ -506,7 +506,7 @@ export interface IDestinyItemStateRequest {
 }
 
 export interface IDestinyItemTalentGridComponent {
-    talentGridHash: string;
+    talentGridHash: number;
     nodes: IDestinyTalentNode[];
     isGridComplete: boolean;
     gridProgression: IDestinyProgression;
@@ -517,7 +517,7 @@ export interface IDestinyItemTalentGridComponent {
  * @interface
  */
 export interface IDestinyItemTransferRequest {
-    itemReferenceHash: string;
+    itemReferenceHash: number;
     stackSize: number;
     transferToVault: boolean;
     itemId: string;
@@ -547,7 +547,7 @@ export interface IDestinyManifest {
 }
 
 export interface IDestinyMaterialRequirement {
-    itemHash: string;
+    itemHash: number;
     deleteOnAction: boolean;
     count: number;
     omitFromRequirements: boolean;
@@ -558,7 +558,7 @@ export interface IDestinyMaterialRequirement {
  * @interface
  */
 export interface IDestinyMilestone {
-    milestoneHash: string;
+    milestoneHash: number;
     availableQuests: IDestinyMilestoneQuest[];
     values: object;
     vendorHashes: number[];
@@ -572,8 +572,8 @@ export interface IDestinyMilestone {
  * @interface
  */
 export interface IDestinyMilestoneActivity {
-    activityHash: string;
-    modifierHash: string[];
+    activityHash: number;
+    modifierHash: number[];
     variants: IDestinyMilestoneActivityVariant[];
 }
 
@@ -599,7 +599,7 @@ export interface IDestinyMilestoneActivityPhase {
  * @interface
  */
 export interface IDestinyMilestoneActivityVariant {
-    activityHash: string;
+    activityHash: number;
     completionStatus?: IDestinyMilestoneActivityCompletionStatus;
 }
 
@@ -620,7 +620,7 @@ export interface IDestinyMilestoneContentItemCategory {
  * @interface
  */
 export interface IDestinyMilestoneQuest {
-    questItemHash: string;
+    questItemHash: number;
     status: IDestinyQuestStatus;
     activity: IDestinyMilestoneActivity;
     challenges: IDestinyChallengeStatus[];
@@ -631,7 +631,7 @@ export interface IDestinyMilestoneQuest {
  * @interface
  */
 export interface IDestinyMilestoneRewardCategory {
-    rewardCategoryHash: string;
+    rewardCategoryHash: number;
     entries: IDestinyMilestoneRewardEntry[];
 }
 
@@ -640,7 +640,7 @@ export interface IDestinyMilestoneRewardCategory {
  * @interface
  */
 export interface IDestinyMilestoneRewardEntry {
-    rewardEntryHash: string;
+    rewardEntryHash: number;
     earned: boolean;
     redeemed: boolean;
 }
@@ -650,7 +650,7 @@ export interface IDestinyMilestoneRewardEntry {
  * @interface
  */
 export interface IDestinyObjectiveProgress {
-    objectiveHash: string;
+    objectiveHash: number;
     destinationHash?: string;
     activityHash?: string;
     progress?: number;
@@ -662,7 +662,7 @@ export interface IDestinyObjectiveProgress {
  * @interface
  */
 export interface IDestinyPerkReference {
-    perkHash: string;
+    perkHash: number;
     iconPath: string;
     isActive: boolean;
     isVisible: boolean;
@@ -762,7 +762,7 @@ export interface IDestinyCharacterProgressionComponent {
  * @interface
  */
 export interface IDestinyProgression {
-    progressionHash: string;
+    progressionHash: number;
     dailyProgress: number;
     dailyLimit: number;
     weeklyProgress: number;
@@ -776,7 +776,7 @@ export interface IDestinyProgression {
 }
 
 export interface IDestinyPublicMilestone {
-    milestoneHash: string;
+    milestoneHash: number;
     availableQuests: IDestinyPublicMilestoneQuest[];
     vendorHashes: string[];
     startDate?: Date;
@@ -784,22 +784,22 @@ export interface IDestinyPublicMilestone {
 }
 
 export interface IDestinyPublicMilestoneActivity {
-    activitHash: string;
+    activitHash: number;
     modifierHashes: string[];
     variants: IDestinyPublicMilestoneActivityVariant[];
 }
 
 export interface IDestinyPublicMilestoneActivityVariant {
-    activityHash: string;
+    activityHash: number;
 }
 
 export interface IDestinyPublicMilestoneChallenge {
-    objectiveHash: string;
+    objectiveHash: number;
     activityHash?: string;
 }
 
 export interface IDestinyPublicMilestoneQuest {
-    questItemHash: string;
+    questItemHash: number;
     activity: IDestinyPublicMilestoneActivity;
     challenges: IDestinyPublicMilestoneChallenge[];
 }
@@ -809,8 +809,8 @@ export interface IDestinyPublicMilestoneQuest {
  * @interface
  */
 export interface IDestinyQuestStatus {
-    questHash: string;
-    stepHash: string;
+    questHash: number;
+    stepHash: number;
     stepObjectives: IDestinyObjectiveProgress[];
     tracked: boolean;
     itemInstanceId: string;
@@ -825,14 +825,14 @@ export interface IDestinyQuestStatus {
  * @interface
  */
 export interface IDestinyStat {
-    statHash: string;
+    statHash: number;
     value: number;
     maximumValue: number;
 }
 
 export interface IDestinyTalentNode {
     nodeIndex: number;
-    nodeHash: string;
+    nodeHash: number;
     state: DestinyTalentNodeState;
     isActivated: boolean;
     stepIndex: number;
@@ -849,7 +849,7 @@ export interface IDestinyTalentNodeStatBlock {
 }
 
 export interface IDestinyUnlockStatus {
-    unlockHash: string;
+    unlockHash: number;
     isSet: boolean;
 }
 
@@ -863,7 +863,7 @@ export interface IDestinyVendorCategory {
 }
 
 export interface IDestinyVendorComponent {
-    vendorHash: string;
+    vendorHash: number;
     ackState: object; // Not used anymore because of that no further definition here
     nextRefreshDate: Date;
     enabled: boolean;
@@ -878,7 +878,7 @@ export interface IDestinyVendorComponent {
 export interface IDestinyVendorReceipt {
     currencyPaid: IDestinyItemQuantity;
     itemReceived: IDestinyItemQuantity;
-    licenseUnlockHash: string;
+    licenseUnlockHash: number;
     purchasedByCharacterId: string;
     refundPolicy: VendorItemRefundPolicy;
     sequenceNumber: number;
@@ -907,7 +907,7 @@ export interface IDestinyVendorResponse {
 
 export interface IDestinyVendorSaleItemComponent {
     vendorItemIndex: number;
-    itemHash: string;
+    itemHash: number;
     saleStatus: VendorItemStatus;
     costs: IDestinyItemQuantity[];
     requiredUnlocks: string[];
@@ -931,8 +931,8 @@ export interface IDictionaryComponent<IComponent> {
  * @interface
  */
 export interface IDyeReference {
-    channelHash: string;
-    dyeHash: string;
+    channelHash: number;
+    dyeHash: number;
 }
 
 /**

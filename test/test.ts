@@ -1,17 +1,18 @@
-import chai from 'chai';
-import { assert } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
-import Traveler from '../build/traveler';
-import { BungieMembershipType, ComponentType, TypeDefinition } from '../build/enums';
+import * as chai from 'chai';
+import { assert, expect } from 'chai';
+import * as chaiAsPromised from 'chai-as-promised';
+import * as mocha from 'mocha';
+import { BungieMembershipType, ComponentType, PlatformErrorCodes, TypeDefinition } from '../src/enums';
+import Traveler from '../src/traveler';
 
 chai.use(chaiAsPromised);
-var expect = chai.expect;
 
-var traveler = new Traveler({
-    apikey: process.env.API_KEY
+const traveler = new Traveler({
+    apikey: process.env.API_KEY as string,
+    userAgent: '',
 });
 
-describe('traveler#getManifest', function () {
+describe('traveler#getManifest', () => {
     it('respond with current manifest formatted in JSON', async () => {
         const result = await traveler.getDestinyManifest();
         return expect(result.Response).to.be.an('object').that.has.all.keys(
@@ -24,32 +25,31 @@ describe('traveler#getManifest', function () {
     });
 });
 
-describe('traveler#getDestinyEntityDefinition', function () {
+describe('traveler#getDestinyEntityDefinition', () => {
     it('respond with JSON data about the weapon called Blue Shift', async () => {
         const result = await traveler.getDestinyEntityDefinition(TypeDefinition.DestinyInventoryItemDefinition, '417474226');
-        return expect(result.Response.displayProperties.name).to.be.an('string').and.equals('Blue Shift')
+        return expect(result.Response.hash).to.be.an('number').and.equals(417474226);
     });
 });
 
-describe('traveler#searchDestinyPlayer', function () {
+describe('traveler#searchDestinyPlayer', () => {
     it('respond with matching player', async () => {
         const result = await traveler.searchDestinyPlayer(BungieMembershipType.All, 'playername');
-        expect(result.Response[0]).to.deep.include({ displayName: 'Playername' });
+        expect(result.Response[0].displayName.toLowerCase()).equals('playername');
     });
     it('get rejected', async () => {
-        expect(traveler.searchDestinyPlayer('-1', '')).to.be.rejectedWith(Error);
+        expect(traveler.searchDestinyPlayer(BungieMembershipType.All, '')).to.be.rejectedWith(Error);
     });
 });
 
-
-describe('traveler#getProfile', function () {
+describe('traveler#getProfile', () => {
     it('respond with the matching profile', async () => {
-        const result = await traveler.getProfile(BungieMembershipType.PSN, '4611686018452033461', { components: ['100'] });
-        return expect(result.Response).to.be.an('object').and.to.include.key('profile');
+        const result = await traveler.getProfile(BungieMembershipType.PSN, '4611686018452033461', { components: [ComponentType.Profiles] });
+        return expect(result.Response).to.be.an('object').and.to.include.keys('profile');
     });
 });
 
-describe('traveler#getCharcter', function () {
+describe('traveler#getCharcter', () => {
     it('respond with matching character and only character components', async () => {
         const result = await traveler.getCharacter(BungieMembershipType.PSN, '4611686018452033461', '2305843009265042115', {
             components:
@@ -59,19 +59,18 @@ describe('traveler#getCharcter', function () {
                 ComponentType.CharacterProgressions,
                 ComponentType.CharacterRenderData,
                 ComponentType.CharacterActivities,
-                ComponentType.CharacterEquipment
-            ]
+                ComponentType.CharacterEquipment,
+            ],
         });
-        return expect(result.Response).to.be.an('object').and.to.include.key('activities', 'character', 'equipment', 'inventory', 'renderData', 'itemComponents', 'progressions');
+        return expect(result.Response).to.be.an('object').and.to.include.keys('activities', 'character', 'equipment', 'inventory', 'renderData', 'itemComponents', 'progressions');
     });
 });
 
+// TODO: getClanWeeklyRewardState
 
-//TODO: getClanWeeklyRewardState
-
-describe('traveler#getItem', function () {
+describe('traveler#getItem', () => {
     it('respond with matching item', async () => {
-        const result = await traveler.getItem(BungieMembershipType.PSN, '4611686018452033461', '6917529033189743362', { components: [ComponentType.ItemCommonData] })
+        const result = await traveler.getItem(BungieMembershipType.PSN, '4611686018452033461', '6917529033189743362', { components: [ComponentType.ItemCommonData] });
         return expect(result.Response.item.data).to.be.an('object').and.have.all.keys(
             'itemHash',
             'itemInstanceId',
@@ -81,53 +80,50 @@ describe('traveler#getItem', function () {
             'bucketHash',
             'transferStatus',
             'lockable',
-            'state'
+            'state',
         );
     });
 });
 
-//TODO: getVendors
+// TODO: getVendors
 
-//TODO: getVendor
+// TODO: getVendor
 
-//TODO: getPostGameCarnageReport
+// TODO: getPostGameCarnageReport
 
-
-
-describe('traveler#getHistoricalStatsDefinition', function () {
+describe('traveler#getHistoricalStatsDefinition', () => {
     it('respond with matching historical stat definitions', async () => {
         const result = await traveler.getHistoricalStatsDefinition();
-        return assert.equal(result.ErrorCode, '1', 'Response was not successful');
+        return assert.equal(result.ErrorCode, PlatformErrorCodes.Success, 'Response was not successful');
 
     });
 });
 
-//TODO: getCLanLeaderboards
+// TODO: getCLanLeaderboards
 
-//TODO: getClanAggregratedStats
+// TODO: getClanAggregratedStats
 
-//TODO: getLeaderboards
+// TODO: getLeaderboards
 
-//TODO: getLeaderboardsForCharacter
+// TODO: getLeaderboardsForCharacter
 
-
-describe('traveler#searchDestinyEntities', function () {
+describe('traveler#searchDestinyEntities', () => {
     it('respond with matching search results for sunshot', async () => {
         const result = await traveler.searchDestinyEntities('sunshot', TypeDefinition.DestinyInventoryItemDefinition, { page: 0 });
         return expect(result.Response.suggestedWords).to.be.a('array').and.includes('sunshot');
     });
 });
 
-//TODO: getHistoricalStats
+// TODO: getHistoricalStats
 
-//TODO: getHistoricalStatsForAccount
+// TODO: getHistoricalStatsForAccount
 
-//TODO: getActivityHistory
+// TODO: getActivityHistory
 
-//TODO: getUniqueWeaponHistory
+// TODO: getUniqueWeaponHistory
 
-//TODO: getAggregateActivityStats
+// TODO: getAggregateActivityStats
 
-//TODO: getPublicMilestoneContent
+// TODO: getPublicMilestoneContent
 
-//TODO:getPublicMilestones
+// TODO:getPublicMilestones
