@@ -3,7 +3,7 @@ import { assert, expect } from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 import * as mocha from 'mocha';
 import { BungieMembershipType, ComponentType, PlatformErrorCodes, TypeDefinition } from '../src/enums';
-import Traveler from '../src/Traveler';
+import Traveler from '../src/traveler';
 
 chai.use(chaiAsPromised);
 
@@ -28,15 +28,14 @@ describe('traveler#getManifest', () => {
 describe('traveler#getDestinyEntityDefinition', () => {
     it('respond with JSON data about the weapon called Blue Shift', async () => {
         const result = await traveler.getDestinyEntityDefinition(TypeDefinition.DestinyInventoryItemDefinition, '417474226');
-        console.log(result);
-        return expect(result.Response.hash).to.be.an('string').and.equals('Blue Shift');
+        return expect(result.Response.hash).to.be.an('number').and.equals(417474226);
     });
 });
 
 describe('traveler#searchDestinyPlayer', () => {
     it('respond with matching player', async () => {
         const result = await traveler.searchDestinyPlayer(BungieMembershipType.All, 'playername');
-        expect(result.Response.displayName).to.deep.include({ displayName: 'Playername' });
+        expect(result.Response[0].displayName.toLowerCase()).equals('playername');
     });
     it('get rejected', async () => {
         expect(traveler.searchDestinyPlayer(BungieMembershipType.All, '')).to.be.rejectedWith(Error);

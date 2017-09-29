@@ -17,5 +17,8 @@
             "request-promise-native"
         ],
         "outDir": "./build"
-    }
+    },
+    "exclude": [
+        "./test/*"
+    ]
 }

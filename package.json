@@ -29,24 +29,6 @@
         "posttest": "nyc report --reporter=lcov && codecov",
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
     },
-    "nyc": {
-        "include": [
-            "src/*.ts"
-        ],
-        "extension": [
-            ".ts",
-            ".tsx"
-        ],
-        "require": [
-            "ts-node/register"
-        ],
-        "reporter": [
-            "text-summary",
-            "html"
-        ],
-        "sourceMap": true,
-        "instrument": true
-    },
     "dependencies": {
         "@types/request-promise-native": "^1.0.6",
         "es6-promise": "^4.1.1",

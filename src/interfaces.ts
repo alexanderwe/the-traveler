@@ -222,7 +222,7 @@ export interface IDestinyClanAggregateStat {
  * @interface
  */
 export interface IDestinyDefinition {
-    hash: string;
+    hash: number;
     index: number;
     redacted: boolean;
 }
