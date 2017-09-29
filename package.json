@@ -27,7 +27,7 @@
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "nyc mocha",
         "posttest": "nyc report --reporter=lcov && codecov",
-        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator ./src/*.ts && touch ./docs/.nojekyll"
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts && touch ./docs/.nojekyll"
     },
     "dependencies": {
         "@types/request-promise-native": "^1.0.6",
