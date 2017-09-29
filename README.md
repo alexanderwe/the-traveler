@@ -1,4 +1,4 @@
-# The Traveler
+# the-traveler 
 [![npm](https://img.shields.io/npm/v/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
 [![npm](https://img.shields.io/npm/dt/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md)
@@ -6,12 +6,12 @@
 [![Build Status](https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master)](https://travis-ci.org/alexanderwe/the-traveler)
 [![codecov](https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg)](https://codecov.io/gh/alexanderwe/the-traveler)
 
-The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
+the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
 
 Table of Contents
 =================
 
-   * [The Traveler](#the-traveler)
+   * [the-traveler](#the-traveler)
    * [Table of Contents](#table-of-contents)
       * [Getting Started](#getting-started)
          * [Prerequisites](#prerequisites)
@@ -46,7 +46,7 @@ yarn add the-traveler
 
 ### Prerequisites
 
-To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application) to obtain your access token.
+To use this package you will need to obtain an API access key from the Bungie.net developer website. Please visit [https://www.bungie.net/en/Application](https://www.bungie.net/en/Application) to obtain your access token.
 
 After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.
 
@@ -105,7 +105,7 @@ Please ensure that you specified a `redirectURL` in your application settings on
 After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: `https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&response_type=code`. 
 
 ```
-const authUrl = traveler.traveler.generateOAuthURL(); // The URL your users have to visit to give your application access
+const authUrl = traveler.generateOAuthURL(); // The URL your users have to visit to give your application access
 ```
 
 
@@ -122,7 +122,7 @@ traveler.getAccessToken(hereComesTheCode).then(oauth => {
 })
 ```
 
-The OAuth response schema is depended on the client type you are using on if you are using. With a `public` type the response does **not** contain an `refresh_token`. This means that a user has to authenticate everytime again after the OAuth access token has expired.
+The OAuth response schema is depended on the client type you are using. With a `public` type the response does **not** contain a `refresh_token`. This means that a user has to authenticate everytime again after the OAuth access token has expired.
 
 
 _Response_:
@@ -133,7 +133,7 @@ _Response_:
   membership_id: ''}
 ```
 
-If you are using a `confidential` client type the response will contain a `refresh_token` which can be used to get a new `access_token` without requiring the user to approve your app again. Use this `refresh_token` to prevent getting errors if the `access_token` has expired.  In the following you can see such a response with the method to renew the token.
+If you are using a `confidential` client type the response will contain a `refresh_token` which can be used to get a new `access_token` without requiring the user to approve your app again. Use this `refresh_token` to prevent you from getting errors if the `access_token` has expired.  In the following you can see such a response with the method to renew the token.
 
 _Response_:
 ```
@@ -147,7 +147,7 @@ _Response_:
 ``` 
 _Use refresh_:
 ```
-traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => {
+traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => { // take the refresh token from the oauth object you provided when initialize the oauth to the traveler
     // Provide your traveler object with the oauth object. This is later used for making authenticated calls
     traveler.oauth = oauth; 
 }).catch(err => {
@@ -179,8 +179,6 @@ The npm package comes with `d.ts` files to allow autocompletion and type checkin
 ![](https://raw.githubusercontent.com/alexanderwe/the-traveler/master/output.gif)
 
 
-
-
 There are some other noteworthy information which could help to resolve some issues with the Destiny 2 API.
 
 ### Typical Response
@@ -197,7 +195,7 @@ The response object from the API is always constructed like the following snippe
 ```
 ### Privacy
 
-Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to obtain specific information through the API. The different pricacy indicators are the following:
+Some information in the Destiny API is privacy protected. If the user set the pricacy settings, and you do not use oauth for those users, it is not possible to obtain specific information through the API. The different pricacy indicators are the following:
 
 * None: 0
 * Public: 1
@@ -239,7 +237,7 @@ _Response_
 
 ### Get a character for an PSN Account
 
-Here all character specific components are queried. You can either use normal strings or use the integrated enums for a better naming.
+Here all character specific components are queried. You can either use normal strings or use the integrated enums.
 
 _Query:_
 ```
@@ -306,7 +304,7 @@ traveler
         transferToVault: false,
         itemId: '6917529033189743362',
         characterId: 'yourCharacterId',
-        membershipType: Enums.BungieMembershipType.PSN
+        membershipType: BungieMembershipType.PSN // BungieMembershipType.PSN in ES5
     })
     .then(result => {
         console.log(result);
@@ -339,7 +337,7 @@ async () => {
 
 ## Progress
 
-Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
+Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
 
 | Endpoint                                  | Implemented      | Unlocked in API       |
 | ----------------------------------------- | ---------------- | --------------------- |
@@ -379,12 +377,12 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/alexanderwe/the-traveler/tags). 
+the-traveler uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/alexanderwe/the-traveler/tags). 
 
 
 ## Issues
 
-Do you have any issues or recommendations for this package ? Feel free to open an issue in the [isse section](https://github.com/alexanderwe/the-traveler/issues) :) 
+Do you have any issues or recommendations for this package ? Feel free to open an issue in the [issue section](https://github.com/alexanderwe/the-traveler/issues) :) 
 
 
 ## License

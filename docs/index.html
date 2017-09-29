@@ -64,17 +64,17 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="the-traveler">The Traveler</h1>
+				<h1 id="the-traveler">the-traveler</h1>
 				<p><a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/v/the-traveler.svg" alt="npm"></a>
 					<a href="https://www.npmjs.com/package/the-traveler"><img src="https://img.shields.io/npm/dt/the-traveler.svg" alt="npm"></a>
 					<a href="https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a>
 					<a href="https://github.com/alexanderwe/the-traveler/issues"><img src="https://img.shields.io/github/issues/alexanderwe/the-traveler.svg" alt="GitHub issues"></a>
 					<a href="https://travis-ci.org/alexanderwe/the-traveler"><img src="https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master" alt="Build Status"></a>
 				<a href="https://codecov.io/gh/alexanderwe/the-traveler"><img src="https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg" alt="codecov"></a></p>
-				<p>The Traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
+				<p>the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 				<h1 id="table-of-contents">Table of Contents</h1>
 				<ul>
-					<li><a href="#the-traveler">The Traveler</a></li>
+					<li><a href="#the-traveler">the-traveler</a></li>
 					<li><a href="#table-of-contents">Table of Contents</a><ul>
 							<li><a href="#getting-started">Getting Started</a><ul>
 									<li><a href="#prerequisites">Prerequisites</a></li>
@@ -109,7 +109,7 @@
 <span class="hljs-comment"># or</span>
 yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span>-traveler
 </code></pre><h3 id="prerequisites">Prerequisites</h3>
-				<p>To use this package you will need to obtain an API access key from the Bungie.net developer webiste. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
+				<p>To use this package you will need to obtain an API access key from the Bungie.net developer website. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 				<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> { ComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>;
@@ -147,7 +147,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 });
 </code></pre><p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
 				After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>. </p>
-				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
+				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
 </code></pre><p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
 				<p>This is the code you need to obtain the OAuth Access token with the  <code>getAccessToken()</code> method.</p>
 				<pre><code>traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
@@ -156,13 +156,13 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err)
 })
-</code></pre><p>The OAuth response schema is depended on the client type you are using on if you are using. With a <code>public</code> type the response does <strong>not</strong> contain an <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired.</p>
+</code></pre><p>The OAuth response schema is depended on the client type you are using. With a <code>public</code> type the response does <strong>not</strong> contain a <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired.</p>
 				<p><em>Response</em>:</p>
 				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   token_type: <span class="hljs-string">'Bearer'</span>,
   expires_in: <span class="hljs-number">3600</span>,
   membership_id: <span class="hljs-string">''</span>}
-</code></pre><p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent getting errors if the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
+</code></pre><p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent you from getting errors if the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
 				<p><em>Response</em>:</p>
 				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   <span class="hljs-attribute">token_type</span>: <span class="hljs-string">'Bearer'</span>,
@@ -171,7 +171,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attribute">membership_id</span>: <span class="hljs-string">''</span> }
 </code></pre><p><em>Use refresh</em>:</p>
-				<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+				<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth; 
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
@@ -206,7 +206,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attribute">MessageData</span>: {} }
 </code></pre><h3 id="privacy">Privacy</h3>
-				<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings it is not possible to obtain specific information through the API. The different pricacy indicators are the following:</p>
+				<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings, and you do not use oauth for those users, it is not possible to obtain specific information through the API. The different pricacy indicators are the following:</p>
 				<ul>
 					<li>None: 0</li>
 					<li>Public: 1</li>
@@ -238,7 +238,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
 </code></pre><h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
-				<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums for a better naming.</p>
+				<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums.</p>
 				<p><em>Query:</em></p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> {ComponentType} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span> 
@@ -294,7 +294,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
         <span class="hljs-attribute">transferToVault</span>: false,
         <span class="hljs-attribute">itemId</span>: <span class="hljs-string">'6917529033189743362'</span>,
         <span class="hljs-attribute">characterId</span>: <span class="hljs-string">'yourCharacterId'</span>,
-        <span class="hljs-attribute">membershipType</span>: Enums.BungieMembershipType.PSN
+        <span class="hljs-attribute">membershipType</span>: BungieMembershipType.PSN <span class="hljs-comment">// BungieMembershipType.PSN in ES5</span>
     })
     <span class="hljs-selector-class">.then</span>(result =&gt; {
         <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(result);
@@ -319,7 +319,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
     <span class="hljs-comment">// now do your calls</span>
 }
 </code></pre><h2 id="progress">Progress</h2>
-				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please bear in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
+				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
 				<table>
 					<thead>
 						<tr>
@@ -477,9 +477,9 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 					<li><a href="https://github.com/Microsoft/TypeScript">Typescript</a> - Programming Language</li>
 				</ul>
 				<h2 id="versioning">Versioning</h2>
-				<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/alexanderwe/the-traveler/tags">tags on this repository</a>. </p>
+				<p>the-traveler uses <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/alexanderwe/the-traveler/tags">tags on this repository</a>. </p>
 				<h2 id="issues">Issues</h2>
-				<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">isse section</a> :) </p>
+				<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">issue section</a> :) </p>
 				<h2 id="license">License</h2>
 				<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
 				<h2 id="acknowledgments">Acknowledgments</h2>
