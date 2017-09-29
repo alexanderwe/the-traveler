@@ -1,4 +1,3 @@
-import 'es6-map';
 import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, TypeDefinition } from './enums';

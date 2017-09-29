@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -47,7 +47,6 @@
         "chai": "^4.1.2",
         "chai-as-promised": "^7.1.1",
         "codecov": "^2.3.0",
-        "es6-map": "^0.1.5",
         "es6-promise": "^4.1.1",
         "es6-shim": "^0.35.3",
         "minami": "^1.2.3",
