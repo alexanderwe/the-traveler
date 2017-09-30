@@ -152,7 +152,7 @@ describe('traveler#equipItem', () => {
     it('fails using  method without oauth', async () => {
         return expect(() => {
             traveler.equipItem(null);
-        }).to.throw(OauthError);
+        }).to.throw;
     });
 });
 
