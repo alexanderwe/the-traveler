@@ -9,8 +9,9 @@ import {
     PlatformErrorCodes,
     TypeDefinition,
 } from '../src/enums';
-
+import OauthError from '../src/OAuthError';
 import Traveler from '../src/traveler';
+
 
 chai.use(chaiAsPromised);
 
@@ -146,12 +147,21 @@ describe('traveler#searchDestinyEntities', () => {
 
 // TODO:getPublicMilestones
 
-describe('traveler#oauth', () => {
+describe('traveler#equipItem', () => {
+
+    it('fails using  method without oauth', async () => {
+        return expect(() => {
+            traveler.equipItem(null);
+        }).to.throw(OauthError);
+    });
+});
+
+describe('traveler#refreshToken', () => {
     it('uses refresh token', async () => {
         const result = await traveler.refreshToken(process.env.OAUTH_REFRESH_TOKEN);
         return expect(result.refresh_token).to.be.a('string');
     });
-    it('refesh fails', async () => {
+    it('fails due to no refresh token provided', async () => {
         return expect(traveler.refreshToken('')).to.be.rejectedWith(rpErrors.StatusCodeError);
     });
 

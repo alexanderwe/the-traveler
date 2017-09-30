@@ -33,9 +33,6 @@ export default class HTTPService {
                     if (response.access_token) { // this is a oauth reponse
                         resolve(response);
                     } else if (response.ErrorCode !== 1) {
-                        console.log(response.ErrorCode);
-                        console.log('Reject!');
-                        console.log(typeof response);
                         reject(response);
                     } else {
                         resolve(JSON.parse(JSON.stringify(response)));
