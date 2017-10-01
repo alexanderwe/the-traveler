@@ -6,12 +6,13 @@ import * as rpErrors from 'request-promise-native/errors';
 import {
     BungieMembershipType,
     ComponentType,
+    DestinyStatsGroupType,
     PlatformErrorCodes,
     TypeDefinition,
 } from '../src/enums';
+import { IAPIResponse } from '../src/interfaces';
 import OauthError from '../src/OAuthError';
 import Traveler from '../src/traveler';
-
 
 chai.use(chaiAsPromised);
 
@@ -104,9 +105,9 @@ describe('traveler#getItem', () => {
     });
 });
 
-// TODO: getVendors
+// TODO: getVendors (not yet active)
 
-// TODO: getVendor
+// TODO: getVendor (not yet active)
 
 // TODO: getPostGameCarnageReport
 
@@ -133,7 +134,16 @@ describe('traveler#searchDestinyEntities', () => {
     });
 });
 
-// TODO: getHistoricalStats
+describe('traveler#getHistoricalStats', () => {
+    it('respond with historical stats', async () => {
+        const result = await traveler.getHistoricalStats(BungieMembershipType.PSN, '4611686018452033461', '2305843009265042115', { dayend: '2017-09-30', daystart: '2017-09-20', groups: [DestinyStatsGroupType.Activity] });
+        return expect(result.ErrorCode).to.be.equal(PlatformErrorCodes.Success);
+    });
+
+    it('fails to response with historical stats due to invalid date parameter', async () => {
+        return expect(traveler.getHistoricalStats(BungieMembershipType.PSN, '4611686018452033461', '2305843009265042115', { dayend: '2017-09-40', daystart: '2017-09-20', groups: [DestinyStatsGroupType.Activity] })).to.be.rejected;
+    });
+});
 
 // TODO: getHistoricalStatsForAccount
 
@@ -148,6 +158,18 @@ describe('traveler#searchDestinyEntities', () => {
 // TODO:getPublicMilestones
 
 describe('traveler#equipItem', () => {
+
+
+
+
+    it('fails to equip item', async () => {
+        traveler.oauth = await traveler.refreshToken(process.env.OAUTH_REFRESH_TOKEN);
+        return expect(traveler.equipItem({
+            characterId: '2305843009265042115',
+            itemId: '1331482397',
+            membershipType: BungieMembershipType.PSN,
+        })).to.be.rejected;
+    });
 
     it('fails using  method without oauth', async () => {
         return expect(() => {
@@ -164,5 +186,4 @@ describe('traveler#refreshToken', () => {
     it('fails due to no refresh token provided', async () => {
         return expect(traveler.refreshToken('')).to.be.rejectedWith(rpErrors.StatusCodeError);
     });
-
 });
