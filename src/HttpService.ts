@@ -1,8 +1,5 @@
 import 'es6-promise';
-import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
-import * as util from 'util';
-import { IAPIResponse } from './interfaces';
 
 /**
  * Wrapper class for the request package. Used to make HTTP calls.
