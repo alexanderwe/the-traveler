@@ -6,6 +6,7 @@ import * as rpErrors from 'request-promise-native/errors';
 import {
     BungieMembershipType,
     ComponentType,
+    DestinyActivityModeType,
     DestinyStatsGroupType,
     PlatformErrorCodes,
     TypeDefinition,
@@ -87,6 +88,17 @@ describe('traveler#getCharacter', () => {
 });
 
 // TODO: getClanWeeklyRewardState
+describe('traveler#getClanWeeklyRewardState', () => {
+    it('respond with information on the weekly clan reward', async () => {
+        const result = await traveler.getClanWeeklyRewardState('1812014');
+        return expect(result.ErrorCode).to.be.equal(PlatformErrorCodes.Success);
+    });
+
+    it('fails with with information on the weekly clan reward', async () => {
+        return expect(traveler.getClanWeeklyRewardState('-1')).to.be.rejected;
+    });
+
+});
 
 describe('traveler#getItem', () => {
     it('respond with matching item', async () => {
@@ -105,9 +117,9 @@ describe('traveler#getItem', () => {
     });
 });
 
-// TODO: getVendors (not yet active)
+// TODO: getVendors (not yet final)
 
-// TODO: getVendor (not yet active)
+// TODO: getVendor (not yet final)
 
 // TODO: getPostGameCarnageReport
 
@@ -119,13 +131,13 @@ describe('traveler#getHistoricalStatsDefinition', () => {
     });
 });
 
-// TODO: getCLanLeaderboards
+// TODO: getCLanLeaderboards (not yet final)
 
-// TODO: getClanAggregratedStats
+// TODO: getClanAggregratedStats (not yet final)
 
-// TODO: getLeaderboards
+// TODO: getLeaderboards (not yet final)
 
-// TODO: getLeaderboardsForCharacter
+// TODO: getLeaderboardsForCharacter (not yet final)
 
 describe('traveler#searchDestinyEntities', () => {
     it('respond with matching search results for sunshot', async () => {
@@ -145,22 +157,29 @@ describe('traveler#getHistoricalStats', () => {
     });
 });
 
-// TODO: getHistoricalStatsForAccount
+// TODO: getHistoricalStatsForAccount (not yet final)
 
-// TODO: getActivityHistory
+// TODO: getActivityHistory (not yet final)
 
-// TODO: getUniqueWeaponHistory
+// TODO: getUniqueWeaponHistory (not yet final)
 
-// TODO: getAggregateActivityStats
+// TODO: getAggregateActivityStats (not yet final)
 
-// TODO: getPublicMilestoneContent
+describe('traveler#getPublicMilestoneContent', () => {
+    it('respond with public milestone content for milestone hash 202035466', async () => {
+        const result = await traveler.getPublicMilestoneContent('202035466');
+        return expect(result.ErrorCode).to.be.equal(PlatformErrorCodes.Success);
+    });
+});
 
-// TODO:getPublicMilestones
+describe('traveler#getPublicMilestones', () => {
+    it('respond with public milestones', async () => {
+        const result = await traveler.getPublicMilestones();
+        return expect(result.ErrorCode).to.be.equal(PlatformErrorCodes.Success);
+    });
+});
 
 describe('traveler#equipItem', () => {
-
-
-
 
     it('fails to equip item', async () => {
         traveler.oauth = await traveler.refreshToken(process.env.OAUTH_REFRESH_TOKEN);
@@ -185,5 +204,11 @@ describe('traveler#refreshToken', () => {
     });
     it('fails due to no refresh token provided', async () => {
         return expect(traveler.refreshToken('')).to.be.rejectedWith(rpErrors.StatusCodeError);
+    });
+});
+
+describe('OAuthError#constructor', () => {
+    it('creates a new OAuth error', async () => {
+        return expect(new OauthError('New OauthError')).to.be.a.instanceOf(Error);
     });
 });
