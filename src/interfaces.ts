@@ -727,7 +727,7 @@ export interface IDestinyProfileComponent {
 
 /**
  * Interface for the response of getProfile
- * @interface 
+ * @interface
  */
 export interface IDestinyProfileResponse {
     vendorReceipts?: ISingleComponentResponse<IDestinyVendorReceiptsComponent>;
@@ -743,6 +743,51 @@ export interface IDestinyProfileResponse {
     characterEquipment?: IDictionaryComponent<IDestinyInventoryComponent>;
     characterKiosks?: IDictionaryComponent<IDestinyKiosksComponent>;
     itemComponents?: object; // TODO: Implement full
+}
+
+/**
+ * Interface for the response of getMembershipDataByCurrentUser
+ * @interface
+ */
+export interface IUserMembershipData {
+  destinyMemberships: IUserInfoCard[];
+  bungieNetUser: IGeneralUser;
+}
+
+/**
+ * Interface for Bungie.net user info
+ * @interface
+ */
+export interface IGeneralUser {
+  membershipId: String;
+  uniqueName: String;
+  normalizedName: String;
+  displayName: String;
+  profilePicture: String;
+  profileTheme: String;
+  userTitle: String;
+  successMessageFlags: String;
+  isDeleted: Boolean;
+  about: String;
+  firstAccess?: String;
+  lastUpdate?: Date;
+  legacyPortalUID?: String;
+  psnDisplayName: String;
+  xboxDisplayName: String;
+  fbDisplayName: String;
+  showActivity?: Boolean;
+  locale: String;
+  localeInheritDefault: Boolean;
+  lastBanReportId?: String;
+  showGroupMessaging: Boolean;
+  profilePicturePath: String;
+  profilePictureWidePath: String;
+  profileThemeName: String;
+  userTitleDisplay: String;
+  statusText: String;
+  statusDate: Date;
+  profileBanExpire?: Date;
+  blizzardDisplayName: String;
 }
 
 /**
@@ -873,7 +918,7 @@ export interface IDestinyVendorComponent {
 
 /**
  * Interface for the a single vendor receipt
- * @interface 
+ * @interface
  */
 export interface IDestinyVendorReceipt {
     currencyPaid: IDestinyItemQuantity;
@@ -888,7 +933,7 @@ export interface IDestinyVendorReceipt {
 
 /**
  * Interface for the vendor receipts component
- * @interface 
+ * @interface
  */
 export interface IDestinyVendorReceiptsComponent {
     receipts: IDestinyVendorReceipt[];
@@ -946,7 +991,7 @@ export interface IGearAssetDataBaseDefinition {
 
 /**
  * Interface for defining an object for the OAuth process
- * @interface 
+ * @interface
  */
 export interface IOAuthConfig {
     clientId?: string;
@@ -955,7 +1000,7 @@ export interface IOAuthConfig {
 
 /**
  * Interface for defining an object for the OAuth response
- * @interface 
+ * @interface
  */
 export interface IOAuthResponse {
     access_token: string;
@@ -974,7 +1019,7 @@ export interface IPagedQUery {
 
 /**
  * Interface for defining an object for the endpoint query strings
- * @interface 
+ * @interface
  */
 export interface IQueryStringParameters {
     components?: ComponentType[];
