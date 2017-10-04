@@ -647,6 +647,49 @@ export interface IDestinyProfileResponse {
     itemComponents?: object;
 }
 /**
+ * Interface for the response of getMembershipDataByCurrentUser
+ * @interface
+ */
+export interface IUserMembershipData {
+    destinyMemberships: IUserInfoCard[];
+    bungieNetUser: IGeneralUser;
+}
+/**
+ * Interface for Bungie.net user info
+ * @interface
+ */
+export interface IGeneralUser {
+    membershipId: String;
+    uniqueName: String;
+    normalizedName: String;
+    displayName: String;
+    profilePicture: String;
+    profileTheme: String;
+    userTitle: String;
+    successMessageFlags: String;
+    isDeleted: Boolean;
+    about: String;
+    firstAccess?: String;
+    lastUpdate?: Date;
+    legacyPortalUID?: String;
+    psnDisplayName: String;
+    xboxDisplayName: String;
+    fbDisplayName: String;
+    showActivity?: Boolean;
+    locale: String;
+    localeInheritDefault: Boolean;
+    lastBanReportId?: String;
+    showGroupMessaging: Boolean;
+    profilePicturePath: String;
+    profilePictureWidePath: String;
+    profileThemeName: String;
+    userTitleDisplay: String;
+    statusText: String;
+    statusDate: Date;
+    profileBanExpire?: Date;
+    blizzardDisplayName: String;
+}
+/**
  * Interface for a single character progress component
  * @interface
  */

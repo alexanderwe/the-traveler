@@ -33,6 +33,7 @@ import {
     IOAuthResponse,
     IQueryStringParameters,
     IUserInfoCard,
+    IUserMembershipData,
 } from './interfaces';
 import OAuthError from './OAuthError';
 /**
@@ -89,11 +90,11 @@ export default class Traveler {
     }
 
     /**
-     * Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions. 
-     * Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found. 
+     * Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions.
+     * Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found.
      * Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
-     * @param entityType 
-     * @param hashIdentifier 
+     * @param entityType
+     * @param hashIdentifier
      * @return {Promise.IAPIResponse<IDestinyDefinition>} When fulfilled returns an object containing the static definition of an entity.
      */
     public getDestinyEntityDefinition(typeDefinition: TypeDefinition, hashIdentifier: string): Promise<IAPIResponse<IDestinyDefinition>> {
@@ -150,7 +151,7 @@ export default class Traveler {
      * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
     public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>> {
-        if (this.oauthOptions) { // if we have oauth available use it 
+        if (this.oauthOptions) { // if we have oauth available use it
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
             return new Promise<IAPIResponse<IDestinyProfileResponse>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
@@ -177,6 +178,28 @@ export default class Traveler {
     }
 
     /**
+   * Retrieve information about the Bungie.net profile of the currently authenticated user
+   * @async
+   * @return {Promise.IAPIResponse<IUserMembershipData>} When fulfilled returns an object containing stats about the specified character
+   */
+    public getMembershipDataForCurrentUser(): Promise<IAPIResponse<IUserMembershipData>> {
+      if (this.oauthOptions) {
+        this.oauthOptions.uri = `${this.rootURL}Platform/User/GetMembershipsForCurrentUser/`;
+        return new Promise<IAPIResponse<IUserMembershipData>>((resolve, reject) => {
+          this.httpService.get(this.oauthOptions)
+            .then((response: IAPIResponse<IUserMembershipData>) => {
+              resolve(response);
+            })
+            .catch((err) => {
+              reject(err);
+            });
+        });
+      } else {
+        throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+      }
+    }
+
+    /**
      * Retrieve aggregrated details about a Destiny Characters
      * @async
      * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
@@ -191,7 +214,7 @@ export default class Traveler {
      * @return {Promise.IAPIResponse<IDestinyCharacterResponse>} When fulfilled returns an object containing stats about the specified character
      */
     public getCharacter(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyCharacterResponse>> {
-        if (this.oauthOptions) { // if we have oauth available use it 
+        if (this.oauthOptions) { // if we have oauth available use it
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(queryStringParameters)}`;
             return new Promise<IAPIResponse<IDestinyCharacterResponse>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
@@ -278,7 +301,7 @@ export default class Traveler {
      * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
      */
     public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse[]>> {
-        if (this.oauthOptions) { // if we have oauth available use it 
+        if (this.oauthOptions) { // if we have oauth available use it
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
             return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
@@ -869,7 +892,7 @@ export default class Traveler {
     }
 
     /**
-     * Generates the OAuthURL where your users need to sign up to give your application access to 
+     * Generates the OAuthURL where your users need to sign up to give your application access to
      * authorized endpoints.
      */
     public generateOAuthURL(): string {
@@ -931,11 +954,11 @@ export default class Traveler {
     }
 
     /**
-     * Use the refreshToken to retrieve a new valid access_token. 
+     * Use the refreshToken to retrieve a new valid access_token.
      * Please keep the expiration durations in mind.
      * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
      * @async
-     * @param refreshToken 
+     * @param refreshToken
      */
     public refreshToken(refreshToken: string): Promise<IOAuthResponse> {
         const options = {

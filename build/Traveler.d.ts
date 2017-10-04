@@ -1,6 +1,6 @@
 import 'es6-map';
 import { BungieMembershipType, TypeDefinition } from './enums';
-import { IAPIResponse, IConfig, IDestinyActivityHistoryResults, IDestinyAggregateActivityResults, IDestinyCharacterResponse, IDestinyClanAggregateStat, IDestinyDefinition, IDestinyEntitySearchResult, IDestinyEquipItemResults, IDestinyHistoricalStatsAccountResult, IDestinyHistoricalStatsByPeriod, IDestinyHistoricalStatsDefinition, IDestinyHistoricalWeaponStatsData, IDestinyItemActionRequest, IDestinyItemResponse, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyMilestone, IDestinyMilestoneContent, IDestinyPostGameCarnageReportData, IDestinyProfileResponse, IDestinyPublicMilestone, IDestinyVendorResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard } from './interfaces';
+import { IAPIResponse, IConfig, IDestinyActivityHistoryResults, IDestinyAggregateActivityResults, IDestinyCharacterResponse, IDestinyClanAggregateStat, IDestinyDefinition, IDestinyEntitySearchResult, IDestinyEquipItemResults, IDestinyHistoricalStatsAccountResult, IDestinyHistoricalStatsByPeriod, IDestinyHistoricalStatsDefinition, IDestinyHistoricalWeaponStatsData, IDestinyItemActionRequest, IDestinyItemResponse, IDestinyItemSetActionRequest, IDestinyItemStateRequest, IDestinyItemTransferRequest, IDestinyManifest, IDestinyMilestone, IDestinyMilestoneContent, IDestinyPostGameCarnageReportData, IDestinyProfileResponse, IDestinyPublicMilestone, IDestinyVendorResponse, IOAuthResponse, IQueryStringParameters, IUserInfoCard, IUserMembershipData } from './interfaces';
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -59,6 +59,12 @@ export default class Traveler {
      * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
      */
     getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>>;
+    /**
+   * Retrieve information about the Bungie.net profile of the currently authenticated user
+   * @async
+   * @return {Promise.IAPIResponse<IUserMembershipData>} When fulfilled returns an object containing stats about the specified character
+   */
+    getMembershipDataForCurrentUser(): Promise<IAPIResponse<IUserMembershipData>>;
     /**
      * Retrieve aggregrated details about a Destiny Characters
      * @async

@@ -135,6 +135,29 @@ var Traveler = /** @class */ (function () {
         }
     };
     /**
+   * Retrieve information about the Bungie.net profile of the currently authenticated user
+   * @async
+   * @return {Promise.IAPIResponse<IUserMembershipData>} When fulfilled returns an object containing stats about the specified character
+   */
+    Traveler.prototype.getMembershipDataForCurrentUser = function () {
+        var _this = this;
+        if (this.oauthOptions) {
+            this.oauthOptions.uri = this.rootURL + "Platform/User/GetMembershipsForCurrentUser/";
+            return new Promise(function (resolve, reject) {
+                _this.httpService.get(_this.oauthOptions)
+                    .then(function (response) {
+                    resolve(response);
+                })
+                    .catch(function (err) {
+                    reject(err);
+                });
+            });
+        }
+        else {
+            throw new OAuthError_1.default('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    };
+    /**
      * Retrieve aggregrated details about a Destiny Characters
      * @async
      * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
