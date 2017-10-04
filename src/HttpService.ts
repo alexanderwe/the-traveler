@@ -1,8 +1,5 @@
 import 'es6-promise';
-import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
-import * as util from 'util';
-import { IAPIResponse } from './interfaces';
 
 /**
  * Wrapper class for the request package. Used to make HTTP calls.
@@ -29,6 +26,7 @@ export default class HTTPService {
         return new Promise<object>((resolve, reject) => {
             rp(options)
                 .then((response) => {
+
                     if (response.access_token) { // this is a oauth reponse
                         resolve(response);
                     } else if (response.ErrorCode !== 1) {

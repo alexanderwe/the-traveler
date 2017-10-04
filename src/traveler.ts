@@ -1,4 +1,3 @@
-import 'es6-map';
 import * as querystring from 'querystring';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, TypeDefinition } from './enums';
@@ -122,13 +121,13 @@ export default class Traveler {
      * <li>254: Bungie</li>
      * </ul>
      * Keep in mind that `-1` or `MembershipType.All` is only applicable on this endpoint.
-     * @return {Promise.IAPIResponse<IUserInfoCard>} When fulfilled returns an object containing information about the found user
+     * @return {Promise.IAPIResponse<IUserInfoCard[]>} When fulfilled returns an object containing information about the found user
      */
-    public searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse<IUserInfoCard>> {
+    public searchDestinyPlayer(membershipType: BungieMembershipType, displayName: string): Promise<IAPIResponse<IUserInfoCard[]>> {
         this.options.uri = `${this.apibase}/SearchDestinyPlayer/${membershipType}/${displayName}/`;
-        return new Promise<IAPIResponse<IUserInfoCard>>((resolve, reject) => {
+        return new Promise<IAPIResponse<IUserInfoCard[]>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse<IUserInfoCard>) => {
+                .then((response: IAPIResponse<IUserInfoCard[]>) => {
                     resolve(response);
                 })
                 .catch((err) => {
