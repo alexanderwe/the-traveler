@@ -147,7 +147,7 @@ export default class Traveler {
      * <ul>
      * <li>components: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing stats about the specified character
+     * @return {Promise.IAPIResponse<IDestinyProfileResponse>} When fulfilled returns an object containing information about the user profile 
      */
     public getProfile(membershipType: BungieMembershipType, destinyMembershipId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyProfileResponse>> {
         if (this.oauthOptions) { // if we have oauth available use it
@@ -177,25 +177,25 @@ export default class Traveler {
     }
 
     /**
-   * Retrieve information about the Bungie.net profile of the currently authenticated user
-   * @async
-   * @return {Promise.IAPIResponse<IUserMembershipData>} When fulfilled returns an object containing stats about the specified character
-   */
+     * Retrieve information about the Bungie.net profile of the currently authenticated user
+     * @async
+     * @return {Promise.IAPIResponse<IUserMembershipData>} When fulfilled returns an object containing information about the membership data of the current logged in user.
+     */
     public getMembershipDataForCurrentUser(): Promise<IAPIResponse<IUserMembershipData>> {
-      if (this.oauthOptions) {
-        this.oauthOptions.uri = `${this.rootURL}Platform/User/GetMembershipsForCurrentUser/`;
-        return new Promise<IAPIResponse<IUserMembershipData>>((resolve, reject) => {
-          this.httpService.get(this.oauthOptions)
-            .then((response: IAPIResponse<IUserMembershipData>) => {
-              resolve(response);
-            })
-            .catch((err) => {
-              reject(err);
+        if (this.oauthOptions) {
+            this.oauthOptions.uri = `${this.rootURL}Platform/User/GetMembershipsForCurrentUser/`;
+            return new Promise<IAPIResponse<IUserMembershipData>>((resolve, reject) => {
+                this.httpService.get(this.oauthOptions)
+                    .then((response: IAPIResponse<IUserMembershipData>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
             });
-        });
-      } else {
-        throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
-      }
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
     }
 
     /**

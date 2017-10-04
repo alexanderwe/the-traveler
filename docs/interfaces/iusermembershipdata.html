@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TransferStatus | The Traveler</title>
+	<title>IUserMembershipData | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="transferstatus.html">TransferStatus</a>
+					<a href="iusermembershipdata.html">IUserMembershipData</a>
 				</li>
 			</ul>
-			<h1>Enumeration TransferStatus</h1>
+			<h1>Interface IUserMembershipData</h1>
 		</div>
 	</div>
 </header>
@@ -69,69 +69,55 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Enum for the transfer status of an item</p>
+						<p>Interface for the response of getMembershipDataByCurrentUser</p>
 					</div>
 					<dl class="tsd-comment-tags">
-						<dt>enum</dt>
+						<dt>interface</dt>
 						<dd></dd>
 					</dl>
 				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IUserMembershipData</span>
+					</li>
+				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="transferstatus.html#cantransfer" class="tsd-kind-icon">Can<wbr>Transfer</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="transferstatus.html#itemisequipped" class="tsd-kind-icon">Item<wbr>IsEquipped</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="transferstatus.html#noroomindestination" class="tsd-kind-icon">No<wbr>Room<wbr>InDestination</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="transferstatus.html#nottransferrable" class="tsd-kind-icon">Not<wbr>Transferrable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iusermembershipdata.html#bungienetuser" class="tsd-kind-icon">bungie<wbr>Net<wbr>User</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iusermembershipdata.html#destinymemberships" class="tsd-kind-icon">destiny<wbr>Memberships</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="cantransfer" class="tsd-anchor"></a>
-					<h3>Can<wbr>Transfer</h3>
-					<div class="tsd-signature tsd-kind-icon">Can<wbr>Transfer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="bungienetuser" class="tsd-anchor"></a>
+					<h3>bungie<wbr>Net<wbr>User</h3>
+					<div class="tsd-signature tsd-kind-icon">bungie<wbr>Net<wbr>User<span class="tsd-signature-symbol">:</span> <a href="igeneraluser.html" class="tsd-signature-type">IGeneralUser</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/enums.ts#L1183">enums.ts:1183</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/interfaces.ts#L754">interfaces.ts:754</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="itemisequipped" class="tsd-anchor"></a>
-					<h3>Item<wbr>IsEquipped</h3>
-					<div class="tsd-signature tsd-kind-icon">Item<wbr>IsEquipped<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="destinymemberships" class="tsd-anchor"></a>
+					<h3>destiny<wbr>Memberships</h3>
+					<div class="tsd-signature tsd-kind-icon">destiny<wbr>Memberships<span class="tsd-signature-symbol">:</span> <a href="iuserinfocard.html" class="tsd-signature-type">IUserInfoCard</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/enums.ts#L1184">enums.ts:1184</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="noroomindestination" class="tsd-anchor"></a>
-					<h3>No<wbr>Room<wbr>InDestination</h3>
-					<div class="tsd-signature tsd-kind-icon">No<wbr>Room<wbr>InDestination<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/enums.ts#L1186">enums.ts:1186</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="nottransferrable" class="tsd-anchor"></a>
-					<h3>Not<wbr>Transferrable</h3>
-					<div class="tsd-signature tsd-kind-icon">Not<wbr>Transferrable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/enums.ts#L1185">enums.ts:1185</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/354c7c2/src/interfaces.ts#L753">interfaces.ts:753</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -149,20 +135,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-enum">
-						<a href="transferstatus.html" class="tsd-kind-icon">Transfer<wbr>Status</a>
+					<li class="current tsd-kind-interface">
+						<a href="iusermembershipdata.html" class="tsd-kind-icon">IUser<wbr>Membership<wbr>Data</a>
 						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="transferstatus.html#cantransfer" class="tsd-kind-icon">Can<wbr>Transfer</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iusermembershipdata.html#bungienetuser" class="tsd-kind-icon">bungie<wbr>Net<wbr>User</a>
 							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="transferstatus.html#itemisequipped" class="tsd-kind-icon">Item<wbr>IsEquipped</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="transferstatus.html#noroomindestination" class="tsd-kind-icon">No<wbr>Room<wbr>InDestination</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="transferstatus.html#nottransferrable" class="tsd-kind-icon">Not<wbr>Transferrable</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iusermembershipdata.html#destinymemberships" class="tsd-kind-icon">destiny<wbr>Memberships</a>
 							</li>
 						</ul>
 					</li>
