@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Bungie.net: 404 Page Not Found</title>
+	<link type="text/css" rel="stylesheet" href="/css/error.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+	<header>
+		<a id="logo" href="/"></a>
+	</header>
+	<div class="container">
+		<h1>404: Page Not Found</h1>
+		<div class="message">
+			<p>
+				Sorry, the page you're looking for has moved or been incinerated.<br /><br />
+			</p>
+		</div>
+		<div class="footer">
+			<p>
+				This error has automatically been logged and we are aware of your plight.<br />
+				<br />
+				HTTP Client Error; 404 Page Not Found
+	   
+			</p>
+		</div>
+	</div>
+</body>
+</html>

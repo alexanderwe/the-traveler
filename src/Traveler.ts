@@ -1,4 +1,7 @@
+
+import * as fs from 'fs';
 import * as querystring from 'querystring';
+import * as request from 'request';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
@@ -35,6 +38,7 @@ import {
     IUserMembershipData,
 } from './interfaces';
 import OAuthError from './OAuthError';
+
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -984,6 +988,14 @@ export default class Traveler {
                     reject(err);
                 });
         });
+    }
+
+    public downloadManifest(manifestUrl: string, filename?: string): void {
+        request(`https://www.bungie.net/${manifestUrl}}`)
+            .pipe(fs.createWriteStream(manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)))
+            .on('close', () => {
+                console.log('File written!');
+            });
     }
 
     /**

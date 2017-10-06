@@ -746,51 +746,6 @@ export interface IDestinyProfileResponse {
 }
 
 /**
- * Interface for the response of getMembershipDataByCurrentUser
- * @interface
- */
-export interface IUserMembershipData {
-  destinyMemberships: IUserInfoCard[];
-  bungieNetUser: IGeneralUser;
-}
-
-/**
- * Interface for Bungie.net user info
- * @interface
- */
-export interface IGeneralUser {
-  membershipId: String;
-  uniqueName: String;
-  normalizedName: String;
-  displayName: String;
-  profilePicture: String;
-  profileTheme: String;
-  userTitle: String;
-  successMessageFlags: String;
-  isDeleted: Boolean;
-  about: String;
-  firstAccess?: String;
-  lastUpdate?: Date;
-  legacyPortalUID?: String;
-  psnDisplayName: String;
-  xboxDisplayName: String;
-  fbDisplayName: String;
-  showActivity?: Boolean;
-  locale: String;
-  localeInheritDefault: Boolean;
-  lastBanReportId?: String;
-  showGroupMessaging: Boolean;
-  profilePicturePath: String;
-  profilePictureWidePath: String;
-  profileThemeName: String;
-  userTitleDisplay: String;
-  statusText: String;
-  statusDate: Date;
-  profileBanExpire?: Date;
-  blizzardDisplayName: String;
-}
-
-/**
  * Interface for a single character progress component
  * @interface
  */
@@ -988,6 +943,41 @@ export interface IGearAssetDataBaseDefinition {
     version: string;
     path: string;
 }
+/**
+ * Interface for Bungie.net user info
+ * @interface
+ */
+export interface IGeneralUser {
+    membershipId: string;
+    uniqueName: string;
+    normalizedName: string;
+    displayName: string;
+    profilePicture: string;
+    profileTheme: string;
+    userTitle: string;
+    successMessageFlags: string;
+    isDeleted: boolean;
+    about: string;
+    firstAccess?: string;
+    lastUpdate?: Date;
+    legacyPortalUID?: string;
+    psnDisplayName: string;
+    xboxDisplayName: string;
+    fbDisplayName: string;
+    showActivity?: boolean;
+    locale: string;
+    localeInheritDefault: boolean;
+    lastBanReportId?: string;
+    showGroupMessaging: boolean;
+    profilePicturePath: string;
+    profilePictureWidePath: string;
+    profileThemeName: string;
+    userTitleDisplay: string;
+    statusText: string;
+    statusDate: Date;
+    profileBanExpire?: Date;
+    blizzardDisplayName: string;
+}
 
 /**
  * Interface for defining an object for the OAuth process
@@ -1064,4 +1054,13 @@ export interface IUserInfoCard {
     membershipType: BungieMembershipType;
     membershipId: string;
     displayName: string;
+}
+
+/**
+ * Interface for the response of getMembershipDataByCurrentUser
+ * @interface
+ */
+export interface IUserMembershipData {
+    destinyMemberships: IUserInfoCard[];
+    bungieNetUser: IGeneralUser;
 }
