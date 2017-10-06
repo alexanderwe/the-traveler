@@ -33,12 +33,14 @@
         "@types/request-promise-native": "^1.0.6",
         "es6-promise": "^4.1.1",
         "request": "^2.83.0",
-        "request-promise-native": "^1.0.4"
+        "request-promise-native": "^1.0.4",
+        "sqlite3": "^3.1.13"
     },
     "devDependencies": {
         "@types/chai": "^4.0.4",
         "@types/chai-as-promised": "^7.1.0",
         "@types/mocha": "^2.2.43",
+        "@types/sqlite3": "^3.1.1",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
         "babel-plugin-transform-runtime": "^6.23.0",
