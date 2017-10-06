@@ -13,7 +13,7 @@ import {
 } from '../src/enums';
 import { IAPIResponse } from '../src/interfaces';
 import OauthError from '../src/OAuthError';
-import Traveler from '../src/traveler';
+import Traveler from '../src/Traveler';
 
 chai.use(chaiAsPromised);
 
