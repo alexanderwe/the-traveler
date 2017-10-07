@@ -1,5 +1,6 @@
 
 import * as fs from 'fs';
+import * as SZIP from 'node-stream-zip';
 import * as querystring from 'querystring';
 import * as request from 'request';
 import * as rp from 'request-promise-native';
@@ -990,12 +991,39 @@ export default class Traveler {
         });
     }
 
-    public downloadManifest(manifestUrl: string, filename?: string): void {
-        request(`https://www.bungie.net/${manifestUrl}}`)
-            .pipe(fs.createWriteStream(manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)))
-            .on('close', () => {
-                console.log('File written!');
-            });
+    /**
+     * 
+     * @param manifestUrl The url of the manifest you want to download
+     * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
+     */
+    public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
+        this.options.uri = `https://www.bungie.net/${manifestUrl}`;
+        const outStream = fs.createWriteStream('manifest.zip');
+        return new Promise<string>((resolve, reject) => {
+            request(this.options)
+                .on('response', (res, body) => {
+                    // do nothing
+                }).pipe(outStream)
+                .on('finish', () => {
+                    const zip = new SZIP({
+                        file: './manifest.zip',
+                        storeEntries: true,
+                    });
+
+                    const fileName = manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1);
+
+                    zip.on('ready', () => {
+                        zip.extract(manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1), filename, (err: object, count: number) => {
+
+                            if (err) {
+                                reject(new Error('Error extracting zip'))
+                            } else {
+                                resolve(filename);
+                            }
+                        });
+                    });
+                });
+        });
     }
 
     /**
