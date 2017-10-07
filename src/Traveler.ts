@@ -992,21 +992,22 @@ export default class Traveler {
     }
 
     /**
-     * 
+     * Download the specified manifest file
+     * @async
      * @param manifestUrl The url of the manifest you want to download
      * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
      */
     public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
         this.options.uri = `https://www.bungie.net/${manifestUrl}`;
-        const outStream = fs.createWriteStream('manifest.zip');
+        const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`);
         return new Promise<string>((resolve, reject) => {
             request(this.options)
-                .on('response', (res, body) => {
+                .on('response', (res: any, body: any) => {
                     // do nothing
                 }).pipe(outStream)
                 .on('finish', () => {
                     const zip = new SZIP({
-                        file: './manifest.zip',
+                        file: `${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`,
                         storeEntries: true,
                     });
 
@@ -1016,7 +1017,7 @@ export default class Traveler {
                         zip.extract(manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1), filename, (err: object, count: number) => {
 
                             if (err) {
-                                reject(new Error('Error extracting zip'))
+                                reject(new Error('Error extracting zip'));
                             } else {
                                 resolve(filename);
                             }

@@ -12,8 +12,8 @@ src/index.js
 .vscode
 .DS_Store
 build
-manifest.zip
-manifest.content
+*.zip
+*.content
 
 
 # Coverage directory used by tools like istanbul
