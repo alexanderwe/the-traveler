@@ -17,7 +17,7 @@ Table of Contents
          * [Prerequisites](#prerequisites)
       * [OAuth](#oauth)
       * [Notices](#notices)
-         * [Typescript Support](#typescript-support) 
+         * [Typescript Support](#typescript-support)
          * [Typical Response](#typical-response)
          * [Privacy](#privacy)
          * [Documentation](#documentation)
@@ -26,12 +26,14 @@ Table of Contents
          * [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
          * [Transfer item from vault to character (needs OAuth)](#transfer-item-from-vault-to-character-needs-oauth)
          * [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
+         * [Manifest](#manifest)
       * [Progress](#progress)
       * [Built With](#built-with)
       * [Versioning](#versioning)
       * [Issues](#issues)
       * [License](#license)
       * [Acknowledgments](#acknowledgments)
+
 
 
 
