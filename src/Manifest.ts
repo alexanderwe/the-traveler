@@ -13,7 +13,7 @@ export default class Manifest {
             this.filepath = filepath;
             this.db = new sqlite.Database(filepath);
         } else {
-            throw new Error('The manifest file you want to refer to does not exist. Consider downloading it at first.');
+            throw new Error('The manifest file you want to refer to does not exist. Consider downloading it at first with Traveler#downloadManifest.');
         }
     }
 

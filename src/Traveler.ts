@@ -996,6 +996,7 @@ export default class Traveler {
      * @async
      * @param manifestUrl The url of the manifest you want to download
      * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
+     * @return {Promise.string} When fulfilled returns the path of the saved manifest file
      */
     public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
         this.options.uri = `https://www.bungie.net/${manifestUrl}`;
