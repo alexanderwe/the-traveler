@@ -541,7 +541,9 @@ export interface IDestinyManifest {
     version: string;
     mobileAssetContentPath: string;
     mobileGearAssetDataBases: IGearAssetDataBaseDefinition[];
-    mobileWorldContentPaths: object;
+    mobileWorldContentPaths: {
+        [key: string]: string;
+    };
     mobileClanBannerDatabasePath: string;
     mobileGearCDN: object;
 }

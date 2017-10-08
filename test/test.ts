@@ -12,6 +12,7 @@ import {
     TypeDefinition,
 } from '../src/enums';
 import { IAPIResponse } from '../src/interfaces';
+import Manifest from '../src/Manifest';
 import OauthError from '../src/OAuthError';
 import Traveler from '../src/Traveler';
 
@@ -210,5 +211,26 @@ describe('traveler#refreshToken', () => {
 describe('OAuthError#constructor', () => {
     it('creates a new OAuth error', async () => {
         return expect(new OauthError('New OauthError')).to.be.a.instanceOf(Error);
+    });
+});
+
+describe('Traveler#downloadManifest and Manifest#constructor and Manifest#queryManifest', () => {
+    it('Downloads the manifest and queries it with a simple query', async () => {
+        const result = await traveler.getDestinyManifest();
+        const filepath = await traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content');
+        const manifest = new Manifest(filepath);
+        const queryResult = await manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"');
+        return expect(queryResult).to.be.a.instanceOf(Object);
+    });
+});
+
+describe('Manifest', () => {
+    it('Fails to create an instance', async () => {
+        return expect(() => {
+            const manifest = new Manifest('./test');
+        }).to.throw;
+    });
+    it('Fails to query an invalid db', async () => {
+        return expect(new Manifest('./output.gif').queryManifest('SELECT name FROM sqlite_master WHERE type="table"')).to.be.rejectedWith(Error);
     });
 });
