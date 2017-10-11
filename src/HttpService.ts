@@ -1,4 +1,5 @@
 import 'es6-promise';
+import * as request from 'request';
 import * as rp from 'request-promise-native';
 
 /**
@@ -11,6 +12,9 @@ export default class HTTPService {
         this.debug = debug;
     }
 
+
+
+
     /**
      * Base function for GET requests
      * @async
@@ -19,20 +23,18 @@ export default class HTTPService {
      */
     public get(options: rp.OptionsWithUri): Promise<object> {
         options.method = 'GET';
-        options.json = true;
         if (this.debug) {
             console.log('\x1b[33m%s\x1b[0m', 'Debug url:' + options.uri);
         }
         return new Promise<object>((resolve, reject) => {
             rp(options)
                 .then((response) => {
-
                     if (response.access_token) { // this is a oauth reponse
                         resolve(response);
                     } else if (response.ErrorCode !== 1) {
                         reject(response);
                     } else {
-                        resolve(JSON.parse(JSON.stringify(response)));
+                        resolve(response);
                     }
                 })
                 .catch((err) => {

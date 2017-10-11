@@ -1,10 +1,10 @@
 # the-traveler 
 [![npm](https://img.shields.io/npm/v/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
 [![npm](https://img.shields.io/npm/dt/the-traveler.svg)](https://www.npmjs.com/package/the-traveler)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/alexanderwe/the-traveler/blob/master/LICENSE.md)
-[![GitHub issues](https://img.shields.io/github/issues/alexanderwe/the-traveler.svg)](https://github.com/alexanderwe/the-traveler/issues)
 [![Build Status](https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master)](https://travis-ci.org/alexanderwe/the-traveler)
 [![codecov](https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg)](https://codecov.io/gh/alexanderwe/the-traveler)
+[![dependencies Status](https://david-dm.org/alexanderwe/the-traveler/status.svg)](https://david-dm.org/alexanderwe/the-traveler)
+[![Known Vulnerabilities](https://snyk.io/test/github/alexanderwe/the-traveler/badge.svg)](https://snyk.io/test/github/alexanderwe/the-traveler/badge.svg)
 
 the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.
 
@@ -17,7 +17,7 @@ Table of Contents
          * [Prerequisites](#prerequisites)
       * [OAuth](#oauth)
       * [Notices](#notices)
-         * [Typescript Support](#typescript-support) 
+         * [Typescript Support](#typescript-support)
          * [Typical Response](#typical-response)
          * [Privacy](#privacy)
          * [Documentation](#documentation)
@@ -26,12 +26,14 @@ Table of Contents
          * [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
          * [Transfer item from vault to character (needs OAuth)](#transfer-item-from-vault-to-character-needs-oauth)
          * [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
+         * [Manifest](#manifest)
       * [Progress](#progress)
       * [Built With](#built-with)
       * [Versioning](#versioning)
       * [Issues](#issues)
       * [License](#license)
       * [Acknowledgments](#acknowledgments)
+
 
 
 
@@ -335,6 +337,51 @@ async () => {
 }
 ```
 
+### Manifest
+
+To use the manifest you first have to download it via 'traveler.downloadManifest(manifestUrl, filename)'. **Be aware that you have to install [node-sqlite3](https://github.com/mapbox/node-sqlite3) to use the manifest class**
+
+The `manifestUrl` can be every URL contained in the response of `traveler.getManifest()`
+ 
+This method will download the specified manifest, unzip it and save it as `filename`. Afterwards you are able to create a new instance of  the `Manifest` class. With this it is possible to query the saved file with valid sqlite queries. A good hint for querying is noted in the [Gist](https://gist.github.com/vpzed/efb7b29f5dfda49633d62801ac30566c) from [@vpzed](https://github.com/vpzed). The result is retrieved asynchronously which makes it possible to integrate it with the `async` `await` flow. 
+
+_common way_
+```
+import Traveler from 'the-traveler';
+import Manifest from 'the-traveler/build/Manifest' 
+
+
+traveler.getDestinyManifest().then(result => {
+    traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content').then(filepath => {
+        const manifest = new Manifest(filepath);
+        manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"').then(queryResult => {
+            console.log(queryResult);
+        }).catch(err => {
+            console.log(err);
+        });
+    }).catch(err => {
+        console.log(err);
+    })
+})
+
+
+```
+
+
+_async way_
+```
+import Traveler from 'the-traveler';
+import Manifest from 'the-traveler/build/Manifest' 
+
+async ()=> {
+    const result = await traveler.getDestinyManifest();
+    const filepath = await traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content');
+    const manifest = new Manifest(filepath);
+    const queryResult = await manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"')
+}
+```
+
+
 ## Progress
 
 Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
@@ -374,6 +421,8 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 
 * [request-promise-native](https://github.com/request/request-promise-native) - Request package
 * [Typescript](https://github.com/Microsoft/TypeScript) - Programming Language
+* [node-stream-zip](https://github.com/antelle/node-stream-zip) - Unzipping files in node (for Manifest interaction)
+* [node-sqlite3](https://github.com/mapbox/node-sqlite3) - Use sqlite 3 in node (for Manifest interaction as a peer dependency) 
 
 ## Versioning
 

@@ -5,6 +5,7 @@ node_js:
 install:
 - yarn install
 before_script:
+- yarn add sqlite3
 - yarn build
 script:
 - yarn test

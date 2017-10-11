@@ -1,4 +1,8 @@
+
+import * as fs from 'fs';
+import * as SZIP from 'node-stream-zip';
 import * as querystring from 'querystring';
+import * as request from 'request';
 import * as rp from 'request-promise-native';
 import { BungieMembershipType, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
@@ -35,6 +39,7 @@ import {
     IUserMembershipData,
 } from './interfaces';
 import OAuthError from './OAuthError';
+
 /**
  * Entry class for accessing the Destiny 2 API
  */
@@ -982,6 +987,43 @@ export default class Traveler {
                 })
                 .catch((err) => {
                     reject(err);
+                });
+        });
+    }
+
+    /**
+     * Download the specified manifest file
+     * @async
+     * @param manifestUrl The url of the manifest you want to download
+     * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
+     * @return {Promise.string} When fulfilled returns the path of the saved manifest file
+     */
+    public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
+        this.options.uri = `https://www.bungie.net/${manifestUrl}`;
+        const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`);
+        return new Promise<string>((resolve, reject) => {
+            request(this.options)
+                .on('response', (res: any, body: any) => {
+                    // do nothing
+                }).pipe(outStream)
+                .on('finish', () => {
+                    const zip = new SZIP({
+                        file: `${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`,
+                        storeEntries: true,
+                    });
+
+                    const fileName = manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1);
+
+                    zip.on('ready', () => {
+                        zip.extract(manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1), filename, (err: object, count: number) => {
+
+                            if (err) {
+                                reject(new Error('Error extracting zip'));
+                            } else {
+                                resolve(filename);
+                            }
+                        });
+                    });
                 });
         });
     }
