@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as sqlite from 'sqlite3';
 
 /**
- * Class for accessing the manifest file
+ * Class for accessing the manifest file. You will need to install <strong>sqlite3</strong> to use this class.
  */
 export default class Manifest {
     private filepath: string;
