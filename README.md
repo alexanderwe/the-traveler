@@ -421,7 +421,7 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 
 * [request-promise-native](https://github.com/request/request-promise-native) - Request package
 * [Typescript](https://github.com/Microsoft/TypeScript) - Programming Language
-* [node-stream-zip](https://github.com/antelle/node-stream-zip) - Unzipping files in node (for Manifest interaction)
+* [node-stream-zip](https://github.com/antelle/node-stream-zip) - Unzipping files in node (for Manifest interaction) _Note: Maybe this will end up in a peer depdendency in a future release since it adds overhead to the package if you do not want to use the Manifest flow_
 * [node-sqlite3](https://github.com/mapbox/node-sqlite3) - Use sqlite 3 in node (for Manifest interaction as a peer dependency) 
 
 ## Versioning
