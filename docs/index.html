@@ -70,7 +70,8 @@
 					<a href="https://travis-ci.org/alexanderwe/the-traveler"><img src="https://travis-ci.org/alexanderwe/the-traveler.svg?branch=master" alt="Build Status"></a>
 					<a href="https://codecov.io/gh/alexanderwe/the-traveler"><img src="https://codecov.io/gh/alexanderwe/the-traveler/branch/master/graph/badge.svg" alt="codecov"></a>
 					<a href="https://david-dm.org/alexanderwe/the-traveler"><img src="https://david-dm.org/alexanderwe/the-traveler/status.svg" alt="dependencies Status"></a>
-				the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
+				<a href="https://snyk.io/test/github/alexanderwe/the-traveler/badge.svg"><img src="https://snyk.io/test/github/alexanderwe/the-traveler/badge.svg" alt="Known Vulnerabilities"></a></p>
+				<p>the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 				<h1 id="table-of-contents">Table of Contents</h1>
 				<ul>
 					<li><a href="#the-traveler">the-traveler</a></li>
@@ -406,6 +407,11 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
+							<td>Destiny2.PullFromPostmaster</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
 							<td>Destiny2.EquipItem</td>
 							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
@@ -432,6 +438,11 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 						</tr>
 						<tr>
 							<td>Destiny2.GetPostGameCarnageReport</td>
+							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
+						</tr>
+						<tr>
+							<td>Destiny2.ReportOffensivePostGameCarnageReportPlayer</td>
 							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
 							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
@@ -468,7 +479,7 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 						<tr>
 							<td>Destiny2.GetHistoricalStats</td>
 							<td><img src="https://img.shields.io/badge/implemented-yes-green.svg" alt="alt text" title="Implemented:yes"></td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
+							<td><img src="https://img.shields.io/badge/-unlocked-green.svg" alt="alt text" title="Unlocked"></td>
 						</tr>
 						<tr>
 							<td>Destiny2.GetHistoricalStatsForAccount</td>
@@ -506,7 +517,7 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 				<ul>
 					<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
 					<li><a href="https://github.com/Microsoft/TypeScript">Typescript</a> - Programming Language</li>
-					<li><a href="https://github.com/antelle/node-stream-zip">node-stream-zip</a> - Unzipping files in node (for Manifest interaction)</li>
+					<li><a href="https://github.com/antelle/node-stream-zip">node-stream-zip</a> - Unzipping files in node (for Manifest interaction) <em>Note: Maybe this will end up in a peer depdendency in a future release since it adds overhead to the package if you do not want to use the Manifest flow</em></li>
 					<li><a href="https://github.com/mapbox/node-sqlite3">node-sqlite3</a> - Use sqlite 3 in node (for Manifest interaction as a peer dependency) </li>
 				</ul>
 				<h2 id="versioning">Versioning</h2>
@@ -830,6 +841,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 						<a href="interfaces/idestinypostgamecarnagereportteamentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Team<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinypostmastertransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Master<wbr>Transfer<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyprofilecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -855,6 +869,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyqueststatus.html" class="tsd-kind-icon">IDestiny<wbr>Quest<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyreportoffensepgcrrequest.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Offense<wbr>Pgcr<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinystat.html" class="tsd-kind-icon">IDestiny<wbr>Stat</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IDestinyItemSocketState | The Traveler</title>
+	<title>IDestinyPostMasterTransferRequest | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="idestinyitemsocketstate.html">IDestinyItemSocketState</a>
+					<a href="idestinypostmastertransferrequest.html">IDestinyPostMasterTransferRequest</a>
 				</li>
 			</ul>
-			<h1>Interface IDestinyItemSocketState</h1>
+			<h1>Interface IDestinyPostMasterTransferRequest</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IDestinyItemSocketState</span>
+						<span class="target">IDestinyPostMasterTransferRequest</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinypostmastertransferrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinypostmastertransferrequest.html#itemid" class="tsd-kind-icon">item<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinypostmastertransferrequest.html#itemreferencehash" class="tsd-kind-icon">item<wbr>Reference<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinypostmastertransferrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinypostmastertransferrequest.html#stacksize" class="tsd-kind-icon">stack<wbr>Size</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +94,52 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="enablefailindexes" class="tsd-anchor"></a>
-					<h3>enable<wbr>Fail<wbr>Indexes</h3>
-					<div class="tsd-signature tsd-kind-icon">enable<wbr>Fail<wbr>Indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="characterid" class="tsd-anchor"></a>
+					<h3>character<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L489">interfaces.ts:489</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L723">interfaces.ts:723</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isenabled" class="tsd-anchor"></a>
-					<h3>is<wbr>Enabled</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="itemid" class="tsd-anchor"></a>
+					<h3>item<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L488">interfaces.ts:488</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L722">interfaces.ts:722</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="plughash" class="tsd-anchor"></a>
-					<h3>plug<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">plug<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="itemreferencehash" class="tsd-anchor"></a>
+					<h3>item<wbr>Reference<wbr>Hash</h3>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Reference<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L487">interfaces.ts:487</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L720">interfaces.ts:720</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="reusableplughashes" class="tsd-anchor"></a>
-					<h3>reusable<wbr>Plug<wbr>Hashes</h3>
-					<div class="tsd-signature tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="membershiptype" class="tsd-anchor"></a>
+					<h3>membership<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">membership<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BungieMembershipType.All</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.Xbox</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.PSN</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.PC</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">BungieMembershipType.Bungie</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L490">interfaces.ts:490</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L724">interfaces.ts:724</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="stacksize" class="tsd-anchor"></a>
+					<h3>stack<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">stack<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L721">interfaces.ts:721</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,19 +158,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
+						<a href="idestinypostmastertransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Master<wbr>Transfer<wbr>Request</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a>
+								<a href="idestinypostmastertransferrequest.html#characterid" class="tsd-kind-icon">character<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
+								<a href="idestinypostmastertransferrequest.html#itemid" class="tsd-kind-icon">item<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a>
+								<a href="idestinypostmastertransferrequest.html#itemreferencehash" class="tsd-kind-icon">item<wbr>Reference<wbr>Hash</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a>
+								<a href="idestinypostmastertransferrequest.html#membershiptype" class="tsd-kind-icon">membership<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="idestinypostmastertransferrequest.html#stacksize" class="tsd-kind-icon">stack<wbr>Size</a>
 							</li>
 						</ul>
 					</li>
