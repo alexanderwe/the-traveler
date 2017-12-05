@@ -717,6 +717,18 @@ export interface IDestinyPostGameCarnageReportTeamEntry {
 }
 
 /**
+ * The object to transfer items from the post master
+ * @interface
+ */
+export interface IDestinyPostMasterTransferRequest {
+    itemReferenceHash: string;
+    stackSize: number;
+    itemId: string;
+    characterId: string;
+    membershipType: BungieMembershipType;
+}
+
+/**
  * Interface for a signle destiny profile
  * @interface
  */
@@ -820,6 +832,16 @@ export interface IDestinyQuestStatus {
     redeemed: boolean;
     started: boolean;
     vendorHash?: string;
+}
+
+/**
+ * Interface for data regarding the reporting of an offensive placer in an activity. Hashes can be found in the manifest.
+ * @interface
+ */
+export interface IDestinyReportOffensePgcrRequest {
+    reasonCategoryHashes: [string];
+    reasonHashes: [string];
+    offendingCharacterId: number;
 }
 
 /**

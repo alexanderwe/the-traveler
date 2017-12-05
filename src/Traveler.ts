@@ -29,8 +29,10 @@ import {
     IDestinyMilestone,
     IDestinyMilestoneContent,
     IDestinyPostGameCarnageReportData,
+    IDestinyPostMasterTransferRequest,
     IDestinyProfileResponse,
     IDestinyPublicMilestone,
+    IDestinyReportOffensePgcrRequest,
     IDestinyVendorResponse,
     IOAuthConfig,
     IOAuthResponse,
@@ -376,6 +378,32 @@ export default class Traveler {
                     reject(err);
                 });
         });
+    }
+
+    /**
+     * Report a player that you met in an activity that was engaging in ToS-violating activities. Both you and the offending player must have played in the activityId passed in. 
+     * Please use this judiciously and only when you have strong suspicions of violation, pretty please.
+     * @async
+     * @param activityId The ID of the activity where you ran into the brigand that you're reporting.
+     * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity
+     */
+    public reportOffensivePostGameCarnageReportPlayer(activityId: string, destinyReportOffensePgcrRequest: IDestinyReportOffensePgcrRequest): Promise<IAPIResponse<number>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = destinyReportOffensePgcrRequest;
+            this.options.uri = `${this.apibase}/Stats/PostGameCarnageReport/${activityId}/Report/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<number>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
     }
 
     /**
@@ -788,6 +816,30 @@ export default class Traveler {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = stateRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/SetLockState/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<number>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Extract an item from the Postmaster, with whatever implications that may entail. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item.
+     * @async
+     * @param postMasterTransferRequest 
+     */
+    public pullFromPostmaster(postMasterTransferRequest: IDestinyPostMasterTransferRequest): Promise<IAPIResponse<number>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = postMasterTransferRequest;
+            this.oauthOptions.uri = `${this.apibase}/Actions/Items/PullFromPostmaster/`;
             this.oauthOptions.json = true;
             return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)

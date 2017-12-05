@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IDestinyItemSocketState | The Traveler</title>
+	<title>IDestinyReportOffensePgcrRequest | The Traveler</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,32 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="idestinyitemsocketstate.html">IDestinyItemSocketState</a>
+					<a href="idestinyreportoffensepgcrrequest.html">IDestinyReportOffensePgcrRequest</a>
 				</li>
 			</ul>
-			<h1>Interface IDestinyItemSocketState</h1>
+			<h1>Interface IDestinyReportOffensePgcrRequest</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Interface for data regarding the reporting of an offensive placer in an activity. Hashes can be found in the manifest.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>interface</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IDestinyItemSocketState</span>
+						<span class="target">IDestinyReportOffensePgcrRequest</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +92,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#offendingcharacterid" class="tsd-kind-icon">offending<wbr>Character<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#reasoncategoryhashes" class="tsd-kind-icon">reason<wbr>Category<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#reasonhashes" class="tsd-kind-icon">reason<wbr>Hashes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +103,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="enablefailindexes" class="tsd-anchor"></a>
-					<h3>enable<wbr>Fail<wbr>Indexes</h3>
-					<div class="tsd-signature tsd-kind-icon">enable<wbr>Fail<wbr>Indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="offendingcharacterid" class="tsd-anchor"></a>
+					<h3>offending<wbr>Character<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">offending<wbr>Character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L489">interfaces.ts:489</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L840">interfaces.ts:840</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isenabled" class="tsd-anchor"></a>
-					<h3>is<wbr>Enabled</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="reasoncategoryhashes" class="tsd-anchor"></a>
+					<h3>reason<wbr>Category<wbr>Hashes</h3>
+					<div class="tsd-signature tsd-kind-icon">reason<wbr>Category<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L488">interfaces.ts:488</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L838">interfaces.ts:838</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="plughash" class="tsd-anchor"></a>
-					<h3>plug<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">plug<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="reasonhashes" class="tsd-anchor"></a>
+					<h3>reason<wbr>Hashes</h3>
+					<div class="tsd-signature tsd-kind-icon">reason<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L487">interfaces.ts:487</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="reusableplughashes" class="tsd-anchor"></a>
-					<h3>reusable<wbr>Plug<wbr>Hashes</h3>
-					<div class="tsd-signature tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L490">interfaces.ts:490</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/e6fecb1/src/interfaces.ts#L839">interfaces.ts:839</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,19 +147,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
+						<a href="idestinyreportoffensepgcrrequest.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Offense<wbr>Pgcr<wbr>Request</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a>
+								<a href="idestinyreportoffensepgcrrequest.html#offendingcharacterid" class="tsd-kind-icon">offending<wbr>Character<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
+								<a href="idestinyreportoffensepgcrrequest.html#reasoncategoryhashes" class="tsd-kind-icon">reason<wbr>Category<wbr>Hashes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a>
+								<a href="idestinyreportoffensepgcrrequest.html#reasonhashes" class="tsd-kind-icon">reason<wbr>Hashes</a>
 							</li>
 						</ul>
 					</li>
