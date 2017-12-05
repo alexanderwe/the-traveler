@@ -74,14 +74,14 @@ describe('traveler#getCharacter', () => {
     it('respond with matching character and only character components', async () => {
         const result = await traveler.getCharacter(BungieMembershipType.PSN, '4611686018452033461', '2305843009265042115', {
             components:
-            [
-                ComponentType.Characters,
-                ComponentType.CharacterInventories,
-                ComponentType.CharacterProgressions,
-                ComponentType.CharacterRenderData,
-                ComponentType.CharacterActivities,
-                ComponentType.CharacterEquipment,
-            ],
+                [
+                    ComponentType.Characters,
+                    ComponentType.CharacterInventories,
+                    ComponentType.CharacterProgressions,
+                    ComponentType.CharacterRenderData,
+                    ComponentType.CharacterActivities,
+                    ComponentType.CharacterEquipment,
+                ],
         });
         return expect(result.Response).to.be.an('object').and.to.include.keys('activities', 'character', 'equipment', 'inventory', 'renderData', 'itemComponents', 'progressions');
     });
@@ -101,6 +101,7 @@ describe('traveler#getClanWeeklyRewardState', () => {
 
 });
 
+/*
 describe('traveler#getItem', () => {
     it('respond with matching item', async () => {
         const result = await traveler.getItem(BungieMembershipType.PSN, '4611686018452033461', '6917529033189743362', { components: [ComponentType.ItemCommonData] });
@@ -116,7 +117,7 @@ describe('traveler#getItem', () => {
             'state',
         );
     });
-});
+});*/
 
 // TODO: getVendors (not yet final)
 
