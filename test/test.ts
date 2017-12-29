@@ -181,23 +181,7 @@ describe('traveler#getPublicMilestones', () => {
     });
 });
 
-describe('traveler#equipItem', () => {
-
-    it('fails to equip item', async () => {
-        traveler.oauth = await traveler.refreshToken(process.env.OAUTH_REFRESH_TOKEN);
-        return expect(traveler.equipItem({
-            characterId: '2305843009265042115',
-            itemId: '1331482397',
-            membershipType: BungieMembershipType.PSN,
-        })).to.be.rejected;
-    });
-
-    it('fails using  method without oauth', async () => {
-        return expect(() => {
-            traveler.equipItem(null);
-        }).to.throw;
-    });
-});
+// TODO: equipItem
 
 describe('traveler#refreshToken', () => {
     it('uses refresh token', async () => {
