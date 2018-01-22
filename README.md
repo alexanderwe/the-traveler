@@ -389,6 +389,7 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 | Endpoint                                            | Implemented      | Unlocked in API       |
 | --------------------------------------------------- | ---------------- | --------------------- |
 | Destiny2.GetDestinyManifest                         | ![alt text][yes] | ![alt text][unlocked] |
+| Destiny2.getDestinyEntityDefinition                 | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.SearchDestinyPlayer                        | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.GetProfile                                 | ![alt text][yes] | ![alt text][unlocked] |
 | Destiny2.GetCharacter                               | ![alt text][yes] | ![alt text][unlocked] |
