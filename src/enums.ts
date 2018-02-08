@@ -120,6 +120,20 @@ export enum DestinyActivityModeType {
 }
 
 /**
+ * Enum for Destiny advanced awa type
+ * @enum
+ */
+export enum DestinyAdvancedAwaType {
+    None = 0,
+    InsertPlugs = 1, // Insert plugs into sockets.
+    BuyItemFromVendor = 2, // Exchange currency to purchase something from a vendor.
+    RefundItem = 3, // Return an item to a vendor that accepts returns.
+    DismantleGroupA = 4, // Dismantle highest value weapons and armor. This group requires permission for a specific item and the resulting token can be used once on that specific item.
+    DismantleGroupB = 5, // Dismantle high value weapons and armor.
+    DismanteGroupC = 6, // Dismantle mid value weapons and armor.
+}
+
+/**
  * Enum for classes in Destiny 2
  * @enum
  */

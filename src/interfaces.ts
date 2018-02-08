@@ -5,6 +5,7 @@ import {
     DamageType,
     DestinyActivityDifficultyTier,
     DestinyActivityModeType,
+    DestinyAdvancedAwaType,
     DestinyClass,
     DestinyGameVersion,
     DestinyGender,
@@ -84,6 +85,22 @@ export interface IDestinyAggregateActivityStats {
         [key: string]: IDestinyHistoricalStatsValue;
     };
 }
+
+/** 
+ * Interface for response of AwaInitializeRequest
+ * @interface 
+ */
+export interface IDestinyAdvancedAwaInitializeResponse {
+    correlationId: string;
+}
+
+export interface IDestinyAdvancedAwaPermissionRequested {
+    type: DestinyAdvancedAwaType;
+    affectedItemId?: number;
+    membershipType: BungieMembershipType;
+    characterId?: string;
+}
+
 
 /**
  * Interface for an Destiny 2 milestone quest

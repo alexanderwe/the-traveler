@@ -10,6 +10,8 @@ import {
     IAPIResponse,
     IConfig,
     IDestinyActivityHistoryResults,
+    IDestinyAdvancedAwaInitializeResponse,
+    IDestinyAdvancedAwaPermissionRequested,
     IDestinyAggregateActivityResults,
     IDestinyCharacterResponse,
     IDestinyClanAggregateStat,
@@ -897,9 +899,9 @@ export default class Traveler {
      * @not-released
      * @param itemActionRequest An object containing following keys: <br />
      * <ul>
-     * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate/li>
-     * <li>charcterId {string} The character ID of the character</li>
-     * <li>membershipType {number} The BungieMemberschipType</li>
+     * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate</li>
+     * <li>charcterId {string} - The character ID of the character</li>
+     * <li>membershipType {number} - The BungieMemberschipType</li>
      * </ul>
      */
     public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
@@ -910,6 +912,37 @@ export default class Traveler {
             return new Promise<IAPIResponse<number>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
                     .then((response: IAPIResponse<number>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }
+
+    /**
+     * Initialize a request to perform an advanced write action.
+     * @async
+     * @param awaPermissionRequest An object containing following keys: <br />
+     * <ul>
+     * <li>type {object} - Type of advanced write action.</li>
+     * <li>charcterId {number} - Item instance ID the action shall be applied to. This is optional for all but a new AwaType values. Rule of thumb is to provide the item instance ID if one is available.</li>
+     * <li>membershipType {number} - The BungieMemberschipType</li>
+     * <li>characterId {number} Destiny character ID, if applicable, that will be affected by the action.</li>
+     * </ul>
+     * 
+     */
+    public awaInitializeRequest(awaPermissionRequest: IDestinyAdvancedAwaPermissionRequested): Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = awaPermissionRequest;
+            this.oauthOptions.uri = `${this.apibase}/Awa/Initialize/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<IDestinyAdvancedAwaInitializeResponse>) => {
                         resolve(response);
                     })
                     .catch((err) => {
