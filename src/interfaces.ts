@@ -5,7 +5,9 @@ import {
     DamageType,
     DestinyActivityDifficultyTier,
     DestinyActivityModeType,
+    DestinyAdvancedAwaResponseReason,
     DestinyAdvancedAwaType,
+    DestinyAdvancedAwaUserSelection,
     DestinyClass,
     DestinyGameVersion,
     DestinyGender,
@@ -86,6 +88,15 @@ export interface IDestinyAggregateActivityStats {
     };
 }
 
+export interface IDestinyAdvancedAwaAuthorizationResult {
+    userSelection: DestinyAdvancedAwaUserSelection;
+    responseReason: DestinyAdvancedAwaResponseReason;
+    developerNote: string;
+    actionToken: string;
+    maximumNumberOfUses: number;
+    validUntil?: Date;
+}
+
 /** 
  * Interface for response of AwaInitializeRequest
  * @interface 
@@ -101,6 +112,11 @@ export interface IDestinyAdvancedAwaPermissionRequested {
     characterId?: string;
 }
 
+export interface IDestinyAdvancedAwaUserResponse {
+    selection: DestinyAdvancedAwaUserSelection;
+    corrlectionId: string;
+    nonce: any;
+}
 /**
  * Interface for an Destiny 2 milestone quest
  * @interface

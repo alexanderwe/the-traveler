@@ -133,6 +133,19 @@ export enum DestinyAdvancedAwaType {
     DismanteGroupC = 6, // Dismantle mid value weapons and armor.
 }
 
+export enum DestinyAdvancedAwaResponseReason {
+    None = 0,
+    Answered = 1,
+    TimedOut = 2,
+    Replaced = 3,
+}
+
+export enum DestinyAdvancedAwaUserSelection {
+    None = 0,
+    Rejected = 1,
+    Approved = 2,
+}
+
 /**
  * Enum for classes in Destiny 2
  * @enum
