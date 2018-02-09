@@ -888,6 +888,21 @@ export enum PlatformErrorCodes {
     TrendingEntryTypeNotSupported = 2601,
 }
 
+export enum SocketResponseCodes {
+    None = 0,
+    CannotAffordMaterialRequirements = 1,
+    FailedPlugInsertionRules = 2,
+    CategoryNotWhitelisted = 4,
+    PlugItemInvalid = 8,
+    PlugItemAlreadySocketed = 16,
+    SocketDefinitionBlank = 32,
+    SocketIndexInvalid = 64,
+    SocketInstanceUnoccupied = 128,
+    SocketItemInvalid = 256,
+    SocketItemNotFound = 512,
+    RequestInvalid = 2048,
+}
+
 /**
  * Enum for different stat category types
  * @enum

@@ -72,7 +72,7 @@ export interface IDestinyActivity {
 }
 
 export interface IDestinyActivityHistoryResults {
-    activities: object[];
+    activities: IDestinyHistoricalStatsPeriodGroup[];
 }
 
 export interface IDestinyAggregateActivityResults {
@@ -100,7 +100,6 @@ export interface IDestinyAdvancedAwaPermissionRequested {
     membershipType: BungieMembershipType;
     characterId?: string;
 }
-
 
 /**
  * Interface for an Destiny 2 milestone quest
@@ -239,7 +238,7 @@ export interface IDestinyClanAggregateStat {
  * @interface
  */
 export interface IDestinyDefinition {
-    hash: number;
+    hash: string;
     index: number;
     redacted: boolean;
 }
@@ -580,7 +579,7 @@ export interface IDestinyMilestone {
     milestoneHash: number;
     availableQuests: IDestinyMilestoneQuest[];
     values: object;
-    vendorHashes: number[];
+    vendors: [IDestinyPublicMilestoneVendor];
     rewards: IDestinyMilestoneRewardCategory[];
     startDate?: Date;
     endDate?: Date;
@@ -704,8 +703,8 @@ export interface IDestinyPlayer {
 export interface IDestinyPostGameCarnageReportData {
     period: Date;
     activityDetails: IDestinyHistoricalStatsActivity;
-    entires: IDestinyPostGameCarnageReportEntry[];
-    teams: IDestinyPostGameCarnageReportTeamEntry[];
+    entires: [IDestinyPostGameCarnageReportEntry];
+    teams: [IDestinyPostGameCarnageReportTeamEntry];
 }
 
 export interface IDestinyPostGameCarnageReportEntry {
@@ -809,7 +808,7 @@ export interface IDestinyProgression {
 export interface IDestinyPublicMilestone {
     milestoneHash: number;
     availableQuests: IDestinyPublicMilestoneQuest[];
-    vendorHashes: string[];
+    vendors: [IDestinyPublicMilestoneVendor];
     startDate?: Date;
     endDate?: Date;
 }
@@ -833,6 +832,11 @@ export interface IDestinyPublicMilestoneQuest {
     questItemHash: number;
     activity: IDestinyPublicMilestoneActivity;
     challenges: IDestinyPublicMilestoneChallenge[];
+}
+
+export interface IDestinyPublicMilestoneVendor {
+    vendorHash: string;
+    previewItemHash?: string;
 }
 
 /**
@@ -892,6 +896,13 @@ export interface IDestinyTalentNodeStatBlock {
 export interface IDestinyUnlockStatus {
     unlockHash: number;
     isSet: boolean;
+}
+
+export interface IDestinyVendorsResponse {
+    vendors?: ISingleComponentResponse<{ [key: string]: IDestinyVendorComponent }>;
+    categories?: ISingleComponentResponse<{ [key: string]: IDestinyVendorCategoriesComponent }>;
+    sales?: ISingleComponentResponse<{ [key: string]: IDestinyVendorSaleItemComponent }>;
+    itemComponents?: ISingleComponentResponse<{ [key: string]: IDestinyItemComponent }>;
 }
 
 export interface IDestinyVendorCategoriesComponent {

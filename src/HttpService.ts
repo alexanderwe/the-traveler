@@ -12,9 +12,6 @@ export default class HTTPService {
         this.debug = debug;
     }
 
-
-
-
     /**
      * Base function for GET requests
      * @async

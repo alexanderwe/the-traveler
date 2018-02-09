@@ -4,7 +4,7 @@ import * as SZIP from 'node-stream-zip';
 import * as querystring from 'querystring';
 import * as request from 'request';
 import * as rp from 'request-promise-native';
-import { BungieMembershipType, TypeDefinition } from './enums';
+import { BungieMembershipType, SocketResponseCodes, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
 import {
     IAPIResponse,
@@ -36,12 +36,14 @@ import {
     IDestinyPublicMilestone,
     IDestinyReportOffensePgcrRequest,
     IDestinyVendorResponse,
+    IDestinyVendorsResponse,
     IOAuthConfig,
     IOAuthResponse,
     IQueryStringParameters,
     IUserInfoCard,
     IUserMembershipData,
 } from './interfaces';
+
 import OAuthError from './OAuthError';
 
 /**
@@ -306,14 +308,14 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorsResponse>} When fulfilled returns an object containing all available vendors
      */
-    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse[]>> {
+    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorsResponse>> {
         if (this.oauthOptions) { // if we have oauth available use it
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorsResponse>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
-                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
+                    .then((response: IAPIResponse<IDestinyVendorsResponse>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -322,9 +324,9 @@ export default class Traveler {
             });
         } else {
             this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorsResponse>>((resolve, reject) => {
                 this.httpService.get(this.options)
-                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
+                    .then((response: IAPIResponse<IDestinyVendorsResponse>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -386,11 +388,11 @@ export default class Traveler {
      * Get historical stats definitions. This contains the values for the `<br` key.
      * @async
      */
-    public getHistoricalStatsDefinition(): Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>> {
+    public getHistoricalStatsDefinition(): Promise<IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>> {
         this.options.uri = `${this.apibase}/Stats/Definition/`;
-        return new Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>>((resolve, reject) => {
+        return new Promise<IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse<IDestinyHistoricalStatsDefinition>) => {
+                .then((response: IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -874,14 +876,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
+    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<SocketResponseCodes>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/InsertSocketPlug/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+            return new Promise<IAPIResponse<SocketResponseCodes>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse<number>) => {
+                    .then((response: IAPIResponse<SocketResponseCodes>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -1124,6 +1126,8 @@ export default class Traveler {
                 'X-API-Key': this.apikey,
                 'user-agent': this.userAgent,
             },
+            json: true,
+            simple: true,
             uri: '',
         };
     }
