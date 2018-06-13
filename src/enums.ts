@@ -94,9 +94,9 @@ export enum DestinyActivityModeType {
     Reserved9 = 9,
     Control = 10,
     Reserved11 = 11,
-    Clash = 12,
+    Clash = 12, // Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.
     Reserved13 = 13,
-    Reserved15 = 15,
+    CrimsonDoubles = 15,
     Nightfall = 16,
     HeroicNightfall = 17,
     AllStrikes = 18,
@@ -117,6 +117,11 @@ export enum DestinyActivityModeType {
     Countdown = 38,
     TrialsOfTheNine = 39,
     Social = 40,
+    TrialsCountdown = 41,
+    TrialsSurvival = 42,
+    IronBannerControl = 43,
+    IronBannerClash = 44,
+    IronBannerSupremacy = 45,
 }
 
 /**

@@ -1098,7 +1098,7 @@ export default class Traveler {
      * </ul>
      * 
      */
-    private awaInitializeRequest(awaPermissionRequest: IDestinyAdvancedAwaPermissionRequested): Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>> {
+    /*private awaInitializeRequest(awaPermissionRequest: IDestinyAdvancedAwaPermissionRequested): Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = awaPermissionRequest;
             this.oauthOptions.uri = `${this.apibase}/Awa/Initialize/`;
@@ -1115,7 +1115,7 @@ export default class Traveler {
         } else {
             throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
         }
-    }
+    }*/
 
     /**
      * Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.
@@ -1129,7 +1129,7 @@ export default class Traveler {
      * </ul>
      * @return {Promise.number} When fulfilled returns a number
      */
-    private awaProvideAuthorizationResult(awaUserResponse: IDestinyAdvancedAwaUserResponse): Promise<IAPIResponse<number>> {
+    /*private awaProvideAuthorizationResult(awaUserResponse: IDestinyAdvancedAwaUserResponse): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = awaUserResponse;
             this.oauthOptions.uri = `${this.apibase}/Awa/AwaProvideAuthorizationResult/`;
@@ -1146,7 +1146,7 @@ export default class Traveler {
         } else {
             throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
         }
-    }
+    }*/
 
     /**
      * Returns the action token if user approves the request.
@@ -1155,7 +1155,7 @@ export default class Traveler {
      * @param correlationId The identifier for the advanced write action request.
      * @return {Promise.IDestinyAdvancedAwaAuthorizationResult} When fulfilled returns a IDestinyAdvancedAwaAuthorizationResult
      */
-    private awaGetActionToken(correlationId: string): Promise<IAPIResponse<IDestinyAdvancedAwaAuthorizationResult>> {
+    /*private awaGetActionToken(correlationId: string): Promise<IAPIResponse<IDestinyAdvancedAwaAuthorizationResult>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = correlationId;
             this.oauthOptions.uri = `${this.apibase}/Awa/GetActionToken/${correlationId}`;
@@ -1172,7 +1172,7 @@ export default class Traveler {
         } else {
             throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
         }
-    }
+    }*/
 
     /**		
      * Report a player that you met in an activity that was engaging in ToSviolating activities. Both you and the offending player must have played in the activityId passed in. 		
@@ -1182,7 +1182,7 @@ export default class Traveler {
      * @param activityId The ID of the activity where you ran into the brigand that you're reporting.		
      * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity		
      */
-    private reportOffensivePostGameCarnageReportPlayer(activityId: string, destinyReportOffensePgcrRequest: IDestinyReportOffensePgcrRequest): Promise<IAPIResponse<number>> {
+    /*private reportOffensivePostGameCarnageReportPlayer(activityId: string, destinyReportOffensePgcrRequest: IDestinyReportOffensePgcrRequest): Promise<IAPIResponse<number>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = destinyReportOffensePgcrRequest;
             this.options.uri = `${this.apibase}/Stats/PostGameCarnageReport/${activityId}/Report/`;
@@ -1199,7 +1199,7 @@ export default class Traveler {
         } else {
             throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
         }
-    }
+    }*/
 
     get oauth(): IOAuthResponse {
         return this._oauth;
