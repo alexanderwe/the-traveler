@@ -1052,7 +1052,12 @@ export default class Traveler {
                             if (err) {
                                 reject(new Error('Error extracting zip'));
                             } else {
-                                resolve(filename);
+                                fs.unlink(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`, (err) => {
+                                    if (err) {
+                                        reject(new Error('Error deleting .zip file'));
+                                    }
+                                    resolve(filename);   
+                                });
                             }
                         });
                     });

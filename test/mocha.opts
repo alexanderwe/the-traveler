@@ -1,6 +1,0 @@
---compilers ts-node/register
---require source-map-support/register
---full-trace
---bail
--t 100000
-./test/test.ts
