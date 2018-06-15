@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -27,7 +27,7 @@
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "jest --coverage",
         "posttest": "codecov",
-        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts && touch ./docs/.nojekyll"
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts --ignoreCompilerErrors && touch ./docs/.nojekyll"
     },
     "dependencies": {
         "@types/request-promise-native": "^1.0.6",
@@ -54,6 +54,7 @@
         "source-map-support": "^0.4.18",
         "ts-jest": "^22.4.6",
         "ts-node": "^6.1.1",
+        "typedoc": "^0.11.1",
         "typedoc-clarity-theme": "^1.1.0",
         "typescript": "^2.9.2"
     },

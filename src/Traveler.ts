@@ -1024,7 +1024,7 @@ export default class Traveler {
     }
 
     /**
-     * Download the specified manifest file
+     * Download the specified manifest file, extract the zip and also deleting the zip afterwards
      * @async
      * @param manifestUrl The url of the manifest you want to download
      * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]

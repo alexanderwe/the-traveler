@@ -130,6 +130,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 
 <span class="hljs-comment">//Access the enums (example componentType profiles)</span>
 <span class="hljs-keyword">var</span> profilesType = Enums.ComponentType.Profiles;
+
 </code></pre><p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
 				<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
@@ -171,6 +172,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">refresh_token</span>: ',
   <span class="hljs-attribute">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attribute">membership_id</span>: <span class="hljs-string">''</span> }
+
 </code></pre><p><em>Use refresh</em>:</p>
 				<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
@@ -272,6 +274,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err);
 });
+
 </code></pre><p><em>Response (First level):</em></p>
 				<pre><code>{ <span class="hljs-attribute">Response</span>:
    { <span class="hljs-attribute">inventory</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
@@ -340,6 +343,8 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
         <span class="hljs-built_in">console</span>.log(err);
     })
 })
+
+
 </code></pre><p><em>async way</em></p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> Manifest <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/Manifest'</span> 
