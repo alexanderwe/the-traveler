@@ -94,9 +94,9 @@ export enum DestinyActivityModeType {
     Reserved9 = 9,
     Control = 10,
     Reserved11 = 11,
-    Clash = 12,
+    Clash = 12, // Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.
     Reserved13 = 13,
-    Reserved15 = 15,
+    CrimsonDoubles = 15,
     Nightfall = 16,
     HeroicNightfall = 17,
     AllStrikes = 18,
@@ -117,6 +117,38 @@ export enum DestinyActivityModeType {
     Countdown = 38,
     TrialsOfTheNine = 39,
     Social = 40,
+    TrialsCountdown = 41,
+    TrialsSurvival = 42,
+    IronBannerControl = 43,
+    IronBannerClash = 44,
+    IronBannerSupremacy = 45,
+}
+
+/**
+ * Enum for Destiny advanced awa type
+ * @enum
+ */
+export enum DestinyAdvancedAwaType {
+    None = 0,
+    InsertPlugs = 1, // Insert plugs into sockets.
+    BuyItemFromVendor = 2, // Exchange currency to purchase something from a vendor.
+    RefundItem = 3, // Return an item to a vendor that accepts returns.
+    DismantleGroupA = 4, // Dismantle highest value weapons and armor. This group requires permission for a specific item and the resulting token can be used once on that specific item.
+    DismantleGroupB = 5, // Dismantle high value weapons and armor.
+    DismanteGroupC = 6, // Dismantle mid value weapons and armor.
+}
+
+export enum DestinyAdvancedAwaResponseReason {
+    None = 0,
+    Answered = 1,
+    TimedOut = 2,
+    Replaced = 3,
+}
+
+export enum DestinyAdvancedAwaUserSelection {
+    None = 0,
+    Rejected = 1,
+    Approved = 2,
 }
 
 /**
@@ -872,6 +904,21 @@ export enum PlatformErrorCodes {
     TwitchCouldNotLoadDestinyInfo = 2502,
     TrendingCategoryNotFound = 2600,
     TrendingEntryTypeNotSupported = 2601,
+}
+
+export enum SocketResponseCodes {
+    None = 0,
+    CannotAffordMaterialRequirements = 1,
+    FailedPlugInsertionRules = 2,
+    CategoryNotWhitelisted = 4,
+    PlugItemInvalid = 8,
+    PlugItemAlreadySocketed = 16,
+    SocketDefinitionBlank = 32,
+    SocketIndexInvalid = 64,
+    SocketInstanceUnoccupied = 128,
+    SocketItemInvalid = 256,
+    SocketItemNotFound = 512,
+    RequestInvalid = 2048,
 }
 
 /**

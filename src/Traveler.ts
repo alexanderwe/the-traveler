@@ -4,12 +4,16 @@ import * as SZIP from 'node-stream-zip';
 import * as querystring from 'querystring';
 import * as request from 'request';
 import * as rp from 'request-promise-native';
-import { BungieMembershipType, TypeDefinition } from './enums';
+import { BungieMembershipType, SocketResponseCodes, TypeDefinition } from './enums';
 import HTTPService from './HttpService';
 import {
     IAPIResponse,
     IConfig,
     IDestinyActivityHistoryResults,
+    IDestinyAdvancedAwaAuthorizationResult,
+    IDestinyAdvancedAwaInitializeResponse,
+    IDestinyAdvancedAwaPermissionRequested,
+    IDestinyAdvancedAwaUserResponse,
     IDestinyAggregateActivityResults,
     IDestinyCharacterResponse,
     IDestinyClanAggregateStat,
@@ -34,12 +38,14 @@ import {
     IDestinyPublicMilestone,
     IDestinyReportOffensePgcrRequest,
     IDestinyVendorResponse,
+    IDestinyVendorsResponse,
     IOAuthConfig,
     IOAuthResponse,
     IQueryStringParameters,
     IUserInfoCard,
     IUserMembershipData,
 } from './interfaces';
+
 import OAuthError from './OAuthError';
 
 /**
@@ -304,14 +310,14 @@ export default class Traveler {
      * <ul>
      * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
      * </ul>
-     * @return {Promise.IAPIResponse<IDestinyVendorResponse[]>} When fulfilled returns an object containing all available vendors
+     * @return {Promise.IAPIResponse<IDestinyVendorsResponse>} When fulfilled returns an object containing all available vendors
      */
-    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorResponse[]>> {
+    public getVendors(membershipType: BungieMembershipType, destinyMembershipId: string, characterId: string, queryStringParameters: IQueryStringParameters): Promise<IAPIResponse<IDestinyVendorsResponse>> {
         if (this.oauthOptions) { // if we have oauth available use it
             this.oauthOptions.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorsResponse>>((resolve, reject) => {
                 this.httpService.get(this.oauthOptions)
-                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
+                    .then((response: IAPIResponse<IDestinyVendorsResponse>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -320,9 +326,9 @@ export default class Traveler {
             });
         } else {
             this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(queryStringParameters)}`;
-            return new Promise<IAPIResponse<IDestinyVendorResponse[]>>((resolve, reject) => {
+            return new Promise<IAPIResponse<IDestinyVendorsResponse>>((resolve, reject) => {
                 this.httpService.get(this.options)
-                    .then((response: IAPIResponse<IDestinyVendorResponse[]>) => {
+                    .then((response: IAPIResponse<IDestinyVendorsResponse>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -384,11 +390,11 @@ export default class Traveler {
      * Get historical stats definitions. This contains the values for the `<br` key.
      * @async
      */
-    public getHistoricalStatsDefinition(): Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>> {
+    public getHistoricalStatsDefinition(): Promise<IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>> {
         this.options.uri = `${this.apibase}/Stats/Definition/`;
-        return new Promise<IAPIResponse<IDestinyHistoricalStatsDefinition>>((resolve, reject) => {
+        return new Promise<IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>>((resolve, reject) => {
             this.httpService.get(this.options)
-                .then((response: IAPIResponse<IDestinyHistoricalStatsDefinition>) => {
+                .then((response: IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>) => {
                     resolve(response);
                 })
                 .catch((err) => {
@@ -872,14 +878,14 @@ export default class Traveler {
      * <li>membershipType {number} The BungieMemberschipType</li>
      * </ul>
      */
-    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
+    public insertSocketPlug(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<SocketResponseCodes>> {
         if (this.oauth !== undefined) {
             this.oauthOptions.body = itemActionRequest;
             this.oauthOptions.uri = `${this.apibase}/Actions/Items/InsertSocketPlug/`;
             this.oauthOptions.json = true;
-            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+            return new Promise<IAPIResponse<SocketResponseCodes>>((resolve, reject) => {
                 this.httpService.post(this.oauthOptions)
-                    .then((response: IAPIResponse<number>) => {
+                    .then((response: IAPIResponse<SocketResponseCodes>) => {
                         resolve(response);
                     })
                     .catch((err) => {
@@ -897,9 +903,9 @@ export default class Traveler {
      * @not-released
      * @param itemActionRequest An object containing following keys: <br />
      * <ul>
-     * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate/li>
-     * <li>charcterId {string} The character ID of the character</li>
-     * <li>membershipType {number} The BungieMemberschipType</li>
+     * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate</li>
+     * <li>charcterId {string} - The character ID of the character</li>
+     * <li>membershipType {number} - The BungieMemberschipType</li>
      * </ul>
      */
     public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
@@ -1018,7 +1024,7 @@ export default class Traveler {
     }
 
     /**
-     * Download the specified manifest file
+     * Download the specified manifest file, extract the zip and also deleting the zip afterwards
      * @async
      * @param manifestUrl The url of the manifest you want to download
      * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
@@ -1046,7 +1052,12 @@ export default class Traveler {
                             if (err) {
                                 reject(new Error('Error extracting zip'));
                             } else {
-                                resolve(filename);
+                                fs.unlink(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`, (err) => {
+                                    if (err) {
+                                        reject(new Error('Error deleting .zip file'));
+                                    }
+                                    resolve(filename);   
+                                });
                             }
                         });
                     });
@@ -1079,6 +1090,122 @@ export default class Traveler {
         return queryString;
     }
 
+    /**
+     * Initialize a request to perform an advanced write action.
+     * @async
+     * @notuseable
+     * @param awaPermissionRequest An object containing following keys: <br />
+     * <ul>
+     * <li>type {DestinyAdvancedAwaType} - Type of advanced write action.</li>
+     * <li>charcterId {number} - Item instance ID the action shall be applied to. This is optional for all but a new AwaType values. Rule of thumb is to provide the item instance ID if one is available.</li>
+     * <li>membershipType {number} - The BungieMemberschipType</li>
+     * <li>affectedItemId {number} Id of the item being affected.</li>
+     * </ul>
+     * 
+     */
+    /*private awaInitializeRequest(awaPermissionRequest: IDestinyAdvancedAwaPermissionRequested): Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = awaPermissionRequest;
+            this.oauthOptions.uri = `${this.apibase}/Awa/Initialize/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<IDestinyAdvancedAwaInitializeResponse>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<IDestinyAdvancedAwaInitializeResponse>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }*/
+
+    /**
+     * Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.
+     * @async
+     * @notusable
+     * @param awaUserResponse An object containing following keys: <br />
+     * <ul>
+     * <li>selection {DestinyAdvancedAwaUserSelection} - Indication of the selection the user has made (Approving or rejecting the action).</li>
+     * <li>correlationId {number} - Correlation ID of the request.</li>
+     * <li>nonce {any} - Secret nonce received via the PUSH notification</li>
+     * </ul>
+     * @return {Promise.number} When fulfilled returns a number
+     */
+    /*private awaProvideAuthorizationResult(awaUserResponse: IDestinyAdvancedAwaUserResponse): Promise<IAPIResponse<number>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = awaUserResponse;
+            this.oauthOptions.uri = `${this.apibase}/Awa/AwaProvideAuthorizationResult/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<number>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }*/
+
+    /**
+     * Returns the action token if user approves the request.
+     * @async
+     * @notusable
+     * @param correlationId The identifier for the advanced write action request.
+     * @return {Promise.IDestinyAdvancedAwaAuthorizationResult} When fulfilled returns a IDestinyAdvancedAwaAuthorizationResult
+     */
+    /*private awaGetActionToken(correlationId: string): Promise<IAPIResponse<IDestinyAdvancedAwaAuthorizationResult>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = correlationId;
+            this.oauthOptions.uri = `${this.apibase}/Awa/GetActionToken/${correlationId}`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<IDestinyAdvancedAwaAuthorizationResult>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<IDestinyAdvancedAwaAuthorizationResult>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }*/
+
+    /**		
+     * Report a player that you met in an activity that was engaging in ToSviolating activities. Both you and the offending player must have played in the activityId passed in. 		
+     * Please use this judiciously and only when you have strong suspicions of violation, pretty please.		
+     * @async	
+     * @notuseable	
+     * @param activityId The ID of the activity where you ran into the brigand that you're reporting.		
+     * @return {Promise.IAPIResponse<IDestinyPostGameCarnageReportData>} When fulfilled returns an object containing the carnage report for the specified activity		
+     */
+    /*private reportOffensivePostGameCarnageReportPlayer(activityId: string, destinyReportOffensePgcrRequest: IDestinyReportOffensePgcrRequest): Promise<IAPIResponse<number>> {
+        if (this.oauth !== undefined) {
+            this.oauthOptions.body = destinyReportOffensePgcrRequest;
+            this.options.uri = `${this.apibase}/Stats/PostGameCarnageReport/${activityId}/Report/`;
+            this.oauthOptions.json = true;
+            return new Promise<IAPIResponse<number>>((resolve, reject) => {
+                this.httpService.post(this.oauthOptions)
+                    .then((response: IAPIResponse<number>) => {
+                        resolve(response);
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+            });
+        } else {
+            throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
+        }
+    }*/
+
     get oauth(): IOAuthResponse {
         return this._oauth;
     }
@@ -1091,6 +1218,8 @@ export default class Traveler {
                 'X-API-Key': this.apikey,
                 'user-agent': this.userAgent,
             },
+            json: true,
+            simple: true,
             uri: '',
         };
     }
