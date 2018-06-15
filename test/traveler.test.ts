@@ -173,7 +173,7 @@ describe('traveler#getItem', () => {
   test('Respond with matching item', async () => {
     const result = await traveler.getItem(
       BungieMembershipType.PSN,
-      process.env.Account_ID,
+      '4611686018452033461',
       '6917529033189743362',
       { components: [ComponentType.ItemCommonData] },
     );
