@@ -96,6 +96,13 @@ describe('traveler#getDestinyEntityDefinition', () => {
     });
   });
 
+  describe('traveler#getLinkedProfiles', ()=>{
+    test('Respond with matching linked accounts', async () => {
+      const result = await traveler.getLinkedProfiles(BungieMembershipType.PSN, '4611686018452033461');
+      expect(typeof result.Response.profiles[0]).toEqual('object');
+    })
+  })
+
   describe('traveler#getProfile', () => {
     test('Respond with the matching profile', async () => {
       const result = await traveler.getProfile(
