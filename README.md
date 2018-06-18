@@ -386,39 +386,39 @@ async ()=> {
 
 Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
 
-| Endpoint                                            | Implemented      | Unlocked in API       |
-| --------------------------------------------------- | ---------------- | --------------------- |
-| Destiny2.GetDestinyManifest                         | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetDestinyEntityDefinition                 | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.SearchDestinyPlayer                        | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetProfile                                 | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetCharacter                               | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetClanWeeklyRewardState                   | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetItem                                    | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetVendors                                 | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetVendor                                  | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.TransferItem                               | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.PullFromPostmaster                         | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.EquipItem                                  | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.EquipItems                                 | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.SetItemLockState                           | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.InsertSocketPlug                           | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.ActivateTalentNode                         | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetPostGameCarnageReport                   | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.ReportOffensivePostGameCarnageReportPlayer | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetHistoricalStatsDefinition               | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetClanLeaderboards                        | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetClanAggregateStats                      | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetLeaderboards                            | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetLeaderboardsForCharacter                | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.SearchDestinyEntities                      | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetHistoricalStats                         | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetHistoricalStatsForAccount               | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetActivityHistory                         | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetUniqueWeaponHistory                     | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetDestinyAggregateActivityStats           | ![alt text][yes] | ![alt text][preview]  |
-| Destiny2.GetPublicMilestoneContent                  | ![alt text][yes] | ![alt text][unlocked] |
-| Destiny2.GetPublicMilestones                        | ![alt text][yes] | ![alt text][unlocked] |
+| Endpoint                                            | Implemented | Unlocked in API      |
+| --------------------------------------------------- | ----------- | -------------------- |
+| Destiny2.GetDestinyManifest                         | ✅           | ✅                    |
+| Destiny2.GetDestinyEntityDefinition                 | ✅           | ✅                    |
+| Destiny2.SearchDestinyPlayer                        | ✅           | ✅                    |
+| Destiny2.GetLinkedProfiles                          | ✅           | ✅                    |
+| Destiny2.GetProfile                                 | ✅           | ✅                    |
+| Destiny2.GetCharacter                               | ✅           | ✅                    |
+| Destiny2.GetClanWeeklyRewardState                   | ✅           | ✅                    |
+| Destiny2.GetItem                                    | ✅           | ✅                    |
+| Destiny2.GetVendors                                 | ✅           | ✅                    |
+| Destiny2.GetVendor                                  | ✅           | ✅                    |
+| Destiny2.TransferItem                               | ✅           | ✅                    |
+| Destiny2.PullFromPostmaster                         | ✅           | ✅                    |
+| Destiny2.EquipItem                                  | ✅           | ✅                    |
+| Destiny2.EquipItems                                 | ✅           | ✅                    |
+| Destiny2.SetItemLockState                           | ✅           | ✅                    |
+| Destiny2.InsertSocketPlug                           | ✅           | ![alt text][preview] |
+| Destiny2.GetPostGameCarnageReport                   | ✅           | ✅                    |
+| Destiny2.ReportOffensivePostGameCarnageReportPlayer | ✅           | ✅                    |
+| Destiny2.GetHistoricalStatsDefinition               | ✅           | ✅                    |
+| Destiny2.GetClanLeaderboards                        | ✅           | ![alt text][preview] |
+| Destiny2.GetClanAggregateStats                      | ✅           | ![alt text][preview] |
+| Destiny2.GetLeaderboards                            | ✅           | ![alt text][preview] |
+| Destiny2.GetLeaderboardsForCharacter                | ✅           | ![alt text][preview] |
+| Destiny2.SearchDestinyEntities                      | ✅           | ✅                    |
+| Destiny2.GetHistoricalStats                         | ✅           | ✅                    |
+| Destiny2.GetHistoricalStatsForAccount               | ✅           | ✅                    |
+| Destiny2.GetActivityHistory                         | ✅           | ✅                    |
+| Destiny2.GetUniqueWeaponHistory                     | ✅           | ✅                    |
+| Destiny2.GetDestinyAggregateActivityStats           | ✅           | ✅                    |
+| Destiny2.GetPublicMilestoneContent                  | ✅           | ✅                    |
+| Destiny2.GetPublicMilestones                        | ✅           | ✅                    |
 
 ## Built With
 
