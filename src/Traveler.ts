@@ -962,37 +962,6 @@ export default class Traveler {
   }
 
   /**
-   * Activate a Talent Node <strong>NOT RELEASED</strong>
-   * @async
-   * @not-released
-   * @param itemActionRequest An object containing following keys: <br />
-   * <ul>
-   * <li>itemId {string} - The itemInstanceId (**not hash**) of the node you want to activate</li>
-   * <li>charcterId {string} - The character ID of the character</li>
-   * <li>membershipType {number} - The BungieMemberschipType</li>
-   * </ul>
-   */
-  public activateTalentNode(itemActionRequest: IDestinyItemActionRequest): Promise<IAPIResponse<number>> {
-    if (this.oauth !== undefined) {
-      this.oauthOptions.body = itemActionRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/ActivateTalentNode/`;
-      this.oauthOptions.json = true;
-      return new Promise<IAPIResponse<number>>((resolve, reject) => {
-        this.httpService
-          .post(this.oauthOptions)
-          .then((response: IAPIResponse<number>) => {
-            resolve(response);
-          })
-          .catch(err => {
-            reject(err);
-          });
-      });
-    } else {
-      throw new OAuthError('You have to use OAuth to access this endpoint. Your oauth object is this: ' + JSON.stringify(this.oauth) + ' Please use traveler.oauth = yourOauthObject to set it.');
-    }
-  }
-
-  /**
    * Generates the OAuthURL where your users need to sign up to give your application access to
    * authorized endpoints.
    */
