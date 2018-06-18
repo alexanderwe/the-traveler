@@ -1,30 +1,31 @@
 import {
-    BungieMembershipType,
-    ComponentPrivacySetting,
-    ComponentType,
-    DamageType,
-    DestinyActivityDifficultyTier,
-    DestinyActivityModeType,
-    DestinyAdvancedAwaResponseReason,
-    DestinyAdvancedAwaType,
-    DestinyAdvancedAwaUserSelection,
-    DestinyClass,
-    DestinyGameVersion,
-    DestinyGender,
-    DestinyRace,
-    DestinyStatsGroupType,
-    DestinyTalentNodeState,
-    EquipFailureReason,
-    ItemBindStatus,
-    ItemLocation,
-    ItemState,
-    PeriodType,
-    PlatformErrorCodes,
-    StatsCategoryType,
-    TransferStatus,
-    UnitType,
-    VendorItemRefundPolicy,
-    VendorItemStatus,
+  BungieMembershipType,
+  ComponentPrivacySetting,
+  ComponentType,
+  DamageType,
+  DestinyActivityDifficultyTier,
+  DestinyActivityModeType,
+  DestinyAdvancedAwaResponseReason,
+  DestinyAdvancedAwaType,
+  DestinyAdvancedAwaUserSelection,
+  DestinyClass,
+  DestinyGameVersion,
+  DestinyGender,
+  DestinyRace,
+  DestinyStatsGroupType,
+  DestinyTalentNodeState,
+  EquipFailureReason,
+  ItemBindStatus,
+  ItemLocation,
+  ItemState,
+  PeriodType,
+  PlatformErrorCodes,
+  StatsCategoryType,
+  TransferStatus,
+  UnitType,
+  VendorItemRefundPolicy,
+  VendorItemStatus,
+  MergeMethod,
 } from './enums';
 
 /**
@@ -32,12 +33,12 @@ import {
  * @interface
  */
 export interface IAPIResponse<ResponseType> {
-    Response: ResponseType;
-    ErrorCode: PlatformErrorCodes;
-    ThrottleSeconds?: string;
-    ErrorStatus?: string;
-    Message?: string;
-    MessageData: object;
+  Response: ResponseType;
+  ErrorCode: PlatformErrorCodes;
+  ThrottleSeconds?: string;
+  ErrorStatus?: string;
+  Message?: string;
+  MessageData: object;
 }
 
 /**
@@ -45,16 +46,16 @@ export interface IAPIResponse<ResponseType> {
  * @interface
  */
 export interface IConfig {
-    apikey: string;
-    userAgent: string;
-    oauthClientId?: string;
-    oauthClientSecret?: string;
-    debug?: boolean;
+  apikey: string;
+  userAgent: string;
+  oauthClientId?: string;
+  oauthClientSecret?: string;
+  debug?: boolean;
 }
 
 export interface IDateRange {
-    start: Date;
-    end: Date;
+  start: Date;
+  end: Date;
 }
 
 /**
@@ -62,70 +63,70 @@ export interface IDateRange {
  * @interface
  */
 export interface IDestinyActivity {
-    activityHash: number;
-    isNew: boolean;
-    canLead: boolean;
-    canJoin: boolean;
-    isCompleted: boolean;
-    isVisible: boolean;
-    displayLevel?: number;
-    recommendedLight?: number;
-    difficultyTier: DestinyActivityDifficultyTier;
+  activityHash: number;
+  isNew: boolean;
+  canLead: boolean;
+  canJoin: boolean;
+  isCompleted: boolean;
+  isVisible: boolean;
+  displayLevel?: number;
+  recommendedLight?: number;
+  difficultyTier: DestinyActivityDifficultyTier;
 }
 
 export interface IDestinyActivityHistoryResults {
-    activities: IDestinyHistoricalStatsPeriodGroup[];
+  activities: IDestinyHistoricalStatsPeriodGroup[];
 }
 
 export interface IDestinyAggregateActivityResults {
-    activities: IDestinyAggregateActivityStats[];
+  activities: IDestinyAggregateActivityStats[];
 }
 
 export interface IDestinyAggregateActivityStats {
-    activityHash: number;
-    values: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
+  activityHash: number;
+  values: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
 }
 
 export interface IDestinyAdvancedAwaAuthorizationResult {
-    userSelection: DestinyAdvancedAwaUserSelection;
-    responseReason: DestinyAdvancedAwaResponseReason;
-    developerNote: string;
-    actionToken: string;
-    maximumNumberOfUses: number;
-    validUntil?: Date;
+  userSelection: DestinyAdvancedAwaUserSelection;
+  responseReason: DestinyAdvancedAwaResponseReason;
+  developerNote: string;
+  actionToken: string;
+  maximumNumberOfUses: number;
+  validUntil?: Date;
 }
 
-/** 
+/**
  * Interface for response of AwaInitializeRequest
- * @interface 
+ * @interface
  */
 export interface IDestinyAdvancedAwaInitializeResponse {
-    correlationId: string;
+  correlationId: string;
 }
 
 export interface IDestinyAdvancedAwaPermissionRequested {
-    type: DestinyAdvancedAwaType;
-    affectedItemId?: number;
-    membershipType: BungieMembershipType;
-    characterId?: string;
+  type: DestinyAdvancedAwaType;
+  affectedItemId?: number;
+  membershipType: BungieMembershipType;
+  characterId?: string;
 }
 
 export interface IDestinyAdvancedAwaUserResponse {
-    selection: DestinyAdvancedAwaUserSelection;
-    corrlectionId: string;
-    nonce: any;
+  selection: DestinyAdvancedAwaUserSelection;
+  corrlectionId: string;
+  nonce: any;
 }
 /**
  * Interface for an Destiny 2 milestone quest
  * @interface
  */
 export interface IDestinyMilestoneQuest {
-    questItemHash: number;
-    status: IDestinyQuestStatus;
-    activity: IDestinyMilestoneActivity;
-    challenges: IDestinyChallengeStatus[];
+  questItemHash: number;
+  status: IDestinyQuestStatus;
+  activity: IDestinyMilestoneActivity;
+  challenges: IDestinyChallengeStatus[];
 }
 
 /**
@@ -133,7 +134,7 @@ export interface IDestinyMilestoneQuest {
  * @interface
  */
 export interface IDestinyChallengeStatus {
-    objective: IDestinyObjectiveProgress;
+  objective: IDestinyObjectiveProgress;
 }
 
 /**
@@ -141,15 +142,15 @@ export interface IDestinyChallengeStatus {
  * @interface
  */
 export interface IDestinyCharacterActivitiesComponent {
-    dateActivityStarted: Date;
-    availableActivites: IDestinyActivity[];
-    currentActivityHash: number;
-    currentActivityModeHash: number;
-    currentActivityModeType?: DestinyActivityModeType;
-    currentActivityModeHashes: string[];
-    currentActivityModeTypes: DestinyActivityModeType[];
-    currentPlaylistActivityHash?: string;
-    lastCompletedStoryHash: number;
+  dateActivityStarted: Date;
+  availableActivites: IDestinyActivity[];
+  currentActivityHash: number;
+  currentActivityModeHash: number;
+  currentActivityModeType?: DestinyActivityModeType;
+  currentActivityModeHashes: string[];
+  currentActivityModeTypes: DestinyActivityModeType[];
+  currentPlaylistActivityHash?: string;
+  lastCompletedStoryHash: number;
 }
 
 /**
@@ -157,26 +158,26 @@ export interface IDestinyCharacterActivitiesComponent {
  * @interface
  */
 export interface IDestinyCharacterComponent {
-    membershipId: string;
-    membershipType: BungieMembershipType;
-    characterId: string;
-    dateLastPlayed: Date;
-    minutesPlayedThisSession: number;
-    minutesPlayedTotal: number;
-    light: number;
-    stats: object;
-    raceHash: number;
-    genderHash: number;
-    classHash: number;
-    raceType: DestinyRace;
-    classType: DestinyClass;
-    genderType: DestinyGender;
-    emblemPath: string;
-    emplemBackgroundPath: string;
-    emblemHash: number;
-    levelProgression: IDestinyProgression;
-    baseCharacterLevel: number;
-    percentToNextLevel: number;
+  membershipId: string;
+  membershipType: BungieMembershipType;
+  characterId: string;
+  dateLastPlayed: Date;
+  minutesPlayedThisSession: number;
+  minutesPlayedTotal: number;
+  light: number;
+  stats: object;
+  raceHash: number;
+  genderHash: number;
+  classHash: number;
+  raceType: DestinyRace;
+  classType: DestinyClass;
+  genderType: DestinyGender;
+  emblemPath: string;
+  emplemBackgroundPath: string;
+  emblemHash: number;
+  levelProgression: IDestinyProgression;
+  baseCharacterLevel: number;
+  percentToNextLevel: number;
 }
 
 /**
@@ -184,18 +185,18 @@ export interface IDestinyCharacterComponent {
  * @interface
  */
 export interface IDestinyCharacterCustomization {
-    personality: string;
-    face: string;
-    skinColor: string;
-    lipColor: string;
-    eyeColor: string;
-    hairColors: string[];
-    featureColors: string[];
-    decalColor: string;
-    wearHelmet: boolean;
-    hairIndex: number;
-    featureIndex: number;
-    decalIndex: number;
+  personality: string;
+  face: string;
+  skinColor: string;
+  lipColor: string;
+  eyeColor: string;
+  hairColors: string[];
+  featureColors: string[];
+  decalColor: string;
+  wearHelmet: boolean;
+  hairIndex: number;
+  featureIndex: number;
+  decalIndex: number;
 }
 
 /**
@@ -203,7 +204,7 @@ export interface IDestinyCharacterCustomization {
  * @interface
  */
 export interface IDestinyCharacterPeerView {
-    equipment: IDestinyItemPeerView[];
+  equipment: IDestinyItemPeerView[];
 }
 
 /**
@@ -211,11 +212,11 @@ export interface IDestinyCharacterPeerView {
  * @interface
  */
 export interface IDestinyCharacterProgressionComponent {
-    progressions: IDestinyProgression;
-    factions: IDestinyFactionProgression;
-    milestones: IDestinyMilestone;
-    quests: IDestinyQuestStatus[];
-    uninstancedItemObjectives: object;
+  progressions: IDestinyProgression;
+  factions: IDestinyFactionProgression;
+  milestones: IDestinyMilestone;
+  quests: IDestinyQuestStatus[];
+  uninstancedItemObjectives: object;
 }
 
 /**
@@ -223,9 +224,9 @@ export interface IDestinyCharacterProgressionComponent {
  * @interface
  */
 export interface IDestinyCharacterRenderComponent {
-    customDyes: IDyeReference;
-    customization: IDestinyCharacterCustomization;
-    peerView: IDestinyCharacterPeerView;
+  customDyes: IDyeReference;
+  customization: IDestinyCharacterCustomization;
+  peerView: IDestinyCharacterPeerView;
 }
 
 /**
@@ -233,20 +234,28 @@ export interface IDestinyCharacterRenderComponent {
  * @interface
  */
 export interface IDestinyCharacterResponse {
-    inventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
-    character?: ISingleComponentResponse<IDestinyCharacterComponent>;
-    progressions?: ISingleComponentResponse<IDestinyCharacterProgressionComponent>;
-    renderData?: ISingleComponentResponse<IDestinyCharacterRenderComponent>;
-    activities?: ISingleComponentResponse<IDestinyCharacterActivitiesComponent>;
-    equipment?: ISingleComponentResponse<IDestinyInventoryComponent>;
-    kiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
-    itemComponents?: object; // TODO: Implement full
+  inventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
+  character?: ISingleComponentResponse<IDestinyCharacterComponent>;
+  progressions?: ISingleComponentResponse<IDestinyCharacterProgressionComponent>;
+  renderData?: ISingleComponentResponse<IDestinyCharacterRenderComponent>;
+  activities?: ISingleComponentResponse<IDestinyCharacterActivitiesComponent>;
+  equipment?: ISingleComponentResponse<IDestinyInventoryComponent>;
+  kiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
+  plugSets?: ISingleComponentResponse<IDestinyPlugSetsComponent>;
+  itemComponents?: IDestinyItemComponentSet; 
+  currencyLookups?: ISingleComponentResponse<IDestinyCurrenciesComponent>;
 }
 
 export interface IDestinyClanAggregateStat {
-    mode: DestinyActivityModeType;
-    statId: string;
-    value: IDestinyHistoricalStatsValue;
+  mode: DestinyActivityModeType;
+  statId: string;
+  value: IDestinyHistoricalStatsValue;
+}
+
+export interface IDestinyCurrenciesComponent {
+  itemQuantities: {
+    [key: number]: number;
+  }
 }
 
 /**
@@ -254,9 +263,9 @@ export interface IDestinyClanAggregateStat {
  * @interface
  */
 export interface IDestinyDefinition {
-    hash: string;
-    index: number;
-    redacted: boolean;
+  hash: string;
+  index: number;
+  redacted: boolean;
 }
 
 /**
@@ -264,31 +273,40 @@ export interface IDestinyDefinition {
  * @interface
  */
 export interface IDestinyDisplayPropertiesDefinition {
-    description: string;
-    name: string;
-    icon: string;
-    hashIcon: string;
+  description: string;
+  name: string;
+  icon: string;
+  hashIcon: string;
 }
 
 export interface IDestinyEntitySearchResult {
-    suggestedWords: string[];
-    results: ISearchResultOfDestinyEntitySearchResultItem;
+  suggestedWords: string[];
+  results: ISearchResultOfDestinyEntitySearchResultItem;
 }
 
 export interface IDestinyEntitySearchResultItem {
-    hash: number;
-    entityType: string;
-    displayProperties: IDestinyDisplayPropertiesDefinition;
-    weight: number;
+  hash: number;
+  entityType: string;
+  displayProperties: IDestinyDisplayPropertiesDefinition;
+  weight: number;
 }
 
 export interface IDestinyEquipItemResult {
-    itemInstanceId: string;
-    equipStatus: PlatformErrorCodes;
+  itemInstanceId: string;
+  equipStatus: PlatformErrorCodes;
 }
 
 export interface IDestinyEquipItemResults {
-    equiResults: IDestinyEquipItemResult[];
+  equiResults: IDestinyEquipItemResult[];
+}
+
+/**
+ * If a Destiny Profile can't be returned, but we're pretty certain it's a valid Destiny account, this will contain as much info as we can get about the profile for your use.
+ * @interface
+ */
+export interface IDestinyErrorProfile {
+    errorCode: PlatformErrorCodes;
+    infoCard: IUserInfoCard;
 }
 
 /**
@@ -296,39 +314,39 @@ export interface IDestinyEquipItemResults {
  * @interface
  */
 export interface IDestinyFactionProgression extends IDestinyProgression {
-    factionHash: number;
+  factionHash: number;
 }
 
 export interface IDestinyHistoricalStatsAccountResult {
-    mergedDeletedCharacters: IDestinyHistoricalStatsWithMerged;
-    mergedAllCharacters: IDestinyHistoricalStatsWithMerged;
-    characters: IDestinyHistoricalStatsPerCharacter[];
+  mergedDeletedCharacters: IDestinyHistoricalStatsWithMerged;
+  mergedAllCharacters: IDestinyHistoricalStatsWithMerged;
+  characters: IDestinyHistoricalStatsPerCharacter[];
 }
 
 export interface IDestinyHistoricalStatsActivity {
-    referenceId: string;
-    directorActivityHash: number;
-    isntanceId: string;
-    mode: DestinyActivityModeType;
-    modes: DestinyActivityModeType[];
-    isPrivate: boolean;
+  referenceId: string;
+  directorActivityHash: number;
+  isntanceId: string;
+  mode: DestinyActivityModeType;
+  modes: DestinyActivityModeType[];
+  isPrivate: boolean;
 }
 
 export interface IDestinyHistoricalStatsByPeriod {
-    allTime: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
-    allTimeTier1: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
-    allTimeTier2: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
-    allTimeTier3: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
-    daily: IDestinyHistoricalStatsPeriodGroup[];
-    monthly: IDestinyHistoricalStatsPeriodGroup[];
+  allTime: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
+  allTimeTier1: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
+  allTimeTier2: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
+  allTimeTier3: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
+  daily: IDestinyHistoricalStatsPeriodGroup[];
+  monthly: IDestinyHistoricalStatsPeriodGroup[];
 }
 
 /**
@@ -336,63 +354,68 @@ export interface IDestinyHistoricalStatsByPeriod {
  * @interface
  */
 export interface IDestinyHistoricalStatsDefinition {
-    statId: string;
-    group: DestinyStatsGroupType;
-    periodTypes: PeriodType[];
-    modes: DestinyActivityModeType[];
-    category: StatsCategoryType;
-    statName: string;
-    statDescription: string;
-    unitType: UnitType;
-    iconImage: string;
-    mergeMethod: string;
+  statId: string;
+  group: DestinyStatsGroupType;
+  periodTypes: PeriodType[];
+  modes: DestinyActivityModeType[];
+  category: StatsCategoryType;
+  statNameAbbr: string;
+  statName: string;
+  statDescription: string;
+  unitType: UnitType;
+  iconImage: string;
+  mergeMethod?: MergeMethod;
+  unitLabel: string;
+  weight: number;
+  medalTierHash?: number;
 }
 
 export interface IDestinyHistoricalStatsPerCharacter {
-    characterId: string;
-    deleted: boolean;
-    results: {
-        [key: string]: IDestinyHistoricalStatsByPeriod;
-    };
-    merged: IDestinyHistoricalStatsByPeriod;
+  characterId: string;
+  deleted: boolean;
+  results: {
+    [key: string]: IDestinyHistoricalStatsByPeriod;
+  };
+  merged: IDestinyHistoricalStatsByPeriod;
 }
 
 export interface IDestinyHistoricalStatsPeriodGroup {
-    period: Date;
-    activityDetail: IDestinyHistoricalStatsActivity;
-    values: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
+  period: Date;
+  activityDetail: IDestinyHistoricalStatsActivity;
+  values: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
 }
 
 export interface IDestinyHistoricalStatsValue {
-    statId: string;
-    basic: IDestinyHistoricalStatsValuePair;
-    pga: IDestinyHistoricalStatsValuePair;
-    weighted: IDestinyHistoricalStatsValuePair;
+  statId: string;
+  basic: IDestinyHistoricalStatsValuePair;
+  pga: IDestinyHistoricalStatsValuePair;
+  weighted: IDestinyHistoricalStatsValuePair;
+  activityId?: number;
 }
 
 export interface IDestinyHistoricalStatsValuePair {
-    value: number;
-    displayValue: string;
+  value: number;
+  displayValue: string;
 }
 
 export interface IDestinyHistoricalStatsWithMerged {
-    results: {
-        [key: string]: IDestinyHistoricalStatsByPeriod;
-    };
-    merged: IDestinyHistoricalStatsByPeriod;
+  results: {
+    [key: string]: IDestinyHistoricalStatsByPeriod;
+  };
+  merged: IDestinyHistoricalStatsByPeriod;
 }
 
 export interface IDestinyHistoricalWeaponStats {
-    referenceId: string;
-    values: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
+  referenceId: number;
+  values: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
 }
 
 export interface IDestinyHistoricalWeaponStatsData {
-    weapons: IDestinyHistoricalWeaponStats[];
+  weapons: IDestinyHistoricalWeaponStats[];
 }
 
 /**
@@ -400,7 +423,7 @@ export interface IDestinyHistoricalWeaponStatsData {
  * @interface
  */
 export interface IDestinyInventoryComponent {
-    items: IDestinyItemComponent[];
+  items: IDestinyItemComponent[];
 }
 
 /**
@@ -408,21 +431,32 @@ export interface IDestinyInventoryComponent {
  * @interface
  */
 export interface IDestinyItemActionRequest {
-    itemId?: string;
-    characterId: string;
-    membershipType: BungieMembershipType;
+  itemId?: string;
+  characterId: string;
+  membershipType: BungieMembershipType;
 }
 
 export interface IDestinyItemComponent {
-    itemHash: number;
-    itemInstanceId: string;
-    quantity: number;
-    bindStatus: ItemBindStatus;
-    location: ItemLocation;
-    bucketHash: number;
-    transferStatus: TransferStatus;
-    lockable: boolean;
-    state: ItemState;
+  itemHash: number;
+  itemInstanceId: string;
+  quantity: number;
+  bindStatus: ItemBindStatus;
+  location: ItemLocation;
+  bucketHash: number;
+  transferStatus: TransferStatus;
+  lockable: boolean;
+  state: ItemState;
+}
+
+export interface IDestinyItemComponentSet {
+  instances: IDictionaryComponent<IDestinyItemInstanceComponent>;
+  objectives: IDictionaryComponent<IDestinyItemObjectivesComponent>;
+  perks: IDictionaryComponent<IDestinyItemPerksComponent>;
+  renderData: IDictionaryComponent<IDestinyItemRenderComponent>;
+  stats: IDictionaryComponent<IDestinyItemStatsComponent>;
+  sockets: IDictionaryComponent<IDestinyItemSocketsComponent>;
+  talentGrids: IDictionaryComponent<IDestinyItemTalentGridComponent>;
+  plugStates: IDictionaryComponent<IDestinyItemPlugComponent>;
 }
 
 /**
@@ -430,23 +464,23 @@ export interface IDestinyItemComponent {
  * @interface
  */
 export interface IDestinyItemInstanceComponent {
-    damageType: DamageType;
-    damageTypeHash: number;
-    primaryStat: IDestinyStat;
-    itemLevel: number;
-    quality: number;
-    isEquipped: boolean;
-    canEquip: boolean;
-    equiRequiredLevel: number;
-    unlockHashesRequiredToEquip: string[];
-    cannEquipReason: EquipFailureReason;
+  damageType: DamageType;
+  damageTypeHash: number;
+  primaryStat: IDestinyStat;
+  itemLevel: number;
+  quality: number;
+  isEquipped: boolean;
+  canEquip: boolean;
+  equiRequiredLevel: number;
+  unlockHashesRequiredToEquip: string[];
+  cannEquipReason: EquipFailureReason;
 }
 
 /**
  * @interface
  */
 export interface IDestinyItemObjectivesComponent {
-    objectives: IDestinyObjectiveProgress[];
+  objectives: IDestinyObjectiveProgress[];
 }
 
 /**
@@ -454,8 +488,8 @@ export interface IDestinyItemObjectivesComponent {
  * @interface
  */
 export interface IDestinyItemPeerView {
-    itemHash: number;
-    dyes: IDyeReference;
+  itemHash: number;
+  dyes: IDyeReference;
 }
 
 /**
@@ -463,7 +497,16 @@ export interface IDestinyItemPeerView {
  * @interface
  */
 export interface IDestinyItemPerksComponent {
-    perks: IDestinyPerkReference[];
+  perks: IDestinyPerkReference[];
+}
+
+export interface IDestinyItemPlugComponent {
+  plugItemHash: string;
+  plugObjectives: IDestinyObjectiveProgress;
+  caninsert: boolean;
+  enabled: boolean;
+  insertFailIndexes: number[];
+  enableFailIndexes: number[];
 }
 
 /**
@@ -471,16 +514,16 @@ export interface IDestinyItemPerksComponent {
  * @interface
  */
 export interface IDestinyItemQuantity {
-    itemHash: number;
-    itemInstanceId: string;
-    quantity: number;
+  itemHash: number;
+  itemInstanceId: string;
+  quantity: number;
 }
 
 export interface IDestinyItemRenderComponent {
-    useCustomDyes: boolean;
-    artRegion: {
-        [key: number]: number;
-    };
+  useCustomDyes: boolean;
+  artRegion: {
+    [key: number]: number;
+  };
 }
 
 /**
@@ -488,15 +531,15 @@ export interface IDestinyItemRenderComponent {
  * @interface
  */
 export interface IDestinyItemResponse {
-    characterId?: string;
-    item?: ISingleComponentResponse<IDestinyItemComponent>;
-    instance?: ISingleComponentResponse<IDestinyItemInstanceComponent>;
-    objectives?: ISingleComponentResponse<IDestinyItemObjectivesComponent>;
-    perks?: ISingleComponentResponse<IDestinyItemPerksComponent>;
-    renderData?: ISingleComponentResponse<IDestinyItemRenderComponent>;
-    stats?: ISingleComponentResponse<IDestinyItemStatsComponent>;
-    talentGrid?: ISingleComponentResponse<IDestinyItemTalentGridComponent>;
-    sockets?: ISingleComponentResponse<IDestinyItemSocketsComponent>;
+  characterId?: string;
+  item?: ISingleComponentResponse<IDestinyItemComponent>;
+  instance?: ISingleComponentResponse<IDestinyItemInstanceComponent>;
+  objectives?: ISingleComponentResponse<IDestinyItemObjectivesComponent>;
+  perks?: ISingleComponentResponse<IDestinyItemPerksComponent>;
+  renderData?: ISingleComponentResponse<IDestinyItemRenderComponent>;
+  stats?: ISingleComponentResponse<IDestinyItemStatsComponent>;
+  talentGrid?: ISingleComponentResponse<IDestinyItemTalentGridComponent>;
+  sockets?: ISingleComponentResponse<IDestinyItemSocketsComponent>;
 }
 
 /**
@@ -504,26 +547,26 @@ export interface IDestinyItemResponse {
  * @interface
  */
 export interface IDestinyItemSetActionRequest {
-    itemIds?: string[];
-    characterId: string;
-    membershipType: BungieMembershipType;
+  itemIds?: string[];
+  characterId: string;
+  membershipType: BungieMembershipType;
 }
 
 export interface IDestinyItemStatsComponent {
-    stats: {
-        [key: string]: IDestinyStat;
-    };
+  stats: {
+    [key: string]: IDestinyStat;
+  };
 }
 
 export interface IDestinyItemSocketState {
-    plugHash: number;
-    isEnabled: boolean;
-    enableFailIndexes: number[];
-    reusablePlugHashes: string[];
+  plugHash: number;
+  isEnabled: boolean;
+  enableFailIndexes: number[];
+  reusablePlugHashes: string[];
 }
 
 export interface IDestinyItemSocketsComponent {
-    sockets: IDestinyItemSocketState[];
+  sockets: IDestinyItemSocketState[];
 }
 
 /**
@@ -531,17 +574,17 @@ export interface IDestinyItemSocketsComponent {
  * @interface
  */
 export interface IDestinyItemStateRequest {
-    state: boolean;
-    itemId: string;
-    characterId: string;
-    membershipType: BungieMembershipType;
+  state: boolean;
+  itemId: string;
+  characterId: string;
+  membershipType: BungieMembershipType;
 }
 
 export interface IDestinyItemTalentGridComponent {
-    talentGridHash: number;
-    nodes: IDestinyTalentNode[];
-    isGridComplete: boolean;
-    gridProgression: IDestinyProgression;
+  talentGridHash: number;
+  nodes: IDestinyTalentNode[];
+  isGridComplete: boolean;
+  gridProgression: IDestinyProgression;
 }
 
 /**
@@ -549,12 +592,12 @@ export interface IDestinyItemTalentGridComponent {
  * @interface
  */
 export interface IDestinyItemTransferRequest {
-    itemReferenceHash: number;
-    stackSize: number;
-    transferToVault: boolean;
-    itemId: string;
-    characterId: string;
-    membershipType: BungieMembershipType;
+  itemReferenceHash: number;
+  stackSize: number;
+  transferToVault: boolean;
+  itemId: string;
+  characterId: string;
+  membershipType: BungieMembershipType;
 }
 
 /**
@@ -562,7 +605,17 @@ export interface IDestinyItemTransferRequest {
  * @interface
  */
 export interface IDestinyKiosksComponent {
-    kioskItems: number[];
+  kioskItems: number[];
+}
+
+/**
+ * Interface a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account
+ * @interface
+ */
+export interface IDestinyLinkedProfilesResponse {
+    profiles: IUserInfoCard[];
+    bnetMembership: IUserInfoCard;
+    profilesWithErrors: IDestinyErrorProfile[];
 }
 
 /**
@@ -570,21 +623,23 @@ export interface IDestinyKiosksComponent {
  * @interface
  */
 export interface IDestinyManifest {
-    version: string;
-    mobileAssetContentPath: string;
-    mobileGearAssetDataBases: IGearAssetDataBaseDefinition[];
-    mobileWorldContentPaths: {
-        [key: string]: string;
-    };
-    mobileClanBannerDatabasePath: string;
-    mobileGearCDN: object;
+  version: string;
+  mobileAssetContentPath: string;
+  mobileGearAssetDataBases: IGearAssetDataBaseDefinition[];
+  mobileWorldContentPaths: {
+    [key: string]: string;
+  };
+  mobileClanBannerDatabasePath: string;
+  mobileGearCDN: {
+    [key: string]: string;
+  };
 }
 
 export interface IDestinyMaterialRequirement {
-    itemHash: number;
-    deleteOnAction: boolean;
-    count: number;
-    omitFromRequirements: boolean;
+  itemHash: number;
+  deleteOnAction: boolean;
+  count: number;
+  omitFromRequirements: boolean;
 }
 
 /**
@@ -592,13 +647,13 @@ export interface IDestinyMaterialRequirement {
  * @interface
  */
 export interface IDestinyMilestone {
-    milestoneHash: number;
-    availableQuests: IDestinyMilestoneQuest[];
-    values: object;
-    vendors: [IDestinyPublicMilestoneVendor];
-    rewards: IDestinyMilestoneRewardCategory[];
-    startDate?: Date;
-    endDate?: Date;
+  milestoneHash: number;
+  availableQuests: IDestinyMilestoneQuest[];
+  values: object;
+  vendors: IDestinyPublicMilestoneVendor[];
+  rewards: IDestinyMilestoneRewardCategory[];
+  startDate?: Date;
+  endDate?: Date;
 }
 
 /**
@@ -606,9 +661,9 @@ export interface IDestinyMilestone {
  * @interface
  */
 export interface IDestinyMilestoneActivity {
-    activityHash: number;
-    modifierHash: number[];
-    variants: IDestinyMilestoneActivityVariant[];
+  activityHash: number;
+  modifierHash: number[];
+  variants: IDestinyMilestoneActivityVariant[];
 }
 
 /**
@@ -616,8 +671,8 @@ export interface IDestinyMilestoneActivity {
  * @interface
  */
 export interface IDestinyMilestoneActivityCompletionStatus {
-    completed: boolean;
-    phases: IDestinyMilestoneActivityPhase[];
+  completed: boolean;
+  phases: IDestinyMilestoneActivityPhase[];
 }
 
 /**
@@ -625,7 +680,7 @@ export interface IDestinyMilestoneActivityCompletionStatus {
  * @interface
  */
 export interface IDestinyMilestoneActivityPhase {
-    complete: boolean;
+  complete: boolean;
 }
 
 /**
@@ -633,20 +688,24 @@ export interface IDestinyMilestoneActivityPhase {
  * @interface
  */
 export interface IDestinyMilestoneActivityVariant {
-    activityHash: number;
-    completionStatus?: IDestinyMilestoneActivityCompletionStatus;
+  activityHash: number;
+  completionStatus?: IDestinyMilestoneActivityCompletionStatus;
 }
 
+/**
+ * Represents localized, extended content related to Milestones. 
+ * @interface
+ */
 export interface IDestinyMilestoneContent {
-    about: string;
-    status: string;
-    tips: string[];
-    itemCategories: IDestinyMilestoneContentItemCategory[];
+  about: string;
+  status: string;
+  tips: string[];
+  itemCategories: IDestinyMilestoneContentItemCategory[];
 }
 
 export interface IDestinyMilestoneContentItemCategory {
-    title: string;
-    itemHashes: string[];
+  title: string;
+  itemHashes: number[];
 }
 
 /**
@@ -654,10 +713,10 @@ export interface IDestinyMilestoneContentItemCategory {
  * @interface
  */
 export interface IDestinyMilestoneQuest {
-    questItemHash: number;
-    status: IDestinyQuestStatus;
-    activity: IDestinyMilestoneActivity;
-    challenges: IDestinyChallengeStatus[];
+  questItemHash: number;
+  status: IDestinyQuestStatus;
+  activity: IDestinyMilestoneActivity;
+  challenges: IDestinyChallengeStatus[];
 }
 
 /**
@@ -665,8 +724,8 @@ export interface IDestinyMilestoneQuest {
  * @interface
  */
 export interface IDestinyMilestoneRewardCategory {
-    rewardCategoryHash: number;
-    entries: IDestinyMilestoneRewardEntry[];
+  rewardCategoryHash: number;
+  entries: IDestinyMilestoneRewardEntry[];
 }
 
 /**
@@ -674,9 +733,9 @@ export interface IDestinyMilestoneRewardCategory {
  * @interface
  */
 export interface IDestinyMilestoneRewardEntry {
-    rewardEntryHash: number;
-    earned: boolean;
-    redeemed: boolean;
+  rewardEntryHash: number;
+  earned: boolean;
+  redeemed: boolean;
 }
 
 /**
@@ -684,11 +743,11 @@ export interface IDestinyMilestoneRewardEntry {
  * @interface
  */
 export interface IDestinyObjectiveProgress {
-    objectiveHash: number;
-    destinationHash?: string;
-    activityHash?: string;
-    progress?: number;
-    complete: boolean;
+  objectiveHash: number;
+  destinationHash?: string;
+  activityHash?: string;
+  progress?: number;
+  complete: boolean;
 }
 
 /**
@@ -696,20 +755,26 @@ export interface IDestinyObjectiveProgress {
  * @interface
  */
 export interface IDestinyPerkReference {
-    perkHash: number;
-    iconPath: string;
-    isActive: boolean;
-    isVisible: boolean;
+  perkHash: number;
+  iconPath: string;
+  isActive: boolean;
+  isVisible: boolean;
 }
 
 export interface IDestinyPlayer {
-    destinyUserInfo: IUserInfoCard;
-    characterClass: string;
-    characterLevel: number;
-    lightLevel: number;
-    bungieNetUserInfo?: IUserInfoCard;
-    clanName?: string;
-    clanTag?: string;
+  destinyUserInfo: IUserInfoCard;
+  characterClass: string;
+  characterLevel: number;
+  lightLevel: number;
+  bungieNetUserInfo?: IUserInfoCard;
+  clanName?: string;
+  clanTag?: string;
+}
+
+export interface IDestinyPlugSetsComponent {
+    plugs: {
+        [key: string]: object[];
+    }
 }
 
 /**
@@ -717,35 +782,35 @@ export interface IDestinyPlayer {
  * @interface
  */
 export interface IDestinyPostGameCarnageReportData {
-    period: Date;
-    activityDetails: IDestinyHistoricalStatsActivity;
-    entires: [IDestinyPostGameCarnageReportEntry];
-    teams: [IDestinyPostGameCarnageReportTeamEntry];
+  period: Date;
+  activityDetails: IDestinyHistoricalStatsActivity;
+  entries: [IDestinyPostGameCarnageReportEntry];
+  teams: [IDestinyPostGameCarnageReportTeamEntry];
 }
 
 export interface IDestinyPostGameCarnageReportEntry {
-    standing: number;
-    score: IDestinyHistoricalStatsValue;
-    player: IDestinyPlayer;
-    characterId: string;
-    values: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
-    extended: IDestinyPostGameCarnageReportExtendedData;
-}
-
-export interface IDestinyPostGameCarnageReportExtendedData {
-    teamId: number;
-    standing: IDestinyHistoricalStatsValue;
-    score: IDestinyHistoricalStatsValue;
-    teamName: string;
+  standing: number;
+  score: IDestinyHistoricalStatsValue;
+  player: IDestinyPlayer;
+  characterId: string;
+  values: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
+  extended: IDestinyPostGameCarnageReportExtendedData;
 }
 
 export interface IDestinyPostGameCarnageReportTeamEntry {
-    weapons: IDestinyHistoricalWeaponStats[];
-    values: {
-        [key: string]: IDestinyHistoricalStatsValue;
-    };
+  teamId: number;
+  standing: IDestinyHistoricalStatsValue;
+  score: IDestinyHistoricalStatsValue;
+  teamName: string;
+}
+
+export interface IDestinyPostGameCarnageReportExtendedData {
+  weapons: IDestinyHistoricalWeaponStats[];
+  values: {
+    [key: string]: IDestinyHistoricalStatsValue;
+  };
 }
 
 /**
@@ -753,11 +818,11 @@ export interface IDestinyPostGameCarnageReportTeamEntry {
  * @interface
  */
 export interface IDestinyPostMasterTransferRequest {
-    itemReferenceHash: string;
-    stackSize: number;
-    itemId: string;
-    characterId: string;
-    membershipType: BungieMembershipType;
+  itemReferenceHash: string;
+  stackSize: number;
+  itemId: string;
+  characterId: string;
+  membershipType: BungieMembershipType;
 }
 
 /**
@@ -765,10 +830,10 @@ export interface IDestinyPostMasterTransferRequest {
  * @interface
  */
 export interface IDestinyProfileComponent {
-    userInfo: IUserInfoCard;
-    dateLastPlayed: Date;
-    versionsOwned: DestinyGameVersion;
-    characterIds: string[];
+  userInfo: IUserInfoCard;
+  dateLastPlayed: Date;
+  versionsOwned: DestinyGameVersion;
+  characterIds: string[];
 }
 
 /**
@@ -776,19 +841,22 @@ export interface IDestinyProfileComponent {
  * @interface
  */
 export interface IDestinyProfileResponse {
-    vendorReceipts?: ISingleComponentResponse<IDestinyVendorReceiptsComponent>;
-    profileInventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
-    profileCurrencies?: ISingleComponentResponse<IDestinyInventoryComponent>;
-    profile?: ISingleComponentResponse<IDestinyProfileComponent>;
-    profileKiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
-    characters?: IDictionaryComponent<IDestinyCharacterComponent>;
-    characterInventories?: IDictionaryComponent<IDestinyInventoryComponent>;
-    characterProgressions?: IDictionaryComponent<IDestinyCharacterProgressionComponent>;
-    characterRenderData?: IDictionaryComponent<IDestinyCharacterRenderComponent>;
-    characterActivities?: IDictionaryComponent<IDestinyCharacterActivitiesComponent>;
-    characterEquipment?: IDictionaryComponent<IDestinyInventoryComponent>;
-    characterKiosks?: IDictionaryComponent<IDestinyKiosksComponent>;
-    itemComponents?: object; // TODO: Implement full
+  vendorReceipts?: ISingleComponentResponse<IDestinyVendorReceiptsComponent>;
+  profileInventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
+  profileCurrencies?: ISingleComponentResponse<IDestinyInventoryComponent>;
+  profile?: ISingleComponentResponse<IDestinyProfileComponent>;
+  profileKiosks?: ISingleComponentResponse<IDestinyKiosksComponent>;
+  profilePlugSets?: ISingleComponentResponse<IDestinyPlugSetsComponent>;
+  characters?: IDictionaryComponent<IDestinyCharacterComponent>;
+  characterInventories?: IDictionaryComponent<IDestinyInventoryComponent>;
+  characterProgressions?: IDictionaryComponent<IDestinyCharacterProgressionComponent>;
+  characterRenderData?: IDictionaryComponent<IDestinyCharacterRenderComponent>;
+  characterActivities?: IDictionaryComponent<IDestinyCharacterActivitiesComponent>;
+  characterEquipment?: IDictionaryComponent<IDestinyInventoryComponent>;
+  characterKiosks?: IDictionaryComponent<IDestinyKiosksComponent>;
+  characterPlugSets?: IDictionaryComponent<IDestinyPlugSetsComponent>;
+  itemComponents?: IDestinyItemComponentSet;
+  characterCurrencyLookups: IDictionaryComponent<IDestinyCurrenciesComponent>;
 }
 
 /**
@@ -796,11 +864,11 @@ export interface IDestinyProfileResponse {
  * @interface
  */
 export interface IDestinyCharacterProgressionComponent {
-    progressions: IDestinyProgression;
-    factions: IDestinyFactionProgression;
-    milestones: IDestinyMilestone;
-    quests: IDestinyQuestStatus[];
-    uninstancedItemObjectives: object;
+  progressions: IDestinyProgression;
+  factions: IDestinyFactionProgression;
+  milestones: IDestinyMilestone;
+  quests: IDestinyQuestStatus[];
+  uninstancedItemObjectives: object;
 }
 
 /**
@@ -808,51 +876,53 @@ export interface IDestinyCharacterProgressionComponent {
  * @interface
  */
 export interface IDestinyProgression {
-    progressionHash: number;
-    dailyProgress: number;
-    dailyLimit: number;
-    weeklyProgress: number;
-    weeklyLimit: number;
-    currentProgress: number;
-    level: number;
-    levelCap: number;
-    stepIndex: number;
-    progressToNextLevel: number;
-    nextLevelAt: number;
+  progressionHash: number;
+  dailyProgress: number;
+  dailyLimit: number;
+  weeklyProgress: number;
+  weeklyLimit: number;
+  currentProgress: number;
+  level: number;
+  levelCap: number;
+  stepIndex: number;
+  progressToNextLevel: number;
+  nextLevelAt: number;
 }
 
 export interface IDestinyPublicMilestone {
-    milestoneHash: number;
-    availableQuests: IDestinyPublicMilestoneQuest[];
-    vendors: [IDestinyPublicMilestoneVendor];
-    startDate?: Date;
-    endDate?: Date;
+  milestoneHash: number;
+  availableQuests: IDestinyPublicMilestoneQuest[];
+  vendors: IDestinyPublicMilestoneVendor[];
+  startDate?: Date;
+  endDate?: Date;
 }
 
 export interface IDestinyPublicMilestoneActivity {
-    activitHash: number;
-    modifierHashes: string[];
-    variants: IDestinyPublicMilestoneActivityVariant[];
+  activitHash: number;
+  modifierHashes: string[];
+  variants: IDestinyPublicMilestoneActivityVariant[];
+  activityModeHash?: number;
+  activityModeType?: DestinyActivityModeType
 }
 
 export interface IDestinyPublicMilestoneActivityVariant {
-    activityHash: number;
+  activityHash: number;
 }
 
 export interface IDestinyPublicMilestoneChallenge {
-    objectiveHash: number;
-    activityHash?: string;
+  objectiveHash: number;
+  activityHash?: number;
 }
 
 export interface IDestinyPublicMilestoneQuest {
-    questItemHash: number;
-    activity: IDestinyPublicMilestoneActivity;
-    challenges: IDestinyPublicMilestoneChallenge[];
+  questItemHash: number;
+  activity: IDestinyPublicMilestoneActivity;
+  challenges: IDestinyPublicMilestoneChallenge[];
 }
 
 export interface IDestinyPublicMilestoneVendor {
-    vendorHash: string;
-    previewItemHash?: string;
+  vendorHash: number;
+  previewItemHash?: number;
 }
 
 /**
@@ -860,15 +930,15 @@ export interface IDestinyPublicMilestoneVendor {
  * @interface
  */
 export interface IDestinyQuestStatus {
-    questHash: number;
-    stepHash: number;
-    stepObjectives: IDestinyObjectiveProgress[];
-    tracked: boolean;
-    itemInstanceId: string;
-    completed: boolean;
-    redeemed: boolean;
-    started: boolean;
-    vendorHash?: string;
+  questHash: number;
+  stepHash: number;
+  stepObjectives: IDestinyObjectiveProgress[];
+  tracked: boolean;
+  itemInstanceId: string;
+  completed: boolean;
+  redeemed: boolean;
+  started: boolean;
+  vendorHash?: string;
 }
 
 /**
@@ -876,9 +946,9 @@ export interface IDestinyQuestStatus {
  * @interface
  */
 export interface IDestinyReportOffensePgcrRequest {
-    reasonCategoryHashes: [string];
-    reasonHashes: [string];
-    offendingCharacterId: number;
+  reasonCategoryHashes: [string];
+  reasonHashes: [string];
+  offendingCharacterId: number;
 }
 
 /**
@@ -886,57 +956,76 @@ export interface IDestinyReportOffensePgcrRequest {
  * @interface
  */
 export interface IDestinyStat {
-    statHash: number;
-    value: number;
-    maximumValue: number;
+  statHash: number;
+  value: number;
+  maximumValue: number;
 }
 
 export interface IDestinyTalentNode {
-    nodeIndex: number;
-    nodeHash: number;
-    state: DestinyTalentNodeState;
-    isActivated: boolean;
-    stepIndex: number;
-    materialsToUpgrade: IDestinyMaterialRequirement[];
-    activationGridLevel: number;
-    progressPercent: number;
-    hidden: boolean;
-    nodeStatsBlock: IDestinyTalentNodeStatBlock;
+  nodeIndex: number;
+  nodeHash: number;
+  state: DestinyTalentNodeState;
+  isActivated: boolean;
+  stepIndex: number;
+  materialsToUpgrade: IDestinyMaterialRequirement[];
+  activationGridLevel: number;
+  progressPercent: number;
+  hidden: boolean;
+  nodeStatsBlock: IDestinyTalentNodeStatBlock;
 }
 
 export interface IDestinyTalentNodeStatBlock {
-    currentStepStats: IDestinyStat[];
-    nextStepStats: IDestinyStat[];
+  currentStepStats: IDestinyStat[];
+  nextStepStats: IDestinyStat[];
 }
 
 export interface IDestinyUnlockStatus {
-    unlockHash: number;
-    isSet: boolean;
+  unlockHash: number;
+  isSet: boolean;
 }
 
 export interface IDestinyVendorsResponse {
-    vendors?: ISingleComponentResponse<{ [key: string]: IDestinyVendorComponent }>;
-    categories?: ISingleComponentResponse<{ [key: string]: IDestinyVendorCategoriesComponent }>;
-    sales?: ISingleComponentResponse<{ [key: string]: IDestinyVendorSaleItemComponent }>;
-    itemComponents?: ISingleComponentResponse<{ [key: string]: IDestinyItemComponent }>;
+  vendorGroups?: ISingleComponentResponse<IDestinyVendorGroupComponent>;
+  vendors?: ISingleComponentResponse<{
+    [key: string]: IDestinyVendorComponent;
+  }>;
+  categories?: ISingleComponentResponse<{
+    [key: string]: IDestinyVendorCategoriesComponent;
+  }>;
+  sales?: ISingleComponentResponse<{
+    [key: string]: IDestinyVendorSaleItemComponent;
+  }>;
+  itemComponents?: ISingleComponentResponse<{
+    [key: string]: IDestinyItemComponent;
+  }>;
+  currencyLookups: ISingleComponentResponse<IDestinyCurrenciesComponent>;
 }
 
 export interface IDestinyVendorCategoriesComponent {
-    categories: IDestinyVendorCategory[];
+  categories: IDestinyVendorCategory[];
 }
 
 export interface IDestinyVendorCategory {
-    categoryIndex: number;
-    itemIndexes: number[];
+  categoryIndex: number;
+  itemIndexes: number[];
 }
 
 export interface IDestinyVendorComponent {
-    vendorHash: number;
-    ackState: object; // Not used anymore because of that no further definition here
-    nextRefreshDate: Date;
-    enabled: boolean;
-    canPurchase: boolean;
-    progression: IDestinyProgression;
+  vendorHash: number;
+  ackState: object; // Not used anymore because of that no further definition here
+  nextRefreshDate: Date;
+  enabled: boolean;
+  canPurchase: boolean;
+  progression: IDestinyProgression;
+}
+
+export interface IDestinyVendorGroup {
+  vendorGroupHash: string;
+  vendorHashes: string[];
+}
+
+export interface IDestinyVendorGroupComponent {
+  groups: IDestinyVendorGroup[];
 }
 
 /**
@@ -944,14 +1033,14 @@ export interface IDestinyVendorComponent {
  * @interface
  */
 export interface IDestinyVendorReceipt {
-    currencyPaid: IDestinyItemQuantity;
-    itemReceived: IDestinyItemQuantity;
-    licenseUnlockHash: number;
-    purchasedByCharacterId: string;
-    refundPolicy: VendorItemRefundPolicy;
-    sequenceNumber: number;
-    timeToExpiration: number;
-    expiresOn: Date;
+  currencyPaid: IDestinyItemQuantity;
+  itemReceived: IDestinyItemQuantity;
+  licenseUnlockHash: number;
+  purchasedByCharacterId: string;
+  refundPolicy: VendorItemRefundPolicy;
+  sequenceNumber: number;
+  timeToExpiration: number;
+  expiresOn: Date;
 }
 
 /**
@@ -959,7 +1048,7 @@ export interface IDestinyVendorReceipt {
  * @interface
  */
 export interface IDestinyVendorReceiptsComponent {
-    receipts: IDestinyVendorReceipt[];
+  receipts: IDestinyVendorReceipt[];
 }
 
 /**
@@ -967,20 +1056,21 @@ export interface IDestinyVendorReceiptsComponent {
  * @interface
  */
 export interface IDestinyVendorResponse {
-    vendor?: ISingleComponentResponse<IDestinyVendorComponent>;
-    categories?: ISingleComponentResponse<IDestinyVendorCategoriesComponent>;
-    sales?: IDictionaryComponent<IDestinyVendorSaleItemComponent>;
-    items: object;
+  vendor?: ISingleComponentResponse<IDestinyVendorComponent>;
+  categories?: ISingleComponentResponse<IDestinyVendorCategoriesComponent>;
+  sales?: IDictionaryComponent<IDestinyVendorSaleItemComponent>;
+  itemComponents: IDestinyItemComponentSet;
+  currencyLookup: ISingleComponentResponse<IDestinyCurrenciesComponent>;
 }
 
 export interface IDestinyVendorSaleItemComponent {
-    vendorItemIndex: number;
-    itemHash: number;
-    saleStatus: VendorItemStatus;
-    costs: IDestinyItemQuantity[];
-    requiredUnlocks: string[];
-    unlockStatuses: IDestinyUnlockStatus[];
-    failureIndexes: number[];
+  vendorItemIndex: number;
+  itemHash: number;
+  saleStatus: VendorItemStatus;
+  costs: IDestinyItemQuantity[];
+  requiredUnlocks: string[];
+  unlockStatuses: IDestinyUnlockStatus[];
+  failureIndexes: number[];
 }
 
 /**
@@ -988,10 +1078,10 @@ export interface IDestinyVendorSaleItemComponent {
  * @interface
  */
 export interface IDictionaryComponent<IComponent> {
-    data: {
-        [key: string]: IComponent;
-    };
-    privacy: ComponentPrivacySetting;
+  data: {
+    [key: string]: IComponent;
+  };
+  privacy: ComponentPrivacySetting;
 }
 
 /**
@@ -999,8 +1089,8 @@ export interface IDictionaryComponent<IComponent> {
  * @interface
  */
 export interface IDyeReference {
-    channelHash: number;
-    dyeHash: number;
+  channelHash: number;
+  dyeHash: number;
 }
 
 /**
@@ -1008,43 +1098,43 @@ export interface IDyeReference {
  * @interface
  */
 export interface IGearAssetDataBaseDefinition {
-    version: string;
-    path: string;
+  version: number;
+  path: string;
 }
 /**
  * Interface for Bungie.net user info
  * @interface
  */
 export interface IGeneralUser {
-    membershipId: string;
-    uniqueName: string;
-    normalizedName: string;
-    displayName: string;
-    profilePicture: string;
-    profileTheme: string;
-    userTitle: string;
-    successMessageFlags: string;
-    isDeleted: boolean;
-    about: string;
-    firstAccess?: string;
-    lastUpdate?: Date;
-    legacyPortalUID?: string;
-    psnDisplayName: string;
-    xboxDisplayName: string;
-    fbDisplayName: string;
-    showActivity?: boolean;
-    locale: string;
-    localeInheritDefault: boolean;
-    lastBanReportId?: string;
-    showGroupMessaging: boolean;
-    profilePicturePath: string;
-    profilePictureWidePath: string;
-    profileThemeName: string;
-    userTitleDisplay: string;
-    statusText: string;
-    statusDate: Date;
-    profileBanExpire?: Date;
-    blizzardDisplayName: string;
+  membershipId: string;
+  uniqueName: string;
+  normalizedName: string;
+  displayName: string;
+  profilePicture: string;
+  profileTheme: string;
+  userTitle: string;
+  successMessageFlags: string;
+  isDeleted: boolean;
+  about: string;
+  firstAccess?: string;
+  lastUpdate?: Date;
+  legacyPortalUID?: string;
+  psnDisplayName: string;
+  xboxDisplayName: string;
+  fbDisplayName: string;
+  showActivity?: boolean;
+  locale: string;
+  localeInheritDefault: boolean;
+  lastBanReportId?: string;
+  showGroupMessaging: boolean;
+  profilePicturePath: string;
+  profilePictureWidePath: string;
+  profileThemeName: string;
+  userTitleDisplay: string;
+  statusText: string;
+  statusDate: Date;
+  profileBanExpire?: Date;
+  blizzardDisplayName: string;
 }
 
 /**
@@ -1052,8 +1142,8 @@ export interface IGeneralUser {
  * @interface
  */
 export interface IOAuthConfig {
-    clientId?: string;
-    clientSecret?: string;
+  clientId?: string;
+  clientSecret?: string;
 }
 
 /**
@@ -1061,18 +1151,18 @@ export interface IOAuthConfig {
  * @interface
  */
 export interface IOAuthResponse {
-    access_token: string;
-    token_type: string;
-    expires_in: number;
-    refresh_token?: string;
-    refresh_expires_in?: number;
-    membership_id: string;
+  access_token: string;
+  token_type: string;
+  expires_in: number;
+  refresh_token?: string;
+  refresh_expires_in?: number;
+  membership_id: string;
 }
 
 export interface IPagedQUery {
-    itemsPerPage: number;
-    currentPage: number;
-    requestContinuationToken: string;
+  itemsPerPage: number;
+  currentPage: number;
+  requestContinuationToken: string;
 }
 
 /**
@@ -1080,27 +1170,27 @@ export interface IPagedQUery {
  * @interface
  */
 export interface IQueryStringParameters {
-    components?: ComponentType[];
-    modes?: DestinyActivityModeType[];
-    mode?: DestinyActivityModeType;
-    maxtop?: number;
-    statid?: string;
-    page?: number;
-    dayend?: string;
-    daystart?: string;
-    groups?: DestinyStatsGroupType[];
-    periodType?: PeriodType;
-    count?: number;
-    [key: string]: any;
+  components?: ComponentType[];
+  modes?: DestinyActivityModeType[];
+  mode?: DestinyActivityModeType;
+  maxtop?: number;
+  statid?: string;
+  page?: number;
+  dayend?: string;
+  daystart?: string;
+  groups?: DestinyStatsGroupType[];
+  periodType?: PeriodType;
+  count?: number;
+  [key: string]: any;
 }
 
 export interface ISearchResultOfDestinyEntitySearchResultItem {
-    results: IDestinyEntitySearchResultItem[];
-    totalResults: number;
-    hasMore: boolean;
-    query: IPagedQUery;
-    replacementContinuationToken: string;
-    useTotalResults: boolean;
+  results: IDestinyEntitySearchResultItem[];
+  totalResults: number;
+  hasMore: boolean;
+  query: IPagedQUery;
+  replacementContinuationToken: string;
+  useTotalResults: boolean;
 }
 
 /**
@@ -1108,8 +1198,8 @@ export interface ISearchResultOfDestinyEntitySearchResultItem {
  * @interface
  */
 export interface ISingleComponentResponse<IComponent> {
-    data: IComponent;
-    privacy: ComponentPrivacySetting;
+  data: IComponent;
+  privacy: ComponentPrivacySetting;
 }
 
 /**
@@ -1117,11 +1207,11 @@ export interface ISingleComponentResponse<IComponent> {
  * @interface
  */
 export interface IUserInfoCard {
-    supplementalDisplayName: string;
-    iconPath: string;
-    membershipType: BungieMembershipType;
-    membershipId: string;
-    displayName: string;
+  supplementalDisplayName: string;
+  iconPath: string;
+  membershipType: BungieMembershipType;
+  membershipId: string;
+  displayName: string;
 }
 
 /**
@@ -1129,6 +1219,6 @@ export interface IUserInfoCard {
  * @interface
  */
 export interface IUserMembershipData {
-    destinyMemberships: IUserInfoCard[];
-    bungieNetUser: IGeneralUser;
+  destinyMemberships: IUserInfoCard[];
+  bungieNetUser: IGeneralUser;
 }
