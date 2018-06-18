@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.6.2",
+    "version": "0.7.0",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
