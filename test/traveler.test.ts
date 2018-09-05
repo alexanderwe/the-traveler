@@ -101,7 +101,7 @@ describe('traveler#getDestinyEntityDefinition', () => {
         components: [ComponentType.Characters, ComponentType.CharacterInventories, ComponentType.CharacterProgressions, ComponentType.CharacterRenderData, ComponentType.CharacterActivities, ComponentType.CharacterEquipment]
       });
 
-      expect(Object.keys(result.Response)).toEqual(expect.arrayContaining(['activities', 'character', 'equipment', 'inventory', 'renderData', 'itemComponents', 'progressions']));
+      expect(Object.keys(result.Response)).toEqual(expect.arrayContaining(['inventory', 'character', 'progressions', 'renderData', 'activities', 'character', 'equipment']));
     });
   });
   // TODO: make rejected test
