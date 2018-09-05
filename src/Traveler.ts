@@ -1091,9 +1091,7 @@ export default class Traveler {
                   if (err) {
                     reject(new Error('Error deleting .zip file'));
                   }
-                  else {
-                    resolve(filename);
-                  }
+                  resolve(filename);
                 });
               }
             });
