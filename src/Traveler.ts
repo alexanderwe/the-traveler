@@ -1086,6 +1086,7 @@ export default class Traveler {
               if (err) {
                 reject(new Error('Error extracting zip'));
               } else {
+                zip.close();
                 fs.unlink(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`, err => {
                   if (err) {
                     reject(new Error('Error deleting .zip file'));
