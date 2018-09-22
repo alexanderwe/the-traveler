@@ -173,7 +173,7 @@ export interface IDestinyCharacterComponent {
   classType: DestinyClass;
   genderType: DestinyGender;
   emblemPath: string;
-  emplemBackgroundPath: string;
+  emblemBackgroundPath: string;
   emblemHash: number;
   levelProgression: IDestinyProgression;
   baseCharacterLevel: number;
