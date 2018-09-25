@@ -181,6 +181,17 @@ export enum DestinyClass {
   Unknown = 3
 }
 
+export enum DestinyCollectibleState {
+  None = 0,
+  NotAcquired = 1,
+  Obscured = 2,
+  Invisible = 4,
+  ConnotAffordMaterialRequirements = 8,
+  InventorySpaceUnavailable = 16,
+  UniquenessViolation = 32,
+  PurchaseDisabled = 64
+}
+
 /**
  * A flags enumeration indicating the versions of the game that a given user has purchased.
  * @enum

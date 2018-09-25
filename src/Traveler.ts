@@ -16,6 +16,7 @@ import {
   IDestinyAggregateActivityResults,
   IDestinyCharacterResponse,
   IDestinyClanAggregateStat,
+  IDestinyCollectibleNodeDetailResponse,
   IDestinyDefinition,
   IDestinyEntitySearchResult,
   IDestinyEquipItemResults,
@@ -396,6 +397,40 @@ export default class Traveler {
       this.httpService
         .get(this.options)
         .then((response: IAPIResponse<IDestinyVendorResponse>) => {
+          resolve(response);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  /**
+   * Given a Presentation Node that has Collectibles as direct descendants, this will return item details about those descendants in the context of the requesting character.
+   * @async
+   * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />
+   * Keep in mind that `-1 / MembershipType.All` is <strong> not applicable here </strong> <br/>
+   * Ex: If the `destinyMembershipId` is a PSN account then use `'2'` or `MembershipType.PSN` for this endpoint.
+   * @param destinyMembershipId Destiny membership ID of another user. You may be denied.
+   * @param characterId The Destiny Character ID of the character for whom we're getting collectible detail info.
+   * @param queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
+   * <ul>
+   * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+   * </ul>
+   * @return {Promise.IAPIResponse<IDestinyCollectibleNodeDetailResponse>} When fulfilled returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants.
+   */
+  public getCollectibleNodeDetails(
+    membershipType: BungieMembershipType,
+    destinyMembershipId: string,
+    characterId: string,
+    collectiblePresentationNodeHash: number,
+    queryStringParameters: IQueryStringParameters
+  ): Promise<IAPIResponse<IDestinyCollectibleNodeDetailResponse>> {
+    this.options.uri = `${this.apibase}/${membershipType}/Profile/${destinyMembershipId}/Collectibles/${collectiblePresentationNodeHash}/${this.resolveQueryStringParameters(queryStringParameters)}`;
+    return new Promise<IAPIResponse<IDestinyCollectibleNodeDetailResponse>>((resolve, reject) => {
+      this.httpService
+        .get(this.options)
+        .then((response: IAPIResponse<IDestinyCollectibleNodeDetailResponse>) => {
           resolve(response);
         })
         .catch(err => {

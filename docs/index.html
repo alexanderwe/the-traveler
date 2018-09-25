@@ -108,8 +108,7 @@
 				<h2 id="getting-started">Getting Started</h2>
 				<pre><code>npm install <span class="hljs-keyword">the</span>-traveler
 <span class="hljs-comment"># or</span>
-yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span>-traveler
-</code></pre><h3 id="prerequisites">Prerequisites</h3>
+yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span>-traveler</code></pre><h3 id="prerequisites">Prerequisites</h3>
 				<p>To use this package you will need to obtain an API access key from the Bungie.net developer website. Please visit <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a> to obtain your access token.</p>
 				<p>After obtaining your access token you are ready for using the Destiny 2 API in your next awesome project.</p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -118,8 +117,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
-});
-</code></pre><p>If you want to use this package inside a ES5 project you can import it like so:</p>
+});</code></pre><p>If you want to use this package inside a ES5 project you can import it like so:</p>
 				<pre><code><span class="hljs-keyword">var</span> Traveler = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler'</span>).<span class="hljs-keyword">default</span>;
 <span class="hljs-keyword">const</span> Enums = <span class="hljs-keyword">require</span>(<span class="hljs-string">'the-traveler/build/enums'</span>)
 
@@ -130,14 +128,12 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
 
 <span class="hljs-comment">//Access the enums (example componentType profiles)</span>
 <span class="hljs-keyword">var</span> profilesType = Enums.ComponentType.Profiles;
-
 </code></pre><p><em>If you want to show the URLs the API wrapper is requesting, just add <code>debug: true</code> to the configuration array when instantiate a <code>Traveler</code> object</em></p>
 				<pre><code><span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     apikey: <span class="hljs-string">'pasteYourAPIkey'</span>,
     userAgent: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
     debug: <span class="hljs-literal">true</span> 
-});
-</code></pre><h2 id="oauth">OAuth</h2>
+});</code></pre><h2 id="oauth">OAuth</h2>
 				<p>If you want to use OAuth to get access to endpoints which require user approval provide the <code>Traveler</code> object with your OAuth <code>clientId</code> and if you are using a confidential client type additionally the <code>clientSecret</code>.</p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 
@@ -146,25 +142,21 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
     oauthClientId: <span class="hljs-string">'yourClientId'</span>,
     <span class="hljs-attr">oauthClientSecret</span>: <span class="hljs-string">'yourClientSecret'</span>,
-});
-</code></pre><p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
+});</code></pre><p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
 				After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>. </p>
-				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span>
-</code></pre><p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
+				<pre><code><span class="hljs-keyword">const</span> authUrl = traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span></code></pre><p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
 				<p>This is the code you need to obtain the OAuth Access token with the  <code>getAccessToken()</code> method.</p>
 				<pre><code>traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth; 
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err)
-})
-</code></pre><p>The OAuth response schema is depended on the client type you are using. With a <code>public</code> type the response does <strong>not</strong> contain a <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired.</p>
+})</code></pre><p>The OAuth response schema is depended on the client type you are using. With a <code>public</code> type the response does <strong>not</strong> contain a <code>refresh_token</code>. This means that a user has to authenticate everytime again after the OAuth access token has expired.</p>
 				<p><em>Response</em>:</p>
 				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   token_type: <span class="hljs-string">'Bearer'</span>,
   expires_in: <span class="hljs-number">3600</span>,
-  membership_id: <span class="hljs-string">''</span>}
-</code></pre><p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent you from getting errors if the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
+  membership_id: <span class="hljs-string">''</span>}</code></pre><p>If you are using a <code>confidential</code> client type the response will contain a <code>refresh_token</code> which can be used to get a new <code>access_token</code> without requiring the user to approve your app again. Use this <code>refresh_token</code> to prevent you from getting errors if the <code>access_token</code> has expired.  In the following you can see such a response with the method to renew the token.</p>
 				<p><em>Response</em>:</p>
 				<pre><code>{ <span class="hljs-attribute">access_token</span>: <span class="hljs-string">''</span>,
   <span class="hljs-attribute">token_type</span>: <span class="hljs-string">'Bearer'</span>,
@@ -172,15 +164,13 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">refresh_token</span>: ',
   <span class="hljs-attribute">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attribute">membership_id</span>: <span class="hljs-string">''</span> }
-
 </code></pre><p><em>Use refresh</em>:</p>
 				<pre><code>traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth; 
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err)
-})
-</code></pre><p>So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.</p>
+})</code></pre><p>So the refresh procedure has to be initiated manually, there is no automatic refresh implemented.</p>
 				<p>To wrap this up, the flow is the following:</p>
 				<ul>
 					<li>Provide <code>clientId</code> and <code>clientSecret (only for confidential)</code></li>
@@ -207,8 +197,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
-  <span class="hljs-attribute">MessageData</span>: {} }
-</code></pre><h3 id="privacy">Privacy</h3>
+  <span class="hljs-attribute">MessageData</span>: {} }</code></pre><h3 id="privacy">Privacy</h3>
 				<p>Some information in the Destiny API is privacy protected. If the user set the pricacy settings, and you do not use oauth for those users, it is not possible to obtain specific information through the API. The different pricacy indicators are the following:</p>
 				<ul>
 					<li>None: 0</li>
@@ -229,8 +218,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
         <span class="hljs-built_in">console</span>.log(player);
     }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
         <span class="hljs-comment">//do something with the error</span>
-    })
-</code></pre><p><em>Response</em></p>
+    })</code></pre><p><em>Response</em></p>
 				<pre><code>{ <span class="hljs-attribute">Response</span>:
    [ { <span class="hljs-attribute">iconPath</span>: <span class="hljs-string">'/img/theme/destiny/icons/icon_psn.png'</span>,
        <span class="hljs-attribute">membershipType</span>: <span class="hljs-number">2</span>,
@@ -239,8 +227,7 @@ yarn <span class="hljs-built_in">add</span> <span class="hljs-keyword">the</span
   <span class="hljs-attribute">ErrorCode</span>: <span class="hljs-number">1</span>,
   <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
-  <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
-</code></pre><h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
+  <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,</code></pre><h3 id="get-a-character-for-an-psn-account">Get a character for an PSN Account</h3>
 				<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums.</p>
 				<p><em>Query:</em></p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -274,7 +261,6 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err);
 });
-
 </code></pre><p><em>Response (First level):</em></p>
 				<pre><code>{ <span class="hljs-attribute">Response</span>:
    { <span class="hljs-attribute">inventory</span>: { <span class="hljs-attribute">privacy</span>: <span class="hljs-number">2</span> },
@@ -288,8 +274,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
   <span class="hljs-attribute">ThrottleSeconds</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attribute">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attribute">Message</span>: <span class="hljs-string">'Ok'</span>,
-  <span class="hljs-attribute">MessageData</span>: {} }
-</code></pre><h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
+  <span class="hljs-attribute">MessageData</span>: {} }</code></pre><h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
 				<p><code>traveler.oauth</code> has to be set before calling this method</p>
 				<pre><code><span class="hljs-selector-tag">traveler</span>
     <span class="hljs-selector-class">.transferItem</span>({
@@ -305,8 +290,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
     })
     <span class="hljs-selector-class">.catch</span>(err =&gt; {
         <span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(err);
-    });
-</code></pre><h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
+    });</code></pre><h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
 				<p>Just a thought about using <code>async</code> and <code>await</code></p>
 				<pre><code><span class="hljs-keyword">async</span> () =&gt; {
     <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
@@ -321,8 +305,7 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
     traveler.oauth = <span class="hljs-keyword">await</span> traveler.refreshToken(refreshToken);
 
     <span class="hljs-comment">// now do your calls</span>
-}
-</code></pre><h3 id="manifest">Manifest</h3>
+}</code></pre><h3 id="manifest">Manifest</h3>
 				<p>To use the manifest you first have to download it via &#39;traveler.downloadManifest(manifestUrl, filename)&#39;. <strong>Be aware that you have to install <a href="https://github.com/mapbox/node-sqlite3">node-sqlite3</a> to use the manifest class</strong></p>
 				<p>The <code>manifestUrl</code> can be every URL contained in the response of <code>traveler.getManifest()</code></p>
 				<p>This method will download the specified manifest, unzip it and save it as <code>filename</code>. Afterwards you are able to create a new instance of  the <code>Manifest</code> class. With this it is possible to query the saved file with valid sqlite queries. A good hint for querying is noted in the <a href="https://gist.github.com/vpzed/efb7b29f5dfda49633d62801ac30566c">Gist</a> from <a href="https://github.com/vpzed">@vpzed</a>. The result is retrieved asynchronously which makes it possible to integrate it with the <code>async</code> <code>await</code> flow. </p>
@@ -344,7 +327,6 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
     })
 })
 
-
 </code></pre><p><em>async way</em></p>
 				<pre><code><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> Manifest <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/Manifest'</span> 
@@ -354,8 +336,7 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
     <span class="hljs-keyword">const</span> filepath = <span class="hljs-keyword">await</span> traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, <span class="hljs-string">'./manifest.content'</span>);
     <span class="hljs-keyword">const</span> manifest = <span class="hljs-keyword">new</span> Manifest(filepath);
     <span class="hljs-keyword">const</span> queryResult = <span class="hljs-keyword">await</span> manifest.queryManifest(<span class="hljs-string">'SELECT name FROM sqlite_master WHERE type="table"'</span>)
-}
-</code></pre><h2 id="progress">Progress</h2>
+}</code></pre><h2 id="progress">Progress</h2>
 				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
 				<table>
 					<thead>
@@ -365,8 +346,7 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 							<th>Unlocked in API</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
+					<tbody><tr>
 							<td>Destiny2.GetDestinyManifest</td>
 							<td>✅</td>
 							<td>✅</td>
@@ -521,8 +501,7 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 							<td>✅</td>
 							<td>✅</td>
 						</tr>
-					</tbody>
-				</table>
+				</tbody></table>
 				<h2 id="built-with">Built With</h2>
 				<ul>
 					<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
@@ -581,6 +560,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 						<a href="enums/destinyclass.html" class="tsd-kind-icon">Destiny<wbr>Class</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/destinycollectiblestate.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/destinygameversion.html" class="tsd-kind-icon">Destiny<wbr>Game<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-enum">
@@ -594,6 +576,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/destinytalentnodestate.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/destinyvendoritemstate.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Item<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/equipfailurereason.html" class="tsd-kind-icon">Equip<wbr>Failure<wbr>Reason</a>
@@ -713,6 +698,15 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 						<a href="interfaces/idestinyclanaggregatestat.html" class="tsd-kind-icon">IDestiny<wbr>Clan<wbr>Aggregate<wbr>Stat</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycollectiblecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycollectiblenodedetailresponse.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Node<wbr>Detail<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinycollectiblescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Collectibles<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinycurrenciescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Currencies<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -795,6 +789,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyitemperkscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Perks<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyitemplug.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Plug</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyitemplugcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Plug<wbr>Component</a>
@@ -969,6 +966,9 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyvendorsaleitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idestinyvendorsaleitemsetcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Set<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/idestinyvendorsresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendors<wbr>Response</a>

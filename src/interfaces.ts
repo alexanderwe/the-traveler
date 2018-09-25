@@ -9,6 +9,7 @@ import {
   DestinyAdvancedAwaType,
   DestinyAdvancedAwaUserSelection,
   DestinyClass,
+  DestinyCollectibleState,
   DestinyVendorItemState,
   DestinyGameVersion,
   DestinyGender,
@@ -257,6 +258,21 @@ export interface IDestinyCurrenciesComponent {
   itemQuantities: {
     [key: number]: number;
   };
+}
+
+export interface IDestinyCollectibleComponent {
+  state: DestinyCollectibleState;
+}
+
+export interface IDestinyCollectiblesComponent {
+  collectibles: {
+    [key: number]: IDestinyCollectibleComponent;
+  };
+}
+
+export interface IDestinyCollectibleNodeDetailResponse {
+  collectibles: ISingleComponentResponse<IDestinyCollectiblesComponent>;
+  collectibleItemComponents: IDestinyItemComponentSet;
 }
 
 /**
@@ -1012,9 +1028,7 @@ export interface IDestinyVendorsResponse {
   sales?: ISingleComponentResponse<{
     [key: number]: IDestinyVendorSaleItemSetComponent; // TODO: look at docs
   }>;
-  itemComponents?: ISingleComponentResponse<{
-    [key: number]: IDestinyItemComponent;
-  }>;
+  itemComponents?: IDestinyItemComponentSet;
   currencyLookups: ISingleComponentResponse<IDestinyCurrenciesComponent>;
 }
 
@@ -1083,7 +1097,7 @@ export interface IDestinyVendorResponse {
 }
 
 export interface IDestinyVendorSaleItemSetComponent {
-  saleItems: IDestinyVendorSaleItemComponent[];
+  saleItems: { [key: number]: IDestinyVendorSaleItemComponent };
 }
 
 export interface IDestinyVendorSaleItemComponent {
