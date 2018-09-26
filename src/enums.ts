@@ -99,7 +99,7 @@ export enum DestinyActivityModeType {
   Reserved9 = 9,
   Control = 10,
   Reserved11 = 11,
-  Clash = 12, //Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.
+  Clash = 12, //Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.,
   Reserved13 = 13,
   CrimsonDoubles = 15,
   Nightfall = 16,
@@ -140,7 +140,13 @@ export enum DestinyActivityModeType {
   PrivateMatchesMayhem = 56,
   PrivateMatchesRumble = 57,
   HeroicAdventure = 58,
-  Showdown = 59
+  Showdown = 59,
+  Lockdown = 60,
+  Scorched = 61,
+  ScorchedTeam = 62,
+  Gambit = 63,
+  AllPvECompetitive = 64,
+  Breakthrough = 65
 }
 
 /**
@@ -1362,7 +1368,8 @@ export enum UnitType {
   Boolean = 9,
   WeaponType = 10,
   Standing = 11,
-  Milliseconds = 12
+  Milliseconds = 12,
+  CompletionReason = 13
 }
 
 /**

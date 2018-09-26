@@ -238,7 +238,9 @@ export interface IDestinyCharacterRenderComponent {
 export interface IDestinyCharacterResponse {
   inventory?: ISingleComponentResponse<IDestinyInventoryComponent>;
   character?: ISingleComponentResponse<IDestinyCharacterComponent>;
-  progressions?: ISingleComponentResponse<IDestinyCharacterProgressionComponent>;
+  progressions?: ISingleComponentResponse<
+    IDestinyCharacterProgressionComponent
+  >;
   renderData?: ISingleComponentResponse<IDestinyCharacterRenderComponent>;
   activities?: ISingleComponentResponse<IDestinyCharacterActivitiesComponent>;
   equipment?: ISingleComponentResponse<IDestinyInventoryComponent>;
@@ -341,9 +343,9 @@ export interface IDestinyHistoricalStatsAccountResult {
 }
 
 export interface IDestinyHistoricalStatsActivity {
-  referenceId: string;
+  referenceId: number;
   directorActivityHash: number;
-  isntanceId: string;
+  isntanceId: number;
   mode: DestinyActivityModeType;
   modes: DestinyActivityModeType[];
   isPrivate: boolean;
@@ -816,6 +818,7 @@ export interface IDestinyItemPlug {
  */
 export interface IDestinyPostGameCarnageReportData {
   period: Date;
+  startingPhaseIndex: number;
   activityDetails: IDestinyHistoricalStatsActivity;
   entries: [IDestinyPostGameCarnageReportEntry];
   teams: [IDestinyPostGameCarnageReportTeamEntry];
@@ -882,9 +885,13 @@ export interface IDestinyProfileResponse {
   profilePlugSets?: ISingleComponentResponse<IDestinyPlugSetsComponent>;
   characters?: IDictionaryComponent<IDestinyCharacterComponent>;
   characterInventories?: IDictionaryComponent<IDestinyInventoryComponent>;
-  characterProgressions?: IDictionaryComponent<IDestinyCharacterProgressionComponent>;
+  characterProgressions?: IDictionaryComponent<
+    IDestinyCharacterProgressionComponent
+  >;
   characterRenderData?: IDictionaryComponent<IDestinyCharacterRenderComponent>;
-  characterActivities?: IDictionaryComponent<IDestinyCharacterActivitiesComponent>;
+  characterActivities?: IDictionaryComponent<
+    IDestinyCharacterActivitiesComponent
+  >;
   characterEquipment?: IDictionaryComponent<IDestinyInventoryComponent>;
   characterKiosks?: IDictionaryComponent<IDestinyKiosksComponent>;
   characterPlugSets?: IDictionaryComponent<IDestinyPlugSetsComponent>;
@@ -925,14 +932,16 @@ export interface IDestinyProgression {
 export interface IDestinyPublicMilestone {
   milestoneHash: number;
   availableQuests: IDestinyPublicMilestoneQuest[];
+  vendorHashes: number[];
   vendors: IDestinyPublicMilestoneVendor[];
   startDate?: Date;
   endDate?: Date;
+  order: number;
 }
 
 export interface IDestinyPublicMilestoneActivity {
   activitHash: number;
-  modifierHashes: string[];
+  modifierHashes: number[];
   variants: IDestinyPublicMilestoneActivityVariant[];
   activityModeHash?: number;
   activityModeType?: DestinyActivityModeType;
@@ -940,6 +949,8 @@ export interface IDestinyPublicMilestoneActivity {
 
 export interface IDestinyPublicMilestoneActivityVariant {
   activityHash: number;
+  activityModeHash: number;
+  activityModeType: DestinyActivityModeType;
 }
 
 export interface IDestinyPublicMilestoneChallenge {

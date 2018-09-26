@@ -1,5 +1,5 @@
 {
-  "printWidth": 250,
+  "printWidth":80,
   "tabWidth": 2,
   "parser": "typescript",
   "singleQuote": true
