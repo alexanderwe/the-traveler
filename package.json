@@ -27,7 +27,8 @@
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "jest --coverage",
         "posttest": "codecov",
-        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts --ignoreCompilerErrors && touch ./docs/.nojekyll"
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts --ignoreCompilerErrors && touch ./docs/.nojekyll",
+        "package": "npm pack"
     },
     "dependencies": {
         "@types/request-promise-native": "^1.0.6",
