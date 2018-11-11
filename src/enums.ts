@@ -296,6 +296,26 @@ export enum EquipFailureReason {
 }
 
 /**
+ * Enum for the global alert level
+ * @enum
+ */
+export enum GlobalAlertLevel {
+  Unkown = 0,
+  Blue = 1,
+  Yellow = 2,
+  Red = 3
+}
+
+/**
+ * Enum for the global alert type
+ * @enum
+ */
+export enum GlobalAlertType {
+  GlobalAlert = 0,
+  StreamingAlert = 1
+}
+
+/**
  * Enum for the item bind status
  * @enum
  */

@@ -24,6 +24,7 @@ import {
   IDestinyDefinition,
   IDestinyEntitySearchResult,
   IDestinyEquipItemResults,
+  IGlobalAlert,
   IDestinyHistoricalStatsAccountResult,
   IDestinyHistoricalStatsByPeriod,
   IDestinyHistoricalStatsDefinition,
@@ -61,8 +62,9 @@ export default class Traveler {
   private userAgent: string;
   private oauthConfig: IOAuthConfig;
   private _oauth: IOAuthResponse;
+  private apibaseDestiny2: string;
+  private apibaseUser: string;
   private apibase: string;
-  private rootURL: string;
   private httpService: HTTPService;
   private options: rp.OptionsWithUri;
   private oauthOptions: rp.OptionsWithUri; // Used when making authenticated calls to the API
@@ -74,8 +76,9 @@ export default class Traveler {
       clientId: config.oauthClientId,
       clientSecret: config.oauthClientSecret
     };
-    this.apibase = 'https://www.bungie.net/Platform/Destiny2';
-    this.rootURL = 'https://www.bungie.net/';
+    this.apibase = 'https://www.bungie.net/Platform';
+    this.apibaseDestiny2 = `${this.apibase}/Destiny2`;
+    this.apibaseUser = `${this.apibase}/User`;
     this.options = {
       headers: {
         'User-Agent': this.userAgent,
@@ -89,12 +92,31 @@ export default class Traveler {
   }
 
   /**
+   * Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts.
+   * @async
+   * @return {Promise.IAPIResponse<IDestinyManifest>} When fulfilled returns an object containing the current Global Alerts
+   */
+  public getGlobalAlerts(): Promise<IAPIResponse<IGlobalAlert[]>> {
+    this.options.uri = `${this.apibase}/GlobalAlerts/`;
+    return new Promise<IAPIResponse<IGlobalAlert[]>>((resolve, reject) => {
+      this.httpService
+        .get(this.options)
+        .then((response: IAPIResponse<IGlobalAlert[]>) => {
+          resolve(response);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  /**
    * Gets the current manifest in a JSON document
    * @async
    * @return {Promise.IAPIResponse<IDestinyManifest>} When fulfilled returns an object containing the current Destiny 2 manifest
    */
   public getDestinyManifest(): Promise<IAPIResponse<IDestinyManifest>> {
-    this.options.uri = `${this.apibase}/Manifest/`;
+    this.options.uri = `${this.apibaseDestiny2}/Manifest/`;
     return new Promise<IAPIResponse<IDestinyManifest>>((resolve, reject) => {
       this.httpService
         .get(this.options)
@@ -120,7 +142,7 @@ export default class Traveler {
     hashIdentifier: string
   ): Promise<IAPIResponse<IDestinyDefinition>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Manifest/${typeDefinition}/${hashIdentifier}/`;
     return new Promise<IAPIResponse<IDestinyDefinition>>((resolve, reject) => {
       this.httpService
@@ -153,7 +175,7 @@ export default class Traveler {
     displayName: string
   ): Promise<IAPIResponse<IUserInfoCard[]>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/SearchDestinyPlayer/${membershipType}/${displayName}/`;
     return new Promise<IAPIResponse<IUserInfoCard[]>>((resolve, reject) => {
       this.httpService
@@ -181,7 +203,7 @@ export default class Traveler {
     destinyMembershipId: string
   ): Promise<IAPIResponse<IDestinyLinkedProfilesResponse>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Profile/${destinyMembershipId}/LinkedProfiles/`;
     return new Promise<IAPIResponse<IDestinyLinkedProfilesResponse>>(
       (resolve, reject) => {
@@ -218,7 +240,7 @@ export default class Traveler {
     if (this.oauthOptions) {
       // if we have oauth available use it
       this.oauthOptions.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -236,7 +258,7 @@ export default class Traveler {
       );
     } else {
       this.options.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -265,8 +287,8 @@ export default class Traveler {
   > {
     if (this.oauthOptions) {
       this.oauthOptions.uri = `${
-        this.rootURL
-      }Platform/User/GetMembershipsForCurrentUser/`;
+        this.apibaseUser
+      }/GetMembershipsForCurrentUser/`;
       return new Promise<IAPIResponse<IUserMembershipData>>(
         (resolve, reject) => {
           this.httpService
@@ -311,7 +333,7 @@ export default class Traveler {
     if (this.oauthOptions) {
       // if we have oauth available use it
       this.oauthOptions.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -329,7 +351,7 @@ export default class Traveler {
       );
     } else {
       this.options.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -357,7 +379,9 @@ export default class Traveler {
   public getClanWeeklyRewardState(
     groupId: string
   ): Promise<IAPIResponse<IDestinyMilestone>> {
-    this.options.uri = `${this.apibase}/Clan/${groupId}/WeeklyRewardState/`;
+    this.options.uri = `${
+      this.apibaseDestiny2
+    }/Clan/${groupId}/WeeklyRewardState/`;
     return new Promise<IAPIResponse<IDestinyMilestone>>((resolve, reject) => {
       this.httpService
         .get(this.options)
@@ -392,7 +416,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyItemResponse>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -433,7 +457,7 @@ export default class Traveler {
     if (this.oauthOptions) {
       // if we have oauth available use it
       this.oauthOptions.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -451,7 +475,7 @@ export default class Traveler {
       );
     } else {
       this.options.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${this.resolveQueryStringParameters(
         queryStringParameters
       )}`;
@@ -493,7 +517,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyVendorResponse>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -533,7 +557,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyCollectibleNodeDetailResponse>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Profile/${destinyMembershipId}/Collectibles/${collectiblePresentationNodeHash}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -563,7 +587,7 @@ export default class Traveler {
     activityId: string
   ): Promise<IAPIResponse<IDestinyPostGameCarnageReportData>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Stats/PostGameCarnageReport/${activityId}/`;
     return new Promise<IAPIResponse<IDestinyPostGameCarnageReportData>>(
       (resolve, reject) => {
@@ -586,7 +610,7 @@ export default class Traveler {
   public getHistoricalStatsDefinition(): Promise<
     IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>
   > {
-    this.options.uri = `${this.apibase}/Stats/Definition/`;
+    this.options.uri = `${this.apibaseDestiny2}/Stats/Definition/`;
     return new Promise<
       IAPIResponse<{ [key: string]: IDestinyHistoricalStatsDefinition }>
     >((resolve, reject) => {
@@ -627,7 +651,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<{ [key: string]: object }>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Stats/Leaderboards/Clans/${groupId}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -661,7 +685,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyClanAggregateStat[]>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Stats/AggregateClanStats/${groupId}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -703,7 +727,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<{ [key: string]: object }>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -747,7 +771,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<{ [key: string]: object }>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -781,7 +805,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyEntitySearchResult>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/Armory/Search/${typeDefinition}/${searchTerm}/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -833,7 +857,7 @@ export default class Traveler {
     }>
   > {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -879,7 +903,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyHistoricalStatsAccountResult>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Stats/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -924,7 +948,7 @@ export default class Traveler {
     queryStringParameters: IQueryStringParameters
   ): Promise<IAPIResponse<IDestinyActivityHistoryResults>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/${this.resolveQueryStringParameters(
       queryStringParameters
     )}`;
@@ -958,7 +982,7 @@ export default class Traveler {
     characterId: string
   ): Promise<IAPIResponse<IDestinyHistoricalWeaponStatsData>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/`;
     return new Promise<IAPIResponse<IDestinyHistoricalWeaponStatsData>>(
       (resolve, reject) => {
@@ -990,7 +1014,7 @@ export default class Traveler {
     characterId: string
   ): Promise<IAPIResponse<IDestinyAggregateActivityResults>> {
     this.options.uri = `${
-      this.apibase
+      this.apibaseDestiny2
     }/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/`;
     return new Promise<IAPIResponse<IDestinyAggregateActivityResults>>(
       (resolve, reject) => {
@@ -1015,7 +1039,9 @@ export default class Traveler {
   public getPublicMilestoneContent(
     milestoneHash: string
   ): Promise<IAPIResponse<IDestinyMilestoneContent>> {
-    this.options.uri = `${this.apibase}/Milestones/${milestoneHash}/Content/`;
+    this.options.uri = `${
+      this.apibaseDestiny2
+    }/Milestones/${milestoneHash}/Content/`;
     return new Promise<IAPIResponse<IDestinyMilestoneContent>>(
       (resolve, reject) => {
         this.httpService
@@ -1037,7 +1063,7 @@ export default class Traveler {
   public getPublicMilestones(): Promise<
     IAPIResponse<{ [key: string]: IDestinyPublicMilestone }>
   > {
-    this.options.uri = `${this.apibase}/Milestones/`;
+    this.options.uri = `${this.apibaseDestiny2}/Milestones/`;
     return new Promise<
       IAPIResponse<{ [key: number]: IDestinyPublicMilestone }>
     >((resolve, reject) => {
@@ -1071,7 +1097,9 @@ export default class Traveler {
   ): Promise<IAPIResponse<number>> {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = itemActionRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItem/`;
+      this.oauthOptions.uri = `${
+        this.apibaseDestiny2
+      }/Actions/Items/EquipItem/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<number>>((resolve, reject) => {
         this.httpService
@@ -1107,7 +1135,9 @@ export default class Traveler {
   ): Promise<IAPIResponse<IDestinyEquipItemResults>> {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = itemActionRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/EquipItems/`;
+      this.oauthOptions.uri = `${
+        this.apibaseDestiny2
+      }/Actions/Items/EquipItems/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<IDestinyEquipItemResults>>(
         (resolve, reject) => {
@@ -1146,7 +1176,9 @@ export default class Traveler {
   ): Promise<IAPIResponse<number>> {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = stateRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/SetLockState/`;
+      this.oauthOptions.uri = `${
+        this.apibaseDestiny2
+      }/Actions/Items/SetLockState/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<number>>((resolve, reject) => {
         this.httpService
@@ -1178,7 +1210,7 @@ export default class Traveler {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = postMasterTransferRequest;
       this.oauthOptions.uri = `${
-        this.apibase
+        this.apibaseDestiny2
       }/Actions/Items/PullFromPostmaster/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<number>>((resolve, reject) => {
@@ -1218,7 +1250,9 @@ export default class Traveler {
   ): Promise<IAPIResponse<number>> {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = transferRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/TransferItem/`;
+      this.oauthOptions.uri = `${
+        this.apibaseDestiny2
+      }/Actions/Items/TransferItem/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<number>>((resolve, reject) => {
         this.httpService
@@ -1255,7 +1289,9 @@ export default class Traveler {
   ): Promise<IAPIResponse<SocketResponseCodes>> {
     if (this.oauth !== undefined) {
       this.oauthOptions.body = itemActionRequest;
-      this.oauthOptions.uri = `${this.apibase}/Actions/Items/InsertSocketPlug/`;
+      this.oauthOptions.uri = `${
+        this.apibaseDestiny2
+      }/Actions/Items/InsertSocketPlug/`;
       this.oauthOptions.json = true;
       return new Promise<IAPIResponse<SocketResponseCodes>>(
         (resolve, reject) => {

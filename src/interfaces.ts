@@ -17,6 +17,8 @@ import {
   DestinyStatsGroupType,
   DestinyTalentNodeState,
   EquipFailureReason,
+  GlobalAlertLevel,
+  GlobalAlertType,
   ItemBindStatus,
   ItemLocation,
   ItemState,
@@ -29,6 +31,20 @@ import {
   VendorItemStatus,
   MergeMethod
 } from './enums';
+
+export interface IGlobalAlert {
+  AlertKey: string;
+  AlertHtml: string;
+  AlerTimestamp: Date;
+  AlertLink: string;
+  AlertLevel: GlobalAlertLevel;
+  AlertType: GlobalAlertType;
+  StreamInfo: IStreamInfo;
+}
+
+export interface IStreamInfo {
+  ChannelName: string;
+}
 
 /**
  * Interface for the common API response object
