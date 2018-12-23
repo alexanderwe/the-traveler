@@ -1,12 +1,8 @@
-import * as FormData from 'form-data';
-
 import HTTPService from './HttpService';
 import GlobalResource from './resources/GlobalResource';
 import Destiny2Resource from './resources/Destiny2Resource';
 import UserResource from './resources/UserResource';
-import { ITravelerConfig, IOAuthResponse } from './type-definitions/additions';
-import { OAuthError } from './type-definitions/errors';
-import got = require('got');
+import { ITravelerConfig } from './type-definitions/additions';
 import OAuthResource from './resources/OAuthResource';
 
 /**

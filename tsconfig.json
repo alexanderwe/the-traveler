@@ -15,7 +15,6 @@
             "./typings"
         ],
         "types": [
-            "request-promise-native",
             "node-stream-zip"
         ],
         "outDir": "./build"

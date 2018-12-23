@@ -1,4 +1,3 @@
-import * as rp from 'request-promise-native';
 import * as got from 'got';
 import Logger from './Logger';
 
