@@ -69,12 +69,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an response object for retrieving an individual instanced item</p>
+						<p>The response object for retrieving an individual instanced item. None of these
+							components are relevant for an item that doesn&#39;t have an &quot;itemInstanceId&quot;: for
+						those, get your information from the DestinyInventoryDefinition.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,114 +87,172 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#characterid" class="tsd-kind-icon">character<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#instance" class="tsd-kind-icon">instance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#item" class="tsd-kind-icon">item</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#objectives" class="tsd-kind-icon">objectives</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#perks" class="tsd-kind-icon">perks</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#renderdata" class="tsd-kind-icon">render<wbr>Data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#sockets" class="tsd-kind-icon">sockets</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#stats" class="tsd-kind-icon">stats</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemresponse.html#talentgrid" class="tsd-kind-icon">talent<wbr>Grid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#characterid" class="tsd-kind-icon">character<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#instance" class="tsd-kind-icon">instance</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#item" class="tsd-kind-icon">item</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#objectives" class="tsd-kind-icon">objectives</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#perks" class="tsd-kind-icon">perks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#renderdata" class="tsd-kind-icon">render<wbr>Data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#sockets" class="tsd-kind-icon">sockets</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#stats" class="tsd-kind-icon">stats</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemresponse.html#talentgrid" class="tsd-kind-icon">talent<wbr>Grid</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="characterid" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> character<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L555">interfaces.ts:555</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10076</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the item is on a character, this will return the ID of the character that is
+							holding the item.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="instance" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> instance</h3>
+					<h3>instance</h3>
 					<div class="tsd-signature tsd-kind-icon">instance<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyiteminstancecomponent.html" class="tsd-signature-type">IDestinyItemInstanceComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L557">interfaces.ts:557</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10088</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Basic instance data for the item.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemInstances</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="item" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> item</h3>
+					<h3>item</h3>
 					<div class="tsd-signature tsd-kind-icon">item<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemcomponent.html" class="tsd-signature-type">IDestinyItemComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L556">interfaces.ts:556</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10082</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Common data for the item relevant to its non-instanced properties.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemCommonData</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="objectives" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> objectives</h3>
+					<h3>objectives</h3>
 					<div class="tsd-signature tsd-kind-icon">objectives<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemobjectivescomponent.html" class="tsd-signature-type">IDestinyItemObjectivesComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L558">interfaces.ts:558</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10094</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information specifically about the item&#39;s objectives.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemObjectives</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="perks" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> perks</h3>
+					<h3>perks</h3>
 					<div class="tsd-signature tsd-kind-icon">perks<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemperkscomponent.html" class="tsd-signature-type">IDestinyItemPerksComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L559">interfaces.ts:559</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10100</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information specifically about the perks currently active on the item.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemPerks</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="renderdata" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> render<wbr>Data</h3>
+					<h3>render<wbr>Data</h3>
 					<div class="tsd-signature tsd-kind-icon">render<wbr>Data<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemrendercomponent.html" class="tsd-signature-type">IDestinyItemRenderComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L560">interfaces.ts:560</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10106</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information about how to render the item in 3D.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemRenderData</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="sockets" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sockets</h3>
+					<h3>sockets</h3>
 					<div class="tsd-signature tsd-kind-icon">sockets<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemsocketscomponent.html" class="tsd-signature-type">IDestinyItemSocketsComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L563">interfaces.ts:563</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10128</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information about the sockets of the item: which are currently active, what
+								potential sockets you could have and the stats/abilities/perks you can gain from
+							them.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemSockets</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="stats" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stats</h3>
+					<h3>stats</h3>
 					<div class="tsd-signature tsd-kind-icon">stats<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemstatscomponent.html" class="tsd-signature-type">IDestinyItemStatsComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L561">interfaces.ts:561</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10112</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information about the computed stats of the item: power, defense, etc...</p>
+						</div>
+						<p>COMPONENT TYPE: ItemStats</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="talentgrid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> talent<wbr>Grid</h3>
+					<h3>talent<wbr>Grid</h3>
 					<div class="tsd-signature tsd-kind-icon">talent<wbr>Grid<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyitemtalentgridcomponent.html" class="tsd-signature-type">IDestinyItemTalentGridComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L562">interfaces.ts:562</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10120</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Information about the talent grid attached to the item. Talent nodes can provide
+								a variety of benefits and abilities, and in Destiny 2 are used almost
+							exclusively for the character&#39;s &quot;Builds&quot;.</p>
+						</div>
+						<p>COMPONENT TYPE: ItemTalentGrids</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -212,34 +268,34 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyitemresponse.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Response</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#characterid" class="tsd-kind-icon">character<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#instance" class="tsd-kind-icon">instance</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#item" class="tsd-kind-icon">item</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#objectives" class="tsd-kind-icon">objectives</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#perks" class="tsd-kind-icon">perks</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#renderdata" class="tsd-kind-icon">render<wbr>Data</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#sockets" class="tsd-kind-icon">sockets</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#stats" class="tsd-kind-icon">stats</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemresponse.html#talentgrid" class="tsd-kind-icon">talent<wbr>Grid</a>
 							</li>
 						</ul>

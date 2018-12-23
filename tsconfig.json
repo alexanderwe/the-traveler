@@ -11,10 +11,12 @@
             "es2017.object"
         ],
         "typeRoots": [
-            "./node_modules/@types"
+            "./node_modules/@types",
+            "./typings"
         ],
         "types": [
-            "request-promise-native"
+            "request-promise-native",
+            "node-stream-zip"
         ],
         "outDir": "./build"
     },

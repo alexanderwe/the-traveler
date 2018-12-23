@@ -69,12 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for a signle destiny profile</p>
+						<p>The most essential summary information about a Profile (in Destiny 1, we called
+						these &quot;Accounts&quot;).</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,59 +86,80 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyprofilecomponent.html#characterids" class="tsd-kind-icon">character<wbr>Ids</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyprofilecomponent.html#datelastplayed" class="tsd-kind-icon">date<wbr>Last<wbr>Played</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyprofilecomponent.html#userinfo" class="tsd-kind-icon">user<wbr>Info</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyprofilecomponent.html#versionsowned" class="tsd-kind-icon">versions<wbr>Owned</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyprofilecomponent.html#characterids" class="tsd-kind-icon">character<wbr>Ids</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyprofilecomponent.html#datelastplayed" class="tsd-kind-icon">date<wbr>Last<wbr>Played</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyprofilecomponent.html#userinfo" class="tsd-kind-icon">user<wbr>Info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyprofilecomponent.html#versionsowned" class="tsd-kind-icon">versions<wbr>Owned</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="characterids" class="tsd-anchor"></a>
 					<h3>character<wbr>Ids</h3>
 					<div class="tsd-signature tsd-kind-icon">character<wbr>Ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L872">interfaces.ts:872</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7342</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A list of the character IDs, for further querying on your part.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="datelastplayed" class="tsd-anchor"></a>
 					<h3>date<wbr>Last<wbr>Played</h3>
-					<div class="tsd-signature tsd-kind-icon">date<wbr>Last<wbr>Played<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">date<wbr>Last<wbr>Played<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L870">interfaces.ts:870</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7338</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The last time the user played with any character on this Profile.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="userinfo" class="tsd-anchor"></a>
 					<h3>user<wbr>Info</h3>
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="iuserinfocard.html" class="tsd-signature-type">IUserInfoCard</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L869">interfaces.ts:869</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7336</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you need to render the Profile (their platform name, icon, etc...) somewhere,
+							this property contains that information.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="versionsowned" class="tsd-anchor"></a>
 					<h3>versions<wbr>Owned</h3>
-					<div class="tsd-signature tsd-kind-icon">versions<wbr>Owned<span class="tsd-signature-symbol">:</span> <a href="../enums/destinygameversion.html" class="tsd-signature-type">DestinyGameVersion</a></div>
+					<div class="tsd-signature tsd-kind-icon">versions<wbr>Owned<span class="tsd-signature-symbol">:</span> <a href="../enums/destinygameversions.html" class="tsd-signature-type">DestinyGameVersions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L871">interfaces.ts:871</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7340</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you want to know what expansions they own, this will contain that data.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -157,19 +175,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyprofilecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyprofilecomponent.html#characterids" class="tsd-kind-icon">character<wbr>Ids</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyprofilecomponent.html#datelastplayed" class="tsd-kind-icon">date<wbr>Last<wbr>Played</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyprofilecomponent.html#userinfo" class="tsd-kind-icon">user<wbr>Info</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyprofilecomponent.html#versionsowned" class="tsd-kind-icon">versions<wbr>Owned</a>
 							</li>
 						</ul>

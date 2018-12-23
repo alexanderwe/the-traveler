@@ -69,12 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for an item stack and its quantity</p>
+						<p>Used in a number of Destiny contracts to return data about an item stack and its
+							quantity. Can optionally return an itemInstanceId if the item is instanced - in
+							which case, the quantity returned will be 1. If it&#39;s not... uh, let me know okay?
+						Thanks.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +88,67 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemquantity.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemquantity.html#iteminstanceid" class="tsd-kind-icon">item<wbr>Instance<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemquantity.html#quantity" class="tsd-kind-icon">quantity</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemquantity.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemquantity.html#iteminstanceid" class="tsd-kind-icon">item<wbr>Instance<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemquantity.html#quantity" class="tsd-kind-icon">quantity</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="itemhash" class="tsd-anchor"></a>
 					<h3>item<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">item<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L538">interfaces.ts:538</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:273</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier for the item in question. Use it to look up the item&#39;s
+							DestinyInventoryItemDefinition.</p>
+						</div>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="iteminstanceid" class="tsd-anchor"></a>
-					<h3>item<wbr>Instance<wbr>Id</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> item<wbr>Instance<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">item<wbr>Instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L539">interfaces.ts:539</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:278</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If this quantity is referring to a specific instance of an item, this will have
+							the item&#39;s instance ID. Normally, this will be null.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="quantity" class="tsd-anchor"></a>
 					<h3>quantity</h3>
 					<div class="tsd-signature tsd-kind-icon">quantity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L540">interfaces.ts:540</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:283</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The amount of the item needed/available depending on the context of where
+							DestinyItemQuantity is being used.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +164,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyitemquantity.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Quantity</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemquantity.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemquantity.html#iteminstanceid" class="tsd-kind-icon">item<wbr>Instance<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemquantity.html#quantity" class="tsd-kind-icon">quantity</a>
 							</li>
 						</ul>

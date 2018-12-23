@@ -66,6 +66,31 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>I see you&#39;ve come to find out more about Talent Nodes. I&#39;m so sorry. Talent
+							Nodes are the conceptual, visual nodes that appear on Talent Grids. Talent Grids,
+							in Destiny 1, were found on almost every instanced item: they had Nodes that
+							could be activated to change the properties of the item. In Destiny 2, Talent
+							Grids only exist for Builds/Subclasses, and while the basic concept is the same (
+							Nodes can be activated once you&#39;ve gained sufficient Experience on the Item, and
+							provide effects), there are some new concepts from Destiny 1. Examine
+							DestinyTalentGridDefinition and its subordinates for more information. This is
+							the &quot;Live&quot; information for the current status of a Talent Node on a specific
+							item. Talent Nodes have many Steps, but only one can be active at any one time:
+							and it is the Step that determines both the visual and the game state-changing
+							properties that the Node provides. Examine this and
+							DestinyTalentNodeStepDefinition carefully. <em>IMPORTANT NOTE</em> Talent Nodes are,
+							unfortunately, Content Version DEPENDENT. Though they refer to hashes for Nodes
+							and Steps, those hashes are not guaranteed to be immutable across content
+							versions. This is a source of great exasperation for me, but as a result anyone
+							using Talent Grid data must ensure that the content version of their static
+							content matches that of the server responses before showing or making decisions
+						based on talent grid data.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,125 +103,194 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#activationgridlevel" class="tsd-kind-icon">activation<wbr>Grid<wbr>Level</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#hidden" class="tsd-kind-icon">hidden</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#isactivated" class="tsd-kind-icon">is<wbr>Activated</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#materialstoupgrade" class="tsd-kind-icon">materials<wbr>ToUpgrade</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#nodehash" class="tsd-kind-icon">node<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#nodeindex" class="tsd-kind-icon">node<wbr>Index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#nodestatsblock" class="tsd-kind-icon">node<wbr>Stats<wbr>Block</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#progresspercent" class="tsd-kind-icon">progress<wbr>Percent</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#state" class="tsd-kind-icon">state</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnode.html#stepindex" class="tsd-kind-icon">step<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#activationgridlevel" class="tsd-kind-icon">activation<wbr>Grid<wbr>Level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#hidden" class="tsd-kind-icon">hidden</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#isactivated" class="tsd-kind-icon">is<wbr>Activated</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#materialstoupgrade" class="tsd-kind-icon">materials<wbr>ToUpgrade</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#nodehash" class="tsd-kind-icon">node<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#nodeindex" class="tsd-kind-icon">node<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#nodestatsblock" class="tsd-kind-icon">node<wbr>Stats<wbr>Block</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#progresspercent" class="tsd-kind-icon">progress<wbr>Percent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#state" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnode.html#stepindex" class="tsd-kind-icon">step<wbr>Index</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activationgridlevel" class="tsd-anchor"></a>
 					<h3>activation<wbr>Grid<wbr>Level</h3>
 					<div class="tsd-signature tsd-kind-icon">activation<wbr>Grid<wbr>Level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1015">interfaces.ts:1015</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9836</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The progression level required on the Talent Grid in order to be able to
+								activate this talent node. Talent Grids have their own Progression - similar to
+							Character Level, but in this case it is experience related to the item itself.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="hidden" class="tsd-anchor"></a>
 					<h3>hidden</h3>
 					<div class="tsd-signature tsd-kind-icon">hidden<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1017">interfaces.ts:1017</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9849</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the talent node is actually visible in the game&#39;s UI. Whether you
+								want to show it in your own UI is up to you! I&#39;m not gonna tell you who to sock
+							it to.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isactivated" class="tsd-anchor"></a>
 					<h3>is<wbr>Activated</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Activated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1012">interfaces.ts:1012</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9816</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the node is activated: it&#39;s current step then provides its benefits.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="materialstoupgrade" class="tsd-anchor"></a>
 					<h3>materials<wbr>ToUpgrade</h3>
 					<div class="tsd-signature tsd-kind-icon">materials<wbr>ToUpgrade<span class="tsd-signature-symbol">:</span> <a href="idestinymaterialrequirement.html" class="tsd-signature-type">IDestinyMaterialRequirement</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1014">interfaces.ts:1014</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9830</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the node has material requirements to be activated, this is the list of those
+							requirements.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="nodehash" class="tsd-anchor"></a>
 					<h3>node<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1010">interfaces.ts:1010</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9809</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash of the Talent Node being referred to (in DestinyTalentGridDefinition.
+								nodes). Deceptively CONTENT VERSION DEPENDENT. We have no guarantee of the hash&#39;
+							s immutability between content versions.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="nodeindex" class="tsd-anchor"></a>
 					<h3>node<wbr>Index</h3>
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1009">interfaces.ts:1009</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9803</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The index of the Talent Node being referred to (an index into
+							DestinyTalentGridDefinition.nodes[]). CONTENT VERSION DEPENDENT.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="nodestatsblock" class="tsd-anchor"></a>
 					<h3>node<wbr>Stats<wbr>Block</h3>
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Stats<wbr>Block<span class="tsd-signature-symbol">:</span> <a href="idestinytalentnodestatblock.html" class="tsd-signature-type">IDestinyTalentNodeStatBlock</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1018">interfaces.ts:1018</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9855</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This property has some history. A talent grid can provide stats on both the item
+								it&#39;s related to and the character equipping the item. This returns data about
+							those stat bonuses.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="progresspercent" class="tsd-anchor"></a>
 					<h3>progress<wbr>Percent</h3>
 					<div class="tsd-signature tsd-kind-icon">progress<wbr>Percent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1016">interfaces.ts:1016</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9843</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you want to show a progress bar or circle for how close this talent node is
+								to being activate-able, this is the percentage to show. It follows the node&#39;s
+								underlying rules about when the progress bar should first show up, and when it
+							should be filled.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="state" class="tsd-anchor"></a>
 					<h3>state</h3>
 					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <a href="../enums/destinytalentnodestate.html" class="tsd-signature-type">DestinyTalentNodeState</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1011">interfaces.ts:1011</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9814</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An DestinyTalentNodeState enum value indicating the node&#39;s state: whether it can
+							be activated or swapped, and why not if neither can be performed.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="stepindex" class="tsd-anchor"></a>
 					<h3>step<wbr>Index</h3>
 					<div class="tsd-signature tsd-kind-icon">step<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1013">interfaces.ts:1013</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9825</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The currently relevant Step for the node. It is this step that has rendering
+								data for the node and the benefits that are provided if the node is activated. (
+								the actual rules for benefits provided are extremely complicated in theory, but
+								with how Talent Grids are being used in Destiny 2 you don&#39;t have to worry about
+								a lot of those old Destiny 1 rules.) This is an index into:
+							DestinyTalentGridDefinition.nodes[nodeIndex].steps[stepIndex]</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -212,37 +306,37 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinytalentnode.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#activationgridlevel" class="tsd-kind-icon">activation<wbr>Grid<wbr>Level</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#hidden" class="tsd-kind-icon">hidden</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#isactivated" class="tsd-kind-icon">is<wbr>Activated</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#materialstoupgrade" class="tsd-kind-icon">materials<wbr>ToUpgrade</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#nodehash" class="tsd-kind-icon">node<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#nodeindex" class="tsd-kind-icon">node<wbr>Index</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#nodestatsblock" class="tsd-kind-icon">node<wbr>Stats<wbr>Block</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#progresspercent" class="tsd-kind-icon">progress<wbr>Percent</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#state" class="tsd-kind-icon">state</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnode.html#stepindex" class="tsd-kind-icon">step<wbr>Index</a>
 							</li>
 						</ul>

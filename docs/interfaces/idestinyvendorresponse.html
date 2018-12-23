@@ -69,12 +69,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an response containing all of the components for a vendor.</p>
+						<p>A response containing all of the components for a vendor.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,70 +85,102 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorresponse.html#categories" class="tsd-kind-icon">categories</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorresponse.html#currencylookup" class="tsd-kind-icon">currency<wbr>Lookup</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorresponse.html#itemcomponents" class="tsd-kind-icon">item<wbr>Components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorresponse.html#sales" class="tsd-kind-icon">sales</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorresponse.html#vendor" class="tsd-kind-icon">vendor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorresponse.html#categories" class="tsd-kind-icon">categories</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorresponse.html#currencylookups" class="tsd-kind-icon">currency<wbr>Lookups</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorresponse.html#itemcomponents" class="tsd-kind-icon">item<wbr>Components</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorresponse.html#sales" class="tsd-kind-icon">sales</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorresponse.html#vendor" class="tsd-kind-icon">vendor</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="categories" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> categories</h3>
+					<h3>categories</h3>
 					<div class="tsd-signature tsd-kind-icon">categories<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyvendorcategoriescomponent.html" class="tsd-signature-type">IDestinyVendorCategoriesComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1104">interfaces.ts:1104</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10529</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Categories that the vendor has available, and references to the sales therein.</p>
+						</div>
+						<p>COMPONENT TYPE: VendorCategories</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="currencylookup" class="tsd-anchor"></a>
-					<h3>currency<wbr>Lookup</h3>
-					<div class="tsd-signature tsd-kind-icon">currency<wbr>Lookup<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinycurrenciescomponent.html" class="tsd-signature-type">IDestinyCurrenciesComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="currencylookups" class="tsd-anchor"></a>
+					<h3>currency<wbr>Lookups</h3>
+					<div class="tsd-signature tsd-kind-icon">currency<wbr>Lookups<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinycurrenciescomponent.html" class="tsd-signature-type">IDestinyCurrenciesComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1107">interfaces.ts:1107</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10549</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A &quot;lookup&quot; convenience component that can be used to quickly check if the
+							character has access to items that can be used for purchasing.</p>
+						</div>
+						<p>COMPONENT TYPE: CurrencyLookups</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="itemcomponents" class="tsd-anchor"></a>
 					<h3>item<wbr>Components</h3>
-					<div class="tsd-signature tsd-kind-icon">item<wbr>Components<span class="tsd-signature-symbol">:</span> <a href="idestinyitemcomponentset.html" class="tsd-signature-type">IDestinyItemComponentSet</a></div>
+					<div class="tsd-signature tsd-kind-icon">item<wbr>Components<span class="tsd-signature-symbol">:</span> <a href="idestinyitemcomponentsetofint32.html" class="tsd-signature-type">IDestinyItemComponentSetOfint32</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1106">interfaces.ts:1106</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10542</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Item components, keyed by the vendorItemIndex of the active sale items.</p>
+						</div>
+						<p>COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component
+						types.]</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="sales" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sales</h3>
-					<div class="tsd-signature tsd-kind-icon">sales<span class="tsd-signature-symbol">:</span> <a href="idictionarycomponent.html" class="tsd-signature-type">IDictionaryComponent</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyvendorsaleitemcomponent.html" class="tsd-signature-type">IDestinyVendorSaleItemComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<h3>sales</h3>
+					<div class="tsd-signature tsd-kind-icon">sales<span class="tsd-signature-symbol">:</span> <a href="idictionarycomponentresponse.html" class="tsd-signature-type">IDictionaryComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyvendorsaleitemcomponent.html" class="tsd-signature-type">IDestinyVendorSaleItemComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1105">interfaces.ts:1105</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10535</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sales, keyed by the vendorItemIndex of the item being sold.</p>
+						</div>
+						<p>COMPONENT TYPE: VendorSales</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="vendor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> vendor</h3>
+					<h3>vendor</h3>
 					<div class="tsd-signature tsd-kind-icon">vendor<span class="tsd-signature-symbol">:</span> <a href="isinglecomponentresponse.html" class="tsd-signature-type">ISingleComponentResponse</a><span class="tsd-signature-symbol">&lt;</span><a href="idestinyvendorcomponent.html" class="tsd-signature-type">IDestinyVendorComponent</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1103">interfaces.ts:1103</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10523</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The base properties of the vendor.</p>
+						</div>
+						<p>COMPONENT TYPE: Vendors</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -168,22 +196,22 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyvendorresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Response</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorresponse.html#categories" class="tsd-kind-icon">categories</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyvendorresponse.html#currencylookup" class="tsd-kind-icon">currency<wbr>Lookup</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinyvendorresponse.html#currencylookups" class="tsd-kind-icon">currency<wbr>Lookups</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorresponse.html#itemcomponents" class="tsd-kind-icon">item<wbr>Components</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorresponse.html#sales" class="tsd-kind-icon">sales</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorresponse.html#vendor" class="tsd-kind-icon">vendor</a>
 							</li>
 						</ul>

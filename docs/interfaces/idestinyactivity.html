@@ -69,12 +69,12 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for an Destiny 2 Activity</p>
+						<p>Represents the &quot;Live&quot; data that we can obtain about a Character&#39;s status with a
+							specific Activity. This will tell you whether the character can participate in
+						the activity, as well as some other basic mutable information.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>Meant to be combined with static DestinyActivityDefinition data for a full
+					picture of the Activity.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,114 +89,165 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#canjoin" class="tsd-kind-icon">can<wbr>Join</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#canlead" class="tsd-kind-icon">can<wbr>Lead</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#difficultytier" class="tsd-kind-icon">difficulty<wbr>Tier</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#displaylevel" class="tsd-kind-icon">display<wbr>Level</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#iscompleted" class="tsd-kind-icon">is<wbr>Completed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#isnew" class="tsd-kind-icon">is<wbr>New</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyactivity.html#recommendedlight" class="tsd-kind-icon">recommended<wbr>Light</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#canjoin" class="tsd-kind-icon">can<wbr>Join</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#canlead" class="tsd-kind-icon">can<wbr>Lead</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#difficultytier" class="tsd-kind-icon">difficulty<wbr>Tier</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#displaylevel" class="tsd-kind-icon">display<wbr>Level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#iscompleted" class="tsd-kind-icon">is<wbr>Completed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#isnew" class="tsd-kind-icon">is<wbr>New</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyactivity.html#recommendedlight" class="tsd-kind-icon">recommended<wbr>Light</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activityhash" class="tsd-anchor"></a>
 					<h3>activity<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L68">interfaces.ts:68</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9289</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier of the Activity. Use this to look up the
+							DestinyActivityDefinition of the activity.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="canjoin" class="tsd-anchor"></a>
 					<h3>can<wbr>Join</h3>
 					<div class="tsd-signature tsd-kind-icon">can<wbr>Join<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L71">interfaces.ts:71</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9295</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the user is allowed to join with another Fireteam in this activity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="canlead" class="tsd-anchor"></a>
 					<h3>can<wbr>Lead</h3>
 					<div class="tsd-signature tsd-kind-icon">can<wbr>Lead<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L70">interfaces.ts:70</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9293</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the user is allowed to lead a Fireteam into this activity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="difficultytier" class="tsd-anchor"></a>
 					<h3>difficulty<wbr>Tier</h3>
 					<div class="tsd-signature tsd-kind-icon">difficulty<wbr>Tier<span class="tsd-signature-symbol">:</span> <a href="../enums/destinyactivitydifficultytier.html" class="tsd-signature-type">DestinyActivityDifficultyTier</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L76">interfaces.ts:76</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9313</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A DestinyActivityDifficultyTier enum value indicating the difficulty of the
+							activity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="displaylevel" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> display<wbr>Level</h3>
 					<div class="tsd-signature tsd-kind-icon">display<wbr>Level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L74">interfaces.ts:74</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9306</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The difficulty level of the activity, if applicable.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="iscompleted" class="tsd-anchor"></a>
 					<h3>is<wbr>Completed</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Completed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L72">interfaces.ts:72</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9302</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, we both have the ability to know that the user has completed this
+								activity and they have completed it. Unfortunately, we can&#39;t necessarily know
+								this for all activities. As such, this should probably only be used if you
+							already know in advance which specific activities you wish to check.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isnew" class="tsd-anchor"></a>
 					<h3>is<wbr>New</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>New<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L69">interfaces.ts:69</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9291</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, then the activity should have a &quot;new&quot; indicator in the Director UI.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isvisible" class="tsd-anchor"></a>
 					<h3>is<wbr>Visible</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L73">interfaces.ts:73</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9304</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If true, the user should be able to see this activity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="recommendedlight" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> recommended<wbr>Light</h3>
 					<div class="tsd-signature tsd-kind-icon">recommended<wbr>Light<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L75">interfaces.ts:75</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9308</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The recommended light level for the activity, if applicable.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -212,34 +263,34 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyactivity.html" class="tsd-kind-icon">IDestiny<wbr>Activity</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#canjoin" class="tsd-kind-icon">can<wbr>Join</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#canlead" class="tsd-kind-icon">can<wbr>Lead</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#difficultytier" class="tsd-kind-icon">difficulty<wbr>Tier</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#displaylevel" class="tsd-kind-icon">display<wbr>Level</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#iscompleted" class="tsd-kind-icon">is<wbr>Completed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#isnew" class="tsd-kind-icon">is<wbr>New</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyactivity.html#recommendedlight" class="tsd-kind-icon">recommended<wbr>Light</a>
 							</li>
 						</ul>

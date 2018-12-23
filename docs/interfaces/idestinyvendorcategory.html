@@ -66,6 +66,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Information about the category and items currently sold in that category.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,37 +85,51 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorcategory.html#categoryindex" class="tsd-kind-icon">category<wbr>Index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorcategory.html#itemindexes" class="tsd-kind-icon">item<wbr>Indexes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorcategory.html#displaycategoryindex" class="tsd-kind-icon">display<wbr>Category<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorcategory.html#itemindexes" class="tsd-kind-icon">item<wbr>Indexes</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="categoryindex" class="tsd-anchor"></a>
-					<h3>category<wbr>Index</h3>
-					<div class="tsd-signature tsd-kind-icon">category<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="displaycategoryindex" class="tsd-anchor"></a>
+					<h3>display<wbr>Category<wbr>Index</h3>
+					<div class="tsd-signature tsd-kind-icon">display<wbr>Category<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1051">interfaces.ts:1051</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10295</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An index into the DestinyVendorDefinition.displayCategories property, so you can
+							grab the display data for this category.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="itemindexes" class="tsd-anchor"></a>
 					<h3>item<wbr>Indexes</h3>
 					<div class="tsd-signature tsd-kind-icon">item<wbr>Indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1052">interfaces.ts:1052</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10302</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An ordered list of indexes into items being sold in this category (
+								DestinyVendorDefinition.itemList) which will contain more information about the
+								items being sold themselves. Can also be used to index into
+							DestinyVendorSaleItemComponent data, if you asked for that data to be returned.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -124,13 +145,13 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyvendorcategory.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyvendorcategory.html#categoryindex" class="tsd-kind-icon">category<wbr>Index</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinyvendorcategory.html#displaycategoryindex" class="tsd-kind-icon">display<wbr>Category<wbr>Index</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorcategory.html#itemindexes" class="tsd-kind-icon">item<wbr>Indexes</a>
 							</li>
 						</ul>

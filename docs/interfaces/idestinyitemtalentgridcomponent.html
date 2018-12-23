@@ -66,6 +66,26 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Well, we&#39;re here in Destiny 2, and Talent Grids are unfortunately still around.</p>
+					</div>
+					<p>The good news is that they&#39;re pretty much only being used for certain base
+						information on items and for Builds/Subclasses. The bad news is that they still
+					suck. If you really want this information, grab this component.</p>
+					<p>An important note is that talent grids are defined as such:</p>
+					<p>A Grid has 1:M Nodes, which has 1:M Steps.</p>
+					<p>Any given node can only have a single step active at one time, which represents
+						the actual visual contents and effects of the Node (for instance, if you see a &quot;
+						Super Cool Bonus&quot; node, the actual icon and text for the node is coming from the
+					current Step of that node).</p>
+					<p>Nodes can be grouped into exclusivity sets <em>and</em> as of D2, exclusivity groups (
+					which are collections of exclusivity sets that affect each other).</p>
+					<p>See DestinyTalentGridDefinition for more information. Brace yourself, the water&#39;
+					s cold out there in the deep end.</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,59 +98,92 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtalentgridcomponent.html#gridprogression" class="tsd-kind-icon">grid<wbr>Progression</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtalentgridcomponent.html#isgridcomplete" class="tsd-kind-icon">is<wbr>Grid<wbr>Complete</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtalentgridcomponent.html#nodes" class="tsd-kind-icon">nodes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemtalentgridcomponent.html#talentgridhash" class="tsd-kind-icon">talent<wbr>Grid<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemtalentgridcomponent.html#gridprogression" class="tsd-kind-icon">grid<wbr>Progression</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemtalentgridcomponent.html#isgridcomplete" class="tsd-kind-icon">is<wbr>Grid<wbr>Complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemtalentgridcomponent.html#nodes" class="tsd-kind-icon">nodes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemtalentgridcomponent.html#talentgridhash" class="tsd-kind-icon">talent<wbr>Grid<wbr>Hash</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="gridprogression" class="tsd-anchor"></a>
 					<h3>grid<wbr>Progression</h3>
 					<div class="tsd-signature tsd-kind-icon">grid<wbr>Progression<span class="tsd-signature-symbol">:</span> <a href="idestinyprogression.html" class="tsd-signature-type">IDestinyProgression</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L611">interfaces.ts:611</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9774</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the item has a progression, it will be detailed here. A progression means
+								that the item can gain experience. Thresholds of experience are what determines
+							whether and when a talent node can be activated.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isgridcomplete" class="tsd-anchor"></a>
 					<h3>is<wbr>Grid<wbr>Complete</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Grid<wbr>Complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L610">interfaces.ts:610</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9768</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates whether the talent grid on this item is completed, and thus whether it
+							should have a gold border around it.</p>
+						</div>
+						<p>Only will be true if the item actually <em>has</em> a talent grid, and only then if it
+							is completed (i.e. every exclusive set has an activated node, and every non-
+						exclusive set node has been activated)</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="nodes" class="tsd-anchor"></a>
 					<h3>nodes</h3>
 					<div class="tsd-signature tsd-kind-icon">nodes<span class="tsd-signature-symbol">:</span> <a href="idestinytalentnode.html" class="tsd-signature-type">IDestinyTalentNode</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L609">interfaces.ts:609</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9759</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Detailed information about the individual nodes in the talent grid.</p>
+						</div>
+						<p>A node represents a single visual &quot;pip&quot; in the talent grid or Build detail view,
+							though each node may have multiple &quot;steps&quot; which indicate the actual bonuses and
+						visual representation of that node.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="talentgridhash" class="tsd-anchor"></a>
 					<h3>talent<wbr>Grid<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">talent<wbr>Grid<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L608">interfaces.ts:608</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9751</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Most items don&#39;t have useful talent grids anymore, but Builds in particular
+							still do.</p>
+						</div>
+						<p>You can use this hash to lookup the DestinyTalentGridDefinition attached to this
+						item, which will be crucial for understanding the node values on the item.</p>
+						<p>Mapped to IDestinyTalentGridDefinition in the manifest.</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,19 +199,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyitemtalentgridcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemtalentgridcomponent.html#gridprogression" class="tsd-kind-icon">grid<wbr>Progression</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemtalentgridcomponent.html#isgridcomplete" class="tsd-kind-icon">is<wbr>Grid<wbr>Complete</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemtalentgridcomponent.html#nodes" class="tsd-kind-icon">nodes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemtalentgridcomponent.html#talentgridhash" class="tsd-kind-icon">talent<wbr>Grid<wbr>Hash</a>
 							</li>
 						</ul>

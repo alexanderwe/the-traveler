@@ -20,3 +20,4 @@ build
 coverage
 .nyc_output
 coverage.*
+src/test.ts

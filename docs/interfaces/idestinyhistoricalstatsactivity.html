@@ -66,6 +66,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Summary information about the activity that was played.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,81 +85,119 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#directoractivityhash" class="tsd-kind-icon">director<wbr>Activity<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#isntanceid" class="tsd-kind-icon">isntance<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#mode" class="tsd-kind-icon">mode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#modes" class="tsd-kind-icon">modes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsactivity.html#referenceid" class="tsd-kind-icon">reference<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#directoractivityhash" class="tsd-kind-icon">director<wbr>Activity<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#instanceid" class="tsd-kind-icon">instance<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#mode" class="tsd-kind-icon">mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#modes" class="tsd-kind-icon">modes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsactivity.html#referenceid" class="tsd-kind-icon">reference<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="directoractivityhash" class="tsd-anchor"></a>
 					<h3>director<wbr>Activity<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">director<wbr>Activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L347">interfaces.ts:347</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10682</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique hash identifier of the DestinyActivityDefinition that was played.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="instanceid" class="tsd-anchor"></a>
+					<h3>instance<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10689</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique identifier for this <em>specific</em> match that was played.</p>
+						</div>
+						<p>This value can be used to get additional data about this activity such as who
+						else was playing via the GetPostGameCarnageReport endpoint.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isprivate" class="tsd-anchor"></a>
 					<h3>is<wbr>Private</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Private<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L351">interfaces.ts:351</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10702</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the match was a private match. There&#39;s no private matches in
+							Destiny 2... yet... DUN DUN DUNNNN</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isntanceid" class="tsd-anchor"></a>
-					<h3>isntance<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">isntance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L348">interfaces.ts:348</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="mode" class="tsd-anchor"></a>
 					<h3>mode</h3>
 					<div class="tsd-signature tsd-kind-icon">mode<span class="tsd-signature-symbol">:</span> <a href="../enums/destinyactivitymodetype.html" class="tsd-signature-type">DestinyActivityModeType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L349">interfaces.ts:349</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10691</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates the most specific game mode of the activity that we could find.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="modes" class="tsd-anchor"></a>
 					<h3>modes</h3>
 					<div class="tsd-signature tsd-kind-icon">modes<span class="tsd-signature-symbol">:</span> <a href="../enums/destinyactivitymodetype.html" class="tsd-signature-type">DestinyActivityModeType</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L350">interfaces.ts:350</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10697</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The list of all Activity Modes to which this activity applies, including
+								aggregates. This will let you see, for example, whether the activity was both
+							Clash and part of the Trials of the Nine event.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="referenceid" class="tsd-anchor"></a>
 					<h3>reference<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">reference<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L346">interfaces.ts:346</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:10676</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique hash identifier of the DestinyActivityDefinition that was played. If
+							I had this to do over, it&#39;d be named activityHash. Too late now.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -168,25 +213,25 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyhistoricalstatsactivity.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Activity</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsactivity.html#directoractivityhash" class="tsd-kind-icon">director<wbr>Activity<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinyhistoricalstatsactivity.html#instanceid" class="tsd-kind-icon">instance<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsactivity.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyhistoricalstatsactivity.html#isntanceid" class="tsd-kind-icon">isntance<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsactivity.html#mode" class="tsd-kind-icon">mode</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsactivity.html#modes" class="tsd-kind-icon">modes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsactivity.html#referenceid" class="tsd-kind-icon">reference<wbr>Id</a>
 							</li>
 						</ul>

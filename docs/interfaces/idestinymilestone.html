@@ -69,12 +69,12 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for an Destiny 2 milestone</p>
+						<p>Represents a runtime instance of a user&#39;s milestone status. Live Milestone data
+							should be combined with DestinyMilestoneDefinition data to show the user a
+							picture of what is available for them to do in the game, and their status in
+							regards to said &quot;things to do.&quot; Consider it a big, wonky to-do list, or Advisors
+						3.0 for those who remember the Destiny 1 API.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,92 +89,225 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#availablequests" class="tsd-kind-icon">available<wbr>Quests</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#enddate" class="tsd-kind-icon">end<wbr>Date</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#milestonehash" class="tsd-kind-icon">milestone<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#rewards" class="tsd-kind-icon">rewards</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#startdate" class="tsd-kind-icon">start<wbr>Date</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#values" class="tsd-kind-icon">values</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestone.html#vendors" class="tsd-kind-icon">vendors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#activities" class="tsd-kind-icon">activities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#availablequests" class="tsd-kind-icon">available<wbr>Quests</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#enddate" class="tsd-kind-icon">end<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#milestonehash" class="tsd-kind-icon">milestone<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#order" class="tsd-kind-icon">order</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#rewards" class="tsd-kind-icon">rewards</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#startdate" class="tsd-kind-icon">start<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#values" class="tsd-kind-icon">values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#vendorhashes" class="tsd-kind-icon">vendor<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestone.html#vendors" class="tsd-kind-icon">vendors</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activities" class="tsd-anchor"></a>
+					<h3>activities</h3>
+					<div class="tsd-signature tsd-kind-icon">activities<span class="tsd-signature-symbol">:</span> <a href="idestinymilestonechallengeactivity.html" class="tsd-signature-type">IDestinyMilestoneChallengeActivity</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8222</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The currently active Activities in this milestone, when the Milestone is driven
+							by Challenges.</p>
+						</div>
+						<p>Not all Milestones have Challenges, but when they do this will indicate the
+						Activities and Challenges under those Activities related to this Milestone.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="availablequests" class="tsd-anchor"></a>
 					<h3>available<wbr>Quests</h3>
 					<div class="tsd-signature tsd-kind-icon">available<wbr>Quests<span class="tsd-signature-symbol">:</span> <a href="idestinymilestonequest.html" class="tsd-signature-type">IDestinyMilestoneQuest</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L675">interfaces.ts:675</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8214</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates what quests are available for this Milestone. Usually this will be
+								only a single Quest, but some quests have multiple available that you can choose
+								from at any given time. All possible quests for a milestone can be found in the
+								DestinyMilestoneDefinition, but they must be combined with this Live data to
+								determine which one(s) are actually active right now. It is possible for
+							Milestones to not have any quests.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="enddate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> end<wbr>Date</h3>
-					<div class="tsd-signature tsd-kind-icon">end<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">end<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L680">interfaces.ts:680</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8278</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If known, this is the date when the event will next end or repeat. It will only
+							be populated for events with fixed and repeating start and end dates.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="milestonehash" class="tsd-anchor"></a>
 					<h3>milestone<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">milestone<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L674">interfaces.ts:674</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8205</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique identifier for the Milestone. Use it to look up the
+								DestinyMilestoneDefinition, so you can combine the other data in this contract
+							with static definition data.</p>
+						</div>
+						<p>Mapped to IDestinyMilestoneDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="order" class="tsd-anchor"></a>
+					<h3>order</h3>
+					<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8283</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used for ordering milestones in a display to match how we order them in BNet.
+							May pull from static data, or possibly in the future from dynamic information.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="rewards" class="tsd-anchor"></a>
 					<h3>rewards</h3>
 					<div class="tsd-signature tsd-kind-icon">rewards<span class="tsd-signature-symbol">:</span> <a href="idestinymilestonerewardcategory.html" class="tsd-signature-type">IDestinyMilestoneRewardCategory</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L678">interfaces.ts:678</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8268</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the entity to which this component is attached has known active Rewards for
+								the player, this will detail information about those rewards, keyed by the
+								RewardEntry Hash. (See DestinyMilestoneDefinition for more information about
+								Reward Entries) Note that these rewards are not for the Quests related to the
+								Milestone. Think of these as &quot;overview/checklist&quot; rewards that may be provided
+								for Milestones that may provide rewards for performing a variety of tasks that
+							aren&#39;t under a specific Quest.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="startdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> start<wbr>Date</h3>
-					<div class="tsd-signature tsd-kind-icon">start<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">start<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L679">interfaces.ts:679</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8273</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If known, this is the date when the event last began or refreshed. It will only
+							be populated for events with fixed and repeating start and end dates.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="values" class="tsd-anchor"></a>
 					<h3>values</h3>
 					<div class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L676">interfaces.ts:676</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8234</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Milestones may have arbitrary key/value pairs associated with them, for data
+								that users will want to know about but that doesn&#39;t fit neatly into any of the
+								common components such as Quests. A good example of this would be - if this
+								existed in Destiny 1 - the number of wins you currently have on your Trials of
+								Osiris ticket. Looking in the DestinyMilestoneDefinition, you can use the string
+								identifier of this dictionary to look up more info about the value, including
+								localized string content for displaying the value. The value in the dictionary
+								is the floating point number. The definition will tell you how to format this
+							number.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="vendors" class="tsd-anchor"></a>
-					<h3>vendors</h3>
-					<div class="tsd-signature tsd-kind-icon">vendors<span class="tsd-signature-symbol">:</span> <a href="idestinypublicmilestonevendor.html" class="tsd-signature-type">IDestinyPublicMilestoneVendor</a><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="vendorhashes" class="tsd-anchor"></a>
+					<h3>vendor<wbr>Hashes</h3>
+					<div class="tsd-signature tsd-kind-icon">vendor<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L677">interfaces.ts:677</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8250</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A milestone may have one or more active vendors that are &quot;related&quot; to it (that
+								provide rewards, or that are the initiators of the Milestone). I already regret
+								this, even as I&#39;m typing it. [I told you I&#39;d regret this] You see, sometimes a
+								milestone may be directly correlated with a set of vendors that provide varying
+								tiers of rewards. The player may not be able to interact with one or more of
+								those vendors. This will return the hashes of the Vendors that the player <em>can</em>
+								interact with, allowing you to show their current inventory as rewards or
+							related items to the Milestone or its activities.</p>
+						</div>
+						<p>Before we even use it, it&#39;s already deprecated! How much of a bummer is that? We
+						need more data.</p>
+						<p>Mapped to IDestinyVendorDefinition in the manifest.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="vendors" class="tsd-anchor"></a>
+					<h3>vendors</h3>
+					<div class="tsd-signature tsd-kind-icon">vendors<span class="tsd-signature-symbol">:</span> <a href="idestinymilestonevendor.html" class="tsd-signature-type">IDestinyMilestoneVendor</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8258</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Replaces vendorHashes, which I knew was going to be trouble the day it walked in
+								the door. This will return not only what Vendors are active and relevant to the
+								activity (in an implied order that you can choose to ignore), but also other
+								data - for example, if the Vendor is featuring a specific item relevant to this
+							event that you should show with them.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -190,28 +323,37 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestone.html" class="tsd-kind-icon">IDestiny<wbr>Milestone</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestone.html#activities" class="tsd-kind-icon">activities</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#availablequests" class="tsd-kind-icon">available<wbr>Quests</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#enddate" class="tsd-kind-icon">end<wbr>Date</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#milestonehash" class="tsd-kind-icon">milestone<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestone.html#order" class="tsd-kind-icon">order</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#rewards" class="tsd-kind-icon">rewards</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#startdate" class="tsd-kind-icon">start<wbr>Date</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#values" class="tsd-kind-icon">values</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestone.html#vendorhashes" class="tsd-kind-icon">vendor<wbr>Hashes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestone.html#vendors" class="tsd-kind-icon">vendors</a>
 							</li>
 						</ul>

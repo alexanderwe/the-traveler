@@ -69,15 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for an Destiny 2 milestone quest
-						Interface for an Destiny 2 milestone quest</p>
+						<p>If a Milestone has one or more Quests, this will contain the live information
+						for the character&#39;s status with one of those quests.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -92,63 +86,96 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonequest.html#activity" class="tsd-kind-icon">activity</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonequest.html#challenges" class="tsd-kind-icon">challenges</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonequest.html#questitemhash" class="tsd-kind-icon">quest<wbr>Item<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonequest.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonequest.html#activity" class="tsd-kind-icon">activity</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonequest.html#challenges" class="tsd-kind-icon">challenges</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonequest.html#questitemhash" class="tsd-kind-icon">quest<wbr>Item<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonequest.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activity" class="tsd-anchor"></a>
 					<h3>activity</h3>
 					<div class="tsd-signature tsd-kind-icon">activity<span class="tsd-signature-symbol">:</span> <a href="idestinymilestoneactivity.html" class="tsd-signature-type">IDestinyMilestoneActivity</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L130">interfaces.ts:130</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L742">interfaces.ts:742</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8814</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><em>IF</em> the Milestone has an active Activity that can give you greater details
+								about what you need to do, it will be returned here. Remember to associate this
+								with the DestinyMilestoneDefinition&#39;s activities to get details about the
+								activity, including what specific quest it is related to if you have multiple
+							quests to choose from.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="challenges" class="tsd-anchor"></a>
 					<h3>challenges</h3>
 					<div class="tsd-signature tsd-kind-icon">challenges<span class="tsd-signature-symbol">:</span> <a href="idestinychallengestatus.html" class="tsd-signature-type">IDestinyChallengeStatus</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L131">interfaces.ts:131</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L743">interfaces.ts:743</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8825</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The activities referred to by this quest can have many associated challenges.
+								They are all contained here, with activityHashes so that you can associate them
+								with the specific activity variants in which they can be found. In retrospect, I
+								probably should have put these under the specific Activity Variants, but it&#39;s
+								too late to change it now. Theoretically, a quest without Activities can still
+								have Challenges, which is why this is on a higher level than activity/variants,
+								but it probably should have been in both places. That may come as a later
+							revision.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="questitemhash" class="tsd-anchor"></a>
 					<h3>quest<wbr>Item<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">quest<wbr>Item<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L128">interfaces.ts:128</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L740">interfaces.ts:740</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8804</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Quests are defined as Items in content. As such, this is the hash identifier of
+								the DestinyInventoryItemDefinition that represents this quest. It will have
+								pointers to all of the steps in the quest, and display information for the quest
+								(title, description, icon etc) Individual steps will be referred to in the Quest
+								item&#39;s DestinyInventoryItemDefinition.setData property, and themselves are Items
+							with their own renderable data.</p>
+						</div>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="status" class="tsd-anchor"></a>
 					<h3>status</h3>
 					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="idestinyqueststatus.html" class="tsd-signature-type">IDestinyQuestStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L129">interfaces.ts:129</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L741">interfaces.ts:741</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8806</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current status of the quest for the character making the request.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -164,19 +191,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonequest.html#activity" class="tsd-kind-icon">activity</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonequest.html#challenges" class="tsd-kind-icon">challenges</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonequest.html#questitemhash" class="tsd-kind-icon">quest<wbr>Item<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonequest.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>

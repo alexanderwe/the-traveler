@@ -69,12 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for the a single vendor receipt</p>
+						<p>If a character purchased an item that is refundable, a Vendor Receipt will be
+							created on the user&#39;s Destiny Profile. These expire after a configurable period
+							of time, but until then can be used to get refunds on items. BNet does not
+						provide the ability to refund a purchase <em>yet</em>, but you know.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,103 +88,145 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#currencypaid" class="tsd-kind-icon">currency<wbr>Paid</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#expireson" class="tsd-kind-icon">expires<wbr>On</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#itemreceived" class="tsd-kind-icon">item<wbr>Received</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#licenseunlockhash" class="tsd-kind-icon">license<wbr>Unlock<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#purchasedbycharacterid" class="tsd-kind-icon">purchased<wbr>ByCharacter<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#refundpolicy" class="tsd-kind-icon">refund<wbr>Policy</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#sequencenumber" class="tsd-kind-icon">sequence<wbr>Number</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyvendorreceipt.html#timetoexpiration" class="tsd-kind-icon">time<wbr>ToExpiration</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#currencypaid" class="tsd-kind-icon">currency<wbr>Paid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#expireson" class="tsd-kind-icon">expires<wbr>On</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#itemreceived" class="tsd-kind-icon">item<wbr>Received</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#licenseunlockhash" class="tsd-kind-icon">license<wbr>Unlock<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#purchasedbycharacterid" class="tsd-kind-icon">purchased<wbr>ByCharacter<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#refundpolicy" class="tsd-kind-icon">refund<wbr>Policy</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#sequencenumber" class="tsd-kind-icon">sequence<wbr>Number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyvendorreceipt.html#timetoexpiration" class="tsd-kind-icon">time<wbr>ToExpiration</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="currencypaid" class="tsd-anchor"></a>
 					<h3>currency<wbr>Paid</h3>
-					<div class="tsd-signature tsd-kind-icon">currency<wbr>Paid<span class="tsd-signature-symbol">:</span> <a href="idestinyitemquantity.html" class="tsd-signature-type">IDestinyItemQuantity</a></div>
+					<div class="tsd-signature tsd-kind-icon">currency<wbr>Paid<span class="tsd-signature-symbol">:</span> <a href="idestinyitemquantity.html" class="tsd-signature-type">IDestinyItemQuantity</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1080">interfaces.ts:1080</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7171</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The amount paid for the item, in terms of items that were consumed in the
+							purchase and their quantity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="expireson" class="tsd-anchor"></a>
 					<h3>expires<wbr>On</h3>
-					<div class="tsd-signature tsd-kind-icon">expires<wbr>On<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">expires<wbr>On<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1087">interfaces.ts:1087</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7188</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The date at which this receipt is rendered invalid.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="itemreceived" class="tsd-anchor"></a>
 					<h3>item<wbr>Received</h3>
 					<div class="tsd-signature tsd-kind-icon">item<wbr>Received<span class="tsd-signature-symbol">:</span> <a href="idestinyitemquantity.html" class="tsd-signature-type">IDestinyItemQuantity</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1081">interfaces.ts:1081</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7173</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The item that was received, and its quantity.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="licenseunlockhash" class="tsd-anchor"></a>
 					<h3>license<wbr>Unlock<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">license<wbr>Unlock<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1082">interfaces.ts:1082</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7175</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unlock flag used to determine whether you still have the purchased item.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="purchasedbycharacterid" class="tsd-anchor"></a>
 					<h3>purchased<wbr>ByCharacter<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">purchased<wbr>ByCharacter<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1083">interfaces.ts:1083</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7177</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The ID of the character who made the purchase.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="refundpolicy" class="tsd-anchor"></a>
 					<h3>refund<wbr>Policy</h3>
-					<div class="tsd-signature tsd-kind-icon">refund<wbr>Policy<span class="tsd-signature-symbol">:</span> <a href="../enums/vendoritemrefundpolicy.html" class="tsd-signature-type">VendorItemRefundPolicy</a></div>
+					<div class="tsd-signature tsd-kind-icon">refund<wbr>Policy<span class="tsd-signature-symbol">:</span> <a href="../enums/destinyvendoritemrefundpolicy.html" class="tsd-signature-type">DestinyVendorItemRefundPolicy</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1084">interfaces.ts:1084</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7182</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether you can get a refund, and what happens in order for the refund to be
+							received. See the DestinyVendorItemRefundPolicy enum for details.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="sequencenumber" class="tsd-anchor"></a>
 					<h3>sequence<wbr>Number</h3>
 					<div class="tsd-signature tsd-kind-icon">sequence<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1085">interfaces.ts:1085</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7184</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The identifier of this receipt.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="timetoexpiration" class="tsd-anchor"></a>
 					<h3>time<wbr>ToExpiration</h3>
-					<div class="tsd-signature tsd-kind-icon">time<wbr>ToExpiration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">time<wbr>ToExpiration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1086">interfaces.ts:1086</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7186</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The seconds since epoch at which this receipt is rendered invalid.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -201,31 +242,31 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyvendorreceipt.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipt</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#currencypaid" class="tsd-kind-icon">currency<wbr>Paid</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#expireson" class="tsd-kind-icon">expires<wbr>On</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#itemreceived" class="tsd-kind-icon">item<wbr>Received</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#licenseunlockhash" class="tsd-kind-icon">license<wbr>Unlock<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#purchasedbycharacterid" class="tsd-kind-icon">purchased<wbr>ByCharacter<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#refundpolicy" class="tsd-kind-icon">refund<wbr>Policy</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#sequencenumber" class="tsd-kind-icon">sequence<wbr>Number</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyvendorreceipt.html#timetoexpiration" class="tsd-kind-icon">time<wbr>ToExpiration</a>
 							</li>
 						</ul>

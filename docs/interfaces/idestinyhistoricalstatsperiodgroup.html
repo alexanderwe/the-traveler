@@ -78,48 +78,65 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsperiodgroup.html#activitydetail" class="tsd-kind-icon">activity<wbr>Detail</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsperiodgroup.html#period" class="tsd-kind-icon">period</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyhistoricalstatsperiodgroup.html#values" class="tsd-kind-icon">values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsperiodgroup.html#activitydetails" class="tsd-kind-icon">activity<wbr>Details</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsperiodgroup.html#period" class="tsd-kind-icon">period</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyhistoricalstatsperiodgroup.html#values" class="tsd-kind-icon">values</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="activitydetail" class="tsd-anchor"></a>
-					<h3>activity<wbr>Detail</h3>
-					<div class="tsd-signature tsd-kind-icon">activity<wbr>Detail<span class="tsd-signature-symbol">:</span> <a href="idestinyhistoricalstatsactivity.html" class="tsd-signature-type">IDestinyHistoricalStatsActivity</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activitydetails" class="tsd-anchor"></a>
+					<h3>activity<wbr>Details</h3>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Details<span class="tsd-signature-symbol">:</span> <a href="idestinyhistoricalstatsactivity.html" class="tsd-signature-type">IDestinyHistoricalStatsActivity</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L403">interfaces.ts:403</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:11044</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the period group is for a specific activity, this property will be set.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="period" class="tsd-anchor"></a>
 					<h3>period</h3>
-					<div class="tsd-signature tsd-kind-icon">period<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<div class="tsd-signature tsd-kind-icon">period<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L402">interfaces.ts:402</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:11042</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Period for the group. If the stat periodType is day, then this will have a
+								specific day. If the type is monthly, then this value will be the first day of
+							the applicable month. This value is not set when the periodType is &#39;all time&#39;.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="values" class="tsd-anchor"></a>
 					<h3>values</h3>
 					<div class="tsd-signature tsd-kind-icon">values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L404">interfaces.ts:404</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:11046</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Collection of stats for the period.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -143,16 +160,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyhistoricalstatsperiodgroup.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Period<wbr>Group</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyhistoricalstatsperiodgroup.html#activitydetail" class="tsd-kind-icon">activity<wbr>Detail</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinyhistoricalstatsperiodgroup.html#activitydetails" class="tsd-kind-icon">activity<wbr>Details</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsperiodgroup.html#period" class="tsd-kind-icon">period</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyhistoricalstatsperiodgroup.html#values" class="tsd-kind-icon">values</a>
 							</li>
 						</ul>

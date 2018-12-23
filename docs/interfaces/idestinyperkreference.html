@@ -69,12 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The list of perks to display in an item tooltip - and whether or not they have been activated.</p>
+						<p>The list of perks to display in an item tooltip - and whether or not they have
+						been activated.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>Perks apply a variety of effects to a character, and are generally either
+					intrinsic to the item or provided in activated talent nodes or sockets.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,59 +88,86 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyperkreference.html#iconpath" class="tsd-kind-icon">icon<wbr>Path</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyperkreference.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyperkreference.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyperkreference.html#perkhash" class="tsd-kind-icon">perk<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyperkreference.html#iconpath" class="tsd-kind-icon">icon<wbr>Path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyperkreference.html#isactive" class="tsd-kind-icon">is<wbr>Active</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyperkreference.html#perkhash" class="tsd-kind-icon">perk<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyperkreference.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="iconpath" class="tsd-anchor"></a>
 					<h3>icon<wbr>Path</h3>
 					<div class="tsd-signature tsd-kind-icon">icon<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L785">interfaces.ts:785</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9577</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The icon for the perk.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isactive" class="tsd-anchor"></a>
 					<h3>is<wbr>Active</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Active<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L786">interfaces.ts:786</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9583</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether this perk is currently active. (We may return perks that you have not
+								actually activated yet: these represent perks that you should show in the item&#39;s
+							tooltip, but that the user has not yet activated.)</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isvisible" class="tsd-anchor"></a>
-					<h3>is<wbr>Visible</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L787">interfaces.ts:787</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="perkhash" class="tsd-anchor"></a>
 					<h3>perk<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">perk<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L784">interfaces.ts:784</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9575</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier for the perk, which can be used to look up
+								DestinySandboxPerkDefinition if it exists. Be warned, perks frequently do not
+								have user-viewable information. You should examine whether you actually found a
+							name/description in the perk&#39;s definition before you show it to the user.</p>
+						</div>
+						<p>Mapped to IDestinySandboxPerkDefinition in the manifest.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3>visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9588</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Some perks provide benefits, but aren&#39;t visible in the UI. This value will let
+							you know if this is perk should be shown in your UI.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -157,20 +183,20 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyperkreference.html" class="tsd-kind-icon">IDestiny<wbr>Perk<wbr>Reference</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyperkreference.html#iconpath" class="tsd-kind-icon">icon<wbr>Path</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyperkreference.html#isactive" class="tsd-kind-icon">is<wbr>Active</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinyperkreference.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyperkreference.html#perkhash" class="tsd-kind-icon">perk<wbr>Hash</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinyperkreference.html#visible" class="tsd-kind-icon">visible</a>
 							</li>
 						</ul>
 					</li>

@@ -66,6 +66,16 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The status of a given item&#39;s socket. (which plug is inserted, if any: whether it
+						is enabled, what &quot;reusable&quot; plugs can be inserted, etc...)</p>
+					</div>
+					<p>If I had it to do over, this would probably have a DestinyItemPlug representing
+					the inserted item instead of most of these properties. :shrug:</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,92 +88,160 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#plugobjectives" class="tsd-kind-icon">plug<wbr>Objectives</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyitemsocketstate.html#reusableplugs" class="tsd-kind-icon">reusable<wbr>Plugs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#plugobjectives" class="tsd-kind-icon">plug<wbr>Objectives</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyitemsocketstate.html#reusableplugs" class="tsd-kind-icon">reusable<wbr>Plugs</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="enablefailindexes" class="tsd-anchor"></a>
 					<h3>enable<wbr>Fail<wbr>Indexes</h3>
 					<div class="tsd-signature tsd-kind-icon">enable<wbr>Fail<wbr>Indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L586">interfaces.ts:586</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9681</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If a plug is inserted but not enabled, this will be populated with indexes into
+								the plug item definition&#39;s plug.enabledRules property, so that you can show the
+							reasons why it is not enabled.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isenabled" class="tsd-anchor"></a>
 					<h3>is<wbr>Enabled</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L584">interfaces.ts:584</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9665</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Even if a plug is inserted, it doesn&#39;t mean it&#39;s enabled.</p>
+						</div>
+						<p>This flag indicates whether the plug is active and providing its benefits.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="isvisible" class="tsd-anchor"></a>
 					<h3>is<wbr>Visible</h3>
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L585">interfaces.ts:585</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9675</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A plug may theoretically provide benefits but not be visible - for instance,
+								some older items use a plug&#39;s damage type perk to modify their own damage type.
+								These, though they are not visible, still affect the item. This field indicates
+							that state.</p>
+						</div>
+						<p>An invisible plug, while it provides benefits if it is Enabled, cannot be
+						directly modified by the user.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="plughash" class="tsd-anchor"></a>
-					<h3>plug<wbr>Hash</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> plug<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">plug<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L583">interfaces.ts:583</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9659</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The currently active plug, if any.</p>
+						</div>
+						<p>Note that, because all plugs are statically defined, its effect on stats and
+							perks can be statically determined using the plug item&#39;s definition. The stats
+							and perks can be taken at face value on the plug item as the stats and perks it
+						will provide to the user/item.</p>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="plugobjectives" class="tsd-anchor"></a>
 					<h3>plug<wbr>Objectives</h3>
 					<div class="tsd-signature tsd-kind-icon">plug<wbr>Objectives<span class="tsd-signature-symbol">:</span> <a href="idestinyobjectiveprogress.html" class="tsd-signature-type">IDestinyObjectiveProgress</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L588">interfaces.ts:588</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9699</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sometimes, Plugs may have objectives: generally, these are used for flavor and
+								display purposes. For instance, a Plug might be tracking the number of PVP kills
+								you have made. It will use the parent item&#39;s data about that tracking status to
+								determine what to show, and will generally show it using the
+								DestinyObjectiveDefinition&#39;s progressDescription property. Refer to the plug&#39;s
+								itemHash and objective property for more information if you would like to
+							display even more data.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="reusableplughashes" class="tsd-anchor"></a>
 					<h3>reusable<wbr>Plug<wbr>Hashes</h3>
 					<div class="tsd-signature tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L587">interfaces.ts:587</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9689</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the item supports reusable plugs, this is the list of plug item hashes that
+								are currently allowed to be used for this socket. See the &quot;reusablePlugs&quot;
+							property, which has rendered this obsolete, for more information.</p>
+						</div>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="reusableplugs" class="tsd-anchor"></a>
 					<h3>reusable<wbr>Plugs</h3>
 					<div class="tsd-signature tsd-kind-icon">reusable<wbr>Plugs<span class="tsd-signature-symbol">:</span> <a href="idestinyitemplug.html" class="tsd-signature-type">IDestinyItemPlug</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L589">interfaces.ts:589</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9716</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the item supports reusable plugs, this is the list of plugs that are allowed
+								to be used for the socket, and any relevant information about whether they are &quot;
+								enabled&quot;, whether they are allowed to be inserted, and any other information
+							such as objectives.</p>
+						</div>
+						<p>A Reusable Plug is a plug that you can always insert into this socket as long as
+							its insertion rules are passed, regardless of whether or not you have the plug
+							in your inventory. An example of it failing an insertion rule would be if it has
+							an Objective that needs to be completed before it can be inserted, and that
+						objective hasn&#39;t been completed yet.</p>
+						<p>In practice, a socket will <em>either</em> have reusable plugs <em>or</em> it will allow for
+							plugs in your inventory to be inserted. See DestinyInventoryItemDefinition.
+						socket for more info.</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -179,28 +257,28 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#enablefailindexes" class="tsd-kind-icon">enable<wbr>Fail<wbr>Indexes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#plughash" class="tsd-kind-icon">plug<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#plugobjectives" class="tsd-kind-icon">plug<wbr>Objectives</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#reusableplughashes" class="tsd-kind-icon">reusable<wbr>Plug<wbr>Hashes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyitemsocketstate.html#reusableplugs" class="tsd-kind-icon">reusable<wbr>Plugs</a>
 							</li>
 						</ul>

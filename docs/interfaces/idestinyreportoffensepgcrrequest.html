@@ -69,12 +69,17 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for data regarding the reporting of an offensive placer in an activity. Hashes can be found in the manifest.</p>
+						<p>If you want to report a player causing trouble in a game, this request will let
+							you report that player and the specific PGCR in which the trouble was caused,
+						along with why.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>Please don&#39;t do this just because you dislike the person! I mean, I know people
+						will do it anyways, but can you like take a good walk, or put a curse on them or
+					something? Do me a solid and reconsider.</p>
+					<p>Note that this request object doesn&#39;t have the actual PGCR ID nor your Account/
+						Character ID in it. We will infer that information from your authentication
+						information and the PGCR ID that you pass into the URL of the reporting endpoint
+					itself.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +94,72 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#offendingcharacterid" class="tsd-kind-icon">offending<wbr>Character<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#reasoncategoryhashes" class="tsd-kind-icon">reason<wbr>Category<wbr>Hashes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyreportoffensepgcrrequest.html#reasonhashes" class="tsd-kind-icon">reason<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyreportoffensepgcrrequest.html#offendingcharacterid" class="tsd-kind-icon">offending<wbr>Character<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyreportoffensepgcrrequest.html#reasoncategoryhashes" class="tsd-kind-icon">reason<wbr>Category<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyreportoffensepgcrrequest.html#reasonhashes" class="tsd-kind-icon">reason<wbr>Hashes</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="offendingcharacterid" class="tsd-anchor"></a>
 					<h3>offending<wbr>Character<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">offending<wbr>Character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">offending<wbr>Character<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L995">interfaces.ts:995</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6800</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Within the PGCR provided when calling the Reporting endpoint, this should be the
+								character ID of the user that you thought was violating terms of use. They must
+							exist in the PGCR provided.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="reasoncategoryhashes" class="tsd-anchor"></a>
 					<h3>reason<wbr>Category<wbr>Hashes</h3>
-					<div class="tsd-signature tsd-kind-icon">reason<wbr>Category<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
+					<div class="tsd-signature tsd-kind-icon">reason<wbr>Category<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L993">interfaces.ts:993</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6787</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>So you&#39;ve decided to report someone instead of cursing them and their
+								descendants. Well, okay then. This is the category or categorie(s) of
+								infractions for which you are reporting the user. These are hash identifiers
+							that map to DestinyReportReasonCategoryDefinition entries.</p>
+						</div>
+						<p>Mapped to IDestinyReportReasonCategoryDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="reasonhashes" class="tsd-anchor"></a>
 					<h3>reason<wbr>Hashes</h3>
-					<div class="tsd-signature tsd-kind-icon">reason<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
+					<div class="tsd-signature tsd-kind-icon">reason<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L994">interfaces.ts:994</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6794</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If applicable, provide a more specific reason(s) within the general category of
+								problems provided by the reasonHash. This is also an identifier for a reason.
+								All reasonHashes provided must be children of at least one the
+							reasonCategoryHashes provided.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +175,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyreportoffensepgcrrequest.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Offense<wbr>Pgcr<wbr>Request</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyreportoffensepgcrrequest.html#offendingcharacterid" class="tsd-kind-icon">offending<wbr>Character<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyreportoffensepgcrrequest.html#reasoncategoryhashes" class="tsd-kind-icon">reason<wbr>Category<wbr>Hashes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyreportoffensepgcrrequest.html#reasonhashes" class="tsd-kind-icon">reason<wbr>Hashes</a>
 							</li>
 						</ul>

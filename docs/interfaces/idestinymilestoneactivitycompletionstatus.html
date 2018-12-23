@@ -69,12 +69,12 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an milestone activity completion status</p>
+						<p>Represents this player&#39;s personal completion status for the Activity under a
+							Milestone, if the activity has trackable completion and progress information. (
+							most activities won&#39;t, or the concept won&#39;t apply. For instance, it makes sense
+							to talk about a tier of a raid as being Completed or having progress, but it
+						doesn&#39;t make sense to talk about a Crucible Playlist in those terms.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,37 +89,50 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivitycompletionstatus.html#completed" class="tsd-kind-icon">completed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivitycompletionstatus.html#phases" class="tsd-kind-icon">phases</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivitycompletionstatus.html#completed" class="tsd-kind-icon">completed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivitycompletionstatus.html#phases" class="tsd-kind-icon">phases</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="completed" class="tsd-anchor"></a>
 					<h3>completed</h3>
 					<div class="tsd-signature tsd-kind-icon">completed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L698">interfaces.ts:698</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8977</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the activity has been &quot;completed&quot;, that information will be returned here.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="phases" class="tsd-anchor"></a>
 					<h3>phases</h3>
 					<div class="tsd-signature tsd-kind-icon">phases<span class="tsd-signature-symbol">:</span> <a href="idestinymilestoneactivityphase.html" class="tsd-signature-type">IDestinyMilestoneActivityPhase</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L699">interfaces.ts:699</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8984</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the Activity has discrete &quot;phases&quot; that we can track, that info will be here.
+								Otherwise, this value will be NULL. Note that this is a list and not a
+								dictionary: the order implies the ascending order of phases or progression in
+							this activity.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -135,13 +148,13 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestoneactivitycompletionstatus.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Completion<wbr>Status</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivitycompletionstatus.html#completed" class="tsd-kind-icon">completed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivitycompletionstatus.html#phases" class="tsd-kind-icon">phases</a>
 							</li>
 						</ul>

@@ -69,12 +69,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base interface for that display information.</p>
+						<p>Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that
+							have their own tables in the Manifest Database - also have displayable
+						information. This is the base class for that display information.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,57 +87,66 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydisplaypropertiesdefinition.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydisplaypropertiesdefinition.html#hashicon" class="tsd-kind-icon">hash<wbr>Icon</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydisplaypropertiesdefinition.html#icon" class="tsd-kind-icon">icon</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydisplaypropertiesdefinition.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydisplaypropertiesdefinition.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydisplaypropertiesdefinition.html#hasicon" class="tsd-kind-icon">has<wbr>Icon</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydisplaypropertiesdefinition.html#icon" class="tsd-kind-icon">icon</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydisplaypropertiesdefinition.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L295">interfaces.ts:295</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:670</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="hashicon" class="tsd-anchor"></a>
-					<h3>hash<wbr>Icon</h3>
-					<div class="tsd-signature tsd-kind-icon">hash<wbr>Icon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="hasicon" class="tsd-anchor"></a>
+					<h3>has<wbr>Icon</h3>
+					<div class="tsd-signature tsd-kind-icon">has<wbr>Icon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L298">interfaces.ts:298</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:681</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="icon" class="tsd-anchor"></a>
 					<h3>icon</h3>
 					<div class="tsd-signature tsd-kind-icon">icon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L297">interfaces.ts:297</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:680</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Note that &quot;icon&quot; is sometimes misleading, and should be interpreted in the
+								context of the entity. For instance, in Destiny 1 the
+							DestinyRecordBookDefinition&#39;s icon was a big picture of a book.</p>
+						</div>
+						<p>But usually, it will be a small square image that you can use as... well, an
+						icon.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="name" class="tsd-anchor"></a>
 					<h3>name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L296">interfaces.ts:296</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:671</li>
 						</ul>
 					</aside>
 				</section>
@@ -157,19 +164,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinydisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Display<wbr>Properties<wbr>Definition</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydisplaypropertiesdefinition.html#description" class="tsd-kind-icon">description</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinydisplaypropertiesdefinition.html#hashicon" class="tsd-kind-icon">hash<wbr>Icon</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinydisplaypropertiesdefinition.html#hasicon" class="tsd-kind-icon">has<wbr>Icon</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydisplaypropertiesdefinition.html#icon" class="tsd-kind-icon">icon</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydisplaypropertiesdefinition.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>

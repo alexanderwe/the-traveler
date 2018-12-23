@@ -66,6 +66,21 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Sockets may refer to a &quot;Plug Set&quot;: a set of reusable plugs that may be shared
+							across multiple sockets (or even, in theory, multiple sockets over multiple
+						items).</p>
+					</div>
+					<p>This is the set of those plugs that we came across in the users&#39; inventory,
+						along with the values for plugs in the set. Any given set in this component may
+						be represented in Character and Profile-level, as some plugs may be Profile-
+						level restricted, and some character-level restricted. (note that the ones that
+						are even more specific will remain on the actual socket component itself, as
+					they cannot be reused)</p>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,31 +93,38 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyplugsetscomponent.html#plugs" class="tsd-kind-icon">plugs</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyplugsetscomponent.html#plugs" class="tsd-kind-icon">plugs</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="plugs" class="tsd-anchor"></a>
 					<h3>plugs</h3>
 					<div class="tsd-signature tsd-kind-icon">plugs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L801">interfaces.ts:801</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7484</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The shared list of plugs for each relevant PlugSet, keyed by the hash identifier
+							of the PlugSet (DestinyPlugSetDefinition).</p>
+						</div>
+						<p>Mapped to IDestinyPlugSetDefinition in the manifest.</p>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="idestinyitemplug.html" class="tsd-signature-type">IDestinyItemPlug</a><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 					</div>
@@ -121,10 +143,10 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyplugsetscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Plug<wbr>Sets<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyplugsetscomponent.html#plugs" class="tsd-kind-icon">plugs</a>
 							</li>
 						</ul>

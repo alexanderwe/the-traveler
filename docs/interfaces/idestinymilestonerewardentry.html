@@ -69,12 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for The character-specific data for a milestone&#39;s reward entry</p>
+						<p>The character-specific data for a milestone&#39;s reward entry. See
+						DestinyMilestoneDefinition for more information about Reward Entries.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +86,68 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonerewardentry.html#earned" class="tsd-kind-icon">earned</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonerewardentry.html#redeemed" class="tsd-kind-icon">redeemed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestonerewardentry.html#rewardentryhash" class="tsd-kind-icon">reward<wbr>Entry<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonerewardentry.html#earned" class="tsd-kind-icon">earned</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonerewardentry.html#redeemed" class="tsd-kind-icon">redeemed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestonerewardentry.html#rewardentryhash" class="tsd-kind-icon">reward<wbr>Entry<wbr>Hash</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="earned" class="tsd-anchor"></a>
 					<h3>earned</h3>
 					<div class="tsd-signature tsd-kind-icon">earned<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L761">interfaces.ts:761</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9119</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If TRUE, the player has earned this reward.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="redeemed" class="tsd-anchor"></a>
 					<h3>redeemed</h3>
 					<div class="tsd-signature tsd-kind-icon">redeemed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L762">interfaces.ts:762</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9124</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If TRUE, the player has redeemed/picked up/obtained this reward. Feel free to
+							alias this to &quot;gotTheShinyBauble&quot; in your own codebase.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="rewardentryhash" class="tsd-anchor"></a>
 					<h3>reward<wbr>Entry<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">reward<wbr>Entry<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L760">interfaces.ts:760</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9117</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The identifier for the reward entry in question. It is important to look up the
+								related DestinyMilestoneRewardEntryDefinition to get the static details about
+								the reward, which you can do by looking up the milestone&#39;s
+								DestinyMilestoneDefinition and examining the DestinyMilestoneDefinition.rewards[
+							rewardCategoryHash].rewardEntries[rewardEntryHash] data.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +163,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestonerewardentry.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Entry</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonerewardentry.html#earned" class="tsd-kind-icon">earned</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonerewardentry.html#redeemed" class="tsd-kind-icon">redeemed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestonerewardentry.html#rewardentryhash" class="tsd-kind-icon">reward<wbr>Entry<wbr>Hash</a>
 							</li>
 						</ul>

@@ -69,12 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account</p>
+						<p>I know what you seek. You seek linked accounts. Found them, you have.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>This contract returns a minimal amount of data about Destiny Accounts that are
+						linked through your Bungie.Net account. We will not return accounts in this
+					response whose</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +88,72 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinylinkedprofilesresponse.html#bnetmembership" class="tsd-kind-icon">bnet<wbr>Membership</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinylinkedprofilesresponse.html#profiles" class="tsd-kind-icon">profiles</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinylinkedprofilesresponse.html#profileswitherrors" class="tsd-kind-icon">profiles<wbr>With<wbr>Errors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinylinkedprofilesresponse.html#bnetmembership" class="tsd-kind-icon">bnet<wbr>Membership</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinylinkedprofilesresponse.html#profiles" class="tsd-kind-icon">profiles</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinylinkedprofilesresponse.html#profileswitherrors" class="tsd-kind-icon">profiles<wbr>With<wbr>Errors</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="bnetmembership" class="tsd-anchor"></a>
 					<h3>bnet<wbr>Membership</h3>
 					<div class="tsd-signature tsd-kind-icon">bnet<wbr>Membership<span class="tsd-signature-symbol">:</span> <a href="iuserinfocard.html" class="tsd-signature-type">IUserInfoCard</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L641">interfaces.ts:641</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6915</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the requested membership had a linked Bungie.Net membership ID, this is the
+							basic information about that BNet account.</p>
+						</div>
+						<p>I know, Tetron; I know this is mixing UserServices concerns with DestinyServices
+							concerns. But it&#39;s so damn convenient! <a href="https://www.youtube.com/watch?v=X5R-bB-">https://www.youtube.com/watch?v=X5R-bB-</a>
+						gKVI</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="profiles" class="tsd-anchor"></a>
 					<h3>profiles</h3>
-					<div class="tsd-signature tsd-kind-icon">profiles<span class="tsd-signature-symbol">:</span> <a href="iuserinfocard.html" class="tsd-signature-type">IUserInfoCard</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">profiles<span class="tsd-signature-symbol">:</span> <a href="idestinyprofileuserinfocard.html" class="tsd-signature-type">IDestinyProfileUserInfoCard</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L640">interfaces.ts:640</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6906</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Any Destiny account for whom we could successfully pull characters will be
+								returned here, as the Platform-level summary of user data. (no character data,
+								no Destiny account data other than the Membership ID and Type so you can make
+							further queries)</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="profileswitherrors" class="tsd-anchor"></a>
 					<h3>profiles<wbr>With<wbr>Errors</h3>
 					<div class="tsd-signature tsd-kind-icon">profiles<wbr>With<wbr>Errors<span class="tsd-signature-symbol">:</span> <a href="idestinyerrorprofile.html" class="tsd-signature-type">IDestinyErrorProfile</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L642">interfaces.ts:642</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:6921</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This is brief summary info for profiles that we believe have valid Destiny info,
+								but who failed to return data for some other reason and thus we know that
+							subsequent calls for their info will also fail.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +169,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinylinkedprofilesresponse.html" class="tsd-kind-icon">IDestiny<wbr>Linked<wbr>Profiles<wbr>Response</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinylinkedprofilesresponse.html#bnetmembership" class="tsd-kind-icon">bnet<wbr>Membership</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinylinkedprofilesresponse.html#profiles" class="tsd-kind-icon">profiles</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinylinkedprofilesresponse.html#profileswitherrors" class="tsd-kind-icon">profiles<wbr>With<wbr>Errors</a>
 							</li>
 						</ul>

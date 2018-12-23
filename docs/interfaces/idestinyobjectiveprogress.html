@@ -69,12 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for data about a character&#39;s status with a given Objective</p>
+						<p>Returns data about a character&#39;s status with a given Objective. Combine with
+						DestinyObjectiveDefinition static data for display purposes.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,92 +86,149 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#complete" class="tsd-kind-icon">complete</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#completionvalue" class="tsd-kind-icon">completion<wbr>Value</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#destinationhash" class="tsd-kind-icon">destination<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#objectivehash" class="tsd-kind-icon">objective<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#progress" class="tsd-kind-icon">progress</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyobjectiveprogress.html#visible" class="tsd-kind-icon">visible</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#complete" class="tsd-kind-icon">complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#completionvalue" class="tsd-kind-icon">completion<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#destinationhash" class="tsd-kind-icon">destination<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#objectivehash" class="tsd-kind-icon">objective<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#progress" class="tsd-kind-icon">progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyobjectiveprogress.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activityhash" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activity<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L772">interfaces.ts:772</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7434</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the Objective has an Activity associated with it, this is the unique
+								identifier of the Activity being referred to. Use to look up the
+								DestinyActivityDefinition in static data. This will give localized data about *
+							what* you should be playing for the objective to be achieved.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="complete" class="tsd-anchor"></a>
 					<h3>complete</h3>
 					<div class="tsd-signature tsd-kind-icon">complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L775">interfaces.ts:775</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7457</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether or not the Objective is completed.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="completionvalue" class="tsd-anchor"></a>
 					<h3>completion<wbr>Value</h3>
 					<div class="tsd-signature tsd-kind-icon">completion<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L774">interfaces.ts:774</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7455</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>As of Forsaken, objectives&#39; completion value is determined dynamically at
+							runtime.</p>
+						</div>
+						<p>This value represents the threshold of progress you need to surpass in order for
+						this objective to be considered &quot;complete&quot;.</p>
+						<p>If you were using objective data, switch from using the
+						DestinyObjectiveDefinition&#39;s &quot;completionValue&quot; to this value.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="destinationhash" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> destination<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">destination<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">destination<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L771">interfaces.ts:771</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7425</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the Objective has a Destination associated with it, this is the unique
+								identifier of the Destination being referred to. Use to look up the
+								DestinyDestinationDefinition in static data. This will give localized data about
+							<em>where</em> in the universe the objective should be achieved.</p>
+						</div>
+						<p>Mapped to IDestinyDestinationDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="objectivehash" class="tsd-anchor"></a>
 					<h3>objective<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">objective<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L770">interfaces.ts:770</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7416</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique identifier of the Objective being referred to. Use to look up the
+							DestinyObjectiveDefinition in static data.</p>
+						</div>
+						<p>Mapped to IDestinyObjectiveDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="progress" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> progress</h3>
 					<div class="tsd-signature tsd-kind-icon">progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L773">interfaces.ts:773</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7444</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If progress has been made, and the progress can be measured numerically, this
+								will be the value of that progress. You can compare it to the
+								DestinyObjectiveDefinition.completionValue property for current vs. upper bounds,
+								and use DestinyObjectiveDefinition.valueStyle to determine how this should be
+								rendered. Note that progress, in Destiny 2, need not be a literal numeric
+								progression. It could be one of a number of possible values, even a Timestamp.
+							Always examine DestinyObjectiveDefinition.valueStyle before rendering progress.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="visible" class="tsd-anchor"></a>
 					<h3>visible</h3>
 					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L776">interfaces.ts:776</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:7462</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If this is true, the objective is visible in-game. Otherwise, it&#39;s not yet
+							visible to the player. Up to you if you want to honor this property.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -190,28 +244,28 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyobjectiveprogress.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Progress</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#complete" class="tsd-kind-icon">complete</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#completionvalue" class="tsd-kind-icon">completion<wbr>Value</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#destinationhash" class="tsd-kind-icon">destination<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#objectivehash" class="tsd-kind-icon">objective<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#progress" class="tsd-kind-icon">progress</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyobjectiveprogress.html#visible" class="tsd-kind-icon">visible</a>
 							</li>
 						</ul>

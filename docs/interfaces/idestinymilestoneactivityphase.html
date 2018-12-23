@@ -69,12 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an milestone activity phase</p>
+						<p>Represents whatever information we can return about an explicit phase in an
+							activity. In the future, I hope we&#39;ll have more than just &quot;guh, you done gone
+							and did something,&quot; but for the forseeable future that&#39;s all we&#39;ve got. I&#39;m
+						making it more than just a list of booleans out of that overly-optimistic hope.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,26 +88,49 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivityphase.html#complete" class="tsd-kind-icon">complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityphase.html#complete" class="tsd-kind-icon">complete</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityphase.html#phasehash" class="tsd-kind-icon">phase<wbr>Hash</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="complete" class="tsd-anchor"></a>
 					<h3>complete</h3>
 					<div class="tsd-signature tsd-kind-icon">complete<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L707">interfaces.ts:707</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8995</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Indicates if the phase has been completed.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="phasehash" class="tsd-anchor"></a>
+					<h3>phase<wbr>Hash</h3>
+					<div class="tsd-signature tsd-kind-icon">phase<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:9001</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>In DestinyActivityDefinition, if the activity has phases, there will be a set of
+								phases defined in the &quot;insertionPoints&quot; property. This is the hash that maps to
+							that phase.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -124,11 +146,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestoneactivityphase.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Phase</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivityphase.html#complete" class="tsd-kind-icon">complete</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivityphase.html#phasehash" class="tsd-kind-icon">phase<wbr>Hash</a>
 							</li>
 						</ul>
 					</li>

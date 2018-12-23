@@ -69,12 +69,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an milestone activity</p>
+						<p>Sometimes, we know the specific activity that the Milestone wants you to play.
+							This entity provides additional information about that Activity and all of its
+						variants. (sometimes there&#39;s only one variant, but I think you get the point)</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +87,116 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivity.html#modifierhash" class="tsd-kind-icon">modifier<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivity.html#variants" class="tsd-kind-icon">variants</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivity.html#activitymodehash" class="tsd-kind-icon">activity<wbr>Mode<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivity.html#activitymodetype" class="tsd-kind-icon">activity<wbr>Mode<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivity.html#modifierhashes" class="tsd-kind-icon">modifier<wbr>Hashes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivity.html#variants" class="tsd-kind-icon">variants</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activityhash" class="tsd-anchor"></a>
 					<h3>activity<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L688">interfaces.ts:688</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8898</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash of an arbitrarily chosen variant of this activity. We&#39;ll go ahead and
+								call that the &quot;canonical&quot; activity, because if you&#39;re using this value you
+								should only use it for properties that are common across the variants: things
+								like the name of the activity, it&#39;s location, etc... Use this hash to look up
+							the DestinyActivityDefinition of this activity for rendering data.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="modifierhash" class="tsd-anchor"></a>
-					<h3>modifier<wbr>Hash</h3>
-					<div class="tsd-signature tsd-kind-icon">modifier<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activitymodehash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activity<wbr>Mode<wbr>Hash</h3>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Mode<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L689">interfaces.ts:689</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8908</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier of the most specific Activity Mode under which this activity
+								is played. This is useful for situations where the activity in question is - for
+								instance - a PVP map, but it&#39;s not clear what mode the PVP map is being played
+								under. If it&#39;s a playlist, this will be less specific: but hopefully useful in
+							some way.</p>
+						</div>
+						<p>Mapped to IDestinyActivityModeDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activitymodetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activity<wbr>Mode<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Mode<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8913</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The enumeration equivalent of the most specific Activity Mode under which this
+							activity is played.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="modifierhashes" class="tsd-anchor"></a>
+					<h3>modifier<wbr>Hashes</h3>
+					<div class="tsd-signature tsd-kind-icon">modifier<wbr>Hashes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8925</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the activity has modifiers, this will be the list of modifiers that all
+								variants have in common. Perform lookups against
+								DestinyActivityModifierDefinition which defines the modifier being applied to
+								get at the modifier data. Note that, in the DestiyActivityDefinition, you will
+								see many more modifiers than this being referred to: those are all <em>possible</em>
+								modifiers for the activity, not the active ones. Use only the active ones to
+							match what&#39;s really live.</p>
+						</div>
+						<p>Mapped to IDestinyActivityModifierDefinition in the manifest.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="variants" class="tsd-anchor"></a>
 					<h3>variants</h3>
 					<div class="tsd-signature tsd-kind-icon">variants<span class="tsd-signature-symbol">:</span> <a href="idestinymilestoneactivityvariant.html" class="tsd-signature-type">IDestinyMilestoneActivityVariant</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L690">interfaces.ts:690</a></li>
+							<li>Defined in type-definitions/destiny2/interfaces.ts:8932</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If you want more than just name/location/etc... you&#39;re going to have to dig into
+								and show the variants of the conceptual activity. These will differ in seemingly
+								arbitrary ways, like difficulty level and modifiers applied. Show it in whatever
+							way tickles your fancy.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +212,22 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivity.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="idestinymilestoneactivity.html#modifierhash" class="tsd-kind-icon">modifier<wbr>Hash</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivity.html#activitymodehash" class="tsd-kind-icon">activity<wbr>Mode<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivity.html#activitymodetype" class="tsd-kind-icon">activity<wbr>Mode<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivity.html#modifierhashes" class="tsd-kind-icon">modifier<wbr>Hashes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivity.html#variants" class="tsd-kind-icon">variants</a>
 							</li>
 						</ul>
