@@ -1507,10 +1507,11 @@ export default class Destiny2Resource extends BungieResource {
 
   /**
    * Download the specified manifest file, extract the zip and also deleting the zip afterwards
-   * @async
-   * @param manifestUrl The url of the manifest you want to download
-   * @param filename The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
-   * @return {Promise.string} When fulfilled returns the path of the saved manifest file
+   *
+   * @param {string} manifestUrl The url of the manifest you want to download
+   * @param {string} [filename] The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
+   * @returns {Promise<string>} When fulfilled returns the path of the saved manifest file
+   * @memberof Destiny2Resource
    */
   public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
     const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`);
@@ -1545,6 +1546,26 @@ export default class Destiny2Resource extends BungieResource {
               }
             );
           });
+        });
+    });
+  }
+
+  /**
+   * Download the specified manifest file, extract the zip and also deleting the zip afterwards
+   *
+   * @param {string} manifestUrl The url of the manifest you want to download
+   * @param {string} [filename] The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
+   * @returns {Promise<string>} When fulfilled returns the path of the saved manifest file
+   * @memberof Destiny2Resource
+   */
+  public downloadManifestJSON(manifestUrl: string, filename?: string): Promise<string> {
+    const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}`);
+    return new Promise<string>((resolve, reject) => {
+      got
+        .stream(`https://www.bungie.net/${manifestUrl}`)
+        .pipe(outStream)
+        .on('finish', () => {
+          resolve();
         });
     });
   }
