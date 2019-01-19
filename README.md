@@ -174,7 +174,8 @@ _Response_:
 _Use refresh_:
 
 ```js
-traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(oauth => { // take the refresh token from the oauth object you provided when initialize the oauth to the traveler
+traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(oauth => { 
+    // take the refresh token from the oauth object you provided when initialize the oauth to the traveler
     // Provide your traveler object with the oauth object. This is later used for making authenticated calls
     traveler.oauth = oauth;
 }).catch(err => {
