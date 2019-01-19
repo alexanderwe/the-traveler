@@ -69,15 +69,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for a single character progress component
-						Interface for a single character progress component</p>
+						<p>This component returns anything that could be considered &quot;Progression&quot; on a user:
+						data where the user is gaining levels, reputation, completions, rewards, etc...</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -92,75 +86,178 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterprogressioncomponent.html#factions" class="tsd-kind-icon">factions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterprogressioncomponent.html#milestones" class="tsd-kind-icon">milestones</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterprogressioncomponent.html#progressions" class="tsd-kind-icon">progressions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterprogressioncomponent.html#quests" class="tsd-kind-icon">quests</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterprogressioncomponent.html#uninstanceditemobjectives" class="tsd-kind-icon">uninstanced<wbr>Item<wbr>Objectives</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#checklists" class="tsd-kind-icon">checklists</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#factions" class="tsd-kind-icon">factions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#milestones" class="tsd-kind-icon">milestones</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#progressions" class="tsd-kind-icon">progressions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#quests" class="tsd-kind-icon">quests</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterprogressioncomponent.html#uninstanceditemobjectives" class="tsd-kind-icon">uninstanced<wbr>Item<wbr>Objectives</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="checklists" class="tsd-anchor"></a>
+					<h3>checklists</h3>
+					<div class="tsd-signature tsd-kind-icon">checklists<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8121">type-definitions/destiny2/interfaces.ts:8121</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The set of checklists that can be examined for this specific character, keyed by
+							the hash identifier of the Checklist (DestinyChecklistDefinition)</p>
+						</div>
+						<p>For each checklist returned, its value is itself a Dictionary keyed by the
+							checklist&#39;s hash identifier with the value being a boolean indicating if it&#39;s
+						been discovered yet.</p>
+						<p>Mapped to IDestinyChecklistDefinition in the manifest.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">object</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-index-signature">
+										<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">boolean</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="factions" class="tsd-anchor"></a>
 					<h3>factions</h3>
-					<div class="tsd-signature tsd-kind-icon">factions<span class="tsd-signature-symbol">:</span> <a href="idestinyfactionprogression.html" class="tsd-signature-type">IDestinyFactionProgression</a></div>
+					<div class="tsd-signature tsd-kind-icon">factions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L218">interfaces.ts:218</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L908">interfaces.ts:908</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8083">type-definitions/destiny2/interfaces.ts:8083</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A dictionary of all known Factions, keyed by the Faction&#39;s hash. It contains
+							data about this character&#39;s status with the faction.</p>
+						</div>
+						<p>Mapped to IDestinyFactionDefinition in the manifest.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="idestinyfactionprogression.html" class="tsd-signature-type">IDestinyFactionProgression</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="milestones" class="tsd-anchor"></a>
 					<h3>milestones</h3>
-					<div class="tsd-signature tsd-kind-icon">milestones<span class="tsd-signature-symbol">:</span> <a href="idestinymilestone.html" class="tsd-signature-type">IDestinyMilestone</a></div>
+					<div class="tsd-signature tsd-kind-icon">milestones<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L219">interfaces.ts:219</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L909">interfaces.ts:909</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8091">type-definitions/destiny2/interfaces.ts:8091</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Milestones are related to the simple progressions shown in the game, but return
+								additional and hopefully helpful information for users about the specifics of
+							the Milestone&#39;s status.</p>
+						</div>
+						<p>Mapped to IDestinyMilestoneDefinition in the manifest.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="idestinymilestone.html" class="tsd-signature-type">IDestinyMilestone</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="progressions" class="tsd-anchor"></a>
 					<h3>progressions</h3>
-					<div class="tsd-signature tsd-kind-icon">progressions<span class="tsd-signature-symbol">:</span> <a href="idestinyprogression.html" class="tsd-signature-type">IDestinyProgression</a></div>
+					<div class="tsd-signature tsd-kind-icon">progressions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L217">interfaces.ts:217</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L907">interfaces.ts:907</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8076">type-definitions/destiny2/interfaces.ts:8076</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A Dictionary of all known progressions for the Character, keyed by the
+							Progression&#39;s hash.</p>
+						</div>
+						<p>Not all progressions have user-facing data, but those who do will have that data
+						contained in the DestinyProgressionDefinition.</p>
+						<p>Mapped to IDestinyProgressionDefinition in the manifest.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="idestinyprogression.html" class="tsd-signature-type">IDestinyProgression</a></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="quests" class="tsd-anchor"></a>
 					<h3>quests</h3>
 					<div class="tsd-signature tsd-kind-icon">quests<span class="tsd-signature-symbol">:</span> <a href="idestinyqueststatus.html" class="tsd-signature-type">IDestinyQuestStatus</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L220">interfaces.ts:220</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L910">interfaces.ts:910</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8098">type-definitions/destiny2/interfaces.ts:8098</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the user has any active quests, the quests&#39; statuses will be returned here.</p>
+						</div>
+						<p>Note that quests have been largely supplanted by Milestones, but that doesn&#39;t
+						mean that they won&#39;t make a comeback independent of milestones at some point.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="uninstanceditemobjectives" class="tsd-anchor"></a>
 					<h3>uninstanced<wbr>Item<wbr>Objectives</h3>
 					<div class="tsd-signature tsd-kind-icon">uninstanced<wbr>Item<wbr>Objectives<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L221">interfaces.ts:221</a></li>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L911">interfaces.ts:911</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8110">type-definitions/destiny2/interfaces.ts:8110</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sometimes, you have items in your inventory that don&#39;t have instances, but still
+								have Objective information. This provides you that objective information for
+							uninstanced items.</p>
+						</div>
+						<p>This dictionary is keyed by the item&#39;s hash: which you can use to look up the
+							name and description for the overall task(s) implied by the objective. The value
+						is the list of objectives for this item, and their statuses.</p>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]: </span><a href="idestinyobjectiveprogress.html" class="tsd-signature-type">IDestinyObjectiveProgress</a><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -176,22 +273,25 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinycharacterprogressioncomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Progression<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinycharacterprogressioncomponent.html#checklists" class="tsd-kind-icon">checklists</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterprogressioncomponent.html#factions" class="tsd-kind-icon">factions</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterprogressioncomponent.html#milestones" class="tsd-kind-icon">milestones</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterprogressioncomponent.html#progressions" class="tsd-kind-icon">progressions</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterprogressioncomponent.html#quests" class="tsd-kind-icon">quests</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterprogressioncomponent.html#uninstanceditemobjectives" class="tsd-kind-icon">uninstanced<wbr>Item<wbr>Objectives</a>
 							</li>
 						</ul>

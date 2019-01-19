@@ -69,12 +69,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface an milestone activity variant</p>
+						<p>Represents custom data that we know about an individual variant of an activity.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,37 +85,90 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivityvariant.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymilestoneactivityvariant.html#completionstatus" class="tsd-kind-icon">completion<wbr>Status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityvariant.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityvariant.html#activitymodehash" class="tsd-kind-icon">activity<wbr>Mode<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityvariant.html#activitymodetype" class="tsd-kind-icon">activity<wbr>Mode<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymilestoneactivityvariant.html#completionstatus" class="tsd-kind-icon">completion<wbr>Status</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="activityhash" class="tsd-anchor"></a>
 					<h3>activity<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">activity<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L715">interfaces.ts:715</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8944">type-definitions/destiny2/interfaces.ts:8944</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash for the specific variant of the activity related to this milestone. You
+								can pull more detailed static info from the DestinyActivityDefinition, such as
+							difficulty level.</p>
+						</div>
+						<p>Mapped to IDestinyActivityDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activitymodehash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activity<wbr>Mode<wbr>Hash</h3>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Mode<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8960">type-definitions/destiny2/interfaces.ts:8960</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier of the most specific Activity Mode under which this activity
+								is played. This is useful for situations where the activity in question is - for
+								instance - a PVP map, but it&#39;s not clear what mode the PVP map is being played
+								under. If it&#39;s a playlist, this will be less specific: but hopefully useful in
+							some way.</p>
+						</div>
+						<p>Mapped to IDestinyActivityModeDefinition in the manifest.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="activitymodetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activity<wbr>Mode<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">activity<wbr>Mode<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8965">type-definitions/destiny2/interfaces.ts:8965</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The enumeration equivalent of the most specific Activity Mode under which this
+							activity is played.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="completionstatus" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> completion<wbr>Status</h3>
+					<h3>completion<wbr>Status</h3>
 					<div class="tsd-signature tsd-kind-icon">completion<wbr>Status<span class="tsd-signature-symbol">:</span> <a href="idestinymilestoneactivitycompletionstatus.html" class="tsd-signature-type">IDestinyMilestoneActivityCompletionStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L716">interfaces.ts:716</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L8950">type-definitions/destiny2/interfaces.ts:8950</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An OPTIONAL component: if it makes sense to talk about this activity variant in
+								terms of whether or not it has been completed or what progress you have made in
+							it, this will be returned. Otherwise, this will be NULL.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -135,13 +184,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Variant</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivityvariant.html#activityhash" class="tsd-kind-icon">activity<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivityvariant.html#activitymodehash" class="tsd-kind-icon">activity<wbr>Mode<wbr>Hash</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="idestinymilestoneactivityvariant.html#activitymodetype" class="tsd-kind-icon">activity<wbr>Mode<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymilestoneactivityvariant.html#completionstatus" class="tsd-kind-icon">completion<wbr>Status</a>
 							</li>
 						</ul>

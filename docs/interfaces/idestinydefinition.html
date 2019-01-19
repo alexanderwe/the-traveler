@@ -69,12 +69,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for common properties for destiny defitions</p>
+						<p>Provides common properties for destiny definitions.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +85,67 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydefinition.html#hash" class="tsd-kind-icon">hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydefinition.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinydefinition.html#redacted" class="tsd-kind-icon">redacted</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydefinition.html#hash" class="tsd-kind-icon">hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydefinition.html#index" class="tsd-kind-icon">index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinydefinition.html#redacted" class="tsd-kind-icon">redacted</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="hash" class="tsd-anchor"></a>
 					<h3>hash</h3>
-					<div class="tsd-signature tsd-kind-icon">hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L285">interfaces.ts:285</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L6882">type-definitions/destiny2/interfaces.ts:6882</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The unique identifier for this entity. Guaranteed to be unique for the type of
+							entity, but not globally.</p>
+						</div>
+						<p>When entities refer to each other in Destiny content, it is this hash that they
+						are referring to.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="index" class="tsd-anchor"></a>
 					<h3>index</h3>
 					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L286">interfaces.ts:286</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L6884">type-definitions/destiny2/interfaces.ts:6884</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The index of the entity as it was found in the investment tables.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="redacted" class="tsd-anchor"></a>
 					<h3>redacted</h3>
 					<div class="tsd-signature tsd-kind-icon">redacted<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L287">interfaces.ts:287</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L6889">type-definitions/destiny2/interfaces.ts:6889</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If this is true, then there is an entity with this identifier/type combination,
+							but BNet is not yet allowed to show it. Sorry!</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +161,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Definition</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydefinition.html#hash" class="tsd-kind-icon">hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydefinition.html#index" class="tsd-kind-icon">index</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinydefinition.html#redacted" class="tsd-kind-icon">redacted</a>
 							</li>
 						</ul>

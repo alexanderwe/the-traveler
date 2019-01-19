@@ -69,12 +69,13 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for character render data component</p>
+						<p>Only really useful if you&#39;re attempting to render the character&#39;s current
+							appearance in 3D, this returns a bare minimum of information, pre-aggregated,
+							that you&#39;ll need to perform that rendering. Note that you need to combine this
+						with other 3D assets and data from our servers.</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>Examine the Javascript returned by <a href="https://bungie.net/sharedbundle/spasm">https://bungie.net/sharedbundle/spasm</a> to see
+					how we use this data, but be warned: the rabbit hole goes pretty deep.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,48 +90,77 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterrendercomponent.html#customdyes" class="tsd-kind-icon">custom<wbr>Dyes</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterrendercomponent.html#customization" class="tsd-kind-icon">customization</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinycharacterrendercomponent.html#peerview" class="tsd-kind-icon">peer<wbr>View</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterrendercomponent.html#customdyes" class="tsd-kind-icon">custom<wbr>Dyes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterrendercomponent.html#customization" class="tsd-kind-icon">customization</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinycharacterrendercomponent.html#peerview" class="tsd-kind-icon">peer<wbr>View</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="customdyes" class="tsd-anchor"></a>
 					<h3>custom<wbr>Dyes</h3>
-					<div class="tsd-signature tsd-kind-icon">custom<wbr>Dyes<span class="tsd-signature-symbol">:</span> <a href="idyereference.html" class="tsd-signature-type">IDyeReference</a></div>
+					<div class="tsd-signature tsd-kind-icon">custom<wbr>Dyes<span class="tsd-signature-symbol">:</span> <a href="idyereference.html" class="tsd-signature-type">IDyeReference</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L229">interfaces.ts:229</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L9141">type-definitions/destiny2/interfaces.ts:9141</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Custom dyes, calculated by iterating over the character&#39;s equipped items. Useful
+							for pre-fetching all of the dye data needed from our server.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="customization" class="tsd-anchor"></a>
 					<h3>customization</h3>
 					<div class="tsd-signature tsd-kind-icon">customization<span class="tsd-signature-symbol">:</span> <a href="idestinycharactercustomization.html" class="tsd-signature-type">IDestinyCharacterCustomization</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L230">interfaces.ts:230</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L9150">type-definitions/destiny2/interfaces.ts:9150</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This is actually something that Spasm.js <em>doesn&#39;t</em> do right now, and that we don&#39;
+								t return assets for yet. This is the data about what character customization
+								options you picked. You can combine this with
+								DestinyCharacterCustomizationOptionDefinition to show some cool info, and
+								hopefully someday to actually render a user&#39;s face in 3D. We&#39;ll see if we ever
+							end up with time for that.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="peerview" class="tsd-anchor"></a>
 					<h3>peer<wbr>View</h3>
 					<div class="tsd-signature tsd-kind-icon">peer<wbr>View<span class="tsd-signature-symbol">:</span> <a href="idestinycharacterpeerview.html" class="tsd-signature-type">IDestinyCharacterPeerView</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L231">interfaces.ts:231</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L9161">type-definitions/destiny2/interfaces.ts:9161</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A minimal view of:</p>
+						</div>
+						<ul>
+							<li><p>Equipped items</p>
+							</li>
+							<li><p>The rendering-related custom options on those equipped items</p>
+							</li>
+						</ul>
+						<p>Combined, that should be enough to render all of the items on the equipped
+						character.</p>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,16 +176,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinycharacterrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Render<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterrendercomponent.html#customdyes" class="tsd-kind-icon">custom<wbr>Dyes</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterrendercomponent.html#customization" class="tsd-kind-icon">customization</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinycharacterrendercomponent.html#peerview" class="tsd-kind-icon">peer<wbr>View</a>
 							</li>
 						</ul>

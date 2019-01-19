@@ -66,6 +66,15 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This property has some history. A talent grid can provide stats on both the item
+							it&#39;s related to and the character equipping the item. This returns data about
+						those stat bonuses.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,37 +87,54 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnodestatblock.html#currentstepstats" class="tsd-kind-icon">current<wbr>Step<wbr>Stats</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinytalentnodestatblock.html#nextstepstats" class="tsd-kind-icon">next<wbr>Step<wbr>Stats</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnodestatblock.html#currentstepstats" class="tsd-kind-icon">current<wbr>Step<wbr>Stats</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinytalentnodestatblock.html#nextstepstats" class="tsd-kind-icon">next<wbr>Step<wbr>Stats</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="currentstepstats" class="tsd-anchor"></a>
 					<h3>current<wbr>Step<wbr>Stats</h3>
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Step<wbr>Stats<span class="tsd-signature-symbol">:</span> <a href="idestinystat.html" class="tsd-signature-type">IDestinyStat</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1022">interfaces.ts:1022</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L9885">type-definitions/destiny2/interfaces.ts:9885</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The stat benefits conferred when this talent node is activated for the current
+							Step that is active on the node.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="nextstepstats" class="tsd-anchor"></a>
 					<h3>next<wbr>Step<wbr>Stats</h3>
 					<div class="tsd-signature tsd-kind-icon">next<wbr>Step<wbr>Stats<span class="tsd-signature-symbol">:</span> <a href="idestinystat.html" class="tsd-signature-type">IDestinyStat</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L1023">interfaces.ts:1023</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L9895">type-definitions/destiny2/interfaces.ts:9895</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This is a holdover from the old days of Destiny 1, when a node could be
+								activated multiple times, conferring multiple steps worth of benefits: you would
+								use this property to show what activating the &quot;next&quot; step on the node would
+								provide vs. what the current step is providing. While Nodes are currently not
+								being used this way, the underlying system for this functionality still exists.
+								I hesitate to remove this property while the ability for designers to make such
+							a talent grid still exists. Whether you want to show it is up to you.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -124,13 +150,13 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinytalentnodestatblock.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Stat<wbr>Block</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnodestatblock.html#currentstepstats" class="tsd-kind-icon">current<wbr>Step<wbr>Stats</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinytalentnodestatblock.html#nextstepstats" class="tsd-kind-icon">next<wbr>Step<wbr>Stats</a>
 							</li>
 						</ul>

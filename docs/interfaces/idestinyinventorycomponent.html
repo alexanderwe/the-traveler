@@ -69,12 +69,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Interface for  minimal information for items in an inventory:</p>
+						<p>A list of minimal information for items in an inventory: be it a character&#39;s
+							inventory, or a Profile&#39;s inventory. (Note that the Vault is a collection of
+						inventory buckets in the Profile&#39;s inventory)</p>
 					</div>
-					<dl class="tsd-comment-tags">
-						<dt>interface</dt>
-						<dd></dd>
-					</dl>
+					<p>Inventory Items returned here are in a flat list, but importantly they have a
+						bucketHash property that indicates the specific inventory bucket that is holding
+						them. These buckets constitute things like the separate sections of the Vault,
+						the user&#39;s inventory slots, etc. See DestinyInventoryBucketDefinition for more
+					info.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -89,26 +92,32 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinyinventorycomponent.html#items" class="tsd-kind-icon">items</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinyinventorycomponent.html#items" class="tsd-kind-icon">items</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="items" class="tsd-anchor"></a>
 					<h3>items</h3>
 					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <a href="idestinyitemcomponent.html" class="tsd-signature-type">IDestinyItemComponent</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L445">interfaces.ts:445</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L7213">type-definitions/destiny2/interfaces.ts:7213</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The items in this inventory. If you care to bucket them, use the item&#39;s
+							bucketHash property to group them.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -124,10 +133,10 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinyinventorycomponent.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Component</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinyinventorycomponent.html#items" class="tsd-kind-icon">items</a>
 							</li>
 						</ul>

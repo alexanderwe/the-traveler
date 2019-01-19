@@ -66,6 +66,19 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Many actions relating to items require you to expend materials: - Activating a
+							talent node - Inserting a plug into a socket The items will refer to material
+							requirements by a materialRequirementsHash in these cases, and this is the
+							definition for those requirements in terms of the item required, how much of it
+							is required and other interesting info. This is one of the rare/strange times
+							where a single contract class is used both in definitions <em>and</em> in live data
+						response contracts. I&#39;m not sure yet whether I regret that.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -78,59 +91,84 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymaterialrequirement.html#count" class="tsd-kind-icon">count</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymaterialrequirement.html#deleteonaction" class="tsd-kind-icon">delete<wbr>OnAction</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymaterialrequirement.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="idestinymaterialrequirement.html#omitfromrequirements" class="tsd-kind-icon">omit<wbr>From<wbr>Requirements</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymaterialrequirement.html#count" class="tsd-kind-icon">count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymaterialrequirement.html#deleteonaction" class="tsd-kind-icon">delete<wbr>OnAction</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymaterialrequirement.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="idestinymaterialrequirement.html#omitfromrequirements" class="tsd-kind-icon">omit<wbr>From<wbr>Requirements</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="count" class="tsd-anchor"></a>
 					<h3>count</h3>
 					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L665">interfaces.ts:665</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L790">type-definitions/destiny2/interfaces.ts:790</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The amount of the material required.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="deleteonaction" class="tsd-anchor"></a>
 					<h3>delete<wbr>OnAction</h3>
 					<div class="tsd-signature tsd-kind-icon">delete<wbr>OnAction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L664">interfaces.ts:664</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L788">type-definitions/destiny2/interfaces.ts:788</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If True, the material will be removed from the character&#39;s inventory when the
+							action is performed.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="itemhash" class="tsd-anchor"></a>
 					<h3>item<wbr>Hash</h3>
 					<div class="tsd-signature tsd-kind-icon">item<wbr>Hash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L663">interfaces.ts:663</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L783">type-definitions/destiny2/interfaces.ts:783</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hash identifier of the material required. Use it to look up the material&#39;s
+							DestinyInventoryItemDefinition.</p>
+						</div>
+						<p>Mapped to IDestinyInventoryItemDefinition in the manifest.</p>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="omitfromrequirements" class="tsd-anchor"></a>
 					<h3>omit<wbr>From<wbr>Requirements</h3>
 					<div class="tsd-signature tsd-kind-icon">omit<wbr>From<wbr>Requirements<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/interfaces.ts#L666">interfaces.ts:666</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/destiny2/interfaces.ts#L796">type-definitions/destiny2/interfaces.ts:796</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If True, this requirement is &quot;silent&quot;: don&#39;t bother showing it in a material
+								requirements display. I mean, I&#39;m not your mom: I&#39;m not going to tell you you *
+							can&#39;t* show it. But we won&#39;t show it in our UI.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,19 +184,19 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class="current tsd-kind-interface tsd-is-external">
 						<a href="idestinymaterialrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Material<wbr>Requirement</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymaterialrequirement.html#count" class="tsd-kind-icon">count</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymaterialrequirement.html#deleteonaction" class="tsd-kind-icon">delete<wbr>OnAction</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymaterialrequirement.html#itemhash" class="tsd-kind-icon">item<wbr>Hash</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="idestinymaterialrequirement.html#omitfromrequirements" class="tsd-kind-icon">omit<wbr>From<wbr>Requirements</a>
 							</li>
 						</ul>

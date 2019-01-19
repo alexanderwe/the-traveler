@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.7.4",
+    "version": "1.0.0",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -17,29 +17,36 @@
         "url": "https://github.com/alexanderwe/the-traveler"
     },
     "files": [
-        "build/*.js",
-        "build/*.d.ts"
+        "build/**.js",
+        "build/**.d.ts",
+        "build/resources",
+        "build/resources/**.js",
+        "build/resources/**.d.ts",
+        "build/type-definitions",
+        "build/type-definitions/**.js",
+        "build/type-definitions/**.d.ts"
     ],
     "scripts": {
+        "testing": "ts-node ./src/test.ts --files",
         "start": "babel-node ./src/index.js --presets env",
         "debug": "babel-node ./src/index.js --presets env",
-        "build": "tsc --p tsconfig.json --declaration --target es5",
+        "build": "rm -rf ./build && tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "jest --coverage",
         "posttest": "codecov",
-        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/*.ts --ignoreCompilerErrors && touch ./docs/.nojekyll",
+        "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/**/**.ts --ignoreCompilerErrors && touch ./docs/.nojekyll",
         "package": "npm pack"
     },
     "dependencies": {
-        "@types/request-promise-native": "^1.0.6",
+        "form-data": "^2.3.3",
+        "got": "^9.4.0",
         "node-stream-zip": "^1.3.7",
-        "request": "^2.83.0",
-        "request-promise-native": "^1.0.4",
         "sqlite3": "^4.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.1.0",
         "@types/dotenv": "^4.0.3",
+        "@types/got": "^9.2.1",
         "@types/jest": "23.1.0",
         "@types/sqlite3": "^3.1.1",
         "babel-cli": "^6.26.0",

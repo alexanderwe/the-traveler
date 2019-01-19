@@ -1,16 +1,12 @@
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 
-import {
-  BungieMembershipType,
-  ComponentType,
-  DestinyStatsGroupType,
-  PlatformErrorCodes,
-  TypeDefinition
-} from '../src/enums';
 import Manifest from '../src/Manifest';
-import OauthError from '../src/OAuthError';
 import Traveler from '../src/Traveler';
+import { TypeDefinition } from '../src/type-definitions/additions';
+import { BungieMembershipType } from '../src/type-definitions/app';
+import { DestinyComponentType, PlatformErrorCodes, DestinyStatsGroupType } from '../src/type-definitions/destiny2';
+import { OAuthError } from '../src/type-definitions/errors';
 
 dotenv.config();
 
@@ -22,7 +18,7 @@ const traveler = new Traveler({
   userAgent: ''
 });
 
-jest.setTimeout(15000); // 10 second timeout
+jest.setTimeout(30000); // 30 second timeout
 
 afterAll(() => {
   fs.unlink(`./manifest.content`, err => {
@@ -33,21 +29,21 @@ afterAll(() => {
   });
 });
 
-describe('Traveler#getGlobalAlerts', () => {
+describe('traveler.global#getGlobalAlerts', () => {
   test('Respond with current global alerts', async () => {
-    const result = await traveler.getGlobalAlerts();
+    const result = await traveler.global.getGlobalAlerts();
     expect(typeof result.Response).toBe('object');
   });
 });
 
-describe('Traveler#getDestinyManifest', () => {
+describe('traveler.destiny2#getDestinyManifest', () => {
   test('Respond with current manifest formatted in JSON', async () => {
-    const result = await traveler.getDestinyManifest();
+    const result = await traveler.destiny2.getDestinyManifest();
     expect(typeof result.Response).toBe('object');
   });
 
   test('Object contains all required keys', async () => {
-    const result = await traveler.getDestinyManifest();
+    const result = await traveler.destiny2.getDestinyManifest();
     expect(Object.keys(result.Response)).toEqual(
       expect.arrayContaining([
         'mobileAssetContentPath',
@@ -62,9 +58,9 @@ describe('Traveler#getDestinyManifest', () => {
   });
 });
 
-describe('traveler#getDestinyEntityDefinition', () => {
+describe('traveler.destiny2#getDestinyEntityDefinition', () => {
   test('Respond with JSON data about the weapon called Blue Shift', async () => {
-    const result = await traveler.getDestinyEntityDefinition(
+    const result = await traveler.destiny2.getDestinyEntityDefinition(
       TypeDefinition.DestinyInventoryItemDefinition,
       '417474226'
     );
@@ -74,63 +70,48 @@ describe('traveler#getDestinyEntityDefinition', () => {
   test('Get rejected due to wrong parameters', async () => {
     expect.assertions(1);
     try {
-      await traveler.getDestinyEntityDefinition(
-        TypeDefinition.DestinyInventoryItemDefinition,
-        ''
-      );
+      await traveler.destiny2.getDestinyEntityDefinition(TypeDefinition.DestinyInventoryItemDefinition, '');
     } catch (e) {
       expect(e.statusCode).toEqual(404);
     }
   });
 
-  describe('traveler#searchDestinyPlayer', () => {
+  describe('traveler.destiny2#searchDestinyPlayer', () => {
     test('Respond with matching player', async () => {
-      const result = await traveler.searchDestinyPlayer(
-        BungieMembershipType.All,
-        'playername'
-      );
-      expect(result.Response[0].displayName.toLowerCase()).toEqual(
-        'playername'
-      );
+      const result = await traveler.destiny2.searchDestinyPlayer(BungieMembershipType.All, 'playername');
+      expect(result.Response[0].displayName.toLowerCase()).toEqual('playername');
     });
 
     test('Get rejected due to wrong parameters', async () => {
       expect.assertions(1);
       try {
-        await traveler.searchDestinyPlayer(BungieMembershipType.All, '');
+        await traveler.destiny2.searchDestinyPlayer(BungieMembershipType.All, '');
       } catch (e) {
         expect(e.statusCode).toEqual(404);
       }
     });
   });
 
-  describe('traveler#getLinkedProfiles', () => {
+  describe('traveler.destiny2#getLinkedProfiles', () => {
     test('Respond with matching linked accounts', async () => {
-      const result = await traveler.getLinkedProfiles(
-        BungieMembershipType.PSN,
-        '4611686018452033461'
-      );
+      const result = await traveler.destiny2.getLinkedProfiles(BungieMembershipType.TigerPsn, '4611686018452033461');
       expect(typeof result.Response.profiles[0]).toEqual('object');
     });
   });
 
-  describe('traveler#getProfile', () => {
+  describe('traveler.destiny2#getProfile', () => {
     test('Respond with the matching profile', async () => {
-      const result = await traveler.getProfile(
-        BungieMembershipType.PSN,
-        '4611686018452033461',
-        { components: [ComponentType.Profiles] }
-      );
+      const result = await traveler.destiny2.getProfile(BungieMembershipType.TigerPsn, '4611686018452033461', {
+        components: [DestinyComponentType.Profiles]
+      });
 
-      expect(Object.keys(result.Response)).toEqual(
-        expect.arrayContaining(['profile'])
-      );
+      expect(Object.keys(result.Response)).toEqual(expect.arrayContaining(['profile']));
     });
 
-    test('Get rejected due to requesting PSN profile data but providing XBOX member type and wrong id', async () => {
+    test('Get rejected due to requesting TigerPsn profile data but providing XBOX member type and wrong id', async () => {
       try {
-        await traveler.getProfile(BungieMembershipType.Xbox, '', {
-          components: [ComponentType.Profiles]
+        await traveler.destiny2.getProfile(BungieMembershipType.TigerPsn, '', {
+          components: [DestinyComponentType.Profiles]
         });
       } catch (e) {
         expect(e.statusCode).toEqual(404);
@@ -138,20 +119,20 @@ describe('traveler#getDestinyEntityDefinition', () => {
     });
   });
 
-  describe('traveler#getCharacter', () => {
+  describe('traveler.destiny2#getCharacter', () => {
     test('Respond with matching character and only character components', async () => {
-      const result = await traveler.getCharacter(
-        BungieMembershipType.PSN,
+      const result = await traveler.destiny2.getCharacter(
+        BungieMembershipType.TigerPsn,
         '4611686018452033461',
         '2305843009265042115',
         {
           components: [
-            ComponentType.Characters,
-            ComponentType.CharacterInventories,
-            ComponentType.CharacterProgressions,
-            ComponentType.CharacterRenderData,
-            ComponentType.CharacterActivities,
-            ComponentType.CharacterEquipment
+            DestinyComponentType.Characters,
+            DestinyComponentType.CharacterInventories,
+            DestinyComponentType.CharacterProgressions,
+            DestinyComponentType.CharacterRenderData,
+            DestinyComponentType.CharacterActivities,
+            DestinyComponentType.CharacterEquipment
           ]
         }
       );
@@ -172,28 +153,30 @@ describe('traveler#getDestinyEntityDefinition', () => {
   // TODO: make rejected test
 });
 
-describe('traveler#getClanWeeklyRewardState', () => {
+describe('traveler.destiny2#getClanWeeklyRewardState', () => {
   test('Respond with information on the weekly clan reward', async () => {
-    const result = await traveler.getClanWeeklyRewardState('1812014');
+    const result = await traveler.destiny2.getClanWeeklyRewardState('1812014');
     return expect(result.ErrorCode).toEqual(PlatformErrorCodes.Success);
   });
 
   test('Fail to respond with information of the weekly clan reward', async () => {
     try {
-      await traveler.getClanWeeklyRewardState('-1');
+      await traveler.destiny2.getClanWeeklyRewardState('-1');
     } catch (e) {
       expect(e.ErrorCode).toEqual(622);
     }
   });
 });
 
-describe('traveler#getItem', () => {
+describe('traveler.destiny2#getItem', () => {
   test('Respond with matching item', async () => {
-    const result = await traveler.getItem(
-      BungieMembershipType.PSN,
+    const result = await traveler.destiny2.getItem(
+      BungieMembershipType.TigerPsn,
       '4611686018452033461',
       '6917529033189743362',
-      { components: [ComponentType.ItemCommonData] }
+      {
+        components: [DestinyComponentType.ItemCommonData]
+      }
     );
 
     expect(Object.keys(result.Response.item.data)).toEqual(
@@ -218,9 +201,9 @@ describe('traveler#getItem', () => {
 
 // TODO: getPostGameCarnageReport
 
-describe('traveler#getHistoricalStatsDefinition', () => {
+describe('traveler.destiny2#getHistoricalStatsDefinition', () => {
   test('Respond with matching historical stat definitions', async () => {
-    const result = await traveler.getHistoricalStatsDefinition();
+    const result = await traveler.destiny2.getHistoricalStatsDefinition();
     expect(result.ErrorCode).toEqual(PlatformErrorCodes.Success);
   });
 });
@@ -233,21 +216,23 @@ describe('traveler#getHistoricalStatsDefinition', () => {
 
 // TODO: getLeaderboardsForCharacter (not yet final)
 
-describe('traveler#searchDestinyEntities', () => {
+describe('traveler.destiny2#searchDestinyEntities', () => {
   test('Respond with matching search results for sunshot', async () => {
-    const result = await traveler.searchDestinyEntities(
+    const result = await traveler.destiny2.searchDestinyEntities(
       'sunshot',
       TypeDefinition.DestinyInventoryItemDefinition,
-      { page: 0 }
+      {
+        page: 0
+      }
     );
     return expect(result.Response.suggestedWords).toContain('sunshot');
   });
 });
 
-describe('traveler#getHistoricalStats', () => {
+describe('traveler.destiny2#getHistoricalStats', () => {
   it('Respond with historical stats', async () => {
-    const result = await traveler.getHistoricalStats(
-      BungieMembershipType.PSN,
+    const result = await traveler.destiny2.getHistoricalStats(
+      BungieMembershipType.TigerPsn,
       '4611686018452033461',
       '2305843009265042115',
       {
@@ -260,10 +245,9 @@ describe('traveler#getHistoricalStats', () => {
   });
 
   test('Fail to respond with historical stats due to invalid date parameter', async () => {
-    expect.assertions(1);
     try {
-      await traveler.getHistoricalStats(
-        BungieMembershipType.PSN,
+      await traveler.destiny2.getHistoricalStats(
+        BungieMembershipType.TigerPsn,
         '4611686018452033461',
         '2305843009265042115',
         {
@@ -286,16 +270,16 @@ describe('traveler#getHistoricalStats', () => {
 
 // TODO: getAggregateActivityStats (not yet final)
 
-describe('traveler#getPublicMilestoneContent', () => {
+describe('traveler.destiny2#getPublicMilestoneContent', () => {
   test('Respond with public milestone content for milestone hash 202035466', async () => {
-    const result = await traveler.getPublicMilestoneContent('202035466');
+    const result = await traveler.destiny2.getPublicMilestoneContent('202035466');
     return expect(result.ErrorCode).toEqual(PlatformErrorCodes.Success);
   });
 });
 
-describe('traveler#getPublicMilestones', () => {
+describe('traveler.destiny2#getPublicMilestones', () => {
   test('Respond with public milestones', async () => {
-    const result = await traveler.getPublicMilestones();
+    const result = await traveler.destiny2.getPublicMilestones();
     return expect(result.ErrorCode).toEqual(PlatformErrorCodes.Success);
   });
 });
@@ -304,22 +288,20 @@ describe('traveler#getPublicMilestones', () => {
 
 describe('OAuthError#constructor', () => {
   it('creates a new OAuth error', async () => {
-    return expect(new OauthError('New OauthError')).toBeInstanceOf(Error);
+    return expect(new OAuthError('New OauthError')).toBeInstanceOf(Error);
   });
 });
 
 describe('Traveler#downloadManifest and Manifest#constructor and Manifest#queryManifest', () => {
   test('Download the manifest, remove .zip and queries it with a simple query', async () => {
-    const result = await traveler.getDestinyManifest();
+    const result = await traveler.destiny2.getDestinyManifest();
 
-    const filepath = await traveler.downloadManifest(
+    const filepath = await traveler.destiny2.downloadManifest(
       result.Response.mobileWorldContentPaths.en,
       './manifest.content'
     );
     const manifest = new Manifest(filepath);
-    const queryResult = await manifest.queryManifest(
-      'SELECT name FROM sqlite_master WHERE type="table"'
-    );
+    const queryResult = await manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"');
     expect(typeof queryResult).toEqual('object');
   });
 });
@@ -333,9 +315,7 @@ describe('Manifest', () => {
 
   it('Fails to query an invalid db', async () => {
     try {
-      await new Manifest('./output.gif').queryManifest(
-        'SELECT name FROM sqlite_master WHERE type="table"'
-      );
+      await new Manifest('./output.gif').queryManifest('SELECT name FROM sqlite_master WHERE type="table"');
     } catch (e) {
       expect(e.code).toEqual('SQLITE_NOTADB');
     }

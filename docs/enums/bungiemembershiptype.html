@@ -66,17 +66,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Enum for the Bungie membership type</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>enum</dt>
-						<dd></dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -85,10 +74,12 @@
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#all" class="tsd-kind-icon">All</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#bungie" class="tsd-kind-icon">Bungie</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#pc" class="tsd-kind-icon">PC</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#psn" class="tsd-kind-icon">PSN</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#xbox" class="tsd-kind-icon">Xbox</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#bungienext" class="tsd-kind-icon">Bungie<wbr>Next</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#none" class="tsd-kind-icon">None</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#tigerblizzard" class="tsd-kind-icon">Tiger<wbr>Blizzard</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#tigerdemon" class="tsd-kind-icon">Tiger<wbr>Demon</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#tigerpsn" class="tsd-kind-icon">Tiger<wbr>Psn</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bungiemembershiptype.html#tigerxbox" class="tsd-kind-icon">Tiger<wbr>Xbox</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,47 +93,73 @@
 					<div class="tsd-signature tsd-kind-icon">All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;-1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/enums.ts#L6">enums.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L724">type-definitions/common.ts:724</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>&quot;All&quot; is only valid for searching capabilities: you need to pass the actual
+							matching BungieMembershipType for any query where you pass a known membershipId.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="bungienext" class="tsd-anchor"></a>
+					<h3>Bungie<wbr>Next</h3>
+					<div class="tsd-signature tsd-kind-icon">Bungie<wbr>Next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;254</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L719">type-definitions/common.ts:719</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="bungie" class="tsd-anchor"></a>
-					<h3>Bungie</h3>
-					<div class="tsd-signature tsd-kind-icon">Bungie<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;254</span></div>
+					<a name="none" class="tsd-anchor"></a>
+					<h3>None</h3>
+					<div class="tsd-signature tsd-kind-icon">None<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/enums.ts#L10">enums.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L714">type-definitions/common.ts:714</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="pc" class="tsd-anchor"></a>
-					<h3>PC</h3>
-					<div class="tsd-signature tsd-kind-icon">PC<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
+					<a name="tigerblizzard" class="tsd-anchor"></a>
+					<h3>Tiger<wbr>Blizzard</h3>
+					<div class="tsd-signature tsd-kind-icon">Tiger<wbr>Blizzard<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/enums.ts#L9">enums.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L717">type-definitions/common.ts:717</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="psn" class="tsd-anchor"></a>
-					<h3>PSN</h3>
-					<div class="tsd-signature tsd-kind-icon">PSN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
+					<a name="tigerdemon" class="tsd-anchor"></a>
+					<h3>Tiger<wbr>Demon</h3>
+					<div class="tsd-signature tsd-kind-icon">Tiger<wbr>Demon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;10</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/enums.ts#L8">enums.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L718">type-definitions/common.ts:718</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="xbox" class="tsd-anchor"></a>
-					<h3>Xbox</h3>
-					<div class="tsd-signature tsd-kind-icon">Xbox<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<a name="tigerpsn" class="tsd-anchor"></a>
+					<h3>Tiger<wbr>Psn</h3>
+					<div class="tsd-signature tsd-kind-icon">Tiger<wbr>Psn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/ed077a4/src/enums.ts#L7">enums.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L716">type-definitions/common.ts:716</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="tigerxbox" class="tsd-anchor"></a>
+					<h3>Tiger<wbr>Xbox</h3>
+					<div class="tsd-signature tsd-kind-icon">Tiger<wbr>Xbox<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/type-definitions/common.ts#L715">type-definitions/common.ts:715</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,16 +184,22 @@
 								<a href="bungiemembershiptype.html#all" class="tsd-kind-icon">All</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bungiemembershiptype.html#bungie" class="tsd-kind-icon">Bungie</a>
+								<a href="bungiemembershiptype.html#bungienext" class="tsd-kind-icon">Bungie<wbr>Next</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bungiemembershiptype.html#pc" class="tsd-kind-icon">PC</a>
+								<a href="bungiemembershiptype.html#none" class="tsd-kind-icon">None</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bungiemembershiptype.html#psn" class="tsd-kind-icon">PSN</a>
+								<a href="bungiemembershiptype.html#tigerblizzard" class="tsd-kind-icon">Tiger<wbr>Blizzard</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bungiemembershiptype.html#xbox" class="tsd-kind-icon">Xbox</a>
+								<a href="bungiemembershiptype.html#tigerdemon" class="tsd-kind-icon">Tiger<wbr>Demon</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="bungiemembershiptype.html#tigerpsn" class="tsd-kind-icon">Tiger<wbr>Psn</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="bungiemembershiptype.html#tigerxbox" class="tsd-kind-icon">Tiger<wbr>Xbox</a>
 							</li>
 						</ul>
 					</li>
