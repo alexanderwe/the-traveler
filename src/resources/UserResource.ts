@@ -14,6 +14,17 @@ export default class UserResource extends BungieResource {
 
   /**
    * Returns a list of accounts associated with signed in user. This is useful for OAuth implementations that do not give you access to the token response.
+   * ```js
+   *
+   * traveler.user
+   *  .getMembershipDataForCurrentUser('oauthAccessToken')
+   *  .then(response => {
+   *    console.log(response);
+   *  })
+   *  .catch(err => {
+   *    console.log(err);
+   *  });
+   * ```
    *
    * @param {string} oauthAccesstoken
    * @returns {Promise<IServerResponse<IUserMembershipData>>}
@@ -37,6 +48,18 @@ export default class UserResource extends BungieResource {
   /**
    * Returns a list of accounts associated with the supplied membership ID and membership type.
    * This will include all linked accounts (even when hidden) if supplied credentials permit it.
+   *
+   * ```js
+   * traveler.user
+   *  .getMembershipDataById('membershipId', BungieMembershipType.TigerPsn, 'oauthAccessToken')
+   *  .then(response => {
+   *    console.log(response);
+   *  })
+   *  .catch(err => {
+   *    console.log(err);
+   *  });
+   * ```
+   *
    *
    * @param {string} destinyMembershipId
    * @param {BungieMembershipType} membershipType

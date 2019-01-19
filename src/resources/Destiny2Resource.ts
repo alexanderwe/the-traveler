@@ -1508,64 +1508,102 @@ export default class Destiny2Resource extends BungieResource {
   /**
    * Download the specified manifest file, extract the zip and also deleting the zip afterwards
    *
-   * @param {string} manifestUrl The url of the manifest you want to download
-   * @param {string} [filename] The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
-   * @returns {Promise<string>} When fulfilled returns the path of the saved manifest file
-   * @memberof Destiny2Resource
-   */
-  public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
-    const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`);
-    return new Promise<string>((resolve, reject) => {
-      got
-        .stream(`https://www.bungie.net/${manifestUrl}`)
-        .pipe(outStream)
-        .on('finish', () => {
-          const zip = new SZIP({
-            file: `${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`,
-            storeEntries: true
-          });
-
-          const fileName = manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1);
-
-          zip.on('ready', () => {
-            zip.extract(
-              manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1),
-              filename,
-              (err: object, count: number) => {
-                if (err) {
-                  reject(new Error('Error extracting zip'));
-                } else {
-                  zip.close();
-                  fs.unlink(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}.zip`, err => {
-                    if (err) {
-                      reject(new Error('Error deleting .zip file'));
-                    }
-                    resolve(filename);
-                  });
-                }
-              }
-            );
-          });
-        });
-    });
-  }
-
-  /**
-   * Download the specified manifest file, extract the zip and also deleting the zip afterwards
+   * ```js
+   * traveler.destiny2
+   * .getDestinyManifest()
+   * .then(response => {
+   *   traveler.destiny2
+   *    .downloadManifest(response.Response.mobileWorldContentPaths['en'])
+   *     .then(response => {
+   *       console.log(response);
+   *     })
+   *     .catch(err => {
+   *       console.log(err);
+   *      });
+   *  })
+   *  .catch(err => {
+   *   console.log(err);
+   *  });
+   *
+   * ```
    *
    * @param {string} manifestUrl The url of the manifest you want to download
    * @param {string} [filename] The filename of the final unzipped file. This is used for the constructor of [[Manifest]]
    * @returns {Promise<string>} When fulfilled returns the path of the saved manifest file
    * @memberof Destiny2Resource
    */
-  public downloadManifestJSON(manifestUrl: string, filename?: string): Promise<string> {
-    const outStream = fs.createWriteStream(`${manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}`);
+  public downloadManifest(manifestUrl: string, filename?: string): Promise<string> {
+    const downloadFileName = manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1);
+    const outputFileName = `${filename ? filename : manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}`;
+
+    const outStream = fs.createWriteStream(`${downloadFileName}.zip`);
+
     return new Promise<string>((resolve, reject) => {
       got
         .stream(`https://www.bungie.net/${manifestUrl}`)
         .pipe(outStream)
         .on('finish', () => {
-          resolve();
+          const zip = new SZIP({
+            file: `${downloadFileName}.zip`,
+            storeEntries: true
+          });
+
+          zip.on('ready', () => {
+            zip.extract(downloadFileName, outputFileName, (err: object, count: number) => {
+              if (err) {
+                reject(new Error('Error extracting zip'));
+              } else {
+                zip.close();
+                fs.unlink(`${downloadFileName}.zip`, err => {
+                  if (err) {
+                    reject(new Error('Error deleting .zip file'));
+                  }
+                  resolve(outputFileName);
+                });
+              }
+            });
+          });
+        });
+    });
+  }
+
+  /**
+   * Download the specified json manifest file
+   *
+   * ```js
+   * traveler.destiny2
+   * .getDestinyManifest()
+   * .then(response => {
+   *   traveler.destiny2
+   *    .downloadManifestJSON(response.Response.jsonWorldContentPaths['en'])
+   *     .then(response => {
+   *       console.log(response);
+   *     })
+   *     .catch(err => {
+   *       console.log(err);
+   *      });
+   *  })
+   *  .catch(err => {
+   *   console.log(err);
+   *  });
+   *
+   * ```
+   *
+   * @param {string} manifestUrl The url of the manifest you want to download
+   * @param {string} [filename] The filename of the final .json file downloaded
+   * @returns {Promise<string>} When fulfilled returns the path of the saved manifest file
+   * @memberof Destiny2Resource
+   */
+  public downloadManifestJSON(manifestUrl: string, filename?: string): Promise<string> {
+    const outStream = fs.createWriteStream(
+      `${filename ? filename : manifestUrl.substring(manifestUrl.lastIndexOf('/') + 1)}`
+    );
+    return new Promise<string>((resolve, reject) => {
+      got
+        .stream(`https://www.bungie.net/${manifestUrl}`)
+        .pipe(outStream)
+        .on('finish', () => {
+          resolve(filename);
         });
     });
   }

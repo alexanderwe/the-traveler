@@ -18,6 +18,10 @@ export default class OAuthResource extends BungieResource {
    * Generates the OAuthURL where your users need to sign up to give your application access to
    * authorized endpoints.
    *
+   * ```js
+   * let url = traveler.oauth.generateOAuthURL('clientId');
+   * ```
+   *
    * @param {string} oauthClientId
    * @returns {string}
    * @memberof Traveler
@@ -32,6 +36,17 @@ export default class OAuthResource extends BungieResource {
 
   /**
    * Retreive the Oauth access token from the authorization code
+   *
+   * ```js
+   * traveler.oauth
+   *  .getAccessToken('code', 'oauthClientId', 'oauthClientSecret')
+   *  .then(response => {
+   *    console.log(response);
+   *  })
+   *  .catch(err => {
+   *    console.log(err);
+   *  });
+   * ```
    *
    * @param {string} code The authorization code from the oauth redirect url
    * @param {string} [oauthClientId] The oauth client id if present
@@ -77,14 +92,17 @@ export default class OAuthResource extends BungieResource {
    * Use the refreshToken to retrieve a new valid access_token.
    * Please keep the expiration durations in mind.
    * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
-   * @async
-   * @param refreshToken
-   */
-
-  /**
-   * Use the refreshToken to retrieve a new valid access_token.
-   * Please keep the expiration durations in mind.
-   * <strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong>
+   *
+   *```js
+   * traveler.oauth
+   *  .refreshToken('refreshToken', 'oauthClientId', 'oauthClientSecret')
+   *  .then(response => {
+   *    console.log(response);
+   *  })
+   *  .catch(err => {
+   *    console.log(err);
+   *  });
+   * ```
    *
    * @param {string} refreshToken
    * @param {string} oauthClientId The oauth client id
