@@ -101,6 +101,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#downloadmanifest" class="tsd-kind-icon">download<wbr>Manifest</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#downloadmanifestjson" class="tsd-kind-icon">download<wbr>ManifestJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getactivityhistory" class="tsd-kind-icon">get<wbr>Activity<wbr>History</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getcharacter" class="tsd-kind-icon">get<wbr>Character</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getclanaggregatestats" class="tsd-kind-icon">get<wbr>Clan<wbr>Aggregate<wbr>Stats</a></li>
@@ -144,7 +145,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -167,7 +168,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:5</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/BungieResoure.ts#L5">resources/BungieResoure.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +179,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#httpservice">httpService</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:4</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/BungieResoure.ts#L4">resources/BungieResoure.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -189,7 +190,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#resourcepath">resourcePath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -206,16 +207,32 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1515">resources/Destiny2Resource.ts:1515</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1533">resources/Destiny2Resource.ts:1533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Download the specified manifest file, extract the zip and also deleting the zip afterwards</p>
+									<pre><code class="language-js">traveler.destiny2
+ .getDestinyManifest()
+ .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+   traveler.destiny2
+   .downloadManifest(response.Response.mobileWorldContentPaths[<span class="hljs-string">'en'</span>])
+     .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+       <span class="hljs-built_in">console</span>.log(response);
+     })
+     .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+       <span class="hljs-built_in">console</span>.log(err);
+       });
+   })
+   .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(err);
+});</code></pre>
 								</div>
 								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
+									<dt>memberof</dt>
+									<dd><p>Destiny2Resource</p>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -228,9 +245,68 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filename: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>When fulfilled returns the path of the saved manifest file</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="downloadmanifestjson" class="tsd-anchor"></a>
+					<h3>download<wbr>ManifestJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">download<wbr>ManifestJSON<span class="tsd-signature-symbol">(</span>manifestUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filename<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1601">resources/Destiny2Resource.ts:1601</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Download the specified json manifest file</p>
+								</div>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
+
+<span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+ <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
+ <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'useragent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
+});
+
+traveler.destiny2
+.getDestinyManifest()
+.then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+ traveler.destiny2
+   .downloadManifestJSON(response.Response.jsonWorldContentPaths[<span class="hljs-string">'en'</span>])
+   .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+     <span class="hljs-built_in">console</span>.log(response);
+    })
+    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(err);
+    });
+ })
+ .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(err);
+ });</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>Destiny2Resource</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>manifestUrl: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The filename of the final unzipped file. This is used for the constructor of [[Manifest]]</p>
+										<p>The url of the manifest you want to download</p>
 									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filename: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -248,7 +324,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1291">resources/Destiny2Resource.ts:1291</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1291">resources/Destiny2Resource.ts:1291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -336,7 +412,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L341">resources/Destiny2Resource.ts:341</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L341">resources/Destiny2Resource.ts:341</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -428,7 +504,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L870">resources/Destiny2Resource.ts:870</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L870">resources/Destiny2Resource.ts:870</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -493,7 +569,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L816">resources/Destiny2Resource.ts:816</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L816">resources/Destiny2Resource.ts:816</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -566,7 +642,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L392">resources/Destiny2Resource.ts:392</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L392">resources/Destiny2Resource.ts:392</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -618,7 +694,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L672">resources/Destiny2Resource.ts:672</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L672">resources/Destiny2Resource.ts:672</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -711,7 +787,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1404">resources/Destiny2Resource.ts:1404</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1404">resources/Destiny2Resource.ts:1404</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -781,7 +857,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L115">resources/Destiny2Resource.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L115">resources/Destiny2Resource.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -838,7 +914,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L71">resources/Destiny2Resource.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L71">resources/Destiny2Resource.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -881,7 +957,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1145">resources/Destiny2Resource.ts:1145</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1145">resources/Destiny2Resource.ts:1145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -977,7 +1053,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L760">resources/Destiny2Resource.ts:760</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L760">resources/Destiny2Resource.ts:760</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1023,7 +1099,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1223">resources/Destiny2Resource.ts:1223</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1223">resources/Destiny2Resource.ts:1223</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1098,7 +1174,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L446">resources/Destiny2Resource.ts:446</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L446">resources/Destiny2Resource.ts:446</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1181,7 +1257,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L937">resources/Destiny2Resource.ts:937</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L937">resources/Destiny2Resource.ts:937</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1264,7 +1340,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1011">resources/Destiny2Resource.ts:1011</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1011">resources/Destiny2Resource.ts:1011</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1356,7 +1432,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L213">resources/Destiny2Resource.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L213">resources/Destiny2Resource.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1414,7 +1490,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L724">resources/Destiny2Resource.ts:724</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L724">resources/Destiny2Resource.ts:724</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1466,7 +1542,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L269">resources/Destiny2Resource.ts:269</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L269">resources/Destiny2Resource.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1543,7 +1619,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1459">resources/Destiny2Resource.ts:1459</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1459">resources/Destiny2Resource.ts:1459</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1596,7 +1672,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1495">resources/Destiny2Resource.ts:1495</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1495">resources/Destiny2Resource.ts:1495</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1638,7 +1714,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1349">resources/Destiny2Resource.ts:1349</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1349">resources/Destiny2Resource.ts:1349</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1708,7 +1784,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L602">resources/Destiny2Resource.ts:602</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L602">resources/Destiny2Resource.ts:602</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1802,7 +1878,7 @@ traveler.destiny2.
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L515">resources/Destiny2Resource.ts:515</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L515">resources/Destiny2Resource.ts:515</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1891,7 +1967,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1069">resources/Destiny2Resource.ts:1069</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L1069">resources/Destiny2Resource.ts:1069</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1962,7 +2038,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L164">resources/Destiny2Resource.ts:164</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/Destiny2Resource.ts#L164">resources/Destiny2Resource.ts:164</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2047,6 +2123,9 @@ traveler.destiny2
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="destiny2resource.html#downloadmanifest" class="tsd-kind-icon">download<wbr>Manifest</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="destiny2resource.html#downloadmanifestjson" class="tsd-kind-icon">download<wbr>ManifestJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="destiny2resource.html#getactivityhistory" class="tsd-kind-icon">get<wbr>Activity<wbr>History</a>

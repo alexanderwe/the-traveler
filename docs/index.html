@@ -73,12 +73,18 @@
 				<p>the-traveler is a small npm package which wraps around the Destiny 2 API. It uses Promises for a modern workflow in your application.</p>
 				<h2 id="table-of-contents">Table of Contents</h2>
 				<ul>
-					<li><a href="#the-traveler">the-traveler</a></li>
-					<li><a href="#table-of-contents">Table of Contents</a><ul>
+					<li><a href="#the-traveler">the-traveler</a><ul>
+							<li><a href="#table-of-contents">Table of Contents</a></li>
 							<li><a href="#getting-started">Getting Started</a><ul>
+									<li><a href="#installation">Installation</a><ul>
+											<li><a href="#npm">NPM</a></li>
+											<li><a href="#yarn">Yarn</a></li>
+										</ul>
+									</li>
 									<li><a href="#prerequisites">Prerequisites</a></li>
 								</ul>
 							</li>
+							<li><a href="#general-remark">General remark</a></li>
 							<li><a href="#oauth">OAuth</a></li>
 							<li><a href="#notices">Notices</a><ul>
 									<li><a href="#typescript-support">Typescript Support</a></li>
@@ -90,13 +96,13 @@
 							<li><a href="#examples">Examples</a><ul>
 									<li><a href="#search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</a></li>
 									<li><a href="#get-a-character-for-an-psn-account">Get a character for an PSN Account</a></li>
-									<li><a href="#transfer-item-from-vault-to-character-needs-oauth">Transfer item from vault to character (needs OAuth)</a></li>
 									<li><a href="#async-await-approach-pseudo-code">Async await approach (pseudo-code)</a></li>
 									<li><a href="#manifest">Manifest</a></li>
 								</ul>
 							</li>
 							<li><a href="#progress">Progress</a></li>
 							<li><a href="#built-with">Built With</a></li>
+							<li><a href="#thanks">Thanks</a></li>
 							<li><a href="#versioning">Versioning</a></li>
 							<li><a href="#issues">Issues</a></li>
 							<li><a href="#license">License</a></li>
@@ -138,6 +144,13 @@
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
     debug: <span class="hljs-literal">true</span>
 });</code></pre>
+				<h2 id="general-remark">General remark</h2>
+				<p>With version <code>v1.0.0</code> the structure of the library changed quite a bit. Not in terms of functionality but in terms of how the different methods are called. The <code>Traveler</code> object contains different attributes indicating the different resource endpoints. For example if you want to use endpoints from Destiny 2 you call them by:</p>
+				<pre><code class="language-js">traveler.destiny2.&lt;method&gt;</code></pre>
+				<p>If you want to access OAuth related methods, they are located under:</p>
+				<pre><code class="language-js">traveler.oauth.&lt;method&gt;</code></pre>
+				<p>This decision was made to better seperate the calls according to their destination.
+				You can find the different resource endpoints in the <a href="https://alexanderwe.github.io/the-traveler/">documentation</a>.</p>
 				<h2 id="oauth">OAuth</h2>
 				<p>If you want to use OAuth to get access to endpoints which require user approval provide the <code>Traveler</code> object with your OAuth <code>clientId</code> and if you are using a confidential client type additionally the <code>clientSecret</code>.</p>
 				<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
@@ -150,10 +163,10 @@
 });</code></pre>
 				<p>Please ensure that you specified a <code>redirectURL</code> in your application settings on <a href="https://www.bungie.net/en/Application">https://www.bungie.net/en/Application</a>.
 				After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: <code>https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&amp;response_type=code</code>.</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> authUrl = traveler.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> authUrl = traveler.oauth.generateOAuthURL(); <span class="hljs-comment">// The URL your users have to visit to give your application access</span></code></pre>
 				<p>If a user visit this site and approve your application he/she will be redirected to the <code>redirectURL</code> you specified. This URL is expaned with query parameter called <code>code</code>: <code>https://www.example.com/?code=hereComesTheCode</code></p>
 				<p>This is the code you need to obtain the OAuth Access token with the  <code>getAccessToken()</code> method.</p>
-				<pre><code class="language-js">traveler.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+				<pre><code class="language-js">traveler.oauth.getAccessToken(hereComesTheCode).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth;
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
@@ -174,7 +187,7 @@
   <span class="hljs-attr">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attr">membership_id</span>: <span class="hljs-string">''</span> }</code></pre>
 				<p><em>Use refresh</em>:</p>
-				<pre><code class="language-js">traveler.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
+				<pre><code class="language-js">traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth;
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
@@ -221,9 +234,11 @@
 					<li>A fully complete documentation about the different endpoints and methods can be found at the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official Destiny 2 API site</a></li>
 				</ul>
 				<h2 id="examples">Examples</h2>
+				<p>Here are some examples on how to use the library. You can find exhaustive examples in the <a href="https://alexanderwe.github.io/the-traveler/"> documentation</a></p>
 				<h3 id="search-for-an-destiny-account-on-psn">Search for an Destiny Account on PSN</h3>
 				<p><em>Query:</em></p>
 				<pre><code class="language-js">traveler
+    .destiny2
     .searchDestinyPlayer(<span class="hljs-string">'2'</span>, <span class="hljs-string">'playername'</span>)
     .then(<span class="hljs-function"><span class="hljs-params">player</span> =&gt;</span> {
         <span class="hljs-built_in">console</span>.log(player);
@@ -251,7 +266,9 @@
     <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'yourUserAgent'</span> <span class="hljs-comment">//used to identify your request to the API</span>
 });
 
-traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-string">'4611686018452033461'</span>, <span class="hljs-string">'2305843009265042115'</span>, { <span class="hljs-attr">components</span>: [<span class="hljs-string">'200'</span>, <span class="hljs-string">'201'</span>, <span class="hljs-string">'202'</span>, <span class="hljs-string">'203'</span>, <span class="hljs-string">'204'</span>, <span class="hljs-string">'205'</span>] }).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+traveler
+    .destiny2
+    .getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-string">'4611686018452033461'</span>, <span class="hljs-string">'2305843009265042115'</span>, { <span class="hljs-attr">components</span>: [<span class="hljs-string">'200'</span>, <span class="hljs-string">'201'</span>, <span class="hljs-string">'202'</span>, <span class="hljs-string">'203'</span>, <span class="hljs-string">'204'</span>, <span class="hljs-string">'205'</span>] }).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(result);
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
     <span class="hljs-built_in">console</span>.log(err);
@@ -259,21 +276,23 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 
 <span class="hljs-comment">// OR</span>
 
-traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-string">'4611686018452033461'</span>, <span class="hljs-string">'2305843009265042115'</span>, {
-    <span class="hljs-attr">components</span>:
-    [
-        ComponentType.Characters,
-        ComponentType.CharacterInventories,
-        ComponentType.CharacterProgressions,
-        ComponentType.CharacterRenderData,
-        ComponentType.CharacterActivities,
-        ComponentType.CharacterEquipment
-    ]
-}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(result);
-}).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(err);
-});
+traveler
+    .destiny2
+    .getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-string">'4611686018452033461'</span>, <span class="hljs-string">'2305843009265042115'</span>, {
+        <span class="hljs-attr">components</span>:
+        [
+            ComponentType.Characters,
+            ComponentType.CharacterInventories,
+            ComponentType.CharacterProgressions,
+            ComponentType.CharacterRenderData,
+            ComponentType.CharacterActivities,
+            ComponentType.CharacterEquipment
+        ]
+    }).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(result);
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(err);
+    });
 </code></pre>
 				<p><em>Response (First level):</em></p>
 				<pre><code class="language-js">{ <span class="hljs-attr">Response</span>:
@@ -289,23 +308,6 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
   <span class="hljs-attr">ErrorStatus</span>: <span class="hljs-string">'Success'</span>,
   <span class="hljs-attr">Message</span>: <span class="hljs-string">'Ok'</span>,
   <span class="hljs-attr">MessageData</span>: {} }</code></pre>
-				<h3 id="transfer-item-from-vault-to-character-needs-oauth-">Transfer item from vault to character (needs OAuth)</h3>
-				<p><code>traveler.oauth</code> has to be set before calling this method</p>
-				<pre><code class="language-js">traveler
-    .transferItem({
-        <span class="hljs-attr">itemReferenceHash</span>: <span class="hljs-string">'2907129556'</span>,
-        <span class="hljs-attr">stackSize</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">transferToVault</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-attr">itemId</span>: <span class="hljs-string">'6917529033189743362'</span>,
-        <span class="hljs-attr">characterId</span>: <span class="hljs-string">'yourCharacterId'</span>,
-        <span class="hljs-attr">membershipType</span>: BungieMembershipType.PSN <span class="hljs-comment">// BungieMembershipType.PSN in ES5</span>
-    })
-    .then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(result);
-    })
-    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
-        <span class="hljs-built_in">console</span>.log(err);
-    });</code></pre>
 				<h3 id="async-await-approach-pseudo-code-">Async await approach (pseudo-code)</h3>
 				<p>Just a thought about using <code>async</code> and <code>await</code></p>
 				<pre><code class="language-js"><span class="hljs-keyword">async</span> () =&gt; {
@@ -331,8 +333,8 @@ traveler.getCharacter(<span class="hljs-string">'2'</span>, <span class="hljs-st
 <span class="hljs-keyword">import</span> Manifest <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/Manifest'</span>
 
 
-traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
-    traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, <span class="hljs-string">'./manifest.content'</span>).then(<span class="hljs-function"><span class="hljs-params">filepath</span> =&gt;</span> {
+traveler.destiny2.getDestinyManifest().then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+    traveler.destiny2.downloadManifest(result.Response.mobileWorldContentPaths.en, <span class="hljs-string">'./manifest.content'</span>).then(<span class="hljs-function"><span class="hljs-params">filepath</span> =&gt;</span> {
         <span class="hljs-keyword">const</span> manifest = <span class="hljs-keyword">new</span> Manifest(filepath);
         manifest.queryManifest(<span class="hljs-string">'SELECT name FROM sqlite_master WHERE type="table"'</span>).then(<span class="hljs-function"><span class="hljs-params">queryResult</span> =&gt;</span> {
             <span class="hljs-built_in">console</span>.log(queryResult);
@@ -343,184 +345,19 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
         <span class="hljs-built_in">console</span>.log(err);
     })
 })
-
 </code></pre>
 				<p><em>async way:</em></p>
 				<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
 <span class="hljs-keyword">import</span> Manifest <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/Manifest'</span>
 
 <span class="hljs-keyword">async</span> ()=&gt; {
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> traveler.getDestinyManifest();
-    <span class="hljs-keyword">const</span> filepath = <span class="hljs-keyword">await</span> traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, <span class="hljs-string">'./manifest.content'</span>);
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> traveler.destiny2.getDestinyManifest();
+    <span class="hljs-keyword">const</span> filepath = <span class="hljs-keyword">await</span> traveler.destiny2.downloadManifest(result.Response.mobileWorldContentPaths.en, <span class="hljs-string">'./manifest.content'</span>);
     <span class="hljs-keyword">const</span> manifest = <span class="hljs-keyword">new</span> Manifest(filepath);
     <span class="hljs-keyword">const</span> queryResult = <span class="hljs-keyword">await</span> manifest.queryManifest(<span class="hljs-string">'SELECT name FROM sqlite_master WHERE type="table"'</span>)
 }</code></pre>
 				<h2 id="progress">Progress</h2>
 				<p>Please visit the <a href="https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest">official documentation for the API</a> to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.</p>
-				<table>
-					<thead>
-						<tr>
-							<th>Endpoint</th>
-							<th>Implemented</th>
-							<th>Unlocked in API</th>
-						</tr>
-					</thead>
-					<tbody><tr>
-							<td>Destiny2.GetDestinyManifest</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetDestinyEntityDefinition</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.SearchDestinyPlayer</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetLinkedProfiles</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetProfile</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetCharacter</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetClanWeeklyRewardState</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetItem</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetVendors</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetVendor</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.TransferItem</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.PullFromPostmaster</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.EquipItem</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.EquipItems</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.SetItemLockState</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.InsertSocketPlug</td>
-							<td>✅</td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetPostGameCarnageReport</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.ReportOffensivePostGameCarnageReportPlayer</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetHistoricalStatsDefinition</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetClanLeaderboards</td>
-							<td>✅</td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetClanAggregateStats</td>
-							<td>✅</td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetLeaderboards</td>
-							<td>✅</td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetLeaderboardsForCharacter</td>
-							<td>✅</td>
-							<td><img src="https://img.shields.io/badge/-preview-blue.svg" alt="alt text" title="Preview"></td>
-						</tr>
-						<tr>
-							<td>Destiny2.SearchDestinyEntities</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetHistoricalStats</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetHistoricalStatsForAccount</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetActivityHistory</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetUniqueWeaponHistory</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetDestinyAggregateActivityStats</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetPublicMilestoneContent</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-						<tr>
-							<td>Destiny2.GetPublicMilestones</td>
-							<td>✅</td>
-							<td>✅</td>
-						</tr>
-				</tbody></table>
 				<h2 id="built-with">Built With</h2>
 				<ul>
 					<li><a href="https://github.com/request/request-promise-native">request-promise-native</a> - Request package</li>
@@ -528,10 +365,12 @@ traveler.getDestinyManifest().then(<span class="hljs-function"><span class="hljs
 					<li><a href="https://github.com/antelle/node-stream-zip">node-stream-zip</a> - Unzipping files in node (for Manifest interaction) <em>Note: Maybe this will end up in a peer depdendency in a future release since it adds overhead to the package if you do not want to use the Manifest flow</em></li>
 					<li><a href="https://github.com/mapbox/node-sqlite3">node-sqlite3</a> - Use sqlite 3 in node (for Manifest interaction as a peer dependency)</li>
 				</ul>
+				<h2 id="thanks">Thanks</h2>
+				<p>Huge thanks to <a href="https://github.com/bhollis">@BenHollis</a> and <a href="https://github.com/DestinyItemManager/bungie-api-ts">bungie-api-ts</a> to provide the type definitions for the library, all credits for those are going to him/them</p>
 				<h2 id="versioning">Versioning</h2>
 				<p>the-traveler uses <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/alexanderwe/the-traveler/tags">tags on this repository</a>.</p>
 				<h2 id="issues">Issues</h2>
-				<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">issue section</a> :)</p>
+				<p>Do you have any issues or recommendations for this package ? Feel free to open an issue in the <a href="https://github.com/alexanderwe/the-traveler/issues">issue section</a>.</p>
 				<h2 id="license">License</h2>
 				<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
 				<h2 id="acknowledgments">Acknowledgments</h2>

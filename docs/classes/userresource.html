@@ -120,7 +120,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/UserResource.ts#L8">resources/UserResource.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/UserResource.ts#L8">resources/UserResource.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -143,7 +143,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:5</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/BungieResoure.ts#L5">resources/BungieResoure.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,7 +154,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#httpservice">httpService</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:4</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/BungieResoure.ts#L4">resources/BungieResoure.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -165,7 +165,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#resourcepath">resourcePath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/UserResource.ts#L8">resources/UserResource.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/UserResource.ts#L8">resources/UserResource.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -182,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/UserResource.ts#L47">resources/UserResource.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/UserResource.ts#L70">resources/UserResource.ts:70</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -190,6 +190,14 @@
 									<p>Returns a list of accounts associated with the supplied membership ID and membership type.
 									This will include all linked accounts (even when hidden) if supplied credentials permit it.</p>
 								</div>
+								<pre><code class="language-js">traveler.user
+ .getMembershipDataById(<span class="hljs-string">'membershipId'</span>, BungieMembershipType.TigerPsn, <span class="hljs-string">'oauthAccessToken'</span>)
+ .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(response);
+ })
+ .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(err);
+ });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>UserResource</p>
@@ -222,13 +230,23 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/UserResource.ts#L22">resources/UserResource.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/d3f224a/src/resources/UserResource.ts#L33">resources/UserResource.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a list of accounts associated with signed in user. This is useful for OAuth implementations that do not give you access to the token response.</p>
+									<p>Returns a list of accounts associated with signed in user. This is useful for OAuth implementations that do not give you access to the token response.
+									<code>`</code>js</p>
 								</div>
+								<p>traveler.user
+									.getMembershipDataForCurrentUser(&#39;oauthAccessToken&#39;)
+									.then(response =&gt; {
+									console.log(response);
+									})
+									.catch(err =&gt; {
+									console.log(err);
+									});
+								<code>`</code></p>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>UserResource</p>
