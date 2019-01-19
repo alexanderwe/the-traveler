@@ -187,7 +187,8 @@
   <span class="hljs-attr">refresh_expires_in</span>: <span class="hljs-number">7776000</span>,
   <span class="hljs-attr">membership_id</span>: <span class="hljs-string">''</span> }</code></pre>
 				<p><em>Use refresh</em>:</p>
-				<pre><code class="language-js">traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> { <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
+				<pre><code class="language-js">traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(<span class="hljs-function"><span class="hljs-params">oauth</span> =&gt;</span> {
+    <span class="hljs-comment">// take the refresh token from the oauth object you provided when initialize the oauth to the traveler</span>
     <span class="hljs-comment">// Provide your traveler object with the oauth object. This is later used for making authenticated calls</span>
     traveler.oauth = oauth;
 }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
