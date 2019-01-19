@@ -15,7 +15,6 @@ export default class UserResource extends BungieResource {
   /**
    * Returns a list of accounts associated with signed in user. This is useful for OAuth implementations that do not give you access to the token response.
    * ```js
-   *
    * traveler.user
    *  .getMembershipDataForCurrentUser('oauthAccessToken')
    *  .then(response => {

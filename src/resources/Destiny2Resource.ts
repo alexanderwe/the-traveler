@@ -88,7 +88,7 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { TypeDefinition } from './type-definitions/additions';
+   * import { TypeDefinition } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -130,11 +130,10 @@ export default class Destiny2Resource extends BungieResource {
 
   /**
    * Search for a Destiny 2 player by name
-   *   import { TypeDefinition } from './type-definitions/additions';
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -185,7 +184,7 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -231,8 +230,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -294,8 +293,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -408,8 +407,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -473,8 +472,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -559,8 +558,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -631,8 +630,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyComponentType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -778,8 +777,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { DestinyActivityModeType } from './type-definitions/destiny2';
-   * import { StatId } from './type-definitions/additions';
+   * import { DestinyActivityModeType } from 'the-traveler/type-definitions/destiny2';
+   * import { StatId } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -838,8 +837,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { DestinyActivityModeType } from './type-definitions/destiny2';
-   * import { StatId } from './type-definitions/additions';
+   * import { DestinyActivityModeType } from 'the-traveler/type-definitions/destiny2';
+   * import { StatId } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -893,9 +892,9 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyActivityModeType } from './type-definitions/destiny2';
-   * import { StatId } from './type-definitions/additions';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyActivityModeType } from 'the-traveler/type-definitions/destiny2';
+   * import { StatId } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -962,9 +961,9 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyActivityModeType } from './type-definitions/destiny2';
-   * import { StatId } from './type-definitions/additions';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyActivityModeType } from 'the-traveler/type-definitions/destiny2';
+   * import { StatId } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1037,7 +1036,7 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { TypeDefinition } from './type-definitions/additions';
+   * import { TypeDefinition } from 'the-traveler/type-definitions/additions';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1092,8 +1091,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyStatsGroupType, PeriodType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyStatsGroupType, PeriodType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1186,8 +1185,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyStatsGroupType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyStatsGroupType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1246,8 +1245,8 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
-   * import { DestinyActivityModeType } from './type-definitions/destiny2';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyActivityModeType } from 'the-traveler/type-definitions/destiny2';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1317,7 +1316,7 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1372,7 +1371,7 @@ export default class Destiny2Resource extends BungieResource {
    *
    * ```js
    * import Traveler from './Traveler';
-   * import { BungieMembershipType } from './type-definitions/app';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
    *
    * let traveler = new Traveler({
    *  apikey: 'apikey',
@@ -1507,24 +1506,29 @@ export default class Destiny2Resource extends BungieResource {
 
   /**
    * Download the specified manifest file, extract the zip and also deleting the zip afterwards
-   *
    * ```js
-   * traveler.destiny2
-   * .getDestinyManifest()
-   * .then(response => {
-   *   traveler.destiny2
-   *    .downloadManifest(response.Response.mobileWorldContentPaths['en'])
-   *     .then(response => {
-   *       console.log(response);
-   *     })
-   *     .catch(err => {
-   *       console.log(err);
-   *      });
-   *  })
-   *  .catch(err => {
-   *   console.log(err);
-   *  });
+   * import Traveler from './Traveler';
    *
+   * let traveler = new Traveler({
+   *  apikey: 'apikey',
+   *  userAgent: 'useragent', //used to identify your request to the API
+   * });
+   *
+   * traveler.destiny2
+   *  .getDestinyManifest()
+   *  .then(response => {
+   *    traveler.destiny2
+   *    .downloadManifest(response.Response.mobileWorldContentPaths['en'])
+   *      .then(response => {
+   *        console.log(response);
+   *      })
+   *      .catch(err => {
+   *        console.log(err);
+   *        });
+   *    })
+   *    .catch(err => {
+   *    console.log(err);
+   * });
    * ```
    *
    * @param {string} manifestUrl The url of the manifest you want to download
@@ -1571,22 +1575,28 @@ export default class Destiny2Resource extends BungieResource {
    * Download the specified json manifest file
    *
    * ```js
+   * import Traveler from './Traveler';
+   *
+   * let traveler = new Traveler({
+   *  apikey: 'apikey',
+   *  userAgent: 'useragent', //used to identify your request to the API
+   * });
+   *
    * traveler.destiny2
    * .getDestinyManifest()
    * .then(response => {
-   *   traveler.destiny2
+   *  traveler.destiny2
    *    .downloadManifestJSON(response.Response.jsonWorldContentPaths['en'])
-   *     .then(response => {
-   *       console.log(response);
+   *    .then(response => {
+   *      console.log(response);
    *     })
    *     .catch(err => {
    *       console.log(err);
-   *      });
+   *     });
    *  })
    *  .catch(err => {
    *   console.log(err);
    *  });
-   *
    * ```
    *
    * @param {string} manifestUrl The url of the manifest you want to download
