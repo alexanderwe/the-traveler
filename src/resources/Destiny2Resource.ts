@@ -538,6 +538,57 @@ export default class Destiny2Resource extends BungieResource {
   }
 
   /**
+   * Get items available from vendors where the vendors have items for sale that are common for everyone.
+   * If any portion of the Vendor's available inventory is character or account specific, we will be unable to return their data from this endpoint due to the way that available inventory is computed.
+   * As I am often guilty of saying: 'It's a long story...'
+   *
+   * ```js
+   * import Traveler from './Traveler';
+   * import { BungieMembershipType } from 'the-traveler/type-definitions/app';
+   * import { DestinyComponentType } from 'the-traveler/type-definitions/destiny2';
+   *
+   * let traveler = new Traveler({
+   *  apikey: 'apikey',
+   *  userAgent: 'useragent', //used to identify your request to the API
+   * });
+   *
+   * traveler.destiny2
+   * .getPublicVendors(
+   *    {
+   *      components: [DestinyComponentType.Vendors]
+   *    }
+   * )
+   * .then(response => {
+   *    console.log(response);
+   * })
+   * .catch(err => {
+   *    console.log(err);
+   * });
+   * ```
+   *
+   * @param {IQueryStringParameters} queryStringParameters An object containing key/value query parameters for this endpoint. Following keys are valid:
+   * <ul>
+   * <li>components {string[]}: See {@link https://bungie-net.github.io/multi/schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType|DestinyComponentType} for the different enum types.</li>
+   * </ul> You must request at least one component to receive results.
+   * @returns {Promise<IServerResponse<IDestinyVendorsResponse>>} When fulfilled returns an object containing all valid components for the public Vendors endpoint
+   * @memberof Destiny2Resource
+   */
+  public getPublicVendors(
+    queryStringParameters: IQueryStringParameters
+  ): Promise<IServerResponse<IDestinyVendorsResponse>> {
+    return new Promise<IServerResponse<IDestinyVendorsResponse>>((resolve, reject) => {
+      this.httpService
+        .get(`${this.resourcePath}/Vendors/${resolveQueryStringParameters(queryStringParameters)}`)
+        .then((response: IServerResponse<IDestinyVendorsResponse>) => {
+          resolve(response);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+
+  /**
    * Retrieve all currently available vendors for a specific character
    * @async
    * @param membershipType A valid non-BungieNet membership type. It has to match the type which the `destinyMembershipId` is belonging to. <br />

@@ -199,6 +199,13 @@ describe('traveler.destiny2#getItem', () => {
 
 // TODO: getVendor (not yet final)
 
+describe('traveler.destiny2#getPublicVendors', () => {
+  test('Respond with matching vendors', async () => {
+    const result = await traveler.destiny2.getPublicVendors({ components: [DestinyComponentType.Vendors] });
+    expect(result.Response.vendorGroups).toBeDefined();
+  });
+});
+
 // TODO: getPostGameCarnageReport
 
 describe('traveler.destiny2#getHistoricalStatsDefinition', () => {
