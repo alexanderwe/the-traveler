@@ -6,7 +6,7 @@ import Traveler from '../src/Traveler';
 import { TypeDefinition } from '../src/type-definitions/additions';
 import { BungieMembershipType } from '../src/type-definitions/app';
 import { DestinyComponentType, PlatformErrorCodes, DestinyStatsGroupType } from '../src/type-definitions/destiny2';
-import { OAuthError } from '../src/type-definitions/errors';
+import { OAuthError } from '../src/errors';
 
 dotenv.config();
 

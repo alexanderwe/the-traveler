@@ -1,9 +1,4 @@
-import {
-  DestinyActivityModeType,
-  DestinyStatsGroupType,
-  PeriodType,
-  DestinyComponentType
-} from '../type-definitions/destiny2';
+import { DestinyActivityModeType, DestinyStatsGroupType, PeriodType, DestinyComponentType } from './destiny2';
 
 /**
  * Enum for the global alert level
@@ -303,7 +298,7 @@ export enum TypeDefinition {
  * Interface for defining an object for the Traveler class
  * @interface
  */
-export interface ITravelerConfig {
+export interface TravelerConfig {
   apikey: string;
   userAgent: string;
   oauthClientId?: string;
@@ -311,21 +306,21 @@ export interface ITravelerConfig {
   debug?: boolean;
 }
 
-export interface IStreamInfo {
+export interface StreamInfo {
   ChannelName: string;
 }
 
-export interface IGlobalAlert {
+export interface GlobalAlert {
   AlertKey: string;
   AlertHtml: string;
   AlerTimestamp: Date;
   AlertLink: string;
   AlertLevel: GlobalAlertLevel;
   AlertType: GlobalAlertType;
-  StreamInfo: IStreamInfo;
+  StreamInfo: StreamInfo;
 }
 
-export interface IDictionaryResponse<S> {
+export interface DictionaryResponse<S> {
   [key: string]: S;
 }
 
@@ -333,7 +328,7 @@ export interface IDictionaryResponse<S> {
  * Interface for defining an object for the endpoint query strings
  * @interface
  */
-export interface IQueryStringParameters {
+export interface QueryStringParameters {
   components?: DestinyComponentType[];
   modes?: DestinyActivityModeType[];
   mode?: DestinyActivityModeType;
@@ -352,7 +347,7 @@ export interface IQueryStringParameters {
  * Interface for defining an object for the OAuth response
  * @interface
  */
-export interface IOAuthResponse {
+export interface OAuthResponse {
   access_token: string;
   token_type: string;
   expires_in: number;
