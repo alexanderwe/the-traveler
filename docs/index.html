@@ -260,7 +260,7 @@
 				<p>Here all character specific components are queried. You can either use normal strings or use the integrated enums.</p>
 				<p><em>Query:</em></p>
 				<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler'</span>;
-<span class="hljs-keyword">import</span> {ComponentType} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/build/enums'</span>
+<span class="hljs-keyword">import</span> {ComponentType} <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">const</span> traveler = <span class="hljs-keyword">new</span> Traveler({
     <span class="hljs-attr">apikey</span>: <span class="hljs-string">'pasteYourAPIkey'</span>,
@@ -754,7 +754,7 @@ traveler.destiny2.getDestinyManifest().then(<span class="hljs-function"><span cl
 					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/logger.html" class="tsd-kind-icon">Logger</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-is-external">
 						<a href="classes/oautherror.html" class="tsd-kind-icon">OAuth<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -764,1216 +764,1228 @@ traveler.destiny2.getDestinyManifest().then(<span class="hljs-function"><span cl
 						<a href="classes/userresource.html" class="tsd-kind-icon">User<wbr>Resource</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iapiusage.html" class="tsd-kind-icon">IApi<wbr>Usage</a>
+						<a href="interfaces/apiusage.html" class="tsd-kind-icon">Api<wbr>Usage</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iapplication.html" class="tsd-kind-icon">IApplication</a>
+						<a href="interfaces/application.html" class="tsd-kind-icon">Application</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iapplicationdeveloper.html" class="tsd-kind-icon">IApplication<wbr>Developer</a>
+						<a href="interfaces/applicationdeveloper.html" class="tsd-kind-icon">Application<wbr>Developer</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iawaauthorizationresult.html" class="tsd-kind-icon">IAwa<wbr>Authorization<wbr>Result</a>
+						<a href="interfaces/awaauthorizationresult.html" class="tsd-kind-icon">Awa<wbr>Authorization<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iawainitializeresponse.html" class="tsd-kind-icon">IAwa<wbr>Initialize<wbr>Response</a>
+						<a href="interfaces/awainitializeresponse.html" class="tsd-kind-icon">Awa<wbr>Initialize<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iawapermissionrequested.html" class="tsd-kind-icon">IAwa<wbr>Permission<wbr>Requested</a>
+						<a href="interfaces/awapermissionrequested.html" class="tsd-kind-icon">Awa<wbr>Permission<wbr>Requested</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iawauserresponse.html" class="tsd-kind-icon">IAwa<wbr>User<wbr>Response</a>
+						<a href="interfaces/awauserresponse.html" class="tsd-kind-icon">Awa<wbr>User<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iclanbanner.html" class="tsd-kind-icon">IClan<wbr>Banner</a>
+						<a href="interfaces/clanbanner.html" class="tsd-kind-icon">Clan<wbr>Banner</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icommentsummary.html" class="tsd-kind-icon">IComment<wbr>Summary</a>
+						<a href="interfaces/commentsummary.html" class="tsd-kind-icon">Comment<wbr>Summary</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icommunitylivestatus.html" class="tsd-kind-icon">ICommunity<wbr>Live<wbr>Status</a>
+						<a href="interfaces/communitylivestatus.html" class="tsd-kind-icon">Community<wbr>Live<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontentitempubliccontract.html" class="tsd-kind-icon">IContent<wbr>Item<wbr>Public<wbr>Contract</a>
+						<a href="interfaces/contentitempubliccontract.html" class="tsd-kind-icon">Content<wbr>Item<wbr>Public<wbr>Contract</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontentpreview.html" class="tsd-kind-icon">IContent<wbr>Preview</a>
+						<a href="interfaces/contentpreview.html" class="tsd-kind-icon">Content<wbr>Preview</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontentrepresentation.html" class="tsd-kind-icon">IContent<wbr>Representation</a>
+						<a href="interfaces/contentrepresentation.html" class="tsd-kind-icon">Content<wbr>Representation</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontenttypedefaultvalue.html" class="tsd-kind-icon">IContent<wbr>Type<wbr>Default<wbr>Value</a>
+						<a href="interfaces/contenttypedefaultvalue.html" class="tsd-kind-icon">Content<wbr>Type<wbr>Default<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontenttypedescription.html" class="tsd-kind-icon">IContent<wbr>Type<wbr>Description</a>
+						<a href="interfaces/contenttypedescription.html" class="tsd-kind-icon">Content<wbr>Type<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontenttypeproperty.html" class="tsd-kind-icon">IContent<wbr>Type<wbr>Property</a>
+						<a href="interfaces/contenttypeproperty.html" class="tsd-kind-icon">Content<wbr>Type<wbr>Property</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/icontenttypepropertysection.html" class="tsd-kind-icon">IContent<wbr>Type<wbr>Property<wbr>Section</a>
+						<a href="interfaces/contenttypepropertysection.html" class="tsd-kind-icon">Content<wbr>Type<wbr>Property<wbr>Section</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idatapoint.html" class="tsd-kind-icon">IDatapoint</a>
+						<a href="interfaces/datapoint.html" class="tsd-kind-icon">Datapoint</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/idaterange.html" class="tsd-kind-icon">IDate<wbr>Range</a>
+						<a href="interfaces/daterange.html" class="tsd-kind-icon">Date<wbr>Range</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivity.html" class="tsd-kind-icon">IDestiny<wbr>Activity</a>
+						<a href="interfaces/destinyactivity.html" class="tsd-kind-icon">Destiny<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitychallengedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Challenge<wbr>Definition</a>
+						<a href="interfaces/destinyactivitychallengedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Challenge<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Definition</a>
+						<a href="interfaces/destinyactivitydefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphartelementdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Art<wbr>Element<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphartelementdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Art<wbr>Element<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphconnectiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Connection<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphconnectiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Connection<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphdisplayobjectivedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Display<wbr>Objective<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphdisplayobjectivedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Display<wbr>Objective<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphdisplayprogressiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Display<wbr>Progression<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphdisplayprogressiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Display<wbr>Progression<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphlistentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>List<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphlistentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>List<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphnodeactivitydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Activity<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphnodeactivitydefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Activity<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphnodedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphnodedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphnodefeaturingstatedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Featuring<wbr>State<wbr>Definition</a>
+						<a href="interfaces/destinyactivitygraphnodefeaturingstatedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>Featuring<wbr>State<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitygraphnodestateentry.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>State<wbr>Entry</a>
+						<a href="interfaces/destinyactivitygraphnodestateentry.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Graph<wbr>Node<wbr>State<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityguidedblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Guided<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyactivityguidedblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Guided<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityhistoryresults.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>History<wbr>Results</a>
+						<a href="interfaces/destinyactivityhistoryresults.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>History<wbr>Results</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityinsertionpointdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Insertion<wbr>Point<wbr>Definition</a>
+						<a href="interfaces/destinyactivityinsertionpointdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Insertion<wbr>Point<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityloadoutrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Loadout<wbr>Requirement</a>
+						<a href="interfaces/destinyactivityloadoutrequirement.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Loadout<wbr>Requirement</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityloadoutrequirementset.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Loadout<wbr>Requirement<wbr>Set</a>
+						<a href="interfaces/destinyactivityloadoutrequirementset.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Loadout<wbr>Requirement<wbr>Set</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitymatchmakingblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Matchmaking<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyactivitymatchmakingblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Matchmaking<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitymodedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Mode<wbr>Definition</a>
+						<a href="interfaces/destinyactivitymodedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Mode<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitymodifierdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Modifier<wbr>Definition</a>
+						<a href="interfaces/destinyactivitymodifierdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Modifier<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitymodifierreferencedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Modifier<wbr>Reference<wbr>Definition</a>
+						<a href="interfaces/destinyactivitymodifierreferencedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Modifier<wbr>Reference<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityplaylistitemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Playlist<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyactivityplaylistitemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Playlist<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityrewarddefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Reward<wbr>Definition</a>
+						<a href="interfaces/destinyactivityrewarddefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Reward<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivitytypedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Type<wbr>Definition</a>
+						<a href="interfaces/destinyactivitytypedefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyactivityunlockstringdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Activity<wbr>Unlock<wbr>String<wbr>Definition</a>
+						<a href="interfaces/destinyactivityunlockstringdefinition.html" class="tsd-kind-icon">Destiny<wbr>Activity<wbr>Unlock<wbr>String<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyaggregateactivityresults.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Results</a>
+						<a href="interfaces/destinyaggregateactivityresults.html" class="tsd-kind-icon">Destiny<wbr>Aggregate<wbr>Activity<wbr>Results</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyaggregateactivitystats.html" class="tsd-kind-icon">IDestiny<wbr>Aggregate<wbr>Activity<wbr>Stats</a>
+						<a href="interfaces/destinyaggregateactivitystats.html" class="tsd-kind-icon">Destiny<wbr>Aggregate<wbr>Activity<wbr>Stats</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyanimationreference.html" class="tsd-kind-icon">IDestiny<wbr>Animation<wbr>Reference</a>
+						<a href="interfaces/destinyanimationreference.html" class="tsd-kind-icon">Destiny<wbr>Animation<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyartdyereference.html" class="tsd-kind-icon">IDestiny<wbr>Art<wbr>Dye<wbr>Reference</a>
+						<a href="interfaces/destinyartdyereference.html" class="tsd-kind-icon">Destiny<wbr>Art<wbr>Dye<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinybaseitemcomponentsetofuint32.html" class="tsd-kind-icon">IDestiny<wbr>Base<wbr>Item<wbr>Component<wbr>Set<wbr>Ofuint32</a>
+						<a href="interfaces/destinybaseitemcomponentsetofuint32.html" class="tsd-kind-icon">Destiny<wbr>Base<wbr>Item<wbr>Component<wbr>Set<wbr>Ofuint32</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinybubbledefinition.html" class="tsd-kind-icon">IDestiny<wbr>Bubble<wbr>Definition</a>
+						<a href="interfaces/destinybubbledefinition.html" class="tsd-kind-icon">Destiny<wbr>Bubble<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinychallengestatus.html" class="tsd-kind-icon">IDestiny<wbr>Challenge<wbr>Status</a>
+						<a href="interfaces/destinychallengestatus.html" class="tsd-kind-icon">Destiny<wbr>Challenge<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacteractivitiescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Activities<wbr>Component</a>
+						<a href="interfaces/destinycharacteractivitiescomponent.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Activities<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharactercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Component</a>
+						<a href="interfaces/destinycharactercomponent.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharactercustomization.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Customization</a>
+						<a href="interfaces/destinycharactercustomization.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Customization</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacterpeerview.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Peer<wbr>View</a>
+						<a href="interfaces/destinycharacterpeerview.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Peer<wbr>View</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacterprogressioncomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Progression<wbr>Component</a>
+						<a href="interfaces/destinycharacterprogressioncomponent.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Progression<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacterrecordscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Records<wbr>Component</a>
+						<a href="interfaces/destinycharacterrecordscomponent.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Records<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacterrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Render<wbr>Component</a>
+						<a href="interfaces/destinycharacterrendercomponent.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Render<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycharacterresponse.html" class="tsd-kind-icon">IDestiny<wbr>Character<wbr>Response</a>
+						<a href="interfaces/destinycharacterresponse.html" class="tsd-kind-icon">Destiny<wbr>Character<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinychecklistdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Checklist<wbr>Definition</a>
+						<a href="interfaces/destinychecklistdefinition.html" class="tsd-kind-icon">Destiny<wbr>Checklist<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinychecklistentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Checklist<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinychecklistentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Checklist<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyclanaggregatestat.html" class="tsd-kind-icon">IDestiny<wbr>Clan<wbr>Aggregate<wbr>Stat</a>
+						<a href="interfaces/destinyclanaggregatestat.html" class="tsd-kind-icon">Destiny<wbr>Clan<wbr>Aggregate<wbr>Stat</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyclassdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Class<wbr>Definition</a>
+						<a href="interfaces/destinyclassdefinition.html" class="tsd-kind-icon">Destiny<wbr>Class<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectibleacquisitionblock.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Acquisition<wbr>Block</a>
+						<a href="interfaces/destinycollectibleacquisitionblock.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>Acquisition<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectiblecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Component</a>
+						<a href="interfaces/destinycollectiblecomponent.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectibledefinition.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Definition</a>
+						<a href="interfaces/destinycollectibledefinition.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectiblenodedetailresponse.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>Node<wbr>Detail<wbr>Response</a>
+						<a href="interfaces/destinycollectiblenodedetailresponse.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>Node<wbr>Detail<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectiblestateblock.html" class="tsd-kind-icon">IDestiny<wbr>Collectible<wbr>State<wbr>Block</a>
+						<a href="interfaces/destinycollectiblestateblock.html" class="tsd-kind-icon">Destiny<wbr>Collectible<wbr>State<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycollectiblescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Collectibles<wbr>Component</a>
+						<a href="interfaces/destinycollectiblescomponent.html" class="tsd-kind-icon">Destiny<wbr>Collectibles<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycolor.html" class="tsd-kind-icon">IDestiny<wbr>Color</a>
+						<a href="interfaces/destinycolor.html" class="tsd-kind-icon">Destiny<wbr>Color</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinycurrenciescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Currencies<wbr>Component</a>
+						<a href="interfaces/destinycurrenciescomponent.html" class="tsd-kind-icon">Destiny<wbr>Currencies<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydamagetypedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Damage<wbr>Type<wbr>Definition</a>
+						<a href="interfaces/destinydamagetypedefinition.html" class="tsd-kind-icon">Destiny<wbr>Damage<wbr>Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Definition</a>
+						<a href="interfaces/destinydefinition.html" class="tsd-kind-icon">Destiny<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyderiveditemcategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Derived<wbr>Item<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinyderiveditemcategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Derived<wbr>Item<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyderiveditemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Derived<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyderiveditemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Derived<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydestinationbubblesettingdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Destination<wbr>Bubble<wbr>Setting<wbr>Definition</a>
+						<a href="interfaces/destinydestinationbubblesettingdefinition.html" class="tsd-kind-icon">Destiny<wbr>Destination<wbr>Bubble<wbr>Setting<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydestinationdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Destination<wbr>Definition</a>
+						<a href="interfaces/destinydestinationdefinition.html" class="tsd-kind-icon">Destiny<wbr>Destination<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydisplaycategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Display<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinydisplaycategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Display<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinydisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Display<wbr>Properties<wbr>Definition</a>
+						<a href="interfaces/destinydisplaypropertiesdefinition.html" class="tsd-kind-icon">Destiny<wbr>Display<wbr>Properties<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyentitysearchresult.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result</a>
+						<a href="interfaces/destinyentitysearchresult.html" class="tsd-kind-icon">Destiny<wbr>Entity<wbr>Search<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyentitysearchresultitem.html" class="tsd-kind-icon">IDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
+						<a href="interfaces/destinyentitysearchresultitem.html" class="tsd-kind-icon">Destiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyenvironmentlocationmapping.html" class="tsd-kind-icon">IDestiny<wbr>Environment<wbr>Location<wbr>Mapping</a>
+						<a href="interfaces/destinyenvironmentlocationmapping.html" class="tsd-kind-icon">Destiny<wbr>Environment<wbr>Location<wbr>Mapping</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyequipitemresult.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Result</a>
+						<a href="interfaces/destinyequipitemresult.html" class="tsd-kind-icon">Destiny<wbr>Equip<wbr>Item<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyequipitemresults.html" class="tsd-kind-icon">IDestiny<wbr>Equip<wbr>Item<wbr>Results</a>
+						<a href="interfaces/destinyequipitemresults.html" class="tsd-kind-icon">Destiny<wbr>Equip<wbr>Item<wbr>Results</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyequipmentslotdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Equipment<wbr>Slot<wbr>Definition</a>
+						<a href="interfaces/destinyequipmentslotdefinition.html" class="tsd-kind-icon">Destiny<wbr>Equipment<wbr>Slot<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyequippingblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Equipping<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyequippingblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Equipping<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyerrorprofile.html" class="tsd-kind-icon">IDestiny<wbr>Error<wbr>Profile</a>
+						<a href="interfaces/destinyerrorprofile.html" class="tsd-kind-icon">Destiny<wbr>Error<wbr>Profile</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyfactiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Faction<wbr>Definition</a>
+						<a href="interfaces/destinyfactiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Faction<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyfactionprogression.html" class="tsd-kind-icon">IDestiny<wbr>Faction<wbr>Progression</a>
+						<a href="interfaces/destinyfactionprogression.html" class="tsd-kind-icon">Destiny<wbr>Faction<wbr>Progression</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyfactionvendordefinition.html" class="tsd-kind-icon">IDestiny<wbr>Faction<wbr>Vendor<wbr>Definition</a>
+						<a href="interfaces/destinyfactionvendordefinition.html" class="tsd-kind-icon">Destiny<wbr>Faction<wbr>Vendor<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinygearartarrangementreference.html" class="tsd-kind-icon">IDestiny<wbr>Gear<wbr>Art<wbr>Arrangement<wbr>Reference</a>
+						<a href="interfaces/destinygearartarrangementreference.html" class="tsd-kind-icon">Destiny<wbr>Gear<wbr>Art<wbr>Arrangement<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinygenderdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Gender<wbr>Definition</a>
+						<a href="interfaces/destinygenderdefinition.html" class="tsd-kind-icon">Destiny<wbr>Gender<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsaccountresult.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Account<wbr>Result</a>
+						<a href="interfaces/destinyhistoricalstatsaccountresult.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Account<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsactivity.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Activity</a>
+						<a href="interfaces/destinyhistoricalstatsactivity.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsbyperiod.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>ByPeriod</a>
+						<a href="interfaces/destinyhistoricalstatsbyperiod.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>ByPeriod</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Definition</a>
+						<a href="interfaces/destinyhistoricalstatsdefinition.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatspercharacter.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Per<wbr>Character</a>
+						<a href="interfaces/destinyhistoricalstatspercharacter.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Per<wbr>Character</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsperiodgroup.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Period<wbr>Group</a>
+						<a href="interfaces/destinyhistoricalstatsperiodgroup.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Period<wbr>Group</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsvalue.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value</a>
+						<a href="interfaces/destinyhistoricalstatsvalue.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatsvaluepair.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>Value<wbr>Pair</a>
+						<a href="interfaces/destinyhistoricalstatsvaluepair.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>Value<wbr>Pair</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalstatswithmerged.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Stats<wbr>With<wbr>Merged</a>
+						<a href="interfaces/destinyhistoricalstatswithmerged.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Stats<wbr>With<wbr>Merged</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalweaponstats.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats</a>
+						<a href="interfaces/destinyhistoricalweaponstats.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Weapon<wbr>Stats</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyhistoricalweaponstatsdata.html" class="tsd-kind-icon">IDestiny<wbr>Historical<wbr>Weapon<wbr>Stats<wbr>Data</a>
+						<a href="interfaces/destinyhistoricalweaponstatsdata.html" class="tsd-kind-icon">Destiny<wbr>Historical<wbr>Weapon<wbr>Stats<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinsertplugactiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Insert<wbr>Plug<wbr>Action<wbr>Definition</a>
+						<a href="interfaces/destinyinsertplugactiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Insert<wbr>Plug<wbr>Action<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinsertplugsactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Insert<wbr>Plugs<wbr>Action<wbr>Request</a>
+						<a href="interfaces/destinyinsertplugsactionrequest.html" class="tsd-kind-icon">Destiny<wbr>Insert<wbr>Plugs<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinsertplugsrequestentry.html" class="tsd-kind-icon">IDestiny<wbr>Insert<wbr>Plugs<wbr>Request<wbr>Entry</a>
+						<a href="interfaces/destinyinsertplugsrequestentry.html" class="tsd-kind-icon">Destiny<wbr>Insert<wbr>Plugs<wbr>Request<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinventorybucketdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Bucket<wbr>Definition</a>
+						<a href="interfaces/destinyinventorybucketdefinition.html" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Bucket<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinventorycomponent.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Component</a>
+						<a href="interfaces/destinyinventorycomponent.html" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinventoryitemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyinventoryitemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyinventoryitemstatdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Inventory<wbr>Item<wbr>Stat<wbr>Definition</a>
+						<a href="interfaces/destinyinventoryitemstatdefinition.html" class="tsd-kind-icon">Destiny<wbr>Inventory<wbr>Item<wbr>Stat<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemactionblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemactionblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Action<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Request</a>
+						<a href="interfaces/destinyitemactionrequest.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemactionrequireditemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Action<wbr>Required<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyitemactionrequireditemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Action<wbr>Required<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinyitemcategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemchangeresponse.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Change<wbr>Response</a>
+						<a href="interfaces/destinyitemchangeresponse.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Change<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component</a>
+						<a href="interfaces/destinyitemcomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcomponentsetofint32.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofint32</a>
+						<a href="interfaces/destinyitemcomponentsetofint32.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofint32</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcomponentsetofint64.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofint64</a>
+						<a href="interfaces/destinyitemcomponentsetofint64.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofint64</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcomponentsetofuint32.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofuint32</a>
+						<a href="interfaces/destinyitemcomponentsetofuint32.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Component<wbr>Set<wbr>Ofuint32</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemcreationentryleveldefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Creation<wbr>Entry<wbr>Level<wbr>Definition</a>
+						<a href="interfaces/destinyitemcreationentryleveldefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Creation<wbr>Entry<wbr>Level<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemgearsetblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Gearset<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemgearsetblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Gearset<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyiteminstancecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Instance<wbr>Component</a>
+						<a href="interfaces/destinyiteminstancecomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Instance<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemintrinsicsocketentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Intrinsic<wbr>Socket<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyitemintrinsicsocketentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Intrinsic<wbr>Socket<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyiteminventoryblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Inventory<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyiteminventoryblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Inventory<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyiteminvestmentstatdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Investment<wbr>Stat<wbr>Definition</a>
+						<a href="interfaces/destinyiteminvestmentstatdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Investment<wbr>Stat<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemobjectiveblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Objective<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemobjectiveblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Objective<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemobjectivescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Objectives<wbr>Component</a>
+						<a href="interfaces/destinyitemobjectivescomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Objectives<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitempeerview.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Peer<wbr>View</a>
+						<a href="interfaces/destinyitempeerview.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Peer<wbr>View</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemperkentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Perk<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyitemperkentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Perk<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemperkscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Perks<wbr>Component</a>
+						<a href="interfaces/destinyitemperkscomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Perks<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemplug.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Plug</a>
+						<a href="interfaces/destinyitemplug.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Plug</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemplugcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Plug<wbr>Component</a>
+						<a href="interfaces/destinyitemplugcomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Plug<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemplugdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Plug<wbr>Definition</a>
+						<a href="interfaces/destinyitemplugdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Plug<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitempreviewblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Preview<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitempreviewblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Preview<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemqualityblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Quality<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemqualityblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Quality<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemquantity.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Quantity</a>
+						<a href="interfaces/destinyitemquantity.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Quantity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemrendercomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Render<wbr>Component</a>
+						<a href="interfaces/destinyitemrendercomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Render<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemresponse.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Response</a>
+						<a href="interfaces/destinyitemresponse.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsackblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Sack<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemsackblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Sack<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsetactionrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
+						<a href="interfaces/destinyitemsetactionrequest.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Set<wbr>Action<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsetblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemsetblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Set<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsetblockentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Set<wbr>Block<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyitemsetblockentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Set<wbr>Block<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemsocketblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketcategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinyitemsocketcategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyitemsocketentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketentryplugitemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Plug<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyitemsocketentryplugitemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Plug<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketentryplugitemrandomizeddefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Plug<wbr>Item<wbr>Randomized<wbr>Definition</a>
+						<a href="interfaces/destinyitemsocketentryplugitemrandomizeddefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>Entry<wbr>Plug<wbr>Item<wbr>Randomized<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketstate.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Socket<wbr>State</a>
+						<a href="interfaces/destinyitemsocketstate.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Socket<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsocketscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Sockets<wbr>Component</a>
+						<a href="interfaces/destinyitemsocketscomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Sockets<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsourceblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Source<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemsourceblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Source<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsourcedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Source<wbr>Definition</a>
+						<a href="interfaces/destinyitemsourcedefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Source<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemstatblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Stat<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemstatblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Stat<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemstaterequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>State<wbr>Request</a>
+						<a href="interfaces/destinyitemstaterequest.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>State<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemstatscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Stats<wbr>Component</a>
+						<a href="interfaces/destinyitemstatscomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Stats<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemsummaryblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Summary<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemsummaryblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Summary<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtalentgridblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemtalentgridblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtalentgridcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
+						<a href="interfaces/destinyitemtalentgridcomponent.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Talent<wbr>Grid<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtiertypedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Tier<wbr>Type<wbr>Definition</a>
+						<a href="interfaces/destinyitemtiertypedefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Tier<wbr>Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtiertypeinfusionblock.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Tier<wbr>Type<wbr>Infusion<wbr>Block</a>
+						<a href="interfaces/destinyitemtiertypeinfusionblock.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Tier<wbr>Type<wbr>Infusion<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Transfer<wbr>Request</a>
+						<a href="interfaces/destinyitemtransferrequest.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Transfer<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemtranslationblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Translation<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemtranslationblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Translation<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyitemvalueblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Item<wbr>Value<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyitemvalueblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Value<wbr>Block<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinykioskitem.html" class="tsd-kind-icon">IDestiny<wbr>Kiosk<wbr>Item</a>
+						<a href="interfaces/destinyitemvendorsourcereference.html" class="tsd-kind-icon">Destiny<wbr>Item<wbr>Vendor<wbr>Source<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinykioskscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Kiosks<wbr>Component</a>
+						<a href="interfaces/destinykioskitem.html" class="tsd-kind-icon">Destiny<wbr>Kiosk<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyleaderboard.html" class="tsd-kind-icon">IDestiny<wbr>Leaderboard</a>
+						<a href="interfaces/destinykioskscomponent.html" class="tsd-kind-icon">Destiny<wbr>Kiosks<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyleaderboardentry.html" class="tsd-kind-icon">IDestiny<wbr>Leaderboard<wbr>Entry</a>
+						<a href="interfaces/destinyleaderboard.html" class="tsd-kind-icon">Destiny<wbr>Leaderboard</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinylinkedgraphdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Linked<wbr>Graph<wbr>Definition</a>
+						<a href="interfaces/destinyleaderboardentry.html" class="tsd-kind-icon">Destiny<wbr>Leaderboard<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinylinkedgraphentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Linked<wbr>Graph<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinylinkedgraphdefinition.html" class="tsd-kind-icon">Destiny<wbr>Linked<wbr>Graph<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinylinkedprofilesresponse.html" class="tsd-kind-icon">IDestiny<wbr>Linked<wbr>Profiles<wbr>Response</a>
+						<a href="interfaces/destinylinkedgraphentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Linked<wbr>Graph<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinylocationdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Location<wbr>Definition</a>
+						<a href="interfaces/destinylinkedprofilesresponse.html" class="tsd-kind-icon">Destiny<wbr>Linked<wbr>Profiles<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinylocationreleasedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Location<wbr>Release<wbr>Definition</a>
+						<a href="interfaces/destinylocationdefinition.html" class="tsd-kind-icon">Destiny<wbr>Location<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyloredefinition.html" class="tsd-kind-icon">IDestiny<wbr>Lore<wbr>Definition</a>
+						<a href="interfaces/destinylocationreleasedefinition.html" class="tsd-kind-icon">Destiny<wbr>Location<wbr>Release<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymanifest.html" class="tsd-kind-icon">IDestiny<wbr>Manifest</a>
+						<a href="interfaces/destinyloredefinition.html" class="tsd-kind-icon">Destiny<wbr>Lore<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymaterialrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Material<wbr>Requirement</a>
+						<a href="interfaces/destinymanifest.html" class="tsd-kind-icon">Destiny<wbr>Manifest</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymaterialrequirementsetdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Material<wbr>Requirement<wbr>Set<wbr>Definition</a>
+						<a href="interfaces/destinymaterialrequirement.html" class="tsd-kind-icon">Destiny<wbr>Material<wbr>Requirement</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestone.html" class="tsd-kind-icon">IDestiny<wbr>Milestone</a>
+						<a href="interfaces/destinymaterialrequirementsetdefinition.html" class="tsd-kind-icon">Destiny<wbr>Material<wbr>Requirement<wbr>Set<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity</a>
+						<a href="interfaces/destinymilestone.html" class="tsd-kind-icon">Destiny<wbr>Milestone</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivitycompletionstatus.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Completion<wbr>Status</a>
+						<a href="interfaces/destinymilestoneactivity.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivitydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Definition</a>
+						<a href="interfaces/destinymilestoneactivitycompletionstatus.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity<wbr>Completion<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivityphase.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Phase</a>
+						<a href="interfaces/destinymilestoneactivitydefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Variant</a>
+						<a href="interfaces/destinymilestoneactivityphase.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity<wbr>Phase</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestoneactivityvariantdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Activity<wbr>Variant<wbr>Definition</a>
+						<a href="interfaces/destinymilestoneactivityvariant.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity<wbr>Variant</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonechallengeactivity.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Challenge<wbr>Activity</a>
+						<a href="interfaces/destinymilestoneactivityvariantdefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Activity<wbr>Variant<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonechallengeactivitydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Definition</a>
+						<a href="interfaces/destinymilestonechallengeactivity.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Challenge<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonechallengeactivitygraphnodeentry.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Graph<wbr>Node<wbr>Entry</a>
+						<a href="interfaces/destinymilestonechallengeactivitydefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonechallengeactivityphase.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Phase</a>
+						<a href="interfaces/destinymilestonechallengeactivitygraphnodeentry.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Graph<wbr>Node<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonechallengedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Challenge<wbr>Definition</a>
+						<a href="interfaces/destinymilestonechallengeactivityphase.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Challenge<wbr>Activity<wbr>Phase</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonecontent.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content</a>
+						<a href="interfaces/destinymilestonechallengedefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Challenge<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonecontentitemcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Content<wbr>Item<wbr>Category</a>
+						<a href="interfaces/destinymilestonecontent.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Content</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Definition</a>
+						<a href="interfaces/destinymilestonecontentitemcategory.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Content<wbr>Item<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest</a>
+						<a href="interfaces/destinymilestonedefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonequestdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest<wbr>Definition</a>
+						<a href="interfaces/destinymilestonequest.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Quest</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonequestrewarditem.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest<wbr>Reward<wbr>Item</a>
+						<a href="interfaces/destinymilestonequestdefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Quest<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonequestrewardsdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Quest<wbr>Rewards<wbr>Definition</a>
+						<a href="interfaces/destinymilestonequestrewarditem.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Quest<wbr>Reward<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonerewardcategory.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Category</a>
+						<a href="interfaces/destinymilestonequestrewardsdefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Quest<wbr>Rewards<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonerewardcategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinymilestonerewardcategory.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Reward<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonerewardentry.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Entry</a>
+						<a href="interfaces/destinymilestonerewardcategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Reward<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonerewardentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Reward<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinymilestonerewardentry.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Reward<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonevaluedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Value<wbr>Definition</a>
+						<a href="interfaces/destinymilestonerewardentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Reward<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonevendor.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Vendor</a>
+						<a href="interfaces/destinymilestonevaluedefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Value<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinymilestonevendordefinition.html" class="tsd-kind-icon">IDestiny<wbr>Milestone<wbr>Vendor<wbr>Definition</a>
+						<a href="interfaces/destinymilestonevendor.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Vendor</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinynodeactivationrequirement.html" class="tsd-kind-icon">IDestiny<wbr>Node<wbr>Activation<wbr>Requirement</a>
+						<a href="interfaces/destinymilestonevendordefinition.html" class="tsd-kind-icon">Destiny<wbr>Milestone<wbr>Vendor<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinynodesocketreplaceresponse.html" class="tsd-kind-icon">IDestiny<wbr>Node<wbr>Socket<wbr>Replace<wbr>Response</a>
+						<a href="interfaces/destinynodeactivationrequirement.html" class="tsd-kind-icon">Destiny<wbr>Node<wbr>Activation<wbr>Requirement</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinynodestepdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Node<wbr>Step<wbr>Definition</a>
+						<a href="interfaces/destinynodesocketreplaceresponse.html" class="tsd-kind-icon">Destiny<wbr>Node<wbr>Socket<wbr>Replace<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyobjectivedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Definition</a>
+						<a href="interfaces/destinynodestepdefinition.html" class="tsd-kind-icon">Destiny<wbr>Node<wbr>Step<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyobjectivedisplayproperties.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Display<wbr>Properties</a>
+						<a href="interfaces/destinyobjectivedefinition.html" class="tsd-kind-icon">Destiny<wbr>Objective<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyobjectiveperkentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Perk<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyobjectivedisplayproperties.html" class="tsd-kind-icon">Destiny<wbr>Objective<wbr>Display<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyobjectiveprogress.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Progress</a>
+						<a href="interfaces/destinyobjectiveperkentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Objective<wbr>Perk<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyobjectivestatentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Objective<wbr>Stat<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyobjectiveprogress.html" class="tsd-kind-icon">Destiny<wbr>Objective<wbr>Progress</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyparentitemoverride.html" class="tsd-kind-icon">IDestiny<wbr>Parent<wbr>Item<wbr>Override</a>
+						<a href="interfaces/destinyobjectivestatentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Objective<wbr>Stat<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyperkreference.html" class="tsd-kind-icon">IDestiny<wbr>Perk<wbr>Reference</a>
+						<a href="interfaces/destinyparentitemoverride.html" class="tsd-kind-icon">Destiny<wbr>Parent<wbr>Item<wbr>Override</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplacedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Place<wbr>Definition</a>
+						<a href="interfaces/destinyperkreference.html" class="tsd-kind-icon">Destiny<wbr>Perk<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplayer.html" class="tsd-kind-icon">IDestiny<wbr>Player</a>
+						<a href="interfaces/destinyplacedefinition.html" class="tsd-kind-icon">Destiny<wbr>Place<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplugruledefinition.html" class="tsd-kind-icon">IDestiny<wbr>Plug<wbr>Rule<wbr>Definition</a>
+						<a href="interfaces/destinyplayer.html" class="tsd-kind-icon">Destiny<wbr>Player</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplugsetdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Plug<wbr>Set<wbr>Definition</a>
+						<a href="interfaces/destinyplugruledefinition.html" class="tsd-kind-icon">Destiny<wbr>Plug<wbr>Rule<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplugsetscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Plug<wbr>Sets<wbr>Component</a>
+						<a href="interfaces/destinyplugsetdefinition.html" class="tsd-kind-icon">Destiny<wbr>Plug<wbr>Set<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyplugwhitelistentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Plug<wbr>Whitelist<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyplugsetscomponent.html" class="tsd-kind-icon">Destiny<wbr>Plug<wbr>Sets<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypositiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Position<wbr>Definition</a>
+						<a href="interfaces/destinyplugwhitelistentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Plug<wbr>Whitelist<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypostgamecarnagereportdata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Data</a>
+						<a href="interfaces/destinypositiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Position<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypostgamecarnagereportentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Entry</a>
+						<a href="interfaces/destinypostgamecarnagereportdata.html" class="tsd-kind-icon">Destiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypostgamecarnagereportextendeddata.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Extended<wbr>Data</a>
+						<a href="interfaces/destinypostgamecarnagereportentry.html" class="tsd-kind-icon">Destiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypostgamecarnagereportteamentry.html" class="tsd-kind-icon">IDestiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Team<wbr>Entry</a>
+						<a href="interfaces/destinypostgamecarnagereportextendeddata.html" class="tsd-kind-icon">Destiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Extended<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypostmastertransferrequest.html" class="tsd-kind-icon">IDestiny<wbr>Postmaster<wbr>Transfer<wbr>Request</a>
+						<a href="interfaces/destinypostgamecarnagereportteamentry.html" class="tsd-kind-icon">Destiny<wbr>Post<wbr>Game<wbr>Carnage<wbr>Report<wbr>Team<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationchildblock.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Child<wbr>Block</a>
+						<a href="interfaces/destinypostmastertransferrequest.html" class="tsd-kind-icon">Destiny<wbr>Postmaster<wbr>Transfer<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodechildentry.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Child<wbr>Entry</a>
+						<a href="interfaces/destinypresentationchildblock.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Child<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodechildrenblock.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Children<wbr>Block</a>
+						<a href="interfaces/destinypresentationnodechildentry.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Child<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodecollectiblechildentry.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Collectible<wbr>Child<wbr>Entry</a>
+						<a href="interfaces/destinypresentationnodechildrenblock.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Children<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Component</a>
+						<a href="interfaces/destinypresentationnodecollectiblechildentry.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Collectible<wbr>Child<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Definition</a>
+						<a href="interfaces/destinypresentationnodecomponent.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnoderecordchildentry.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Record<wbr>Child<wbr>Entry</a>
+						<a href="interfaces/destinypresentationnodedefinition.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnoderequirementsblock.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Node<wbr>Requirements<wbr>Block</a>
+						<a href="interfaces/destinypresentationnoderecordchildentry.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Record<wbr>Child<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypresentationnodescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Presentation<wbr>Nodes<wbr>Component</a>
+						<a href="interfaces/destinypresentationnoderequirementsblock.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Node<wbr>Requirements<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofilecollectiblescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Collectibles<wbr>Component</a>
+						<a href="interfaces/destinypresentationnodescomponent.html" class="tsd-kind-icon">Destiny<wbr>Presentation<wbr>Nodes<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofilecomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Component</a>
+						<a href="interfaces/destinyprofilecollectiblescomponent.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>Collectibles<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofileprogressioncomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Progression<wbr>Component</a>
+						<a href="interfaces/destinyprofilecomponent.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofilerecordscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Records<wbr>Component</a>
+						<a href="interfaces/destinyprofileprogressioncomponent.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>Progression<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofileresponse.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>Response</a>
+						<a href="interfaces/destinyprofilerecordscomponent.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>Records<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprofileuserinfocard.html" class="tsd-kind-icon">IDestiny<wbr>Profile<wbr>User<wbr>Info<wbr>Card</a>
+						<a href="interfaces/destinyprofileresponse.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogression.html" class="tsd-kind-icon">IDestiny<wbr>Progression</a>
+						<a href="interfaces/destinyprofileuserinfocard.html" class="tsd-kind-icon">Destiny<wbr>Profile<wbr>User<wbr>Info<wbr>Card</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Definition</a>
+						<a href="interfaces/destinyprogression.html" class="tsd-kind-icon">Destiny<wbr>Progression</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressiondisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Display<wbr>Properties<wbr>Definition</a>
+						<a href="interfaces/destinyprogressiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressionlevelrequirementdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Level<wbr>Requirement<wbr>Definition</a>
+						<a href="interfaces/destinyprogressiondisplaypropertiesdefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Display<wbr>Properties<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressionmappingdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Mapping<wbr>Definition</a>
+						<a href="interfaces/destinyprogressionlevelrequirementdefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Level<wbr>Requirement<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressionrewarddefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Reward<wbr>Definition</a>
+						<a href="interfaces/destinyprogressionmappingdefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Mapping<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyprogressionstepdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Progression<wbr>Step<wbr>Definition</a>
+						<a href="interfaces/destinyprogressionrewarddefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Reward<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicactivitystatus.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Activity<wbr>Status</a>
+						<a href="interfaces/destinyprogressionstepdefinition.html" class="tsd-kind-icon">Destiny<wbr>Progression<wbr>Step<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestone.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone</a>
+						<a href="interfaces/destinypublicactivitystatus.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Activity<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestoneactivity.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity</a>
+						<a href="interfaces/destinypublicmilestone.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestoneactivityvariant.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Activity<wbr>Variant</a>
+						<a href="interfaces/destinypublicmilestoneactivity.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestonechallenge.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Challenge</a>
+						<a href="interfaces/destinypublicmilestoneactivityvariant.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Activity<wbr>Variant</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestonechallengeactivity.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Challenge<wbr>Activity</a>
+						<a href="interfaces/destinypublicmilestonechallenge.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Challenge</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestonequest.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Quest</a>
+						<a href="interfaces/destinypublicmilestonechallengeactivity.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Challenge<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinypublicmilestonevendor.html" class="tsd-kind-icon">IDestiny<wbr>Public<wbr>Milestone<wbr>Vendor</a>
+						<a href="interfaces/destinypublicmilestonequest.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Quest</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyqueststatus.html" class="tsd-kind-icon">IDestiny<wbr>Quest<wbr>Status</a>
+						<a href="interfaces/destinypublicmilestonevendor.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Milestone<wbr>Vendor</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyracedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Race<wbr>Definition</a>
+						<a href="interfaces/destinypublicvendorcomponent.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Vendor<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyrecordcompletionblock.html" class="tsd-kind-icon">IDestiny<wbr>Record<wbr>Completion<wbr>Block</a>
+						<a href="interfaces/destinypublicvendorsaleitemcomponent.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyrecordcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Record<wbr>Component</a>
+						<a href="interfaces/destinypublicvendorsresponse.html" class="tsd-kind-icon">Destiny<wbr>Public<wbr>Vendors<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyrecorddefinition.html" class="tsd-kind-icon">IDestiny<wbr>Record<wbr>Definition</a>
+						<a href="interfaces/destinyqueststatus.html" class="tsd-kind-icon">Destiny<wbr>Quest<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyrecordtitleblock.html" class="tsd-kind-icon">IDestiny<wbr>Record<wbr>Title<wbr>Block</a>
+						<a href="interfaces/destinyracedefinition.html" class="tsd-kind-icon">Destiny<wbr>Race<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyreportoffensepgcrrequest.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Offense<wbr>Pgcr<wbr>Request</a>
+						<a href="interfaces/destinyrecordcompletionblock.html" class="tsd-kind-icon">Destiny<wbr>Record<wbr>Completion<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyreportreasoncategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Reason<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinyrecordcomponent.html" class="tsd-kind-icon">Destiny<wbr>Record<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyreportreasondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Report<wbr>Reason<wbr>Definition</a>
+						<a href="interfaces/destinyrecorddefinition.html" class="tsd-kind-icon">Destiny<wbr>Record<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyrewardsourcedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Reward<wbr>Source<wbr>Definition</a>
+						<a href="interfaces/destinyrecordexpirationblock.html" class="tsd-kind-icon">Destiny<wbr>Record<wbr>Expiration<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinysandboxperkdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Sandbox<wbr>Perk<wbr>Definition</a>
+						<a href="interfaces/destinyrecordtitleblock.html" class="tsd-kind-icon">Destiny<wbr>Record<wbr>Title<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinysocketcategorydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Socket<wbr>Category<wbr>Definition</a>
+						<a href="interfaces/destinyreportoffensepgcrrequest.html" class="tsd-kind-icon">Destiny<wbr>Report<wbr>Offense<wbr>Pgcr<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinysockettypedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Socket<wbr>Type<wbr>Definition</a>
+						<a href="interfaces/destinyreportreasoncategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Report<wbr>Reason<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinysockettypescalarmaterialrequiremententry.html" class="tsd-kind-icon">IDestiny<wbr>Socket<wbr>Type<wbr>Scalar<wbr>Material<wbr>Requirement<wbr>Entry</a>
+						<a href="interfaces/destinyreportreasondefinition.html" class="tsd-kind-icon">Destiny<wbr>Report<wbr>Reason<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinystat.html" class="tsd-kind-icon">IDestiny<wbr>Stat</a>
+						<a href="interfaces/destinyrewardsourcedefinition.html" class="tsd-kind-icon">Destiny<wbr>Reward<wbr>Source<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinystatdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Stat<wbr>Definition</a>
+						<a href="interfaces/destinysandboxperkdefinition.html" class="tsd-kind-icon">Destiny<wbr>Sandbox<wbr>Perk<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinystatdisplaydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Stat<wbr>Display<wbr>Definition</a>
+						<a href="interfaces/destinysocketcategorydefinition.html" class="tsd-kind-icon">Destiny<wbr>Socket<wbr>Category<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinystatgroupdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Stat<wbr>Group<wbr>Definition</a>
+						<a href="interfaces/destinysockettypedefinition.html" class="tsd-kind-icon">Destiny<wbr>Socket<wbr>Type<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinystatoverridedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Stat<wbr>Override<wbr>Definition</a>
+						<a href="interfaces/destinysockettypescalarmaterialrequiremententry.html" class="tsd-kind-icon">Destiny<wbr>Socket<wbr>Type<wbr>Scalar<wbr>Material<wbr>Requirement<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentexclusivegroup.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Exclusive<wbr>Group</a>
+						<a href="interfaces/destinystat.html" class="tsd-kind-icon">Destiny<wbr>Stat</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentgriddefinition.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Grid<wbr>Definition</a>
+						<a href="interfaces/destinystatdefinition.html" class="tsd-kind-icon">Destiny<wbr>Stat<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnode.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node</a>
+						<a href="interfaces/destinystatdisplaydefinition.html" class="tsd-kind-icon">Destiny<wbr>Stat<wbr>Display<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnodecategory.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Category</a>
+						<a href="interfaces/destinystatgroupdefinition.html" class="tsd-kind-icon">Destiny<wbr>Stat<wbr>Group<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnodedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Definition</a>
+						<a href="interfaces/destinystatoverridedefinition.html" class="tsd-kind-icon">Destiny<wbr>Stat<wbr>Override<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnodeexclusivesetdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Exclusive<wbr>Set<wbr>Definition</a>
+						<a href="interfaces/destinytalentexclusivegroup.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Exclusive<wbr>Group</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnodestatblock.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Stat<wbr>Block</a>
+						<a href="interfaces/destinytalentgriddefinition.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Grid<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinytalentnodestepgroups.html" class="tsd-kind-icon">IDestiny<wbr>Talent<wbr>Node<wbr>Step<wbr>Groups</a>
+						<a href="interfaces/destinytalentnode.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyunlockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Definition</a>
+						<a href="interfaces/destinytalentnodecategory.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyunlockexpressiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Expression<wbr>Definition</a>
+						<a href="interfaces/destinytalentnodedefinition.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyunlockstatus.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Status</a>
+						<a href="interfaces/destinytalentnodeexclusivesetdefinition.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>Exclusive<wbr>Set<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyunlockvaluedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Unlock<wbr>Value<wbr>Definition</a>
+						<a href="interfaces/destinytalentnodestatblock.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>Stat<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendoraccepteditemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Accepted<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinytalentnodestepgroups.html" class="tsd-kind-icon">Destiny<wbr>Talent<wbr>Node<wbr>Step<wbr>Groups</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendoractiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Action<wbr>Definition</a>
+						<a href="interfaces/destinyunlockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Unlock<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorcategoriescomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Categories<wbr>Component</a>
+						<a href="interfaces/destinyunlockexpressiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Unlock<wbr>Expression<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorcategory.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category</a>
+						<a href="interfaces/destinyunlockstatus.html" class="tsd-kind-icon">Destiny<wbr>Unlock<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorcategoryentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyunlockvaluedefinition.html" class="tsd-kind-icon">Destiny<wbr>Unlock<wbr>Value<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorcategoryoverlaydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Category<wbr>Overlay<wbr>Definition</a>
+						<a href="interfaces/destinyvendoraccepteditemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Accepted<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Component</a>
+						<a href="interfaces/destinyvendoractiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Action<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendordefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Definition</a>
+						<a href="interfaces/destinyvendorcategoriescomponent.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Categories<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendordisplaypropertiesdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Display<wbr>Properties<wbr>Definition</a>
+						<a href="interfaces/destinyvendorcategory.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorgroup.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Group</a>
+						<a href="interfaces/destinyvendorcategoryentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Category<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorgroupcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Group<wbr>Component</a>
+						<a href="interfaces/destinyvendorcategoryoverlaydefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Category<wbr>Overlay<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorgroupdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Group<wbr>Definition</a>
+						<a href="interfaces/destinyvendorcomponent.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorgroupreference.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Group<wbr>Reference</a>
+						<a href="interfaces/destinyvendordefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorinteractiondefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Interaction<wbr>Definition</a>
+						<a href="interfaces/destinyvendordisplaypropertiesdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Display<wbr>Properties<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorinteractionreplydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Interaction<wbr>Reply<wbr>Definition</a>
+						<a href="interfaces/destinyvendorgroup.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Group</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorinteractionsackentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Interaction<wbr>Sack<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyvendorgroupcomponent.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Group<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorinventoryflyoutbucketdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Inventory<wbr>Flyout<wbr>Bucket<wbr>Definition</a>
+						<a href="interfaces/destinyvendorgroupdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Group<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorinventoryflyoutdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Inventory<wbr>Flyout<wbr>Definition</a>
+						<a href="interfaces/destinyvendorgroupreference.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Group<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendoritemdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Item<wbr>Definition</a>
+						<a href="interfaces/destinyvendorinteractiondefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Interaction<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendoritemquantity.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Item<wbr>Quantity</a>
+						<a href="interfaces/destinyvendorinteractionreplydefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Interaction<wbr>Reply<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendoritemsocketoverride.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Item<wbr>Socket<wbr>Override</a>
+						<a href="interfaces/destinyvendorinteractionsackentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Interaction<wbr>Sack<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorlocationdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Location<wbr>Definition</a>
+						<a href="interfaces/destinyvendorinventoryflyoutbucketdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Inventory<wbr>Flyout<wbr>Bucket<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorreceipt.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipt</a>
+						<a href="interfaces/destinyvendorinventoryflyoutdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Inventory<wbr>Flyout<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorreceiptscomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Receipts<wbr>Component</a>
+						<a href="interfaces/destinyvendoritemdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Item<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorrequirementdisplayentrydefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Requirement<wbr>Display<wbr>Entry<wbr>Definition</a>
+						<a href="interfaces/destinyvendoritemquantity.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Item<wbr>Quantity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Response</a>
+						<a href="interfaces/destinyvendoritemsocketoverride.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Item<wbr>Socket<wbr>Override</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorsaleitemactionblockdefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Action<wbr>Block<wbr>Definition</a>
+						<a href="interfaces/destinyvendorlocationdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Location<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorsaleitemcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
+						<a href="interfaces/destinyvendorreceipt.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Receipt</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorsaleitemsetcomponent.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Set<wbr>Component</a>
+						<a href="interfaces/destinyvendorreceiptscomponent.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Receipts<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorservicedefinition.html" class="tsd-kind-icon">IDestiny<wbr>Vendor<wbr>Service<wbr>Definition</a>
+						<a href="interfaces/destinyvendorrequirementdisplayentrydefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Requirement<wbr>Display<wbr>Entry<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idestinyvendorsresponse.html" class="tsd-kind-icon">IDestiny<wbr>Vendors<wbr>Response</a>
+						<a href="interfaces/destinyvendorresponse.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/destinyvendorsaleitemactionblockdefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Action<wbr>Block<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/destinyvendorsaleitemcomponent.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/destinyvendorservicedefinition.html" class="tsd-kind-icon">Destiny<wbr>Vendor<wbr>Service<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/destinyvendorsresponse.html" class="tsd-kind-icon">Destiny<wbr>Vendors<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/idictionarycomponentresponse.html" class="tsd-kind-icon">IDictionary<wbr>Component<wbr>Response</a>
+						<a href="interfaces/dictionarycomponentresponse.html" class="tsd-kind-icon">Dictionary<wbr>Component<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/idictionaryresponse.html" class="tsd-kind-icon">IDictionary<wbr>Response</a>
+						<a href="interfaces/dictionaryresponse.html" class="tsd-kind-icon">Dictionary<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/idyereference.html" class="tsd-kind-icon">IDye<wbr>Reference</a>
+						<a href="interfaces/dyereference.html" class="tsd-kind-icon">Dye<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ientityactionresult.html" class="tsd-kind-icon">IEntity<wbr>Action<wbr>Result</a>
+						<a href="interfaces/entityactionresult.html" class="tsd-kind-icon">Entity<wbr>Action<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ifireteammember.html" class="tsd-kind-icon">IFireteam<wbr>Member</a>
+						<a href="interfaces/fireteammember.html" class="tsd-kind-icon">Fireteam<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ifireteamresponse.html" class="tsd-kind-icon">IFireteam<wbr>Response</a>
+						<a href="interfaces/fireteamresponse.html" class="tsd-kind-icon">Fireteam<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ifireteamsummary.html" class="tsd-kind-icon">IFireteam<wbr>Summary</a>
+						<a href="interfaces/fireteamsummary.html" class="tsd-kind-icon">Fireteam<wbr>Summary</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iforumrecruitmentdetail.html" class="tsd-kind-icon">IForum<wbr>Recruitment<wbr>Detail</a>
+						<a href="interfaces/forumrecruitmentdetail.html" class="tsd-kind-icon">Forum<wbr>Recruitment<wbr>Detail</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igearassetdatabasedefinition.html" class="tsd-kind-icon">IGear<wbr>Asset<wbr>Data<wbr>Base<wbr>Definition</a>
+						<a href="interfaces/gearassetdatabasedefinition.html" class="tsd-kind-icon">Gear<wbr>Asset<wbr>Data<wbr>Base<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igeneraluser.html" class="tsd-kind-icon">IGeneral<wbr>User</a>
+						<a href="interfaces/generaluser.html" class="tsd-kind-icon">General<wbr>User</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iglobalalert.html" class="tsd-kind-icon">IGlobal<wbr>Alert</a>
+						<a href="interfaces/globalalert.html" class="tsd-kind-icon">Global<wbr>Alert</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupaction.html" class="tsd-kind-icon">IGroup<wbr>Action</a>
+						<a href="interfaces/groupapplicationlistrequest.html" class="tsd-kind-icon">Group<wbr>Application<wbr>List<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupapplicationlistrequest.html" class="tsd-kind-icon">IGroup<wbr>Application<wbr>List<wbr>Request</a>
+						<a href="interfaces/groupapplicationrequest.html" class="tsd-kind-icon">Group<wbr>Application<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupapplicationrequest.html" class="tsd-kind-icon">IGroup<wbr>Application<wbr>Request</a>
+						<a href="interfaces/groupapplicationresponse.html" class="tsd-kind-icon">Group<wbr>Application<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupapplicationresponse.html" class="tsd-kind-icon">IGroup<wbr>Application<wbr>Response</a>
+						<a href="interfaces/groupban.html" class="tsd-kind-icon">Group<wbr>Ban</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupban.html" class="tsd-kind-icon">IGroup<wbr>Ban</a>
+						<a href="interfaces/groupbanrequest.html" class="tsd-kind-icon">Group<wbr>Ban<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupbanrequest.html" class="tsd-kind-icon">IGroup<wbr>Ban<wbr>Request</a>
+						<a href="interfaces/groupeditaction.html" class="tsd-kind-icon">Group<wbr>Edit<wbr>Action</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupcreationresponse.html" class="tsd-kind-icon">IGroup<wbr>Creation<wbr>Response</a>
+						<a href="interfaces/groupfeatures.html" class="tsd-kind-icon">Group<wbr>Features</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupeditaction.html" class="tsd-kind-icon">IGroup<wbr>Edit<wbr>Action</a>
+						<a href="interfaces/groupmember.html" class="tsd-kind-icon">Group<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupfeatures.html" class="tsd-kind-icon">IGroup<wbr>Features</a>
+						<a href="interfaces/groupmemberapplication.html" class="tsd-kind-icon">Group<wbr>Member<wbr>Application</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupmember.html" class="tsd-kind-icon">IGroup<wbr>Member</a>
+						<a href="interfaces/groupmemberleaveresult.html" class="tsd-kind-icon">Group<wbr>Member<wbr>Leave<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupmemberapplication.html" class="tsd-kind-icon">IGroup<wbr>Member<wbr>Application</a>
+						<a href="interfaces/groupmembership.html" class="tsd-kind-icon">Group<wbr>Membership</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupmemberleaveresult.html" class="tsd-kind-icon">IGroup<wbr>Member<wbr>Leave<wbr>Result</a>
+						<a href="interfaces/groupmembershipsearchresponse.html" class="tsd-kind-icon">Group<wbr>Membership<wbr>Search<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupmembership.html" class="tsd-kind-icon">IGroup<wbr>Membership</a>
+						<a href="interfaces/groupnamesearchrequest.html" class="tsd-kind-icon">Group<wbr>Name<wbr>Search<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupmembershipsearchresponse.html" class="tsd-kind-icon">IGroup<wbr>Membership<wbr>Search<wbr>Response</a>
+						<a href="interfaces/groupoptionalconversation.html" class="tsd-kind-icon">Group<wbr>Optional<wbr>Conversation</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupnamesearchrequest.html" class="tsd-kind-icon">IGroup<wbr>Name<wbr>Search<wbr>Request</a>
+						<a href="interfaces/groupoptionalconversationaddrequest.html" class="tsd-kind-icon">Group<wbr>Optional<wbr>Conversation<wbr>Add<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupoptionalconversation.html" class="tsd-kind-icon">IGroup<wbr>Optional<wbr>Conversation</a>
+						<a href="interfaces/groupoptionalconversationeditrequest.html" class="tsd-kind-icon">Group<wbr>Optional<wbr>Conversation<wbr>Edit<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupoptionalconversationaddrequest.html" class="tsd-kind-icon">IGroup<wbr>Optional<wbr>Conversation<wbr>Add<wbr>Request</a>
+						<a href="interfaces/groupoptionseditaction.html" class="tsd-kind-icon">Group<wbr>Options<wbr>Edit<wbr>Action</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupoptionalconversationeditrequest.html" class="tsd-kind-icon">IGroup<wbr>Optional<wbr>Conversation<wbr>Edit<wbr>Request</a>
+						<a href="interfaces/grouppotentialmember.html" class="tsd-kind-icon">Group<wbr>Potential<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupoptionseditaction.html" class="tsd-kind-icon">IGroup<wbr>Options<wbr>Edit<wbr>Action</a>
+						<a href="interfaces/grouppotentialmembership.html" class="tsd-kind-icon">Group<wbr>Potential<wbr>Membership</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igrouppotentialmember.html" class="tsd-kind-icon">IGroup<wbr>Potential<wbr>Member</a>
+						<a href="interfaces/grouppotentialmembershipsearchresponse.html" class="tsd-kind-icon">Group<wbr>Potential<wbr>Membership<wbr>Search<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igrouppotentialmembership.html" class="tsd-kind-icon">IGroup<wbr>Potential<wbr>Membership</a>
+						<a href="interfaces/groupquery.html" class="tsd-kind-icon">Group<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igrouppotentialmembershipsearchresponse.html" class="tsd-kind-icon">IGroup<wbr>Potential<wbr>Membership<wbr>Search<wbr>Response</a>
+						<a href="interfaces/groupresponse.html" class="tsd-kind-icon">Group<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupquery.html" class="tsd-kind-icon">IGroup<wbr>Query</a>
+						<a href="interfaces/groupsearchresponse.html" class="tsd-kind-icon">Group<wbr>Search<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupresponse.html" class="tsd-kind-icon">IGroup<wbr>Response</a>
+						<a href="interfaces/grouptheme.html" class="tsd-kind-icon">Group<wbr>Theme</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupsearchresponse.html" class="tsd-kind-icon">IGroup<wbr>Search<wbr>Response</a>
+						<a href="interfaces/groupv2.html" class="tsd-kind-icon">Group<wbr>V2</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igrouptheme.html" class="tsd-kind-icon">IGroup<wbr>Theme</a>
+						<a href="interfaces/groupv2card.html" class="tsd-kind-icon">Group<wbr>V2Card</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupv2.html" class="tsd-kind-icon">IGroup<wbr>V2</a>
+						<a href="interfaces/groupv2claninfo.html" class="tsd-kind-icon">Group<wbr>V2Clan<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupv2card.html" class="tsd-kind-icon">IGroup<wbr>V2Card</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupv2claninfo.html" class="tsd-kind-icon">IGroup<wbr>V2Clan<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/igroupv2claninfoandinvestment.html" class="tsd-kind-icon">IGroup<wbr>V2Clan<wbr>Info<wbr>And<wbr>Investment</a>
+						<a href="interfaces/groupv2claninfoandinvestment.html" class="tsd-kind-icon">Group<wbr>V2Clan<wbr>Info<wbr>And<wbr>Investment</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ihyperlinkreference.html" class="tsd-kind-icon">IHyperlink<wbr>Reference</a>
+						<a href="interfaces/hyperlinkreference.html" class="tsd-kind-icon">Hyperlink<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iignoreresponse.html" class="tsd-kind-icon">IIgnore<wbr>Response</a>
+						<a href="interfaces/ignoreresponse.html" class="tsd-kind-icon">Ignore<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/imagepyramidentry.html" class="tsd-kind-icon">Image<wbr>Pyramid<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iinterpolationpoint.html" class="tsd-kind-icon">IInterpolation<wbr>Point</a>
+						<a href="interfaces/interpolationpoint.html" class="tsd-kind-icon">Interpolation<wbr>Point</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iinterpolationpointfloat.html" class="tsd-kind-icon">IInterpolation<wbr>Point<wbr>Float</a>
+						<a href="interfaces/interpolationpointfloat.html" class="tsd-kind-icon">Interpolation<wbr>Point<wbr>Float</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ioauthresponse.html" class="tsd-kind-icon">IOAuth<wbr>Response</a>
+						<a href="interfaces/oauthresponse.html" class="tsd-kind-icon">OAuth<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/ipagedquery.html" class="tsd-kind-icon">IPaged<wbr>Query</a>
+						<a href="interfaces/pagedquery.html" class="tsd-kind-icon">Paged<wbr>Query</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ipollresponse.html" class="tsd-kind-icon">IPoll<wbr>Response</a>
+						<a href="interfaces/personaldestinyvendorsaleitemsetcomponent.html" class="tsd-kind-icon">Personal<wbr>Destiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Set<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ipollresult.html" class="tsd-kind-icon">IPoll<wbr>Result</a>
+						<a href="interfaces/pollresponse.html" class="tsd-kind-icon">Poll<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ipostresponse.html" class="tsd-kind-icon">IPost<wbr>Response</a>
+						<a href="interfaces/pollresult.html" class="tsd-kind-icon">Poll<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ipostsearchresponse.html" class="tsd-kind-icon">IPost<wbr>Search<wbr>Response</a>
+						<a href="interfaces/postresponse.html" class="tsd-kind-icon">Post<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ipublicpartnershipdetail.html" class="tsd-kind-icon">IPublic<wbr>Partnership<wbr>Detail</a>
+						<a href="interfaces/postsearchresponse.html" class="tsd-kind-icon">Post<wbr>Search<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/publicdestinyvendorsaleitemsetcomponent.html" class="tsd-kind-icon">Public<wbr>Destiny<wbr>Vendor<wbr>Sale<wbr>Item<wbr>Set<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/publicpartnershipdetail.html" class="tsd-kind-icon">Public<wbr>Partnership<wbr>Detail</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/iquerystringparameters.html" class="tsd-kind-icon">IQuery<wbr>String<wbr>Parameters</a>
+						<a href="interfaces/querystringparameters.html" class="tsd-kind-icon">Query<wbr>String<wbr>Parameters</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isavemessageresult.html" class="tsd-kind-icon">ISave<wbr>Message<wbr>Result</a>
+						<a href="interfaces/schemarecordstateblock.html" class="tsd-kind-icon">Schema<wbr>Record<wbr>State<wbr>Block</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/ischemarecordstateblock.html" class="tsd-kind-icon">ISchema<wbr>Record<wbr>State<wbr>Block</a>
+						<a href="interfaces/searchresultofcommunitylivestatus.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfCommunity<wbr>Live<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofcommunitylivestatus.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfCommunity<wbr>Live<wbr>Status</a>
+						<a href="interfaces/searchresultofcontentitempubliccontract.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfContent<wbr>Item<wbr>Public<wbr>Contract</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofcontentitempubliccontract.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfContent<wbr>Item<wbr>Public<wbr>Contract</a>
+						<a href="interfaces/searchresultofdestinyentitysearchresultitem.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofdestinyentitysearchresultitem.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfDestiny<wbr>Entity<wbr>Search<wbr>Result<wbr>Item</a>
+						<a href="interfaces/searchresultoffireteamresponse.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfFireteam<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultoffireteamresponse.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfFireteam<wbr>Response</a>
+						<a href="interfaces/searchresultoffireteamsummary.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfFireteam<wbr>Summary</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultoffireteamsummary.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfFireteam<wbr>Summary</a>
+						<a href="interfaces/searchresultofgroupban.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfGroup<wbr>Ban</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofgroupban.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfGroup<wbr>Ban</a>
+						<a href="interfaces/searchresultofgroupmember.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfGroup<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofgroupmember.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfGroup<wbr>Member</a>
+						<a href="interfaces/searchresultofgroupmemberapplication.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfGroup<wbr>Member<wbr>Application</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultofgroupmemberapplication.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfGroup<wbr>Member<wbr>Application</a>
+						<a href="interfaces/searchresultoftrendingentry.html" class="tsd-kind-icon">Search<wbr>Result<wbr>OfTrending<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/isearchresultoftrendingentry.html" class="tsd-kind-icon">ISearch<wbr>Result<wbr>OfTrending<wbr>Entry</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iseries.html" class="tsd-kind-icon">ISeries</a>
+						<a href="interfaces/series.html" class="tsd-kind-icon">Series</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/iserverresponse.html" class="tsd-kind-icon">IServer<wbr>Response</a>
+						<a href="interfaces/serverresponse.html" class="tsd-kind-icon">Server<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/isinglecomponentresponse.html" class="tsd-kind-icon">ISingle<wbr>Component<wbr>Response</a>
+						<a href="interfaces/singlecomponentresponse.html" class="tsd-kind-icon">Single<wbr>Component<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/istreaminfo.html" class="tsd-kind-icon">IStream<wbr>Info</a>
+						<a href="interfaces/streaminfo.html" class="tsd-kind-icon">Stream<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itagmetadatadefinition.html" class="tsd-kind-icon">ITag<wbr>Metadata<wbr>Definition</a>
+						<a href="interfaces/tagmetadatadefinition.html" class="tsd-kind-icon">Tag<wbr>Metadata<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itagmetadataitem.html" class="tsd-kind-icon">ITag<wbr>Metadata<wbr>Item</a>
+						<a href="interfaces/tagmetadataitem.html" class="tsd-kind-icon">Tag<wbr>Metadata<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/itagresponse.html" class="tsd-kind-icon">ITag<wbr>Response</a>
+						<a href="interfaces/tagresponse.html" class="tsd-kind-icon">Tag<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/itravelerconfig.html" class="tsd-kind-icon">ITraveler<wbr>Config</a>
+						<a href="interfaces/travelerconfig.html" class="tsd-kind-icon">Traveler<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingcategories.html" class="tsd-kind-icon">ITrending<wbr>Categories</a>
+						<a href="interfaces/trendingcategories.html" class="tsd-kind-icon">Trending<wbr>Categories</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingcategory.html" class="tsd-kind-icon">ITrending<wbr>Category</a>
+						<a href="interfaces/trendingcategory.html" class="tsd-kind-icon">Trending<wbr>Category</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingdetail.html" class="tsd-kind-icon">ITrending<wbr>Detail</a>
+						<a href="interfaces/trendingdetail.html" class="tsd-kind-icon">Trending<wbr>Detail</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentry.html" class="tsd-kind-icon">ITrending<wbr>Entry</a>
+						<a href="interfaces/trendingentry.html" class="tsd-kind-icon">Trending<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrycommunitycreation.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Community<wbr>Creation</a>
+						<a href="interfaces/trendingentrycommunitycreation.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Community<wbr>Creation</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrycommunitystream.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Community<wbr>Stream</a>
+						<a href="interfaces/trendingentrycommunitystream.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Community<wbr>Stream</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrydestinyactivity.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Destiny<wbr>Activity</a>
+						<a href="interfaces/trendingentrydestinyactivity.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Destiny<wbr>Activity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrydestinyitem.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Destiny<wbr>Item</a>
+						<a href="interfaces/trendingentrydestinyitem.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Destiny<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrydestinyritual.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Destiny<wbr>Ritual</a>
+						<a href="interfaces/trendingentrydestinyritual.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Destiny<wbr>Ritual</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrynews.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>News</a>
+						<a href="interfaces/trendingentrynews.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>News</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/itrendingentrysupportarticle.html" class="tsd-kind-icon">ITrending<wbr>Entry<wbr>Support<wbr>Article</a>
+						<a href="interfaces/trendingentrysupportarticle.html" class="tsd-kind-icon">Trending<wbr>Entry<wbr>Support<wbr>Article</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iuserinfocard.html" class="tsd-kind-icon">IUser<wbr>Info<wbr>Card</a>
+						<a href="interfaces/userinfocard.html" class="tsd-kind-icon">User<wbr>Info<wbr>Card</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iusermembership.html" class="tsd-kind-icon">IUser<wbr>Membership</a>
+						<a href="interfaces/usermembership.html" class="tsd-kind-icon">User<wbr>Membership</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iusermembershipdata.html" class="tsd-kind-icon">IUser<wbr>Membership<wbr>Data</a>
+						<a href="interfaces/usermembershipdata.html" class="tsd-kind-icon">User<wbr>Membership<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iusertheme.html" class="tsd-kind-icon">IUser<wbr>Theme</a>
+						<a href="interfaces/usertheme.html" class="tsd-kind-icon">User<wbr>Theme</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/iusertousercontext.html" class="tsd-kind-icon">IUser<wbr>ToUser<wbr>Context</a>
+						<a href="interfaces/usertousercontext.html" class="tsd-kind-icon">User<wbr>ToUser<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#app" class="tsd-kind-icon">App</a>
@@ -1992,9 +2004,6 @@ traveler.destiny2.getDestinyManifest().then(<span class="hljs-function"><span cl
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#forum" class="tsd-kind-icon">Forum</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#groupv2" class="tsd-kind-icon">Group<wbr>V2</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#trending" class="tsd-kind-icon">Trending</a>
