@@ -1,7 +1,7 @@
 import BungieResource from './BungieResoure';
 import HTTPService from '../HttpService';
-import { IServerResponse } from '../type-definitions/app';
-import { IUserMembershipData, BungieMembershipType } from '../type-definitions/user';
+import { ServerResponse } from '../type-definitions/app';
+import { UserMembershipData, BungieMembershipType } from '../type-definitions/user';
 import { checkOauthToken } from '../util';
 
 export default class UserResource extends BungieResource {
@@ -15,7 +15,6 @@ export default class UserResource extends BungieResource {
   /**
    * Returns a list of accounts associated with signed in user. This is useful for OAuth implementations that do not give you access to the token response.
    * ```js
-   *
    * traveler.user
    *  .getMembershipDataForCurrentUser('oauthAccessToken')
    *  .then(response => {
@@ -27,16 +26,16 @@ export default class UserResource extends BungieResource {
    * ```
    *
    * @param {string} oauthAccesstoken
-   * @returns {Promise<IServerResponse<IUserMembershipData>>}
+   * @returns {Promise<ServerResponse<UserMembershipData>>}
    * @memberof UserResource
    */
-  public getMembershipDataForCurrentUser(oauthAccesstoken: string): Promise<IServerResponse<IUserMembershipData>> {
+  public getMembershipDataForCurrentUser(oauthAccesstoken: string): Promise<ServerResponse<UserMembershipData>> {
     checkOauthToken(oauthAccesstoken);
 
-    return new Promise<IServerResponse<IUserMembershipData>>((resolve, reject) => {
+    return new Promise<ServerResponse<UserMembershipData>>((resolve, reject) => {
       this.httpService
         .get(`${this.resourcePath}/GetMembershipsForCurrentUser/`, oauthAccesstoken)
-        .then((response: IServerResponse<IUserMembershipData>) => {
+        .then((response: ServerResponse<UserMembershipData>) => {
           resolve(response);
         })
         .catch(err => {
@@ -64,20 +63,20 @@ export default class UserResource extends BungieResource {
    * @param {string} destinyMembershipId
    * @param {BungieMembershipType} membershipType
    * @param {string} oauthAccesstoken
-   * @returns {Promise<IAPIResponse<IUserMembershipData>>}
+   * @returns {Promise<IAPIResponse<UserMembershipData>>}
    * @memberof UserResource
    */
   public getMembershipDataById(
     destinyMembershipId: string,
     membershipType: BungieMembershipType,
     oauthAccesstoken: string
-  ): Promise<IServerResponse<IUserMembershipData>> {
+  ): Promise<ServerResponse<UserMembershipData>> {
     checkOauthToken(oauthAccesstoken);
 
-    return new Promise<IServerResponse<IUserMembershipData>>((resolve, reject) => {
+    return new Promise<ServerResponse<UserMembershipData>>((resolve, reject) => {
       this.httpService
         .get(`${this.resourcePath}/GetMembershipsById/${destinyMembershipId}/${membershipType}/`, oauthAccesstoken)
-        .then((response: IServerResponse<IUserMembershipData>) => {
+        .then((response: ServerResponse<UserMembershipData>) => {
           resolve(response);
         })
         .catch(err => {

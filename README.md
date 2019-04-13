@@ -10,28 +10,32 @@ the-traveler is a small npm package which wraps around the Destiny 2 API. It use
 
 ## Table of Contents
 
-* [the-traveler](#the-traveler)
-* [Table of Contents](#table-of-contents)
-  * [Getting Started](#getting-started)
-    * [Prerequisites](#prerequisites)
-  * [OAuth](#oauth)
-  * [Notices](#notices)
-    * [Typescript Support](#typescript-support)
-    * [Typical Response](#typical-response)
-    * [Privacy](#privacy)
-    * [Documentation](#documentation)
-  * [Examples](#examples)
-    * [Search for an Destiny Account on PSN](#search-for-an-destiny-account-on-psn)
-    * [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
-    * [Transfer item from vault to character (needs OAuth)](#transfer-item-from-vault-to-character-needs-oauth)
-    * [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
-    * [Manifest](#manifest)
-  * [Progress](#progress)
-  * [Built With](#built-with)
-  * [Versioning](#versioning)
-  * [Issues](#issues)
-  * [License](#license)
-  * [Acknowledgments](#acknowledgments)
+- [the-traveler](#the-traveler)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Installation](#installation)
+      - [NPM](#npm)
+      - [Yarn](#yarn)
+    - [Prerequisites](#prerequisites)
+  - [General remark](#general-remark)
+  - [OAuth](#oauth)
+  - [Notices](#notices)
+    - [Typescript Support](#typescript-support)
+    - [Typical Response](#typical-response)
+    - [Privacy](#privacy)
+    - [Documentation](#documentation)
+  - [Examples](#examples)
+    - [Search for an Destiny Account on PSN](#search-for-an-destiny-account-on-psn)
+    - [Get a character for an PSN Account](#get-a-character-for-an-psn-account)
+    - [Async await approach (pseudo-code)](#async-await-approach-pseudo-code)
+    - [Manifest](#manifest)
+  - [Progress](#progress)
+  - [Built With](#built-with)
+  - [Thanks](#thanks)
+  - [Versioning](#versioning)
+  - [Issues](#issues)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -91,6 +95,23 @@ const traveler = new Traveler({
 });
 ```
 
+## General remark
+
+With version `v1.0.0` the structure of the library changed quite a bit. Not in terms of functionality but in terms of how the different methods are called. The `Traveler` object contains different attributes indicating the different resource endpoints. For example if you want to use endpoints from Destiny 2 you call them by:
+
+```js
+traveler.destiny2.<method>
+```
+
+If you want to access OAuth related methods, they are located under:
+
+```js
+traveler.oauth.<method>
+```
+
+This decision was made to better seperate the calls according to their destination.
+You can find the different resource endpoints in the [documentation](https://alexanderwe.github.io/the-traveler/).
+
 ## OAuth
 
 If you want to use OAuth to get access to endpoints which require user approval provide the `Traveler` object with your OAuth `clientId` and if you are using a confidential client type additionally the `clientSecret`.
@@ -110,7 +131,7 @@ Please ensure that you specified a `redirectURL` in your application settings on
 After you have done that, you can generate the authentication URL which has to be visited by your users to approve your application. The URL is constructed with the following schema: `https://www.bungie.net/en/OAuth/Authorize?client_id={yourClientID}&response_type=code`.
 
 ```js
-const authUrl = traveler.generateOAuthURL(); // The URL your users have to visit to give your application access
+const authUrl = traveler.oauth.generateOAuthURL(); // The URL your users have to visit to give your application access
 ```
 
 If a user visit this site and approve your application he/she will be redirected to the `redirectURL` you specified. This URL is expaned with query parameter called `code`: `https://www.example.com/?code=hereComesTheCode`
@@ -118,7 +139,7 @@ If a user visit this site and approve your application he/she will be redirected
 This is the code you need to obtain the OAuth Access token with the  `getAccessToken()` method.
 
 ```js
-traveler.getAccessToken(hereComesTheCode).then(oauth => {
+traveler.oauth.getAccessToken(hereComesTheCode).then(oauth => {
     // Provide your traveler object with the oauth object. This is later used for making authenticated calls
     traveler.oauth = oauth;
 }).catch(err => {
@@ -153,7 +174,8 @@ _Response_:
 _Use refresh_:
 
 ```js
-traveler.refreshToken(traveler.oauth.refresh_token).then(oauth => { // take the refresh token from the oauth object you provided when initialize the oauth to the traveler
+traveler.oauth.refreshToken(traveler.oauth.refresh_token).then(oauth => { 
+    // take the refresh token from the oauth object you provided when initialize the oauth to the traveler
     // Provide your traveler object with the oauth object. This is later used for making authenticated calls
     traveler.oauth = oauth;
 }).catch(err => {
@@ -213,12 +235,15 @@ Some information in the Destiny API is privacy protected. If the user set the pr
 
 ## Examples
 
+Here are some examples on how to use the library. You can find exhaustive examples in the [ documentation](https://alexanderwe.github.io/the-traveler/)
+
 ### Search for an Destiny Account on PSN
 
 _Query:_
 
 ```js
 traveler
+    .destiny2
     .searchDestinyPlayer('2', 'playername')
     .then(player => {
         console.log(player);
@@ -249,14 +274,16 @@ _Query:_
 
 ```js
 import Traveler from 'the-traveler';
-import {ComponentType} from 'the-traveler/build/enums'
+import {ComponentType} from 'the-traveler/type-definitions/destiny2';
 
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
     userAgent: 'yourUserAgent' //used to identify your request to the API
 });
 
-traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', { components: ['200', '201', '202', '203', '204', '205'] }).then(result => {
+traveler
+    .destiny2
+    .getCharacter('2', '4611686018452033461', '2305843009265042115', { components: ['200', '201', '202', '203', '204', '205'] }).then(result => {
     console.log(result);
 }).catch(err => {
     console.log(err);
@@ -264,21 +291,23 @@ traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', { compo
 
 // OR
 
-traveler.getCharacter('2', '4611686018452033461', '2305843009265042115', {
-    components:
-    [
-        ComponentType.Characters,
-        ComponentType.CharacterInventories,
-        ComponentType.CharacterProgressions,
-        ComponentType.CharacterRenderData,
-        ComponentType.CharacterActivities,
-        ComponentType.CharacterEquipment
-    ]
-}).then(result => {
-    console.log(result);
-}).catch(err => {
-    console.log(err);
-});
+traveler
+    .destiny2
+    .getCharacter('2', '4611686018452033461', '2305843009265042115', {
+        components:
+        [
+            ComponentType.Characters,
+            ComponentType.CharacterInventories,
+            ComponentType.CharacterProgressions,
+            ComponentType.CharacterRenderData,
+            ComponentType.CharacterActivities,
+            ComponentType.CharacterEquipment
+        ]
+    }).then(result => {
+        console.log(result);
+    }).catch(err => {
+        console.log(err);
+    });
 
 ```
 
@@ -300,27 +329,7 @@ _Response (First level):_
   MessageData: {} }
 ```
 
-### Transfer item from vault to character (needs OAuth)
 
-`traveler.oauth` has to be set before calling this method
-
-```js
-traveler
-    .transferItem({
-        itemReferenceHash: '2907129556',
-        stackSize: 1,
-        transferToVault: false,
-        itemId: '6917529033189743362',
-        characterId: 'yourCharacterId',
-        membershipType: BungieMembershipType.PSN // BungieMembershipType.PSN in ES5
-    })
-    .then(result => {
-        console.log(result);
-    })
-    .catch(err => {
-        console.log(err);
-    });
-```
 
 ### Async await approach (pseudo-code)
 
@@ -358,8 +367,8 @@ import Traveler from 'the-traveler';
 import Manifest from 'the-traveler/build/Manifest'
 
 
-traveler.getDestinyManifest().then(result => {
-    traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content').then(filepath => {
+traveler.destiny2.getDestinyManifest().then(result => {
+    traveler.destiny2.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content').then(filepath => {
         const manifest = new Manifest(filepath);
         manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"').then(queryResult => {
             console.log(queryResult);
@@ -371,7 +380,6 @@ traveler.getDestinyManifest().then(result => {
     })
 })
 
-
 ```
 
 *async way:*
@@ -381,8 +389,8 @@ import Traveler from 'the-traveler';
 import Manifest from 'the-traveler/build/Manifest'
 
 async ()=> {
-    const result = await traveler.getDestinyManifest();
-    const filepath = await traveler.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content');
+    const result = await traveler.destiny2.getDestinyManifest();
+    const filepath = await traveler.destiny2.downloadManifest(result.Response.mobileWorldContentPaths.en, './manifest.content');
     const manifest = new Manifest(filepath);
     const queryResult = await manifest.queryManifest('SELECT name FROM sqlite_master WHERE type="table"')
 }
@@ -392,40 +400,6 @@ async ()=> {
 
 Please visit the [official documentation for the API](https://bungie-net.github.io/multi/operation_get_Destiny2-GetDestinyManifest.html#operation_get_Destiny2-GetDestinyManifest) to check if the endpoints are working or if they are still in preview. If you find endpoints in preview, please keep in mind that errors can occur quite often. If the endpoints get finalized also this package will adopt changes and test the functionalities.
 
-| Endpoint                                            | Implemented | Unlocked in API      |
-|-----------------------------------------------------|-------------|----------------------|
-| Destiny2.GetDestinyManifest                         | ✅           | ✅                    |
-| Destiny2.GetDestinyEntityDefinition                 | ✅           | ✅                    |
-| Destiny2.SearchDestinyPlayer                        | ✅           | ✅                    |
-| Destiny2.GetLinkedProfiles                          | ✅           | ✅                    |
-| Destiny2.GetProfile                                 | ✅           | ✅                    |
-| Destiny2.GetCharacter                               | ✅           | ✅                    |
-| Destiny2.GetClanWeeklyRewardState                   | ✅           | ✅                    |
-| Destiny2.GetItem                                    | ✅           | ✅                    |
-| Destiny2.GetVendors                                 | ✅           | ✅                    |
-| Destiny2.GetVendor                                  | ✅           | ✅                    |
-| Destiny2.TransferItem                               | ✅           | ✅                    |
-| Destiny2.PullFromPostmaster                         | ✅           | ✅                    |
-| Destiny2.EquipItem                                  | ✅           | ✅                    |
-| Destiny2.EquipItems                                 | ✅           | ✅                    |
-| Destiny2.SetItemLockState                           | ✅           | ✅                    |
-| Destiny2.InsertSocketPlug                           | ✅           | ![alt text][preview] |
-| Destiny2.GetPostGameCarnageReport                   | ✅           | ✅                    |
-| Destiny2.ReportOffensivePostGameCarnageReportPlayer | ✅           | ✅                    |
-| Destiny2.GetHistoricalStatsDefinition               | ✅           | ✅                    |
-| Destiny2.GetClanLeaderboards                        | ✅           | ![alt text][preview] |
-| Destiny2.GetClanAggregateStats                      | ✅           | ![alt text][preview] |
-| Destiny2.GetLeaderboards                            | ✅           | ![alt text][preview] |
-| Destiny2.GetLeaderboardsForCharacter                | ✅           | ![alt text][preview] |
-| Destiny2.SearchDestinyEntities                      | ✅           | ✅                    |
-| Destiny2.GetHistoricalStats                         | ✅           | ✅                    |
-| Destiny2.GetHistoricalStatsForAccount               | ✅           | ✅                    |
-| Destiny2.GetActivityHistory                         | ✅           | ✅                    |
-| Destiny2.GetUniqueWeaponHistory                     | ✅           | ✅                    |
-| Destiny2.GetDestinyAggregateActivityStats           | ✅           | ✅                    |
-| Destiny2.GetPublicMilestoneContent                  | ✅           | ✅                    |
-| Destiny2.GetPublicMilestones                        | ✅           | ✅                    |
-
 ## Built With
 
 * [request-promise-native](https://github.com/request/request-promise-native) - Request package
@@ -433,13 +407,17 @@ Please visit the [official documentation for the API](https://bungie-net.github.
 * [node-stream-zip](https://github.com/antelle/node-stream-zip) - Unzipping files in node (for Manifest interaction) _Note: Maybe this will end up in a peer depdendency in a future release since it adds overhead to the package if you do not want to use the Manifest flow_
 * [node-sqlite3](https://github.com/mapbox/node-sqlite3) - Use sqlite 3 in node (for Manifest interaction as a peer dependency)
 
+## Thanks
+
+Huge thanks to [@BenHollis](https://github.com/bhollis) and [bungie-api-ts](https://github.com/DestinyItemManager/bungie-api-ts) to provide the type definitions for the library, all credits for those are going to him/them
+
 ## Versioning
 
 the-traveler uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/alexanderwe/the-traveler/tags).
 
 ## Issues
 
-Do you have any issues or recommendations for this package ? Feel free to open an issue in the [issue section](https://github.com/alexanderwe/the-traveler/issues) :)
+Do you have any issues or recommendations for this package ? Feel free to open an issue in the [issue section](https://github.com/alexanderwe/the-traveler/issues).
 
 ## License
 

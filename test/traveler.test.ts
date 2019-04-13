@@ -6,7 +6,7 @@ import Traveler from '../src/Traveler';
 import { TypeDefinition } from '../src/type-definitions/additions';
 import { BungieMembershipType } from '../src/type-definitions/app';
 import { DestinyComponentType, PlatformErrorCodes, DestinyStatsGroupType } from '../src/type-definitions/destiny2';
-import { OAuthError } from '../src/type-definitions/errors';
+import { OAuthError } from '../src/errors';
 
 dotenv.config();
 
@@ -198,6 +198,13 @@ describe('traveler.destiny2#getItem', () => {
 // TODO: getVendors (not yet final)
 
 // TODO: getVendor (not yet final)
+
+describe('traveler.destiny2#getPublicVendors', () => {
+  test('Respond with matching vendors', async () => {
+    const result = await traveler.destiny2.getPublicVendors({ components: [DestinyComponentType.Vendors] });
+    expect(result.Response.vendorGroups).toBeDefined();
+  });
+});
 
 // TODO: getPostGameCarnageReport
 

@@ -122,7 +122,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in resources/OAuthResource.ts:9</li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L9">resources/OAuthResource.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -148,7 +148,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:5</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/BungieResoure.ts#L5">resources/BungieResoure.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -159,7 +159,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#httpservice">httpService</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:4</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/BungieResoure.ts#L4">resources/BungieResoure.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -170,7 +170,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#resourcepath">resourcePath</a></p>
 						<ul>
-							<li>Defined in resources/OAuthResource.ts:8</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L8">resources/OAuthResource.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -180,7 +180,7 @@
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in resources/OAuthResource.ts:9</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L9">resources/OAuthResource.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -197,7 +197,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in resources/OAuthResource.ts:25</li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L29">resources/OAuthResource.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,6 +205,7 @@
 									<p>Generates the OAuthURL where your users need to sign up to give your application access to
 									authorized endpoints.</p>
 								</div>
+								<pre><code class="language-js"><span class="hljs-keyword">let</span> url = traveler.oauth.generateOAuthURL(<span class="hljs-string">'clientId'</span>);</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>Traveler</p>
@@ -231,13 +232,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in resources/OAuthResource.ts:42</li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L57">resources/OAuthResource.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Retreive the Oauth access token from the authorization code</p>
 								</div>
+								<pre><code class="language-js">traveler.oauth
+ .getAccessToken(<span class="hljs-string">'code'</span>, <span class="hljs-string">'oauthClientId'</span>, <span class="hljs-string">'oauthClientSecret'</span>)
+ .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(response);
+ })
+ .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(err);
+ });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>Traveler</p>
@@ -273,7 +282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in resources/OAuthResource.ts:95</li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/OAuthResource.ts#L113">resources/OAuthResource.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,6 +291,14 @@
 										Please keep the expiration durations in mind.
 									<strong>This is only possible with a confidential app, as only this will get a refresh token to use</strong></p>
 								</div>
+								<pre><code class="language-js">traveler.oauth
+ .refreshToken(<span class="hljs-string">'refreshToken'</span>, <span class="hljs-string">'oauthClientId'</span>, <span class="hljs-string">'oauthClientSecret'</span>)
+ .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(response);
+ })
+ .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(err);
+ });</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>memberof</dt>
 									<dd><p>Traveler</p>

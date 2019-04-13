@@ -2,7 +2,7 @@ import HTTPService from './HttpService';
 import GlobalResource from './resources/GlobalResource';
 import Destiny2Resource from './resources/Destiny2Resource';
 import UserResource from './resources/UserResource';
-import { ITravelerConfig } from './type-definitions/additions';
+import { TravelerConfig } from './type-definitions/additions';
 import OAuthResource from './resources/OAuthResource';
 
 /**
@@ -18,7 +18,7 @@ export default class Traveler {
   public user: UserResource;
   public destiny2: Destiny2Resource;
 
-  constructor(config: ITravelerConfig) {
+  constructor(config: TravelerConfig) {
     this.apikey = config.apikey;
     this.userAgent = config.userAgent;
     this.httpService = new HTTPService(

@@ -1,14 +1,14 @@
 import BungieResource from './BungieResoure';
 import HTTPService from '../HttpService';
 import got = require('got');
-import { IOAuthResponse, ITravelerConfig } from '../type-definitions/additions';
-import { OAuthError } from '../type-definitions/errors';
+import { OAuthResponse, TravelerConfig } from '../type-definitions/additions';
+import { OAuthError } from '../errors';
 
 export default class OAuthResource extends BungieResource {
   protected resourcePath: string;
   private userAgent: string;
 
-  constructor(config: ITravelerConfig, httpService: HTTPService) {
+  constructor(config: TravelerConfig, httpService: HTTPService) {
     super(httpService);
     this.resourcePath = ``;
     this.userAgent = config.userAgent;
@@ -51,10 +51,10 @@ export default class OAuthResource extends BungieResource {
    * @param {string} code The authorization code from the oauth redirect url
    * @param {string} [oauthClientId] The oauth client id if present
    * @param {string} [oauthClientSecret] The oauth client secret key if present
-   * @returns {Promise<IOAuthResponse>}
+   * @returns {Promise<OAuthResponse>}
    * @memberof Traveler
    */
-  public getAccessToken(code: string, oauthClientId?: string, oauthClientSecret?: string): Promise<IOAuthResponse> {
+  public getAccessToken(code: string, oauthClientId?: string, oauthClientSecret?: string): Promise<OAuthResponse> {
     let form = new FormData();
     form.append('client_id', oauthClientId);
     form.append('code', code);
@@ -76,10 +76,10 @@ export default class OAuthResource extends BungieResource {
 
       json: true
     };
-    return new Promise<IOAuthResponse>((resolve, reject) => {
+    return new Promise<OAuthResponse>((resolve, reject) => {
       this.httpService
         .post('https://www.bungie.net/platform/app/oauth/token/', options)
-        .then((response: IOAuthResponse) => {
+        .then((response: OAuthResponse) => {
           resolve(response);
         })
         .catch(err => {
@@ -107,10 +107,10 @@ export default class OAuthResource extends BungieResource {
    * @param {string} refreshToken
    * @param {string} oauthClientId The oauth client id
    * @param {string} oauthClientSecret The oauth client secret key
-   * @returns {Promise<IOAuthResponse>}
+   * @returns {Promise<OAuthResponse>}
    * @memberof Traveler
    */
-  public refreshToken(refreshToken: string, oauthClientId: string, oauthClientSecret: string): Promise<IOAuthResponse> {
+  public refreshToken(refreshToken: string, oauthClientId: string, oauthClientSecret: string): Promise<OAuthResponse> {
     let form = new FormData();
     form.append('refresh_token', refreshToken);
     form.append('grant_type', 'refresh_token');
@@ -124,10 +124,10 @@ export default class OAuthResource extends BungieResource {
       json: true
     };
 
-    return new Promise<IOAuthResponse>((resolve, reject) => {
+    return new Promise<OAuthResponse>((resolve, reject) => {
       this.httpService
         .post('https://www.bungie.net/platform/app/oauth/token/', options)
-        .then((response: IOAuthResponse) => {
+        .then((response: OAuthResponse) => {
           resolve(response);
         })
         .catch(err => {

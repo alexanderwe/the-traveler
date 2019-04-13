@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "0.7.4",
+    "version": "1.0.0",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -17,14 +17,20 @@
         "url": "https://github.com/alexanderwe/the-traveler"
     },
     "files": [
-        "build/*.js",
-        "build/*.d.ts"
+        "build/**.js",
+        "build/**.d.ts",
+        "build/resources",
+        "build/resources/**.js",
+        "build/resources/**.d.ts",
+        "build/type-definitions",
+        "build/type-definitions/**.js",
+        "build/type-definitions/**.d.ts"
     ],
     "scripts": {
         "testing": "ts-node ./src/test.ts --files",
         "start": "babel-node ./src/index.js --presets env",
         "debug": "babel-node ./src/index.js --presets env",
-        "build": "tsc --p tsconfig.json --declaration --target es5",
+        "build": "rm -rf ./build && tsc --p tsconfig.json --declaration --target es5",
         "watch": "tsc --watch --p tsconfig.json --declaration --target es5",
         "test": "jest --coverage",
         "posttest": "codecov",

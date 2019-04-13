@@ -101,6 +101,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#downloadmanifest" class="tsd-kind-icon">download<wbr>Manifest</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#downloadmanifestjson" class="tsd-kind-icon">download<wbr>ManifestJSON</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getactivityhistory" class="tsd-kind-icon">get<wbr>Activity<wbr>History</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getcharacter" class="tsd-kind-icon">get<wbr>Character</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="destiny2resource.html#getclanaggregatestats" class="tsd-kind-icon">get<wbr>Clan<wbr>Aggregate<wbr>Stats</a></li>
@@ -144,7 +145,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -167,7 +168,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#basepath">basePath</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:5</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/BungieResoure.ts#L5">resources/BungieResoure.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +179,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#httpservice">httpService</a></p>
 						<ul>
-							<li>Defined in resources/BungieResoure.ts:4</li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/BungieResoure.ts#L4">resources/BungieResoure.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -189,7 +190,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="bungieresource.html">BungieResource</a>.<a href="bungieresource.html#resourcepath">resourcePath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L40">resources/Destiny2Resource.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -206,16 +207,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1515">resources/Destiny2Resource.ts:1515</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1539">resources/Destiny2Resource.ts:1539</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Download the specified manifest file, extract the zip and also deleting the zip afterwards</p>
+									<p>Download the specified manifest file, extract the zip and also deleting the zip afterwards
+										<code>`</code>js
+									import Traveler from &#39;./Traveler&#39;;</p>
 								</div>
+								<p>let traveler = new Traveler({
+									apikey: &#39;apikey&#39;,
+									userAgent: &#39;useragent&#39;, //used to identify your request to the API
+								});</p>
+								<p>traveler.destiny2
+									.getDestinyManifest()
+									.then(response =&gt; {
+									traveler.destiny2
+									.downloadManifest(response.Response.mobileWorldContentPaths[&#39;en&#39;])
+									.then(response =&gt; {
+									console.log(response);
+									})
+									.catch(err =&gt; {
+									console.log(err);
+									});
+									})
+									.catch(err =&gt; {
+									console.log(err);
+									});
+								<code>`</code></p>
 								<dl class="tsd-comment-tags">
-									<dt>async</dt>
-									<dd></dd>
+									<dt>memberof</dt>
+									<dd><p>Destiny2Resource</p>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -228,9 +252,68 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filename: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>When fulfilled returns the path of the saved manifest file</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="downloadmanifestjson" class="tsd-anchor"></a>
+					<h3>download<wbr>ManifestJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">download<wbr>ManifestJSON<span class="tsd-signature-symbol">(</span>manifestUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, filename<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1607">resources/Destiny2Resource.ts:1607</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Download the specified json manifest file</p>
+								</div>
+								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
+
+<span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
+ <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
+ <span class="hljs-attr">userAgent</span>: <span class="hljs-string">'useragent'</span>, <span class="hljs-comment">//used to identify your request to the API</span>
+});
+
+traveler.destiny2
+.getDestinyManifest()
+.then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+ traveler.destiny2
+   .downloadManifestJSON(response.Response.jsonWorldContentPaths[<span class="hljs-string">'en'</span>])
+   .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+     <span class="hljs-built_in">console</span>.log(response);
+    })
+    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(err);
+    });
+ })
+ .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(err);
+ });</code></pre>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>Destiny2Resource</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>manifestUrl: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The filename of the final unzipped file. This is used for the constructor of [[Manifest]]</p>
+										<p>The url of the manifest you want to download</p>
 									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filename: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -248,7 +331,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1291">resources/Destiny2Resource.ts:1291</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1290">resources/Destiny2Resource.ts:1290</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,8 +339,8 @@
 									<p>Gets activity history stats for indicated character.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -336,7 +419,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L341">resources/Destiny2Resource.ts:341</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L340">resources/Destiny2Resource.ts:340</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,8 +427,8 @@ traveler.destiny2
 									<p>Retrieve aggregrated details about a Destiny Characters</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -428,7 +511,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L870">resources/Destiny2Resource.ts:870</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L869">resources/Destiny2Resource.ts:869</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -436,8 +519,8 @@ traveler.destiny2
 									<p>Gets aggregated stats for a clan using the same categories as the clan leaderboards. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
-<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -493,7 +576,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L816">resources/Destiny2Resource.ts:816</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L815">resources/Destiny2Resource.ts:815</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -502,8 +585,8 @@ traveler.destiny2
 									PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
-<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -566,7 +649,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L392">resources/Destiny2Resource.ts:392</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L391">resources/Destiny2Resource.ts:391</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -618,7 +701,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L672">resources/Destiny2Resource.ts:672</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L671">resources/Destiny2Resource.ts:671</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -626,8 +709,8 @@ traveler.destiny2
 									<p>Given a Presentation Node that has Collectibles as direct descendants, this will return item details about those descendants in the context of the requesting character.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -711,7 +794,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1404">resources/Destiny2Resource.ts:1404</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1403">resources/Destiny2Resource.ts:1403</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +802,7 @@ traveler.destiny2
 									<p>Gets all activities the character has participated in together with aggregate statistics for those activities.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -781,7 +864,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L115">resources/Destiny2Resource.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L115">resources/Destiny2Resource.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -791,7 +874,7 @@ traveler.destiny2
 									Please don&#39;t use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -838,7 +921,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L71">resources/Destiny2Resource.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L71">resources/Destiny2Resource.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -881,7 +964,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1145">resources/Destiny2Resource.ts:1145</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1144">resources/Destiny2Resource.ts:1144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -889,8 +972,8 @@ traveler.destiny2
 									<p>Gets historical stats for indicated character.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyStatsGroupType, PeriodType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyStatsGroupType, PeriodType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -977,7 +1060,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L760">resources/Destiny2Resource.ts:760</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L759">resources/Destiny2Resource.ts:759</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1023,7 +1106,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1223">resources/Destiny2Resource.ts:1223</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1222">resources/Destiny2Resource.ts:1222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1031,8 +1114,8 @@ traveler.destiny2
 									<p>Gets aggregate historical stats organized around each character for a given account.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyStatsGroupType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyStatsGroupType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1098,7 +1181,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L446">resources/Destiny2Resource.ts:446</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L445">resources/Destiny2Resource.ts:445</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1107,8 +1190,8 @@ traveler.destiny2
 									The items are coupled with an specific Destiny Account</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1181,7 +1264,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L937">resources/Destiny2Resource.ts:937</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L936">resources/Destiny2Resource.ts:936</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1190,9 +1273,9 @@ traveler.destiny2
 									PREVIEW: This endpoint has not yet been implemented. It is being returned for a preview of future functionality, and for public comment/suggestion/preparation.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
-<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1264,7 +1347,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1011">resources/Destiny2Resource.ts:1011</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1010">resources/Destiny2Resource.ts:1010</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1272,9 +1355,9 @@ traveler.destiny2
 									<p>Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
-<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyActivityModeType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { StatId } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1356,7 +1439,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L213">resources/Destiny2Resource.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L212">resources/Destiny2Resource.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1367,7 +1450,7 @@ traveler.destiny2
 									Note that it will only return linked accounts whose linkages you are allowed to view.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1414,7 +1497,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L724">resources/Destiny2Resource.ts:724</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L723">resources/Destiny2Resource.ts:723</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1466,7 +1549,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L269">resources/Destiny2Resource.ts:269</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L268">resources/Destiny2Resource.ts:268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1474,8 +1557,8 @@ traveler.destiny2
 									<p>Returns Destiny Profile information for the supplied membership.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1543,7 +1626,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1459">resources/Destiny2Resource.ts:1459</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1458">resources/Destiny2Resource.ts:1458</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1596,7 +1679,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1495">resources/Destiny2Resource.ts:1495</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1494">resources/Destiny2Resource.ts:1494</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1638,7 +1721,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1349">resources/Destiny2Resource.ts:1349</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1348">resources/Destiny2Resource.ts:1348</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1646,7 +1729,7 @@ traveler.destiny2
 									<p>Gets details about unique weapon usage, including all exotic weapons.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1708,7 +1791,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L602">resources/Destiny2Resource.ts:602</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L601">resources/Destiny2Resource.ts:601</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1716,8 +1799,8 @@ traveler.destiny2
 									<p>Get the details of a specific Vendor.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1802,7 +1885,7 @@ traveler.destiny2.
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L515">resources/Destiny2Resource.ts:515</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L514">resources/Destiny2Resource.ts:514</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1811,8 +1894,8 @@ traveler.destiny2.
 									Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating/dynamic inventories. Use their definitions as-is for those.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
-<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/destiny2'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { DestinyComponentType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/destiny2'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1891,7 +1974,7 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L1069">resources/Destiny2Resource.ts:1069</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L1068">resources/Destiny2Resource.ts:1068</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1899,7 +1982,7 @@ traveler.destiny2
 									<p>Gets a page list of Destiny items.</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/additions'</span>;
+<span class="hljs-keyword">import</span> { TypeDefinition } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/additions'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -1962,16 +2045,15 @@ traveler.destiny2
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/85864e5/src/resources/Destiny2Resource.ts#L164">resources/Destiny2Resource.ts:164</a></li>
+									<li>Defined in <a href="https://github.com/alexanderwe/the-traveler/blob/2ecf1ba/src/resources/Destiny2Resource.ts#L163">resources/Destiny2Resource.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Search for a Destiny 2 player by name
-									import { TypeDefinition } from &#39;./type-definitions/additions&#39;;</p>
+									<p>Search for a Destiny 2 player by name</p>
 								</div>
 								<pre><code class="language-js"><span class="hljs-keyword">import</span> Traveler <span class="hljs-keyword">from</span> <span class="hljs-string">'./Traveler'</span>;
-<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'./type-definitions/app'</span>;
+<span class="hljs-keyword">import</span> { BungieMembershipType } <span class="hljs-keyword">from</span> <span class="hljs-string">'the-traveler/type-definitions/app'</span>;
 
 <span class="hljs-keyword">let</span> traveler = <span class="hljs-keyword">new</span> Traveler({
  <span class="hljs-attr">apikey</span>: <span class="hljs-string">'apikey'</span>,
@@ -2047,6 +2129,9 @@ traveler.destiny2
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="destiny2resource.html#downloadmanifest" class="tsd-kind-icon">download<wbr>Manifest</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="destiny2resource.html#downloadmanifestjson" class="tsd-kind-icon">download<wbr>ManifestJSON</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="destiny2resource.html#getactivityhistory" class="tsd-kind-icon">get<wbr>Activity<wbr>History</a>
