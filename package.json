@@ -1,6 +1,6 @@
 {
     "name": "the-traveler",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Node.js API wrapper for the Destiny 2 API",
     "keywords": [
         "destiny2",
@@ -35,7 +35,8 @@
         "test": "jest --coverage",
         "posttest": "codecov",
         "doc": "typedoc --target ES5 --readme ./README.md --name 'The Traveler' --mode file --out ./docs/ --hideGenerator --exclude **/node_modules/** ./src/**/**.ts --ignoreCompilerErrors && touch ./docs/.nojekyll",
-        "package": "npm pack"
+        "package": "npm pack",
+        "release": "yarn test && yarn doc && yarn build && npm publish"
     },
     "dependencies": {
         "form-data": "^2.3.3",

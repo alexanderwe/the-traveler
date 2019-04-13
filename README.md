@@ -274,7 +274,7 @@ _Query:_
 
 ```js
 import Traveler from 'the-traveler';
-import {ComponentType} from 'the-traveler/build/enums'
+import {ComponentType} from 'the-traveler/type-definitions/destiny2';
 
 const traveler = new Traveler({
     apikey: 'pasteYourAPIkey',
