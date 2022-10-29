@@ -40,7 +40,7 @@ export default class HTTPService {
     });
   }
 
-  public post(url: string, data: got.GotJSONOptions): Promise<object> {
+  public post(url: string, data: got.GotFormOptions<string>): Promise<object> {
     if (this.debug) {
       Logger.debug(`POST - ${url}`);
     }
@@ -49,7 +49,7 @@ export default class HTTPService {
       got
         .post(url, data)
         .then(response => {
-          resolve(response.body);
+          resolve(JSON.parse(response.body));
         })
         .catch(err => {
           reject(err);

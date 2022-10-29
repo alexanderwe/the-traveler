@@ -55,26 +55,25 @@ export default class OAuthResource extends BungieResource {
    * @memberof Traveler
    */
   public getAccessToken(code: string, oauthClientId?: string, oauthClientSecret?: string): Promise<OAuthResponse> {
-    let form = new FormData();
-    form.append('client_id', oauthClientId);
-    form.append('code', code);
-    form.append('grant_type', 'authorization_code');
+    const form = {
+      client_id: oauthClientId,
+      code,
+      grant_type: 'authorization_code',
+    }
 
-    let options: got.GotJSONOptions = {
+    let options: got.GotFormOptions<string> = {
       body: form,
       headers:
         oauthClientId && oauthClientSecret
           ? {
               authorization: `Basic ${new Buffer(`${oauthClientId}:${oauthClientSecret}`).toString('base64')}`,
-              'content-type': 'application/x-www-form-urlencoded',
               'user-agent': this.userAgent
             }
-          : {
-              'content-type': 'application/x-www-form-urlencoded',
+            : {
               'user-agent': this.userAgent
             },
 
-      json: true
+      form: true
     };
     return new Promise<OAuthResponse>((resolve, reject) => {
       this.httpService
@@ -111,17 +110,18 @@ export default class OAuthResource extends BungieResource {
    * @memberof Traveler
    */
   public refreshToken(refreshToken: string, oauthClientId: string, oauthClientSecret: string): Promise<OAuthResponse> {
-    let form = new FormData();
-    form.append('refresh_token', refreshToken);
-    form.append('grant_type', 'refresh_token');
+    const form = {
+      refresh_token: refreshToken,
+      grant_type: 'refresh_token',
+    }
 
-    const options: got.GotJSONOptions = {
+    const options: got.GotFormOptions<string> = {
       body: form,
       headers: {
         authorization: `Basic ${new Buffer(`${oauthClientId}:${oauthClientSecret}`).toString('base64')}`,
         'content-type': 'application/x-www-form-urlencoded'
       },
-      json: true
+      form: true
     };
 
     return new Promise<OAuthResponse>((resolve, reject) => {
